@@ -1,4 +1,4 @@
-# Usage Guide
+# BIOS Knob Manager Usage
 #### 1. Preparation
 ```
 $ git clone https://github.com/wuz15/coval.garden.git
