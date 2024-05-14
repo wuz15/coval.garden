@@ -37,6 +37,15 @@ formater = logging.Formatter('%(asctime)s - %(levelname)s: %(message)s')
 handler.setFormatter(formater)
 logger.addHandler(handler)
 
+def update_configuration():
+	global cpu_project, customer_type, bmc_type, bmc_ip, bmc_username, bmc_password
+	cpu_project = os.environ['CPU_PROJECT']
+	customer_type = os.environ['CUSTOMER_TYPE']
+	bmc_type = os.environ['BMC_TYPE']
+	bmc_ip = os.environ['BMC_IP']
+	bmc_username = os.environ['BMC_USERNAME']
+	bmc_password = os.environ['BMC_PASSWORD']
+
 def get_bios_knob_ops():
 	'''
 	Unified interface to call BIOS knobs operation APIs for Co-Val platforms
@@ -74,14 +83,6 @@ def get_mapped_bios_knobs(knobs=None):
 	'''
 	Used to patch bios_knobs if the bios_knob path being different between RP platform and Co-Val Platform
 	'''
-	global cpu_project, customer_type
-	cpu_project = os.environ['CPU_PROJECT']
-	customer_type = os.environ['CUSTOMER_TYPE']
-	bmc_type = os.environ['BMC_TYPE']
-	bmc_ip = os.environ['BMC_IP']
-	bmc_username = os.environ['BMC_USERNAME']
-	bmc_password = os.environ['BMC_PASSWORD']
-
 	if cpu_project.upper() == 'SPR':
 		mapping_json_file = "coval_biosknob_mapping_spr.json"
 	elif cpu_project == 'GNR':
@@ -114,6 +115,7 @@ def get_mapped_bios_knobs(knobs=None):
 	return mapped_knobs
 
 def write_bios_knobs(knobs=None):
+	update_configuration()
 	mapped_knobs = get_mapped_bios_knobs(knobs)
 	if mapped_knobs != knobs:
 		if mapped_knobs == '':
@@ -125,6 +127,7 @@ def write_bios_knobs(knobs=None):
 	return get_bios_knob_ops().write_bios_knobs(mapped_knobs)
 
 def read_bios_knobs(knobs=None):
+	update_configuration()
 	mapped_knobs = get_mapped_bios_knobs(knobs)
 	if mapped_knobs != knobs:
 		if mapped_knobs == '':
@@ -135,7 +138,8 @@ def read_bios_knobs(knobs=None):
 
 	return get_bios_knob_ops().read_bios_knobs(mapped_knobs)
 
-def clear_cmos(self):
+def clear_cmos():
+	update_configuration()
 	return get_bios_knob_ops().clear_cmos()
 
 if __name__ == "__main__":

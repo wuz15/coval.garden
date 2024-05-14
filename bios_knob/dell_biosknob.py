@@ -203,7 +203,7 @@ class DellBiosKnobOps(object):
 		current_bios_knobs = resp.json()['SystemConfiguration']['Components'][0]['Attributes']
 
 		# Get default bios knobs
-		with open('tester_instrument/coval_instrument/dell_osm_default_bios_config.json', 'r') as default_bios_config_json_file:
+		with open('dell_osm_default_bios_config.json', 'r') as default_bios_config_json_file:
 				default_bios_config = json.load(default_bios_config_json_file)
 		default_bios_knobs = default_bios_config['SystemConfiguration']['Components'][0]['Attributes']
 
