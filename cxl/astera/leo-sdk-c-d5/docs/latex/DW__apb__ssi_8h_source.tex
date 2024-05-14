@@ -1,0 +1,455 @@
+\hypertarget{DW__apb__ssi_8h_source}{}\doxysection{DW\+\_\+apb\+\_\+ssi.\+h}
+\label{DW__apb__ssi_8h_source}\index{leo-\/sdk-\/c/include/DW\_apb\_ssi.h@{leo-\/sdk-\/c/include/DW\_apb\_ssi.h}}
+\mbox{\hyperlink{DW__apb__ssi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ \_DW\_APB\_SSI\_H\_}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \_DW\_APB\_SSI\_H\_}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_TX\_FIFO\_SIZE\ (32)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_RX\_FIFO\_SIZE\ (32)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ FLASH\_SUBSECTOR\_SIZE\ (0x1000)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FLASH\_PAGE\_SIZE\ 256}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ FLASH\_PAGE\_SIZE\_SHIFT\ 8}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.SPI\_FRF}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_STD\_SPI\_FRF\ (0)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_DUAL\_SPI\_FRF\ (1)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_QUAD\_SPI\_FRF\ (2)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_OCTAL\_SPI\_FRF\ (3)}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.FRF}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_MOTOROLA\_SPI\_FRF\ (0)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_TEXAS\_SSP\_FRF\ (1)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_NS\_MICROWIRE\_FRF\ (2)}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.SCPOL}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_SCLK\_LOW\_SCPOL\ (0)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_SCLK\_HIGH\_SCPOL\ (1)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.SCPH}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_SCPH\_MIDDLE\_SCPH\ (0)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_SCPH\_START\_SCPH\ (1)}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.TMOD}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_TX\_AND\_RX\_TMOD\ (0x0)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_TX\_ONLY\_TMOD\ (0x1)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_RX\_ONLY\_TMOD\ (0x2)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_EEPROM\_RD\_TMOD\ (0x3)}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ DW\_apb\_ssi\_ctrl\_ro\_t.DFS\_32}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_8\_BIT\_FRAME\_DFS\_32\ (0x7)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_CTRL\_R0\_32\_BIT\_FRAME\_DFS\_32\ (0x1F)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ Generic\ cfg\ reg}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_0\ (0x8008c)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_3\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 3))}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_4\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 4))}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_10\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 10))}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_13\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 13))}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_40\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 40))}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_58\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 58))}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_59\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 59))}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ GENERIC\_CFG\_REG\_64\ (GENERIC\_CFG\_REG\_0\ +\ (4\ *\ 64))}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ uint32\_t\ DFS\ :\ 4;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ uint32\_t\ FRF\ :\ 2;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ uint32\_t\ SCPH\ :\ 1;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ uint32\_t\ SCPOL\ :\ 1;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ uint32\_t\ TMOD\ :\ 2;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ uint32\_t\ SLV\_OE\ :\ 1;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ uint32\_t\ SRL\ :\ 1;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ uint32\_t\ CFS\ :\ 4;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ uint32\_t\ DFS\_32\ :\ 5;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ uint32\_t\ SPI\_FRF\ :\ 2;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ uint32\_t\ RSVD\_CTRLR0\_23\ :\ 1;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ uint32\_t\ SSTE\ :\ 1;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ uint32\_t\ SECONV\ :\ 1;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ uint32\_t\ RSVD\_CTRLRO\ :\ 6;}
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00095\ \ \ \};}
+\DoxyCodeLine{00096\ \}\ \mbox{\hyperlink{structDW__apb__ssi__ctrl__ro__t}{DW\_apb\_ssi\_ctrl\_ro\_t}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ uint32\_t\ NDF\ :\ 16;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ uint32\_t\ RSVD\_CTRLR1\ :\ 16;}
+\DoxyCodeLine{00103\ \ \ \ \ \};}
+\DoxyCodeLine{00104\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00105\ \ \ \};}
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{structDW__apb__ssi__ctrl__r1__t}{DW\_apb\_ssi\_ctrl\_r1\_t}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ uint32\_t\ SSI\_EN\ :\ 1;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ uint32\_t\ RSVD\_SSIENR\ :\ 31;}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00114\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00115\ \ \ \};}
+\DoxyCodeLine{00116\ \}\ \mbox{\hyperlink{structDW__apb__ssi__ssienr__t}{DW\_apb\_ssi\_ssienr\_t}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ uint32\_t\ MWMOD\ :\ 1;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ uint32\_t\ MDD\ :\ 1;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ uint32\_t\ MHS\ :\ 1;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ uint32\_t\ RSVD\_MWCR\ :\ 29;}
+\DoxyCodeLine{00125\ \ \ \ \ \};}
+\DoxyCodeLine{00126\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00127\ \ \ \};}
+\DoxyCodeLine{00128\ \}\ \mbox{\hyperlink{structDW__apb__ssi__mwcr__t}{DW\_apb\_ssi\_mwcr\_t}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ uint32\_t\ SER\ :\ 1;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ uint32\_t\ RSVD\_SER\ :\ 31;}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00137\ \ \ \};}
+\DoxyCodeLine{00138\ \}\ \mbox{\hyperlink{structDW__apb__ssi__ser__t}{DW\_apb\_ssi\_ser\_t}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ DW\_apb\_ssi\_baudr\_t.SCKDV}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#ifdef\ FW\_DV\_NO\_SIM\_SPEEDUP}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_BAUDR\_APB\_CLK\_FREQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ (700)\ }\textcolor{comment}{//\ 10000\ MHz.\ \ Artificially\ bumped\ up\ clock\ speed\ for\ simulations.}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_BAUDR\_APB\_CLK\_FREQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ (10000)\ }\textcolor{comment}{//\ 10000\ MHz.\ \ Artificially\ bumped\ up\ clock\ speed\ for\ simulations.}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#ifdef\ FW\_DV\_SSI\_BAUDR\_50\_MHZ}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_BAUDR\_APB\_SPI\_FREQ\ (50)\ }\textcolor{comment}{//\ 50\ MHz}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_BAUDR\_APB\_SPI\_FREQ\ (10)\ }\textcolor{comment}{//\ 10\ MHz}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_BAUDR\_SCKDV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ (DW\_APB\_SSI\_BAUDR\_APB\_CLK\_FREQ\ /\ DW\_APB\_SSI\_BAUDR\_APB\_SPI\_FREQ)}}
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ \#define\ DW\_APB\_SSI\_BAUDR\_SCKDV\ \ \ \ \ \ \ (2)\ */}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00159\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ uint32\_t\ SCKDV\ :\ 16;\ \textcolor{comment}{//\ SSI\ Clock\ Divider.}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ uint32\_t\ RSVD\_BAUDR\ :\ 16;}
+\DoxyCodeLine{00163\ \ \ \ \ \};}
+\DoxyCodeLine{00164\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00165\ \ \ \};}
+\DoxyCodeLine{00166\ \}\ \mbox{\hyperlink{structDW__apb__ssi__baudr__t}{DW\_apb\_ssi\_baudr\_t}};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00169\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ uint32\_t\ TFT\ :\ 5;\ \textcolor{comment}{//\ Transmit\ FIFO\ Threshold.}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ uint32\_t\ RSVD\_TXFTLR\ :\ 27;}
+\DoxyCodeLine{00173\ \ \ \ \ \};}
+\DoxyCodeLine{00174\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00175\ \ \ \};}
+\DoxyCodeLine{00176\ \}\ \mbox{\hyperlink{structDW__apb__ssi__txftlr__t}{DW\_apb\_ssi\_txftlr\_t}};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ uint32\_t\ RFT\ :\ 5;\ \textcolor{comment}{//\ Receive\ FIFO\ Threshold.}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ uint32\_t\ RSVD\_RXFTLR\ :\ 27;}
+\DoxyCodeLine{00183\ \ \ \ \ \};}
+\DoxyCodeLine{00184\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00185\ \ \ \};}
+\DoxyCodeLine{00186\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rxftlr__t}{DW\_apb\_ssi\_rxftlr\_t}};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00189\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ uint32\_t\ TXTFL\ :\ 6;\ \textcolor{comment}{//\ Transmit\ FIFO\ Threshold.}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ uint32\_t\ RSVD\_TXFLR\ :\ 26;}
+\DoxyCodeLine{00193\ \ \ \ \ \};}
+\DoxyCodeLine{00194\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00195\ \ \ \};}
+\DoxyCodeLine{00196\ \}\ \mbox{\hyperlink{structDW__apb__ssi__txflr__t}{DW\_apb\_ssi\_txflr\_t}};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00199\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ uint32\_t\ RXTFL\ :\ 5;\ \textcolor{comment}{//\ Receive\ FIFO\ Threshold.}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ uint32\_t\ RSVD\_RXFLR\ :\ 27;}
+\DoxyCodeLine{00203\ \ \ \ \ \};}
+\DoxyCodeLine{00204\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00205\ \ \ \};}
+\DoxyCodeLine{00206\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rxflr__t}{DW\_apb\_ssi\_rxflr\_t}};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00209\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ uint32\_t\ BUSY\ :\ 1;\ \textcolor{comment}{//\ SSI\ Busy\ Flag.}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ uint32\_t\ TFNF\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Not\ Full.}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ uint32\_t\ TFE\ :\ 1;\ \ \textcolor{comment}{//\ Transmit\ FIFO\ Empty.}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ uint32\_t\ RFNE\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Not\ Empty.}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ uint32\_t\ RFF\ :\ 1;\ \ \textcolor{comment}{//\ Receive\ FIFO\ Full.}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ uint32\_t\ TXE\ :\ 1;\ \ \textcolor{comment}{//\ Transmission\ Error.}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ uint32\_t\ DCOL\ :\ 1;\ \textcolor{comment}{//\ Data\ Collision\ Error.}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ uint32\_t\ RSVD\_SR\ :\ 25;}
+\DoxyCodeLine{00219\ \ \ \ \ \};}
+\DoxyCodeLine{00220\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00221\ \ \ \};}
+\DoxyCodeLine{00222\ \}\ \mbox{\hyperlink{structDW__apb__ssi__sr__t}{DW\_apb\_ssi\_sr\_t}};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00225\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ uint32\_t\ TXEIM\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Empty\ Interrupt\ Mask}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ uint32\_t\ TXOIM\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Overflow\ Interrupt\ Mask}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ uint32\_t\ RXUIM\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Underflow\ Interrupt\ Mask}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ uint32\_t\ RXOIM\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Overflow\ Interrupt\ Mask}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ uint32\_t\ RXFIM\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Full\ Interrupt\ Mask}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ uint32\_t\ MSTM\ :\ 1;\ \ \textcolor{comment}{//\ Multi-\/Master\ Contention\ Interrupt\ Mask.}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ uint32\_t\ RSVD\_IMR\ :\ 26;}
+\DoxyCodeLine{00234\ \ \ \ \ \};}
+\DoxyCodeLine{00235\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00236\ \ \ \};}
+\DoxyCodeLine{00237\ \}\ \mbox{\hyperlink{structDW__apb__ssi__imr__t}{DW\_apb\_ssi\_imr\_t}};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00240\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ uint32\_t\ TXEIS\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Empty\ Interrupt\ Status}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ uint32\_t\ TXOIS\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Overflow\ Interrupt\ Status}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ uint32\_t\ RXUIS\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Underflow\ Interrupt\ Status}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ uint32\_t\ RXOIS\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Overflow\ Interrupt\ Status}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ uint32\_t\ RXFIS\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Full\ Interrupt\ Status}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ uint32\_t\ MSTS\ :\ 1;\ \ \textcolor{comment}{//\ Multi-\/Master\ Contention\ Interrupt\ Status.}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ uint32\_t\ RSVD\_ISR\ :\ 26;}
+\DoxyCodeLine{00249\ \ \ \ \ \};}
+\DoxyCodeLine{00250\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00251\ \ \ \};}
+\DoxyCodeLine{00252\ \}\ \mbox{\hyperlink{structDW__apb__ssi__isr__t}{DW\_apb\_ssi\_isr\_t}};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00255\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ uint32\_t\ TXEIR\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Empty\ Raw\ Interrupt\ Status}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ uint32\_t\ TXOIR\ :\ 1;\ \textcolor{comment}{//\ Transmit\ FIFO\ Overflow\ Raw\ Interrupt\ Status}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ uint32\_t\ RXUIR\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Underflow\ Raw\ Interrupt\ Status}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ uint32\_t\ RXOIR\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Overflow\ Raw\ Interrupt\ Status}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ uint32\_t\ RXFIR\ :\ 1;\ \textcolor{comment}{//\ Receive\ FIFO\ Full\ Raw\ Interrupt\ Status}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ uint32\_t\ MSTR\ :\ 1;\ \ \textcolor{comment}{//\ Multi-\/Master\ Contention\ Raw\ Interrupt\ Status.}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ uint32\_t\ RSVD\_ISR\ :\ 26;}
+\DoxyCodeLine{00264\ \ \ \ \ \};}
+\DoxyCodeLine{00265\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00266\ \ \ \};}
+\DoxyCodeLine{00267\ \}\ \mbox{\hyperlink{structDW__apb__ssi__risr__t}{DW\_apb\_ssi\_risr\_t}};}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00270\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ uint32\_t\ TXOICR\ :\ 1;\ \textcolor{comment}{//\ Clear\ Transmit\ FIFO\ Overflow\ Interrupt.}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ uint32\_t\ RSVD\_TXOICR\ :\ 31;}
+\DoxyCodeLine{00274\ \ \ \ \ \};}
+\DoxyCodeLine{00275\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00276\ \ \ \};}
+\DoxyCodeLine{00277\ \}\ \mbox{\hyperlink{structDW__apb__ssi__txoicr__t}{DW\_apb\_ssi\_txoicr\_t}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00280\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ uint32\_t\ RXOICR\ :\ 1;\ \textcolor{comment}{//\ Clear\ Receive\ FIFO\ Overflow\ Interrupt.}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ uint32\_t\ RSVD\_RXOICR\ :\ 31;}
+\DoxyCodeLine{00284\ \ \ \ \ \};}
+\DoxyCodeLine{00285\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00286\ \ \ \};}
+\DoxyCodeLine{00287\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rxoicr__t}{DW\_apb\_ssi\_rxoicr\_t}};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00290\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ uint32\_t\ RXUICR\ :\ 1;\ \textcolor{comment}{//\ Clear\ Receive\ FIFO\ Underflow\ Interrupt.}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ uint32\_t\ RSVD\_RXUICR\ :\ 31;}
+\DoxyCodeLine{00294\ \ \ \ \ \};}
+\DoxyCodeLine{00295\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00296\ \ \ \};}
+\DoxyCodeLine{00297\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rxuicr__t}{DW\_apb\_ssi\_rxuicr\_t}};}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00300\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ uint32\_t\ MSTICR\ :\ 1;\ \textcolor{comment}{//\ Clear\ Multi-\/Master\ Contention\ Interrupt.}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ uint32\_t\ RSVD\_MSTICR\ :\ 31;}
+\DoxyCodeLine{00304\ \ \ \ \ \};}
+\DoxyCodeLine{00305\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00306\ \ \ \};}
+\DoxyCodeLine{00307\ \}\ \mbox{\hyperlink{structDW__apb__ssi__msticr__t}{DW\_apb\_ssi\_msticr\_t}};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00310\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ uint32\_t\ ICR\ :\ 1;\ \textcolor{comment}{//\ Clear\ Interrupts.}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ uint32\_t\ RSVD\_ICR\ :\ 31;}
+\DoxyCodeLine{00314\ \ \ \ \ \};}
+\DoxyCodeLine{00315\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00316\ \ \ \};}
+\DoxyCodeLine{00317\ \}\ \mbox{\hyperlink{structDW__apb__ssi__icr__t}{DW\_apb\_ssi\_icr\_t}};}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00320\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ uint32\_t\ IDCODE;}
+\DoxyCodeLine{00323\ \ \ \ \ \};}
+\DoxyCodeLine{00324\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00325\ \ \ \};}
+\DoxyCodeLine{00326\ \}\ \mbox{\hyperlink{structDW__apb__ssi__idr__t}{DW\_apb\_ssi\_idr\_t}};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00329\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ uint32\_t\ SSI\_COMP\_VERSION;}
+\DoxyCodeLine{00332\ \ \ \ \ \};}
+\DoxyCodeLine{00333\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00334\ \ \ \};}
+\DoxyCodeLine{00335\ \}\ \mbox{\hyperlink{structDW__apb__ssi__version__id__t}{DW\_apb\_ssi\_version\_id\_t}};}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00338\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ uint32\_t\ DR;\ \textcolor{comment}{//\ Data\ Register.}}
+\DoxyCodeLine{00341\ \ \ \ \ \};}
+\DoxyCodeLine{00342\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00343\ \ \ \};}
+\DoxyCodeLine{00344\ \}\ \mbox{\hyperlink{structDW__apb__ssi__drx__t}{DW\_apb\_ssi\_drx\_t}};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00347\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ uint32\_t\ RSD\ :\ 8;\ \textcolor{comment}{//\ Rxd\ Sample\ Delay.}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ uint32\_t\ RSVD\_RX\_SAMPLE\_DLY\ :\ 24;}
+\DoxyCodeLine{00351\ \ \ \ \ \};}
+\DoxyCodeLine{00352\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00353\ \ \ \};}
+\DoxyCodeLine{00354\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rx__sample__dly__t}{DW\_apb\_ssi\_rx\_sample\_dly\_t}};}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \textcolor{comment}{//\ DW\_apb\_ssi\_spi\_ctrl\_ro\_t.INST\_L}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INST\_L\_0\ (0)\ }\textcolor{comment}{//\ 0-\/bit\ (No\ Instruction)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INST\_L\_1\ (1)\ }\textcolor{comment}{//\ 4-\/bit\ Instruction}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INST\_L\_2\ (2)\ }\textcolor{comment}{//\ 8-\/bit\ Instruction}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INST\_L\_3\ (3)\ }\textcolor{comment}{//\ 16-\/bit\ Instruction}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{comment}{//\ DW\_apb\_ssi\_spi\_ctrl\_ro\_t.TRANS\_TYPE}}
+\DoxyCodeLine{00363\ \textcolor{comment}{//\ Instruction\ and\ Address\ will\ be\ sent\ in\ Standard\ SPI\ Mode.}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_STD\_TRANS\_TYPE\ (0x0)}}
+\DoxyCodeLine{00365\ \textcolor{comment}{//\ Instruction\ will\ be\ sent\ in\ Standard\ SPI\ Mode\ and}}
+\DoxyCodeLine{00366\ \textcolor{comment}{//\ Address\ will\ be\ sent\ in\ the\ mode\ specified\ by}}
+\DoxyCodeLine{00367\ \textcolor{comment}{//\ CTRLR0.SPI\_FRF.}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INS\_STD\_ADDR\_SPI\_FRF\_TRANS\_TYPE\ (0x1)}}
+\DoxyCodeLine{00369\ \textcolor{comment}{//\ Both\ Instruction\ and\ Address\ will\ be\ sent\ in\ the\ mode}}
+\DoxyCodeLine{00370\ \textcolor{comment}{//\ specified\ by\ SPI\_FRF.}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_INS\_SPI\_FRF\_ADDR\_SPI\_FRF\_TRANS\_TYPE\ (0x2)}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_16\_BIT\_ADDR\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ (0x4)\ }\textcolor{comment}{//\ (ADDR\_L\_4):\ 16-\/bit\ Address\ Width}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_20\_BIT\_ADDR\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ (0x5)\ }\textcolor{comment}{//\ (ADDR\_L\_4):\ 20-\/bit\ Address\ Width}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_SPI\_CTRL\_R0\_24\_BIT\_ADDR\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\ \ (0x6)\ }\textcolor{comment}{//\ (ADDR\_L\_4):\ 24-\/bit\ Address\ Width}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00381\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ uint32\_t\ TRANS\_TYPE\ :\ 2;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ uint32\_t\ ADDR\_L\ :\ 4;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ uint32\_t\ RSVD\_SPI\_CTRLRO\_6\_7\ :\ 2;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ uint32\_t\ INST\_L\ :\ 2;}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ uint32\_t\ RSVD\_SPI\_CTRLRO\_10\ :\ 1;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ uint32\_t\ WAIT\_CYCLES\ :\ 5;}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ uint32\_t\ SPI\_DDR\_EN\ :\ 1;}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ uint32\_t\ INST\_DDR\_EN\ :\ 1;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ uint32\_t\ SPI\_RXDS\_EN\ :\ 1;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ uint32\_t\ RSVD\_SPI\_CTRLR0\ :\ 13;}
+\DoxyCodeLine{00393\ \ \ \ \ \};}
+\DoxyCodeLine{00394\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00395\ \ \ \};}
+\DoxyCodeLine{00396\ \}\ \mbox{\hyperlink{structDW__apb__ssi__spi__ctrl__ro__t}{DW\_apb\_ssi\_spi\_ctrl\_ro\_t}};}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00399\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ uint32\_t\ TDE\ :\ 2;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ uint32\_t\ RSVD\_TXD\_DRIVE\_EDGE\ :\ 30;}
+\DoxyCodeLine{00403\ \ \ \ \ \};}
+\DoxyCodeLine{00404\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00405\ \ \ \};}
+\DoxyCodeLine{00406\ \}\ \mbox{\hyperlink{structDW__apb__ssi__txd__drive__edge__t}{DW\_apb\_ssi\_txd\_drive\_edge\_t}};}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00409\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ uint32\_t\ RSVD;\ \textcolor{comment}{//\ RSVD\ 31to0\ Reserved\ address\ location}}
+\DoxyCodeLine{00412\ \ \ \ \ \};}
+\DoxyCodeLine{00413\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00414\ \ \ \};}
+\DoxyCodeLine{00415\ \}\ \mbox{\hyperlink{structDW__apb__ssi__rsvd__t}{DW\_apb\_ssi\_rsvd\_t}};}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00418\ \ \ \mbox{\hyperlink{structDW__apb__ssi__ctrl__ro__t}{DW\_apb\_ssi\_ctrl\_ro\_t}}\ CTRLR0;\ \textcolor{comment}{//\ 0x0}}
+\DoxyCodeLine{00419\ \ \ \mbox{\hyperlink{structDW__apb__ssi__ctrl__r1__t}{DW\_apb\_ssi\_ctrl\_r1\_t}}\ CTRLR1;\ \textcolor{comment}{//\ 0x4}}
+\DoxyCodeLine{00420\ \ \ \mbox{\hyperlink{structDW__apb__ssi__ssienr__t}{DW\_apb\_ssi\_ssienr\_t}}\ SSIENR;\ \ \textcolor{comment}{//\ 0x8}}
+\DoxyCodeLine{00421\ \ \ \mbox{\hyperlink{structDW__apb__ssi__mwcr__t}{DW\_apb\_ssi\_mwcr\_t}}\ MWCR;\ \ \ \ \ \ \textcolor{comment}{//\ 0xC}}
+\DoxyCodeLine{00422\ \ \ \mbox{\hyperlink{structDW__apb__ssi__ser__t}{DW\_apb\_ssi\_ser\_t}}\ SER;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x10}}
+\DoxyCodeLine{00423\ \ \ \mbox{\hyperlink{structDW__apb__ssi__baudr__t}{DW\_apb\_ssi\_baudr\_t}}\ BAUDR;\ \ \ \ \textcolor{comment}{//\ 0x14}}
+\DoxyCodeLine{00424\ \ \ \mbox{\hyperlink{structDW__apb__ssi__txftlr__t}{DW\_apb\_ssi\_txftlr\_t}}\ TXFTLR;\ \ \textcolor{comment}{//\ 0x18}}
+\DoxyCodeLine{00425\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rxftlr__t}{DW\_apb\_ssi\_rxftlr\_t}}\ RXFTLR;\ \ \textcolor{comment}{//\ 0x1C}}
+\DoxyCodeLine{00426\ \ \ \mbox{\hyperlink{structDW__apb__ssi__txflr__t}{DW\_apb\_ssi\_txflr\_t}}\ TXFLR;\ \ \ \ \textcolor{comment}{//\ 0x20}}
+\DoxyCodeLine{00427\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rxflr__t}{DW\_apb\_ssi\_rxflr\_t}}\ RXFLR;\ \ \ \ \textcolor{comment}{//\ 0x24}}
+\DoxyCodeLine{00428\ \ \ \mbox{\hyperlink{structDW__apb__ssi__sr__t}{DW\_apb\_ssi\_sr\_t}}\ SR;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x28}}
+\DoxyCodeLine{00429\ \ \ \mbox{\hyperlink{structDW__apb__ssi__imr__t}{DW\_apb\_ssi\_imr\_t}}\ IMR;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x2C}}
+\DoxyCodeLine{00430\ \ \ \mbox{\hyperlink{structDW__apb__ssi__isr__t}{DW\_apb\_ssi\_isr\_t}}\ ISR;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x30}}
+\DoxyCodeLine{00431\ \ \ \mbox{\hyperlink{structDW__apb__ssi__risr__t}{DW\_apb\_ssi\_risr\_t}}\ RISR;\ \ \ \ \ \ \textcolor{comment}{//\ 0x34}}
+\DoxyCodeLine{00432\ \ \ \mbox{\hyperlink{structDW__apb__ssi__txoicr__t}{DW\_apb\_ssi\_txoicr\_t}}\ TXOICR;\ \ \textcolor{comment}{//\ 0x38}}
+\DoxyCodeLine{00433\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rxoicr__t}{DW\_apb\_ssi\_rxoicr\_t}}\ RXOICR;\ \ \textcolor{comment}{//\ 0x3C}}
+\DoxyCodeLine{00434\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rxuicr__t}{DW\_apb\_ssi\_rxuicr\_t}}\ RXUICR;\ \ \textcolor{comment}{//\ 0x40}}
+\DoxyCodeLine{00435\ \ \ \mbox{\hyperlink{structDW__apb__ssi__msticr__t}{DW\_apb\_ssi\_msticr\_t}}\ MSTICR;\ \ \textcolor{comment}{//\ 0x44}}
+\DoxyCodeLine{00436\ \ \ \mbox{\hyperlink{structDW__apb__ssi__icr__t}{DW\_apb\_ssi\_icr\_t}}\ ICR;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x48}}
+\DoxyCodeLine{00437\ \ \ uint32\_t\ rsvd[3];\ \ \ \ \ \textcolor{comment}{//\ 0x4c\ -\/\ DMA\ control\ registers.\ \ TODO:\ Confirm\ if\ its}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enabled\ in\ LEO\ and\ add\ definitions.}}
+\DoxyCodeLine{00439\ \ \ \mbox{\hyperlink{structDW__apb__ssi__idr__t}{DW\_apb\_ssi\_idr\_t}}\ IDR;\ \textcolor{comment}{//\ 0x58}}
+\DoxyCodeLine{00440\ \ \ \mbox{\hyperlink{structDW__apb__ssi__version__id__t}{DW\_apb\_ssi\_version\_id\_t}}\ VERSION\_ID;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x5C}}
+\DoxyCodeLine{00441\ \ \ \mbox{\hyperlink{structDW__apb__ssi__drx__t}{DW\_apb\_ssi\_drx\_t}}\ DRx[36];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0x60}}
+\DoxyCodeLine{00442\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rx__sample__dly__t}{DW\_apb\_ssi\_rx\_sample\_dly\_t}}\ RX\_SAMPLE\_DLY;\ \ \ \textcolor{comment}{//\ 0xF0}}
+\DoxyCodeLine{00443\ \ \ \mbox{\hyperlink{structDW__apb__ssi__spi__ctrl__ro__t}{DW\_apb\_ssi\_spi\_ctrl\_ro\_t}}\ SPI\_CTRLRO;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0xF4}}
+\DoxyCodeLine{00444\ \ \ \mbox{\hyperlink{structDW__apb__ssi__txd__drive__edge__t}{DW\_apb\_ssi\_txd\_drive\_edge\_t}}\ TXD\_DRIVE\_EDGE;\ \textcolor{comment}{//\ 0xF8}}
+\DoxyCodeLine{00445\ \ \ \mbox{\hyperlink{structDW__apb__ssi__rsvd__t}{DW\_apb\_ssi\_rsvd\_t}}\ RSVD;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0xFC}}
+\DoxyCodeLine{00446\ \}\ \mbox{\hyperlink{structDW__apb__ssi__mem__map__t}{DW\_apb\_ssi\_mem\_map\_t}};}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00449\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ uint32\_t\ addr\ :\ 24;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ uint32\_t\ op\_code\ :\ 8;}
+\DoxyCodeLine{00453\ \ \ \ \ \};}
+\DoxyCodeLine{00454\ \ \ \ \ uint32\_t\ word;}
+\DoxyCodeLine{00455\ \ \ \};}
+\DoxyCodeLine{00456\ \}\ \mbox{\hyperlink{structDW__apb__ssi__micron__flash__cmd__t}{DW\_apb\_ssi\_micron\_flash\_cmd\_t}};}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

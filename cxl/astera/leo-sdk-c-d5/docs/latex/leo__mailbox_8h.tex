@@ -1,0 +1,225 @@
+\hypertarget{leo__mailbox_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+mailbox.h File Reference}
+\label{leo__mailbox_8h}\index{leo-\/sdk-\/c/include/leo\_mailbox.h@{leo-\/sdk-\/c/include/leo\_mailbox.h}}
+
+
+Definition of enums and structs used by the mailbox.  
+
+
+{\ttfamily \#include \char`\"{}leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for leo\+\_\+mailbox.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLeoMailboxInfo}{Leo\+Mailbox\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_afc4aa108323c8cecf4fb8619fb9c549a}\label{leo__mailbox_8h_afc4aa108323c8cecf4fb8619fb9c549a}} 
+\#define {\bfseries MMB\+\_\+\+STS\+\_\+\+OK}~0x1
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a3cc954632f2c63735dac7c2abc14cb57}\label{leo__mailbox_8h_a3cc954632f2c63735dac7c2abc14cb57}} 
+\#define {\bfseries MMB\+\_\+\+STS\+\_\+\+PENDING}~0x40000000
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ad69a0e55b102a464cd70c7c9d7ab6404}\label{leo__mailbox_8h_ad69a0e55b102a464cd70c7c9d7ab6404}} 
+\#define {\bfseries MMB\+\_\+\+STS\+\_\+\+ERROR}~0x80000000
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a716ef39ea80e12de2b257fc8e756b08a}\label{leo__mailbox_8h_a716ef39ea80e12de2b257fc8e756b08a}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CSR\+\_\+\+READ}~0x1
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a3b6fb21ad1a9d4c75f22f81c18468f05}\label{leo__mailbox_8h_a3b6fb21ad1a9d4c75f22f81c18468f05}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CSR\+\_\+\+WRITE}~0x11
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a34e75b117a2c9bfd63bf1b308683a93a}\label{leo__mailbox_8h_a34e75b117a2c9bfd63bf1b308683a93a}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+PING}~0x16
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a5c0073921a1456d8253b3c1941bc204b}\label{leo__mailbox_8h_a5c0073921a1456d8253b3c1941bc204b}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+FW\+\_\+\+TESTS}~0x17
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a4a38e4e27bd98f4835fb85e836260709}\label{leo__mailbox_8h_a4a38e4e27bd98f4835fb85e836260709}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+FW\+\_\+\+CRC\+\_\+\+VERIFY}~0x21
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a06186e4a13cfe82b84cdfac978906ff5}\label{leo__mailbox_8h_a06186e4a13cfe82b84cdfac978906ff5}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CHK\+\_\+\+DIMM\+\_\+\+TSOD}~0x23
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a009668551819992db4acefc34a0c0bd9}\label{leo__mailbox_8h_a009668551819992db4acefc34a0c0bd9}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CHK\+\_\+\+DIMM\+\_\+\+SPD\+\_\+\+INFO}~0x24
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a511df9eef96f230562fae67a33fe7d76}\label{leo__mailbox_8h_a511df9eef96f230562fae67a33fe7d76}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+DUMP\+\_\+\+DIMM\+\_\+\+SPD}~0x25
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a59bd6a632f3f58e3220fae9ac433277a}\label{leo__mailbox_8h_a59bd6a632f3f58e3220fae9ac433277a}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CHK\+\_\+\+EEPROM\+\_\+\+LEO\+\_\+\+ID}~0x26
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a6fa2a7a06b2d7eed08d311c4619675e7}\label{leo__mailbox_8h_a6fa2a7a06b2d7eed08d311c4619675e7}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+CHK\+\_\+\+PERSISTENT\+\_\+\+DATA}~0x27
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ad45de9b2650dc619046a2933c1851747}\label{leo__mailbox_8h_ad45de9b2650dc619046a2933c1851747}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+GET\+\_\+\+DDRPHY\+\_\+\+TRAINING\+\_\+\+MARGIN}~0x28
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a1fbc3bf23bbb94e5c0aaaa81cde961b4}\label{leo__mailbox_8h_a1fbc3bf23bbb94e5c0aaaa81cde961b4}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+RD\+\_\+\+EEPROM}~0x29
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a1eab75dbc4f2702a46a54054a36de64b}\label{leo__mailbox_8h_a1eab75dbc4f2702a46a54054a36de64b}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+GET\+\_\+\+RECENT\+\_\+\+UART\+\_\+\+RX}~0x30
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_aa6fa56b7b59ba92d9fb1c019e5dbbe95}\label{leo__mailbox_8h_aa6fa56b7b59ba92d9fb1c019e5dbbe95}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+GET\+\_\+\+LEO\+\_\+\+ERR\+\_\+\+INFO}~0x31
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a0e396991ca11ee6783dca1e73bbd3f45}\label{leo__mailbox_8h_a0e396991ca11ee6783dca1e73bbd3f45}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+ACCESS\+\_\+\+DRAM\+\_\+\+DBG\+\_\+\+INTF}~0x32
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a49e1b4f591a0d59636ee67375827c2c5}\label{leo__mailbox_8h_a49e1b4f591a0d59636ee67375827c2c5}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+CMD\+\_\+\+OPCODE\+\_\+\+MMB\+\_\+\+SPPR}~0x40
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_af4dd3f31381070789fdf2dec2bc7b6d1}\label{leo__mailbox_8h_af4dd3f31381070789fdf2dec2bc7b6d1}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+PAYLOAD\+\_\+\+MMB\+\_\+\+FW\+\_\+\+TESTS\+\_\+\+FLASH\+\_\+\+ACCESS\+\_\+\+TEST\+\_\+\+PAYLOAD}~0x1
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a09ae99b4f83cb2cf30ea627e8e90fe66}\label{leo__mailbox_8h_a09ae99b4f83cb2cf30ea627e8e90fe66}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+PAYLOAD\+\_\+\+MMB\+\_\+\+FW\+\_\+\+TESTS\+\_\+\+PHY\+\_\+\+CONTEXT\+\_\+\+SEL\+\_\+\+SWITCH\+\_\+\+DEFAULT}~0x0100
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a3a8a9f7cb41ade6c68b6b0947553c560}\label{leo__mailbox_8h_a3a8a9f7cb41ade6c68b6b0947553c560}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+PAYLOAD\+\_\+\+MMB\+\_\+\+FW\+\_\+\+TESTS\+\_\+\+PHY\+\_\+\+CONTEXT\+\_\+\+SEL\+\_\+\+SWITCH\+\_\+\+MPLL\+\_\+\+A\+\_\+\+B\+\_\+\+DIRECT}~  0x0101
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ac5f9858e17f7a4d31e7f275d73ef9806}\label{leo__mailbox_8h_ac5f9858e17f7a4d31e7f275d73ef9806}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+RET\+\_\+\+FW\+\_\+\+TESTS\+\_\+\+FLASH\+\_\+\+ACCESS\+\_\+\+TESTS\+\_\+\+SUCCESS}~0x0
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a346fc2c540652a85974be0edaab0863b}\label{leo__mailbox_8h_a346fc2c540652a85974be0edaab0863b}} 
+\#define {\bfseries FW\+\_\+\+API\+\_\+\+MMB\+\_\+\+RET\+\_\+\+FW\+\_\+\+TESTS\+\_\+\+FLASH\+\_\+\+ACCESS\+\_\+\+TESTS\+\_\+\+FAIL}~0x\+FFFFFFFF
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ab7069cbb21f4c5d584f8179db4579a7f}\label{leo__mailbox_8h_ab7069cbb21f4c5d584f8179db4579a7f}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+CAP\+\_\+\+REG}~0x01012000
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a63eed86e4398dca7254fd560625edd72}\label{leo__mailbox_8h_a63eed86e4398dca7254fd560625edd72}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+CTL\+\_\+\+REG}~0x01012004
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ade6791c3488cf00adc3a28e0b1e59770}\label{leo__mailbox_8h_ade6791c3488cf00adc3a28e0b1e59770}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+CMD\+\_\+\+REG}~0x01012008
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a356bfccddd4042d95e32c8415fef9030}\label{leo__mailbox_8h_a356bfccddd4042d95e32c8415fef9030}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+STS\+\_\+\+REG}~0x01012010
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_afe170d95d4cf3b56419a013ccbee1ab3}\label{leo__mailbox_8h_afe170d95d4cf3b56419a013ccbee1ab3}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+BCS\+\_\+\+REG}~0x01012018
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_aa2f8bbca9f45272ced7fcd8cf231e754}\label{leo__mailbox_8h_aa2f8bbca9f45272ced7fcd8cf231e754}} 
+\#define {\bfseries CXL\+\_\+\+BAR2\+\_\+\+PMBOX\+\_\+\+PAYL\+\_\+\+REG}~0x01012020
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_af50e4e66bb5ff1b6eb9fae8b445b2bca}\label{leo__mailbox_8h_af50e4e66bb5ff1b6eb9fae8b445b2bca}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+EVT\+\_\+\+RECS}~(0x0100)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a779bb5abc9891225bebe858b37b787ef}\label{leo__mailbox_8h_a779bb5abc9891225bebe858b37b787ef}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLR\+\_\+\+EVT\+\_\+\+RECS}~(0x0101)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a367f19d89065752d3a8add230bc2a81c}\label{leo__mailbox_8h_a367f19d89065752d3a8add230bc2a81c}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+INTR\+\_\+\+POLICY}~(0x0102)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a83cea56f72fe108ad2930edba086219c}\label{leo__mailbox_8h_a83cea56f72fe108ad2930edba086219c}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+SET\+\_\+\+INTR\+\_\+\+POLICY}~(0x0103)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a5b5b0bd7e1de527794f5e90e8fc39c9d}\label{leo__mailbox_8h_a5b5b0bd7e1de527794f5e90e8fc39c9d}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+POISON\+\_\+\+LIST}~(0x4300)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ac7f5f1063ee1574f04add953d5c1149d}\label{leo__mailbox_8h_ac7f5f1063ee1574f04add953d5c1149d}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+INJECT\+\_\+\+POISON}~(0x4301)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a52aab0d2b28ba469f662b61cfb8a28a7}\label{leo__mailbox_8h_a52aab0d2b28ba469f662b61cfb8a28a7}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLEAR\+\_\+\+POISON}~(0x4302)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a7394f5675e55364ef845bae7aa521052}\label{leo__mailbox_8h_a7394f5675e55364ef845bae7aa521052}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+ALERT\+\_\+\+CONFIG}~(0x4201)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_acb5c12505da9a0e3b11ae2c13a823b57}\label{leo__mailbox_8h_acb5c12505da9a0e3b11ae2c13a823b57}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+SET\+\_\+\+ALERT\+\_\+\+CONFIG}~(0x4202)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a5c032a49cd5fc69529bc82f5e0d563c1}\label{leo__mailbox_8h_a5c032a49cd5fc69529bc82f5e0d563c1}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+CMD\+\_\+\+IN\+\_\+\+LEN}~0x1
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a94981e07f4cfba87c5b9c76758b17b19}\label{leo__mailbox_8h_a94981e07f4cfba87c5b9c76758b17b19}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLR\+\_\+\+CMD\+\_\+\+IN\+\_\+\+LEN}~0x8
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ad2ed1c4a38560afed3e3b958f187f108}\label{leo__mailbox_8h_ad2ed1c4a38560afed3e3b958f187f108}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+GET\+\_\+\+CMD\+\_\+\+LEN\+\_\+\+SHIFT}~16
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a875ea91dafeec7679b5fbe2219389b1c}\label{leo__mailbox_8h_a875ea91dafeec7679b5fbe2219389b1c}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLR\+\_\+\+CMD\+\_\+\+LEN\+\_\+\+SHIFT}~16
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a8c2d85df2733807e4007a600640d1c2d}\label{leo__mailbox_8h_a8c2d85df2733807e4007a600640d1c2d}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLRALL\+\_\+\+PAYL\+\_\+\+SZ}~(256)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ac7d39b1011e5604c8749f2ceae7ab267}\label{leo__mailbox_8h_ac7d39b1011e5604c8749f2ceae7ab267}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+INFO\+\_\+\+LOG}~(0)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a0b4e5a9b3a5845fa3dee26006bb41370}\label{leo__mailbox_8h_a0b4e5a9b3a5845fa3dee26006bb41370}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+WARN\+\_\+\+LOG}~(1)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a7f137e79609ec269cdfae1d66748e709}\label{leo__mailbox_8h_a7f137e79609ec269cdfae1d66748e709}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+FAILURE\+\_\+\+LOG}~(2)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a570e2fb5ddc6c2fe81db0d9569624f20}\label{leo__mailbox_8h_a570e2fb5ddc6c2fe81db0d9569624f20}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+FATAL\+\_\+\+LOG}~(3)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ab8cb449f70bd23ec9feca3552bb2d045}\label{leo__mailbox_8h_ab8cb449f70bd23ec9feca3552bb2d045}} 
+\#define {\bfseries CXL\+\_\+\+PMBOX\+\_\+\+CLR\+\_\+\+ALL}~0x1
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a7670e7433952909047b59b75205e1508}\label{leo__mailbox_8h_a7670e7433952909047b59b75205e1508}} 
+\#define {\bfseries CXL\+\_\+\+EVENT\+\_\+\+REC\+\_\+\+SZ}~160
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a807b710bb47250387583967ea72d0c2b}\label{leo__mailbox_8h_a807b710bb47250387583967ea72d0c2b}} 
+\#define {\bfseries LEO\+\_\+\+CXL\+\_\+\+MBOX\+\_\+\+MAX\+\_\+\+PAYLOAD\+\_\+\+SIZE}~(256)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_ade12d7d33932e4bfe17c2635f50c19a6}\label{leo__mailbox_8h_ade12d7d33932e4bfe17c2635f50c19a6}} 
+typedef struct \mbox{\hyperlink{structLeoMailboxInfo}{Leo\+Mailbox\+Info}} {\bfseries Leo\+Mailbox\+Info\+Type}
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_adbfe3bfeedf412e9ca18a6279c09db4a}\label{leo__mailbox_8h_adbfe3bfeedf412e9ca18a6279c09db4a}} 
+typedef enum Mailbox\+Status {\bfseries Mailbox\+Status\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_acd47345affa3d8d321e1d8a00df75c4f}\label{leo__mailbox_8h_acd47345affa3d8d321e1d8a00df75c4f}} 
+enum {\bfseries Mailbox\+Status} \{ {\bfseries AL\+\_\+\+MM\+\_\+\+STS\+\_\+\+SUCCESS} = 0
+, {\bfseries AL\+\_\+\+MM\+\_\+\+STS\+\_\+\+ERROR} = 0x4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a587f8e38fb17660cb8965412dab3dcf0}\label{leo__mailbox_8h_a587f8e38fb17660cb8965412dab3dcf0}} 
+void {\bfseries send\+Mailbox\+Cmd} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, uint32\+\_\+t cmd, size\+\_\+t payload\+Len)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a9544a4d0605148558ca5d3c9d9016f9e}\label{leo__mailbox_8h_a9544a4d0605148558ca5d3c9d9016f9e}} 
+size\+\_\+t {\bfseries send\+Mailbox\+Payload} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$payload, size\+\_\+t in\+Payload\+Len)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a69d41759c16f9f70929772f3de8deece}\label{leo__mailbox_8h_a69d41759c16f9f70929772f3de8deece}} 
+uint32\+\_\+t {\bfseries check\+Doorbell} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a10090f96f56597a7d715c443991891fd}\label{leo__mailbox_8h_a10090f96f56597a7d715c443991891fd}} 
+Mailbox\+Status\+Type {\bfseries get\+Mailbox\+Status} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a96b82392b62e7ea7c1adfc3e82fa32e4}\label{leo__mailbox_8h_a96b82392b62e7ea7c1adfc3e82fa32e4}} 
+size\+\_\+t {\bfseries get\+Return\+Data} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$data, size\+\_\+t exp\+Data\+Len)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a3d536cab5ba842f447fea5aa298742e5}\label{leo__mailbox_8h_a3d536cab5ba842f447fea5aa298742e5}} 
+Mailbox\+Status\+Type {\bfseries exec\+Operation} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, uint32\+\_\+t cmd, uint32\+\_\+t $\ast$data\+In, size\+\_\+t in\+Payload\+Len, uint32\+\_\+t $\ast$data\+Out, size\+\_\+t exp\+Return\+Data\+Len)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a1dd8175823b782066731fef012b3c56c}\label{leo__mailbox_8h_a1dd8175823b782066731fef012b3c56c}} 
+void {\bfseries print\+Payload} (uint32\+\_\+t $\ast$payload, size\+\_\+t payload\+Len)
+\item 
+\mbox{\Hypertarget{leo__mailbox_8h_a87372a3de672cf97d5e8a4b34650a5bb}\label{leo__mailbox_8h_a87372a3de672cf97d5e8a4b34650a5bb}} 
+int {\bfseries wait\+For\+Doorbell} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of enums and structs used by the mailbox. 
+

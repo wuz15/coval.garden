@@ -1,0 +1,133 @@
+\hypertarget{leo__pcie_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+pcie.h File Reference}
+\label{leo__pcie_8h}\index{leo-\/sdk-\/c/include/leo\_pcie.h@{leo-\/sdk-\/c/include/leo\_pcie.h}}
+
+
+Definition of PCIe types for the SDK.  
+
+
+{\ttfamily \#include \char`\"{}../include/misc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}astera\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+connection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+Include dependency graph for leo\+\_\+pcie.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{leo__pcie_8h_af8d4c7cd3f09b672c308b566930d9b2e}{CHECK\+\_\+\+SUCCESS}}(rc)
+\item 
+\mbox{\Hypertarget{leo__pcie_8h_af8c317a42292b61c93aae91e59118a46}\label{leo__pcie_8h_af8c317a42292b61c93aae91e59118a46}} 
+\#define {\bfseries container\+\_\+of}(ptr,  type,  member)~  ((type $\ast$)((char $\ast$)(ptr)-\/offsetof(type, member)))
+\item 
+\#define \mbox{\hyperlink{leo__pcie_8h_aa0004d1735f5c5a47cd385525c5bdbc0}{PRINT\+\_\+\+ERROR}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__pcie_8h_a1cd1b39686751b3bfa1d8ab756c16357}{leo\+Write\+Word\+Pcie}} (const char $\ast$barfile, off\+\_\+t baroff, uint32\+\_\+t writeval)
+\begin{DoxyCompactList}\small\item\em Write a data word at specified address to Leo over PCIe. Returns a negative error code if unsuccessful, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__pcie_8h_a7a97930b948dacb0c14a7cadca3f18f1}{leo\+Read\+Word\+Pcie}} (const char $\ast$barfile, off\+\_\+t baroff, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write a data word at specified address to Leo over PCIe. Returns a negative error code if unsuccessful, else zero on success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of PCIe types for the SDK. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{leo__pcie_8h_af8d4c7cd3f09b672c308b566930d9b2e}\label{leo__pcie_8h_af8d4c7cd3f09b672c308b566930d9b2e}} 
+\index{leo\_pcie.h@{leo\_pcie.h}!CHECK\_SUCCESS@{CHECK\_SUCCESS}}
+\index{CHECK\_SUCCESS@{CHECK\_SUCCESS}!leo\_pcie.h@{leo\_pcie.h}}
+\doxysubsubsection{\texorpdfstring{CHECK\_SUCCESS}{CHECK\_SUCCESS}}
+{\footnotesize\ttfamily \#define CHECK\+\_\+\+SUCCESS(\begin{DoxyParamCaption}\item[{}]{rc }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (rc\ !=\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a3d72d460d19ae77549b045922a4e33f7}{LEO\_SUCCESS}})\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ASTERA\_ERROR(\textcolor{stringliteral}{"{}Unexpected\ return\ code:\ \%d"{}},\ rc);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ rc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{leo__pcie_8h_aa0004d1735f5c5a47cd385525c5bdbc0}\label{leo__pcie_8h_aa0004d1735f5c5a47cd385525c5bdbc0}} 
+\index{leo\_pcie.h@{leo\_pcie.h}!PRINT\_ERROR@{PRINT\_ERROR}}
+\index{PRINT\_ERROR@{PRINT\_ERROR}!leo\_pcie.h@{leo\_pcie.h}}
+\doxysubsubsection{\texorpdfstring{PRINT\_ERROR}{PRINT\_ERROR}}
+{\footnotesize\ttfamily \#define PRINT\+\_\+\+ERROR}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ at\ line\ \%d,\ file\ \%s\ (\%d)\ [\%s]\(\backslash\)n"{}},\ \_\_LINE\_\_,\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_\_FILE\_\_,\ errno,\ strerror(errno));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__pcie_8h_a7a97930b948dacb0c14a7cadca3f18f1}\label{leo__pcie_8h_a7a97930b948dacb0c14a7cadca3f18f1}} 
+\index{leo\_pcie.h@{leo\_pcie.h}!leoReadWordPcie@{leoReadWordPcie}}
+\index{leoReadWordPcie@{leoReadWordPcie}!leo\_pcie.h@{leo\_pcie.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordPcie()}{leoReadWordPcie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Pcie (\begin{DoxyParamCaption}\item[{const char $\ast$}]{barfile,  }\item[{off\+\_\+t}]{baroff,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a data word at specified address to Leo over PCIe. Returns a negative error code if unsuccessful, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em barfd} & sysfs file descriptor for PCIe BAR \\
+\hline
+\mbox{\texttt{ in}}  & {\em baroff} & Offset to read from in the PCIe BAR \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Pointer to 32-\/bit value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__pcie_8h_a1cd1b39686751b3bfa1d8ab756c16357}\label{leo__pcie_8h_a1cd1b39686751b3bfa1d8ab756c16357}} 
+\index{leo\_pcie.h@{leo\_pcie.h}!leoWriteWordPcie@{leoWriteWordPcie}}
+\index{leoWriteWordPcie@{leoWriteWordPcie}!leo\_pcie.h@{leo\_pcie.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordPcie()}{leoWriteWordPcie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Pcie (\begin{DoxyParamCaption}\item[{const char $\ast$}]{barfile,  }\item[{off\+\_\+t}]{baroff,  }\item[{uint32\+\_\+t}]{writeval }\end{DoxyParamCaption})}
+
+
+
+Write a data word at specified address to Leo over PCIe. Returns a negative error code if unsuccessful, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em barfd} & sysfs file descriptor for PCIe BAR \\
+\hline
+\mbox{\texttt{ in}}  & {\em baroff} & Offset to read from in the PCIe BAR \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & 32-\/bit word to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}

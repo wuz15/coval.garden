@@ -1,0 +1,1066 @@
+\hypertarget{leo__i2c_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+i2c.h File Reference}
+\label{leo__i2c_8h}\index{leo-\/sdk-\/c/include/leo\_i2c.h@{leo-\/sdk-\/c/include/leo\_i2c.h}}
+
+
+Definition of I2\+C/\+SMBus types for the SDK.  
+
+
+{\ttfamily \#include \char`\"{}../include/misc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}astera\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+connection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+logger.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+Include dependency graph for leo\+\_\+i2c.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{leo__i2c_8h_af8d4c7cd3f09b672c308b566930d9b2e}{CHECK\+\_\+\+SUCCESS}}(rc)
+\item 
+\mbox{\Hypertarget{leo__i2c_8h_af8c317a42292b61c93aae91e59118a46}\label{leo__i2c_8h_af8c317a42292b61c93aae91e59118a46}} 
+\#define {\bfseries container\+\_\+of}(ptr,  type,  member)~  ((type $\ast$)((char $\ast$)(ptr)-\/offsetof(type, member)))
+\item 
+\#define \mbox{\hyperlink{leo__i2c_8h_aa0004d1735f5c5a47cd385525c5bdbc0}{PRINT\+\_\+\+ERROR}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{leo__i2c_8h_ae7fdab0216c6366819f67517ed313fa6}{astera\+I2\+COpen\+Connection}} (int i2c\+Bus, int slave\+Address)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C method to open a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__i2c_8h_af7ff73ba890d870d2a127735e31c4ec1}{astera\+I2\+COpen\+Connection\+Ext}} (int i2c\+Bus, int slave\+Address, \mbox{\hyperlink{structconn__s}{conn\+\_\+t}} conn)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C method to open a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__i2c_8h_a10ae1a02d1c77586654397c6f246cb31}{astera\+I2\+CClose\+Connection}} (int handle)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C method to close a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__i2c_8h_a15d2e7633b18291f0e3533a3b61c25b5}{astera\+I2\+CWrite\+Block\+Data}} (int handle, uint32\+\_\+t cmd\+Code, uint8\+\_\+t buf\+Len, uint8\+\_\+t $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C write method. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. For example, if using linux/i2c.\+h, then the implementation would be\+: int astera\+I2\+CWrite\+Block\+Data(       int handle,       uint8\+\_\+t cmd\+Code,       uint8\+\_\+t buf\+Len,       uint8\+\_\+t $\ast$buf) \{ return i2c\+\_\+smbus\+\_\+write\+\_\+i2c\+\_\+block\+\_\+data(handle, cmd\+Code, buf\+Len, buf); \}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__i2c_8h_abc79746ffa388a845e27ca0f160ea8ba}{astera\+I2\+CRead\+Block\+Data}} (int handle, uint32\+\_\+t cmd\+Code, uint8\+\_\+t buf\+Len, uint8\+\_\+t $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C read method. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. For example, if using linux/i2c.\+h, then the implementation would be\+: int astera\+I2\+CRead\+Block\+Data(       int handle,       uint8\+\_\+t cmd\+Code,       uint8\+\_\+t buf\+Len,       uint8\+\_\+t $\ast$buf) \{ return i2c\+\_\+smbus\+\_\+read\+\_\+i2c\+\_\+block\+\_\+data(handle, cmd\+Code, buf\+Len, buf); \}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__i2c_8h_a7bc9020b297e46e973cae1562339cf35}{astera\+I2\+CBlock}} (int handle)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C method to implement a lock around I2C transactions such that a set of transactions can be atomic. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__i2c_8h_a0f3951b558dd4363783ad42856020986}{astera\+I2\+CUnblock}} (int handle)
+\begin{DoxyCompactList}\small\item\em Low-\/level I2C method to unlock a previous lock around I2C transactions such that a set of transactions can be atomic. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a842c13a344a77410ce08f4f6e42dbf04}{leo\+Run\+Arp}} (int handle, uint8\+\_\+t new7bit\+Smbus\+Addr)
+\begin{DoxyCompactList}\small\item\em Set Slave address to user-\/specified value\+: new7bit\+Smbus\+Addr. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_af54ec05a1531c7d6dc5b42b4c8eb6abe}{leo\+Write\+Block\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write multiple data bytes to Leo over I2C This function retuns a negative error code on error, and zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_ad97e9edb1d79c6ea4fbc37799015669d}{leo\+Write\+Byte\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write a data byte at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a267476abaada1c78478548a2f37268a9}{leo\+Read\+Block\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read multiple bytes of data at specified address from Leo over I2C. If unsuccessful, return a negative error code, else zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a140df9b4ba5e6af084434088fbdddc6c}{leo\+Read\+Byte\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read a data byte from Leo over I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a1930811d507a05fd5fab27f9728d1fa4}{leo\+Read\+Block\+Data\+Main\+Micro\+Indirect\+A0}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t micro\+Ind\+Struct\+Offset, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read multiple (up to eight) data bytes from micro SRAM over I2C on A0. Returns a negative error code, or zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_aaf52aefa4f679031b9cb53f0f16dfc7d}{leo\+Read\+Block\+Data\+Main\+Micro\+Indirect\+MPW}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t micro\+Ind\+Struct\+Offset, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read multiple (up to eight) data bytes from micro SRAM over I2C. Returns a negative error code, or zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a24baa6b4200596e07831439a26cc2690}{leo\+Write\+Block\+Data\+Main\+Micro\+Indirect\+A0}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t micro\+Ind\+Struct\+Offset, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write multiple data bytes to specified address from micro SRAM over I2C for A0. Returns a negative error code, or zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_af6cbf9e1b34db38d0db016f2b839e341}{leo\+Write\+Block\+Data\+Main\+Micro\+Indirect\+MPW}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t micro\+Ind\+Struct\+Offset, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write multiple (up to eight) data bytes to specified address from micro SRAM over I2C. Returns a negative error code, or zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a79cfb7bf5679779649b504f996aebefd}{leo\+Read\+Byte\+Data\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read one byte of data from specified address from Main micro SRAM over I2C. Returns a negative error code, else the number byte data read. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_aec6569b68ba5fdaff827bdf9337626c7}{leo\+Read\+Block\+Data\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read multiple (up to eight) data bytes from speified address from Main micro SRAM over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a6f1ed90fa8029aba1ff09bbc6ae07685}{leo\+Write\+Byte\+Data\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write a data byte at specifed address to Main micro SRAM Leo over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_ab58af37d6ee9a8c76ce76977f5c8a5ab}{leo\+Write\+Block\+Data\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write multiple (up to eight) data bytes at specified address to Main micro SRAM over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a387a26478c4cc214619bf6ea0dc828b6}{leo\+Read\+Byte\+Data\+Path\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint8\+\_\+t path\+ID, uint32\+\_\+t address, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read a data byte at specified address from Path micro SRAM over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a25ece9af649b26ae580dceab78ae90a1}{leo\+Read\+Block\+Data\+Path\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint8\+\_\+t path\+ID, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read multiple (up to eight) data bytes at specified address from Path micro SRAM over I2C. Returns a negative error code, else the number of bytes read. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a6b19636c50b4c797dceeb2add1080fbd}{leo\+Write\+Byte\+Data\+Path\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint8\+\_\+t path\+ID, uint32\+\_\+t address, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write one byte of data byte at specified address to Path micro SRAM Leo over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_aba7dcceeed0e56918ee55190366f34c7}{leo\+Write\+Block\+Data\+Path\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint8\+\_\+t path\+ID, uint32\+\_\+t address, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write multiple (up to eight) data bytes at specified address to Path micro SRAM over I2C. Returns a negative error code, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a42849ffb1bc037d5e9fb0253ac693689}{leo\+Read\+Word\+Pma\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int quad\+Slice, uint16\+\_\+t address, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes of data from PMA register over I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_abad2c91bb03b1d198f632763e01a219a}{leo\+Write\+Word\+Pma\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int quad\+Slice, uint16\+\_\+t address, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes of data from PMA register over I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_adf2a6695194d1bea1e1fa4091eec70ea}{leo\+Read\+Word\+Pma\+Lane\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int quad\+Slice, int lane, uint16\+\_\+t reg\+Offset, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes of data from PMA lane register over I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a5e364735fa6bc28f05e464981a28f510}{leo\+Write\+Word\+Pma\+Lane\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int quad\+Slice, int lane, uint16\+\_\+t reg\+Offset, uint8\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes of data to PMA lane register over I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_af556063c8e59960c6dd245b1ebb351c3}{leo\+Read\+Word\+Pma\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int qs, uint16\+\_\+t pma\+Addr, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes of data from PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_ab91a60b65c7138c50e4d3b5e9168be70}{leo\+Write\+Word\+Pma\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int qs, uint16\+\_\+t pma\+Addr, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes of data to PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a11a07d8a2e5d2235b62b74e82c67e803}{leo\+Read\+Word\+Pma\+Lane\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int qs, int lane, uint16\+\_\+t pma\+Addr, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes of data from PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_aed974141f2a3b27d11b8a7aaa614daf8}{leo\+Write\+Word\+Pma\+Lane\+Main\+Micro\+Indirect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int qs, int lane, uint16\+\_\+t pma\+Addr, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes of data to PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a17ac417ef45414a8ba2f51cceab2b803}{leo\+Read\+Retimer\+Register}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int lane, uint16\+\_\+t base\+Addr, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read N bytes of data from a Retimer (gbl, ln0, or ln1) CSR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_af456ccf13b7a9868d711d75682f17941}{leo\+Write\+Retimer\+Register}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, int side, int lane, uint16\+\_\+t base\+Addr, uint8\+\_\+t length\+Bytes, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Write N bytes of data to a Retimer (gbl, ln0, or ln1) CSR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_af61627fb3e6d4bc7f56d947297e4f5e9}{leo\+Write\+Word\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write a data word at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a69746e3829c6e8698f3ac7851f08ee0b}{leo\+Read\+Word\+Data}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver, uint32\+\_\+t address, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write a data word at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a0f9225331be372e2b8941394224a5338}{leo\+Lock}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver)
+\begin{DoxyCompactList}\small\item\em Set lock on bus (Leo transaction) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__i2c_8h_a4cd73561cbef2ca23ab78850ddec1f60}{leo\+Unlock}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$i2c\+Driver)
+\begin{DoxyCompactList}\small\item\em Unlock bus after lock (Leo transaction) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of I2\+C/\+SMBus types for the SDK. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{leo__i2c_8h_af8d4c7cd3f09b672c308b566930d9b2e}\label{leo__i2c_8h_af8d4c7cd3f09b672c308b566930d9b2e}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!CHECK\_SUCCESS@{CHECK\_SUCCESS}}
+\index{CHECK\_SUCCESS@{CHECK\_SUCCESS}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{CHECK\_SUCCESS}{CHECK\_SUCCESS}}
+{\footnotesize\ttfamily \#define CHECK\+\_\+\+SUCCESS(\begin{DoxyParamCaption}\item[{}]{rc }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (rc\ !=\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a3d72d460d19ae77549b045922a4e33f7}{LEO\_SUCCESS}})\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ASTERA\_ERROR(\textcolor{stringliteral}{"{}Unexpected\ return\ code:\ \%d"{}},\ rc);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ rc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{leo__i2c_8h_aa0004d1735f5c5a47cd385525c5bdbc0}\label{leo__i2c_8h_aa0004d1735f5c5a47cd385525c5bdbc0}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!PRINT\_ERROR@{PRINT\_ERROR}}
+\index{PRINT\_ERROR@{PRINT\_ERROR}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{PRINT\_ERROR}{PRINT\_ERROR}}
+{\footnotesize\ttfamily \#define PRINT\+\_\+\+ERROR}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ at\ line\ \%d,\ file\ \%s\ (\%d)\ [\%s]\(\backslash\)n"{}},\ \_\_LINE\_\_,\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \_\_FILE\_\_,\ errno,\ strerror(errno));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__i2c_8h_a7bc9020b297e46e973cae1562339cf35}\label{leo__i2c_8h_a7bc9020b297e46e973cae1562339cf35}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2CBlock@{asteraI2CBlock}}
+\index{asteraI2CBlock@{asteraI2CBlock}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2CBlock()}{asteraI2CBlock()}}
+{\footnotesize\ttfamily int astera\+I2\+CBlock (\begin{DoxyParamCaption}\item[{int}]{handle }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C method to implement a lock around I2C transactions such that a set of transactions can be atomic. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Handle to I2C driver\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a10ae1a02d1c77586654397c6f246cb31}\label{leo__i2c_8h_a10ae1a02d1c77586654397c6f246cb31}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2CCloseConnection@{asteraI2CCloseConnection}}
+\index{asteraI2CCloseConnection@{asteraI2CCloseConnection}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2CCloseConnection()}{asteraI2CCloseConnection()}}
+{\footnotesize\ttfamily void astera\+I2\+CClose\+Connection (\begin{DoxyParamCaption}\item[{int}]{handle }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C method to close a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & I2C handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ LEO\+\_\+\+SUCCESS or LEO\+\_\+\+ERROR 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_ae7fdab0216c6366819f67517ed313fa6}\label{leo__i2c_8h_ae7fdab0216c6366819f67517ed313fa6}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2COpenConnection@{asteraI2COpenConnection}}
+\index{asteraI2COpenConnection@{asteraI2COpenConnection}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2COpenConnection()}{asteraI2COpenConnection()}}
+{\footnotesize\ttfamily int astera\+I2\+COpen\+Connection (\begin{DoxyParamCaption}\item[{int}]{i2c\+Bus,  }\item[{int}]{slave\+Address }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C method to open a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Bus} & I2C bus number \\
+\hline
+\mbox{\texttt{ in}}  & {\em slave\+Address} & I2C (7-\/bit) address of retimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af7ff73ba890d870d2a127735e31c4ec1}\label{leo__i2c_8h_af7ff73ba890d870d2a127735e31c4ec1}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2COpenConnectionExt@{asteraI2COpenConnectionExt}}
+\index{asteraI2COpenConnectionExt@{asteraI2COpenConnectionExt}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2COpenConnectionExt()}{asteraI2COpenConnectionExt()}}
+{\footnotesize\ttfamily int astera\+I2\+COpen\+Connection\+Ext (\begin{DoxyParamCaption}\item[{int}]{i2c\+Bus,  }\item[{int}]{slave\+Address,  }\item[{\mbox{\hyperlink{structconn__s}{conn\+\_\+t}}}]{conn }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C method to open a connection. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Bus} & I2C bus number \\
+\hline
+\mbox{\texttt{ in}}  & {\em slave\+Address} & I2C (7-\/bit) address of retimer \\
+\hline
+\mbox{\texttt{ in}}  & {\em connection} & structure that has more connectivity details \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_abc79746ffa388a845e27ca0f160ea8ba}\label{leo__i2c_8h_abc79746ffa388a845e27ca0f160ea8ba}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2CReadBlockData@{asteraI2CReadBlockData}}
+\index{asteraI2CReadBlockData@{asteraI2CReadBlockData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2CReadBlockData()}{asteraI2CReadBlockData()}}
+{\footnotesize\ttfamily int astera\+I2\+CRead\+Block\+Data (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{uint32\+\_\+t}]{cmd\+Code,  }\item[{uint8\+\_\+t}]{buf\+Len,  }\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C read method. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. For example, if using linux/i2c.\+h, then the implementation would be\+: int astera\+I2\+CRead\+Block\+Data(       int handle,       uint8\+\_\+t cmd\+Code,       uint8\+\_\+t buf\+Len,       uint8\+\_\+t $\ast$buf) \{ return i2c\+\_\+smbus\+\_\+read\+\_\+i2c\+\_\+block\+\_\+data(handle, cmd\+Code, buf\+Len, buf); \}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Handle to I2C driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em cmd\+Code} & 8-\/bit command code \\
+\hline
+\mbox{\texttt{ in}}  & {\em buf\+Len} & Number of bytes to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$buf} & Pointer to data buffer into which the read data will be placed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a0f3951b558dd4363783ad42856020986}\label{leo__i2c_8h_a0f3951b558dd4363783ad42856020986}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2CUnblock@{asteraI2CUnblock}}
+\index{asteraI2CUnblock@{asteraI2CUnblock}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2CUnblock()}{asteraI2CUnblock()}}
+{\footnotesize\ttfamily int astera\+I2\+CUnblock (\begin{DoxyParamCaption}\item[{int}]{handle }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C method to unlock a previous lock around I2C transactions such that a set of transactions can be atomic. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Handle to I2C driver\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a15d2e7633b18291f0e3533a3b61c25b5}\label{leo__i2c_8h_a15d2e7633b18291f0e3533a3b61c25b5}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!asteraI2CWriteBlockData@{asteraI2CWriteBlockData}}
+\index{asteraI2CWriteBlockData@{asteraI2CWriteBlockData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{asteraI2CWriteBlockData()}{asteraI2CWriteBlockData()}}
+{\footnotesize\ttfamily int astera\+I2\+CWrite\+Block\+Data (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{uint32\+\_\+t}]{cmd\+Code,  }\item[{uint8\+\_\+t}]{buf\+Len,  }\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+Low-\/level I2C write method. THIS FUNCTION MUST BE IMPLEMENTED IN THE USER\textquotesingle{}S APPLICATION. For example, if using linux/i2c.\+h, then the implementation would be\+: int astera\+I2\+CWrite\+Block\+Data(       int handle,       uint8\+\_\+t cmd\+Code,       uint8\+\_\+t buf\+Len,       uint8\+\_\+t $\ast$buf) \{ return i2c\+\_\+smbus\+\_\+write\+\_\+i2c\+\_\+block\+\_\+data(handle, cmd\+Code, buf\+Len, buf); \}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Handle to I2C driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em cmd\+Code} & 8-\/bit command code \\
+\hline
+\mbox{\texttt{ in}}  & {\em buf\+Len} & Data buffer length, in bytes \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$buf} & Pointer to data buffer (byte array) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a0f9225331be372e2b8941394224a5338}\label{leo__i2c_8h_a0f9225331be372e2b8941394224a5338}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoLock@{leoLock}}
+\index{leoLock@{leoLock}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoLock()}{leoLock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver }\end{DoxyParamCaption})}
+
+
+
+Set lock on bus (Leo transaction) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a267476abaada1c78478548a2f37268a9}\label{leo__i2c_8h_a267476abaada1c78478548a2f37268a9}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadBlockData@{leoReadBlockData}}
+\index{leoReadBlockData@{leoReadBlockData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadBlockData()}{leoReadBlockData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Block\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read multiple bytes of data at specified address from Leo over I2C. If unsuccessful, return a negative error code, else zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read (maximum 16 bytes) \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to array of read data (bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_aec6569b68ba5fdaff827bdf9337626c7}\label{leo__i2c_8h_aec6569b68ba5fdaff827bdf9337626c7}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadBlockDataMainMicroIndirect@{leoReadBlockDataMainMicroIndirect}}
+\index{leoReadBlockDataMainMicroIndirect@{leoReadBlockDataMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadBlockDataMainMicroIndirect()}{leoReadBlockDataMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Block\+Data\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read multiple (up to eight) data bytes from speified address from Main micro SRAM over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read (maximum 8 bytes) \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to array storing up to 8 bytes of data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a1930811d507a05fd5fab27f9728d1fa4}\label{leo__i2c_8h_a1930811d507a05fd5fab27f9728d1fa4}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadBlockDataMainMicroIndirectA0@{leoReadBlockDataMainMicroIndirectA0}}
+\index{leoReadBlockDataMainMicroIndirectA0@{leoReadBlockDataMainMicroIndirectA0}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadBlockDataMainMicroIndirectA0()}{leoReadBlockDataMainMicroIndirectA0()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Block\+Data\+Main\+Micro\+Indirect\+A0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{micro\+Ind\+Struct\+Offset,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read multiple (up to eight) data bytes from micro SRAM over I2C on A0. Returns a negative error code, or zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em micro\+Ind\+Struct\+Offset} & Micro Indirect Struct Offset \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to single element array of read data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_aaf52aefa4f679031b9cb53f0f16dfc7d}\label{leo__i2c_8h_aaf52aefa4f679031b9cb53f0f16dfc7d}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadBlockDataMainMicroIndirectMPW@{leoReadBlockDataMainMicroIndirectMPW}}
+\index{leoReadBlockDataMainMicroIndirectMPW@{leoReadBlockDataMainMicroIndirectMPW}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadBlockDataMainMicroIndirectMPW()}{leoReadBlockDataMainMicroIndirectMPW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Block\+Data\+Main\+Micro\+Indirect\+MPW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{micro\+Ind\+Struct\+Offset,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read multiple (up to eight) data bytes from micro SRAM over I2C. Returns a negative error code, or zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em micro\+Ind\+Struct\+Offset} & Micro Indirect Struct Offset \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to single element array of read data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a25ece9af649b26ae580dceab78ae90a1}\label{leo__i2c_8h_a25ece9af649b26ae580dceab78ae90a1}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadBlockDataPathMicroIndirect@{leoReadBlockDataPathMicroIndirect}}
+\index{leoReadBlockDataPathMicroIndirect@{leoReadBlockDataPathMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadBlockDataPathMicroIndirect()}{leoReadBlockDataPathMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Block\+Data\+Path\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint8\+\_\+t}]{path\+ID,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read multiple (up to eight) data bytes at specified address from Path micro SRAM over I2C. Returns a negative error code, else the number of bytes read. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em path\+ID} & Path micro ID (e.\+g. 0, 1, ..., 15) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read (maximum 16 bytes) \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to array storing up to 16 bytes of data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a140df9b4ba5e6af084434088fbdddc6c}\label{leo__i2c_8h_a140df9b4ba5e6af084434088fbdddc6c}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadByteData@{leoReadByteData}}
+\index{leoReadByteData@{leoReadByteData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadByteData()}{leoReadByteData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Byte\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Read a data byte from Leo over I2C. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & Pointer to single element array of read data (byte) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a79cfb7bf5679779649b504f996aebefd}\label{leo__i2c_8h_a79cfb7bf5679779649b504f996aebefd}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadByteDataMainMicroIndirect@{leoReadByteDataMainMicroIndirect}}
+\index{leoReadByteDataMainMicroIndirect@{leoReadByteDataMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadByteDataMainMicroIndirect()}{leoReadByteDataMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Byte\+Data\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read one byte of data from specified address from Main micro SRAM over I2C. Returns a negative error code, else the number byte data read. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to single element array of read data (one byte) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a387a26478c4cc214619bf6ea0dc828b6}\label{leo__i2c_8h_a387a26478c4cc214619bf6ea0dc828b6}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadByteDataPathMicroIndirect@{leoReadByteDataPathMicroIndirect}}
+\index{leoReadByteDataPathMicroIndirect@{leoReadByteDataPathMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadByteDataPathMicroIndirect()}{leoReadByteDataPathMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Byte\+Data\+Path\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint8\+\_\+t}]{path\+ID,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Read a data byte at specified address from Path micro SRAM over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em path\+ID} & Path micro ID (e.\+g. 0, 1, ..., 15) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & Pointer to array of one byte of read data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a17ac417ef45414a8ba2f51cceab2b803}\label{leo__i2c_8h_a17ac417ef45414a8ba2f51cceab2b803}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadRetimerRegister@{leoReadRetimerRegister}}
+\index{leoReadRetimerRegister@{leoReadRetimerRegister}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadRetimerRegister()}{leoReadRetimerRegister()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Retimer\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{base\+Addr,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read N bytes of data from a Retimer (gbl, ln0, or ln1) CSR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & Absolute lane number (15\+:0) \\
+\hline
+\mbox{\texttt{ in}}  & {\em base\+Addr} & 16-\/bit base address \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Byte array which will be contain data read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a69746e3829c6e8698f3ac7851f08ee0b}\label{leo__i2c_8h_a69746e3829c6e8698f3ac7851f08ee0b}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadWordData@{leoReadWordData}}
+\index{leoReadWordData@{leoReadWordData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordData()}{leoReadWordData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a data word at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Pointer to 32-\/bit value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a42849ffb1bc037d5e9fb0253ac693689}\label{leo__i2c_8h_a42849ffb1bc037d5e9fb0253ac693689}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadWordPmaIndirect@{leoReadWordPmaIndirect}}
+\index{leoReadWordPmaIndirect@{leoReadWordPmaIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordPmaIndirect()}{leoReadWordPmaIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Pma\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{quad\+Slice,  }\item[{uint16\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes of data from PMA register over I2C. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0) or A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_adf2a6695194d1bea1e1fa4091eec70ea}\label{leo__i2c_8h_adf2a6695194d1bea1e1fa4091eec70ea}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadWordPmaLaneIndirect@{leoReadWordPmaLaneIndirect}}
+\index{leoReadWordPmaLaneIndirect@{leoReadWordPmaLaneIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordPmaLaneIndirect()}{leoReadWordPmaLaneIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Pma\+Lane\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{quad\+Slice,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{reg\+Offset,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes of data from PMA lane register over I2C. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0) or A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & PMA lane number \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg\+Offset} & 16-\/bit ref offset from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array to store read data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a11a07d8a2e5d2235b62b74e82c67e803}\label{leo__i2c_8h_a11a07d8a2e5d2235b62b74e82c67e803}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadWordPmaLaneMainMicroIndirect@{leoReadWordPmaLaneMainMicroIndirect}}
+\index{leoReadWordPmaLaneMainMicroIndirect@{leoReadWordPmaLaneMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordPmaLaneMainMicroIndirect()}{leoReadWordPmaLaneMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Pma\+Lane\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{qs,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{pma\+Addr,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes of data from PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0) or A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & PMA lane number \\
+\hline
+\mbox{\texttt{ in}}  & {\em pma\+Addr} & 16-\/bit PMA reg offset from which to read \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em data} & Byte array which will be contain data read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af556063c8e59960c6dd245b1ebb351c3}\label{leo__i2c_8h_af556063c8e59960c6dd245b1ebb351c3}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoReadWordPmaMainMicroIndirect@{leoReadWordPmaMainMicroIndirect}}
+\index{leoReadWordPmaMainMicroIndirect@{leoReadWordPmaMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoReadWordPmaMainMicroIndirect()}{leoReadWordPmaMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Word\+Pma\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{qs,  }\item[{uint16\+\_\+t}]{pma\+Addr,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes of data from PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0) or A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em pma\+Addr} & 16-\/bit PMA reg offset from which to read \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em data} & Byte array which will be contain data read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a842c13a344a77410ce08f4f6e42dbf04}\label{leo__i2c_8h_a842c13a344a77410ce08f4f6e42dbf04}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoRunArp@{leoRunArp}}
+\index{leoRunArp@{leoRunArp}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoRunArp()}{leoRunArp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Run\+Arp (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{uint8\+\_\+t}]{new7bit\+Smbus\+Addr }\end{DoxyParamCaption})}
+
+
+
+Set Slave address to user-\/specified value\+: new7bit\+Smbus\+Addr. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Handle to I2C driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em new7bit\+Smbus\+Addr} & Desired\+I2C (7-\/bit) address of retimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a4cd73561cbef2ca23ab78850ddec1f60}\label{leo__i2c_8h_a4cd73561cbef2ca23ab78850ddec1f60}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoUnlock@{leoUnlock}}
+\index{leoUnlock@{leoUnlock}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoUnlock()}{leoUnlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Unlock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver }\end{DoxyParamCaption})}
+
+
+
+Unlock bus after lock (Leo transaction) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af54ec05a1531c7d6dc5b42b4c8eb6abe}\label{leo__i2c_8h_af54ec05a1531c7d6dc5b42b4c8eb6abe}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteBlockData@{leoWriteBlockData}}
+\index{leoWriteBlockData@{leoWriteBlockData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteBlockData()}{leoWriteBlockData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Block\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write multiple data bytes to Leo over I2C This function retuns a negative error code on error, and zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write (maximum 16 bytes) \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Pointer to array of data (bytes) you wish to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+@\+TODO\+: After removing padding functionality from libi2c, enable it here.\mbox{\Hypertarget{leo__i2c_8h_ab58af37d6ee9a8c76ce76977f5c8a5ab}\label{leo__i2c_8h_ab58af37d6ee9a8c76ce76977f5c8a5ab}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteBlockDataMainMicroIndirect@{leoWriteBlockDataMainMicroIndirect}}
+\index{leoWriteBlockDataMainMicroIndirect@{leoWriteBlockDataMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteBlockDataMainMicroIndirect()}{leoWriteBlockDataMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Block\+Data\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write multiple (up to eight) data bytes at specified address to Main micro SRAM over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write (maximum 16 bytes) \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a24baa6b4200596e07831439a26cc2690}\label{leo__i2c_8h_a24baa6b4200596e07831439a26cc2690}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteBlockDataMainMicroIndirectA0@{leoWriteBlockDataMainMicroIndirectA0}}
+\index{leoWriteBlockDataMainMicroIndirectA0@{leoWriteBlockDataMainMicroIndirectA0}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteBlockDataMainMicroIndirectA0()}{leoWriteBlockDataMainMicroIndirectA0()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Block\+Data\+Main\+Micro\+Indirect\+A0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{micro\+Ind\+Struct\+Offset,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write multiple data bytes to specified address from micro SRAM over I2C for A0. Returns a negative error code, or zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em micro\+Ind\+Struct\+Offset} & Micro Indirect Struct Offset \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to array of data (bytes) you wish to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af6cbf9e1b34db38d0db016f2b839e341}\label{leo__i2c_8h_af6cbf9e1b34db38d0db016f2b839e341}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteBlockDataMainMicroIndirectMPW@{leoWriteBlockDataMainMicroIndirectMPW}}
+\index{leoWriteBlockDataMainMicroIndirectMPW@{leoWriteBlockDataMainMicroIndirectMPW}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteBlockDataMainMicroIndirectMPW()}{leoWriteBlockDataMainMicroIndirectMPW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Block\+Data\+Main\+Micro\+Indirect\+MPW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{micro\+Ind\+Struct\+Offset,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write multiple (up to eight) data bytes to specified address from micro SRAM over I2C. Returns a negative error code, or zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em micro\+Ind\+Struct\+Offset} & Micro Indirect Struct Offset \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address from which to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write \\
+\hline
+\mbox{\texttt{ out}}  & {\em values} & Pointer to array of data (bytes) you wish to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_aba7dcceeed0e56918ee55190366f34c7}\label{leo__i2c_8h_aba7dcceeed0e56918ee55190366f34c7}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteBlockDataPathMicroIndirect@{leoWriteBlockDataPathMicroIndirect}}
+\index{leoWriteBlockDataPathMicroIndirect@{leoWriteBlockDataPathMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteBlockDataPathMicroIndirect()}{leoWriteBlockDataPathMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Block\+Data\+Path\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint8\+\_\+t}]{path\+ID,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write multiple (up to eight) data bytes at specified address to Path micro SRAM over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em path\+ID} & Path micro ID (e.\+g. 0, 1, ..., 15) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write (maximum 16 bytes) \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_ad97e9edb1d79c6ea4fbc37799015669d}\label{leo__i2c_8h_ad97e9edb1d79c6ea4fbc37799015669d}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteByteData@{leoWriteByteData}}
+\index{leoWriteByteData@{leoWriteByteData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteByteData()}{leoWriteByteData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Byte\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a data byte at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Pointer to single element array of data you wish to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a6f1ed90fa8029aba1ff09bbc6ae07685}\label{leo__i2c_8h_a6f1ed90fa8029aba1ff09bbc6ae07685}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteByteDataMainMicroIndirect@{leoWriteByteDataMainMicroIndirect}}
+\index{leoWriteByteDataMainMicroIndirect@{leoWriteByteDataMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteByteDataMainMicroIndirect()}{leoWriteByteDataMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Byte\+Data\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a data byte at specifed address to Main micro SRAM Leo over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Byte data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a6b19636c50b4c797dceeb2add1080fbd}\label{leo__i2c_8h_a6b19636c50b4c797dceeb2add1080fbd}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteByteDataPathMicroIndirect@{leoWriteByteDataPathMicroIndirect}}
+\index{leoWriteByteDataPathMicroIndirect@{leoWriteByteDataPathMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteByteDataPathMicroIndirect()}{leoWriteByteDataPathMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Byte\+Data\+Path\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint8\+\_\+t}]{path\+ID,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Write one byte of data byte at specified address to Path micro SRAM Leo over I2C. Returns a negative error code, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em path\+ID} & Path micro ID (e.\+g. 0, 1, ..., 15) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Byte data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af456ccf13b7a9868d711d75682f17941}\label{leo__i2c_8h_af456ccf13b7a9868d711d75682f17941}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteRetimerRegister@{leoWriteRetimerRegister}}
+\index{leoWriteRetimerRegister@{leoWriteRetimerRegister}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteRetimerRegister()}{leoWriteRetimerRegister()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Retimer\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{base\+Addr,  }\item[{uint8\+\_\+t}]{length\+Bytes,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Write N bytes of data to a Retimer (gbl, ln0, or ln1) CSR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & Absolute lane number (15\+:0) \\
+\hline
+\mbox{\texttt{ in}}  & {\em base\+Addr} & 16-\/bit base address \\
+\hline
+\mbox{\texttt{ in}}  & {\em length\+Bytes} & Number of bytes to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Byte array containing data to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_af61627fb3e6d4bc7f56d947297e4f5e9}\label{leo__i2c_8h_af61627fb3e6d4bc7f56d947297e4f5e9}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteWordData@{leoWriteWordData}}
+\index{leoWriteWordData@{leoWriteWordData}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordData()}{leoWriteWordData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a data word at specified address to Leo over I2C. Returns a negative error code if unsuccessful, else zero on success. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 17-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & 32-\/bit word to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_abad2c91bb03b1d198f632763e01a219a}\label{leo__i2c_8h_abad2c91bb03b1d198f632763e01a219a}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteWordPmaIndirect@{leoWriteWordPmaIndirect}}
+\index{leoWriteWordPmaIndirect@{leoWriteWordPmaIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordPmaIndirect()}{leoWriteWordPmaIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Pma\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{quad\+Slice,  }\item[{uint16\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes of data from PMA register over I2C. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1), or broadcast to both (2) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & 16-\/bit address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_a5e364735fa6bc28f05e464981a28f510}\label{leo__i2c_8h_a5e364735fa6bc28f05e464981a28f510}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteWordPmaLaneIndirect@{leoWriteWordPmaLaneIndirect}}
+\index{leoWriteWordPmaLaneIndirect@{leoWriteWordPmaLaneIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordPmaLaneIndirect()}{leoWriteWordPmaLaneIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Pma\+Lane\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{quad\+Slice,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{reg\+Offset,  }\item[{uint8\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes of data to PMA lane register over I2C. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1), or broadcast to both (2) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & PMA lane number \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg\+Offset} & 16-\/bit ref offset from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_aed974141f2a3b27d11b8a7aaa614daf8}\label{leo__i2c_8h_aed974141f2a3b27d11b8a7aaa614daf8}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteWordPmaLaneMainMicroIndirect@{leoWriteWordPmaLaneMainMicroIndirect}}
+\index{leoWriteWordPmaLaneMainMicroIndirect@{leoWriteWordPmaLaneMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordPmaLaneMainMicroIndirect()}{leoWriteWordPmaLaneMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Pma\+Lane\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{qs,  }\item[{int}]{lane,  }\item[{uint16\+\_\+t}]{pma\+Addr,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes of data to PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1), or broadcast to both (2) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em lane} & PMA lane number \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg\+Offset} & 16-\/bit ref offset from which to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__i2c_8h_ab91a60b65c7138c50e4d3b5e9168be70}\label{leo__i2c_8h_ab91a60b65c7138c50e4d3b5e9168be70}} 
+\index{leo\_i2c.h@{leo\_i2c.h}!leoWriteWordPmaMainMicroIndirect@{leoWriteWordPmaMainMicroIndirect}}
+\index{leoWriteWordPmaMainMicroIndirect@{leoWriteWordPmaMainMicroIndirect}!leo\_i2c.h@{leo\_i2c.h}}
+\doxysubsubsection{\texorpdfstring{leoWriteWordPmaMainMicroIndirect()}{leoWriteWordPmaMainMicroIndirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+Word\+Pma\+Main\+Micro\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{i2c\+Driver,  }\item[{int}]{side,  }\item[{int}]{qs,  }\item[{uint16\+\_\+t}]{pma\+Addr,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes of data to PMA lane register over I2C using the \textquotesingle{}main-\/micro-\/assisted\textquotesingle{} indirect method. This method is necessary during mission-\/mode (non-\/\+PRBS-\/test-\/mode) operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i2c\+Driver} & I2C driver responsible for the transaction(s) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & PMA Side B (0), A (1), or broadcast to both (2) \\
+\hline
+\mbox{\texttt{ in}}  & {\em quad\+Slice} & PMA num\+: 0, 1, 2, or 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em pma\+Addr} & 16-\/bit PMA reg offset from which to read \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em data} & Byte array which will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}

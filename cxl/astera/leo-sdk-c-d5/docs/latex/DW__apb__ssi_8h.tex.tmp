@@ -1,0 +1,211 @@
+\hypertarget{DW__apb__ssi_8h}{}\doxysection{leo-\/sdk-\/c/include/\+DW\+\_\+apb\+\_\+ssi.h File Reference}
+\label{DW__apb__ssi_8h}\index{leo-\/sdk-\/c/include/DW\_apb\_ssi.h@{leo-\/sdk-\/c/include/DW\_apb\_ssi.h}}
+
+
+Definitions related to flash subsector size, Page sizes. This file has definitions related to the registers required to configure for setting up the QSPI flash as slave device from Leo perspective. This file also has data structures related to clock, baudrate, macros and all the relevant function prototypes.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for DW\+\_\+apb\+\_\+ssi.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__ctrl__ro__t}{DW\+\_\+apb\+\_\+ssi\+\_\+ctrl\+\_\+ro\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__ctrl__r1__t}{DW\+\_\+apb\+\_\+ssi\+\_\+ctrl\+\_\+r1\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__ssienr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+ssienr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__mwcr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+mwcr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__ser__t}{DW\+\_\+apb\+\_\+ssi\+\_\+ser\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__baudr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+baudr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__txftlr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+txftlr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rxftlr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rxftlr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__txflr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+txflr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rxflr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rxflr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__sr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+sr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__imr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+imr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__isr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+isr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__risr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+risr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__txoicr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+txoicr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rxoicr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rxoicr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rxuicr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rxuicr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__msticr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+msticr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__icr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+icr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__idr__t}{DW\+\_\+apb\+\_\+ssi\+\_\+idr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__version__id__t}{DW\+\_\+apb\+\_\+ssi\+\_\+version\+\_\+id\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__drx__t}{DW\+\_\+apb\+\_\+ssi\+\_\+drx\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rx__sample__dly__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rx\+\_\+sample\+\_\+dly\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__spi__ctrl__ro__t}{DW\+\_\+apb\+\_\+ssi\+\_\+spi\+\_\+ctrl\+\_\+ro\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__txd__drive__edge__t}{DW\+\_\+apb\+\_\+ssi\+\_\+txd\+\_\+drive\+\_\+edge\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__rsvd__t}{DW\+\_\+apb\+\_\+ssi\+\_\+rsvd\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__mem__map__t}{DW\+\_\+apb\+\_\+ssi\+\_\+mem\+\_\+map\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structDW__apb__ssi__micron__flash__cmd__t}{DW\+\_\+apb\+\_\+ssi\+\_\+micron\+\_\+flash\+\_\+cmd\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a7b741cc43447a492612601a2b2d2cd28}\label{DW__apb__ssi_8h_a7b741cc43447a492612601a2b2d2cd28}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+SIZE}~(32)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_af1f7b89f8300aa024f0948cbef6c7bbb}\label{DW__apb__ssi_8h_af1f7b89f8300aa024f0948cbef6c7bbb}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+SIZE}~(32)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ad5fbf6c1f7faee640065e31e6fac845a}\label{DW__apb__ssi_8h_ad5fbf6c1f7faee640065e31e6fac845a}} 
+\#define {\bfseries FLASH\+\_\+\+SUBSECTOR\+\_\+\+SIZE}~(0x1000)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a4cc14e2c99ae7f8e5a8e371d03c8532c}\label{DW__apb__ssi_8h_a4cc14e2c99ae7f8e5a8e371d03c8532c}} 
+\#define {\bfseries FLASH\+\_\+\+PAGE\+\_\+\+SIZE}~256
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a7a3d8364e3914372319aed80d30e4141}\label{DW__apb__ssi_8h_a7a3d8364e3914372319aed80d30e4141}} 
+\#define {\bfseries FLASH\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+\+SHIFT}~8
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a86f16cf87d585a8d80c1facabfc0ddc9}\label{DW__apb__ssi_8h_a86f16cf87d585a8d80c1facabfc0ddc9}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+STD\+\_\+\+SPI\+\_\+\+FRF}~(0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a4fd6ab39d7680b09c5ead3458423902c}\label{DW__apb__ssi_8h_a4fd6ab39d7680b09c5ead3458423902c}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+DUAL\+\_\+\+SPI\+\_\+\+FRF}~(1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a48e56870afbc20c52b9e091d72129ba4}\label{DW__apb__ssi_8h_a48e56870afbc20c52b9e091d72129ba4}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+QUAD\+\_\+\+SPI\+\_\+\+FRF}~(2)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_afcbdde7238660383c197597c66d50e32}\label{DW__apb__ssi_8h_afcbdde7238660383c197597c66d50e32}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+OCTAL\+\_\+\+SPI\+\_\+\+FRF}~(3)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a8089a4a38923fc1fffd681a98a27795e}\label{DW__apb__ssi_8h_a8089a4a38923fc1fffd681a98a27795e}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+MOTOROLA\+\_\+\+SPI\+\_\+\+FRF}~(0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ab9f4e4cfc71cc64562ebbfbc3fca6ef0}\label{DW__apb__ssi_8h_ab9f4e4cfc71cc64562ebbfbc3fca6ef0}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+TEXAS\+\_\+\+SSP\+\_\+\+FRF}~(1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a441aebadbda0802e0041150ee094d5f8}\label{DW__apb__ssi_8h_a441aebadbda0802e0041150ee094d5f8}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+NS\+\_\+\+MICROWIRE\+\_\+\+FRF}~(2)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a2fc03b847e027940fb23ba1212377c52}\label{DW__apb__ssi_8h_a2fc03b847e027940fb23ba1212377c52}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+SCLK\+\_\+\+LOW\+\_\+\+SCPOL}~(0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_aca9c8f446d837c283ac27f215d1073a8}\label{DW__apb__ssi_8h_aca9c8f446d837c283ac27f215d1073a8}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+SCLK\+\_\+\+HIGH\+\_\+\+SCPOL}~(1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a7f6e911b7054a4bd772e30673c44dd14}\label{DW__apb__ssi_8h_a7f6e911b7054a4bd772e30673c44dd14}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+SCPH\+\_\+\+MIDDLE\+\_\+\+SCPH}~(0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a2ab96c8765d3ed01c744e7e6106ead32}\label{DW__apb__ssi_8h_a2ab96c8765d3ed01c744e7e6106ead32}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+SCPH\+\_\+\+START\+\_\+\+SCPH}~(1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ab34c4f733d952669fd1cc5015bbe184c}\label{DW__apb__ssi_8h_ab34c4f733d952669fd1cc5015bbe184c}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+TX\+\_\+\+AND\+\_\+\+RX\+\_\+\+TMOD}~(0x0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a29bef8329e223c1380660bfabc947575}\label{DW__apb__ssi_8h_a29bef8329e223c1380660bfabc947575}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+TX\+\_\+\+ONLY\+\_\+\+TMOD}~(0x1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a7f1ad3249ccfb12912abdf667a423bd6}\label{DW__apb__ssi_8h_a7f1ad3249ccfb12912abdf667a423bd6}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+RX\+\_\+\+ONLY\+\_\+\+TMOD}~(0x2)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a8fd4f2dc04a41c0396329fa21b1b893a}\label{DW__apb__ssi_8h_a8fd4f2dc04a41c0396329fa21b1b893a}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+EEPROM\+\_\+\+RD\+\_\+\+TMOD}~(0x3)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a486f35d937e8794a407ee1ae08a1d0fe}\label{DW__apb__ssi_8h_a486f35d937e8794a407ee1ae08a1d0fe}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+8\+\_\+\+BIT\+\_\+\+FRAME\+\_\+\+DFS\+\_\+32}~(0x7)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a8c65e4bc50e22229108b1f79bb19c178}\label{DW__apb__ssi_8h_a8c65e4bc50e22229108b1f79bb19c178}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+CTRL\+\_\+\+R0\+\_\+32\+\_\+\+BIT\+\_\+\+FRAME\+\_\+\+DFS\+\_\+32}~(0x1F)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_abd834f9dfbfd8cef0e0e9a50d5f31cdf}\label{DW__apb__ssi_8h_abd834f9dfbfd8cef0e0e9a50d5f31cdf}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0}~(0x8008c)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_aee3f343045a3ae6887c88590b8849654}\label{DW__apb__ssi_8h_aee3f343045a3ae6887c88590b8849654}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+3}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 3))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a301f8868f53855233dcfab61d7c1e1b6}\label{DW__apb__ssi_8h_a301f8868f53855233dcfab61d7c1e1b6}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+4}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 4))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a72f659a9fd549ff4edcd88ae23ea475a}\label{DW__apb__ssi_8h_a72f659a9fd549ff4edcd88ae23ea475a}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+10}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 10))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a61ce60a07fe73384634e086449677a91}\label{DW__apb__ssi_8h_a61ce60a07fe73384634e086449677a91}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+13}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 13))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_aee33fb749b0842d6552789657877da6d}\label{DW__apb__ssi_8h_aee33fb749b0842d6552789657877da6d}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+40}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 40))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a91c5f272a890b790754b0dd619cfe7fa}\label{DW__apb__ssi_8h_a91c5f272a890b790754b0dd619cfe7fa}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+58}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 58))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a28496170ec589d9854014c8344127bd2}\label{DW__apb__ssi_8h_a28496170ec589d9854014c8344127bd2}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+59}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 59))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_afe62640b5d0edd3e175ed7127ba4275c}\label{DW__apb__ssi_8h_afe62640b5d0edd3e175ed7127ba4275c}} 
+\#define {\bfseries GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+64}~(GENERIC\+\_\+\+CFG\+\_\+\+REG\+\_\+0 + (4 $\ast$ 64))
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a1128a69c677e8241eb25acd018645af8}\label{DW__apb__ssi_8h_a1128a69c677e8241eb25acd018645af8}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+BAUDR\+\_\+\+APB\+\_\+\+CLK\+\_\+\+FREQ}~  (10000)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a38d61a8163b82729e7c81aedc71d6bb9}\label{DW__apb__ssi_8h_a38d61a8163b82729e7c81aedc71d6bb9}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+BAUDR\+\_\+\+APB\+\_\+\+SPI\+\_\+\+FREQ}~(10)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a814c105a6c6f12b31f89642527a5473f}\label{DW__apb__ssi_8h_a814c105a6c6f12b31f89642527a5473f}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+BAUDR\+\_\+\+SCKDV}~  (DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+BAUDR\+\_\+\+APB\+\_\+\+CLK\+\_\+\+FREQ / DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+BAUDR\+\_\+\+APB\+\_\+\+SPI\+\_\+\+FREQ)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ad9063190bb5092925b7154161729df61}\label{DW__apb__ssi_8h_ad9063190bb5092925b7154161729df61}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INST\+\_\+\+L\+\_\+0}~(0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_aff625ac9ef7314cb86c99b1093f3db28}\label{DW__apb__ssi_8h_aff625ac9ef7314cb86c99b1093f3db28}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INST\+\_\+\+L\+\_\+1}~(1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a848cc9b36f1c883c80df58fcd030f955}\label{DW__apb__ssi_8h_a848cc9b36f1c883c80df58fcd030f955}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INST\+\_\+\+L\+\_\+2}~(2)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a06a4814d2cfd2f24cc10cb83d3b7effe}\label{DW__apb__ssi_8h_a06a4814d2cfd2f24cc10cb83d3b7effe}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INST\+\_\+\+L\+\_\+3}~(3)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a45a98f6db55c2d51e8837fcb2f73a2d1}\label{DW__apb__ssi_8h_a45a98f6db55c2d51e8837fcb2f73a2d1}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+STD\+\_\+\+TRANS\+\_\+\+TYPE}~(0x0)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ae82d7be5628d6419d166bd1c08f6e06c}\label{DW__apb__ssi_8h_ae82d7be5628d6419d166bd1c08f6e06c}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INS\+\_\+\+STD\+\_\+\+ADDR\+\_\+\+SPI\+\_\+\+FRF\+\_\+\+TRANS\+\_\+\+TYPE}~(0x1)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a7da09fc90b8fa49a08885518f717c305}\label{DW__apb__ssi_8h_a7da09fc90b8fa49a08885518f717c305}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+\+INS\+\_\+\+SPI\+\_\+\+FRF\+\_\+\+ADDR\+\_\+\+SPI\+\_\+\+FRF\+\_\+\+TRANS\+\_\+\+TYPE}~(0x2)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a83c6bea915aba602c6c450a5ffa7ca50}\label{DW__apb__ssi_8h_a83c6bea915aba602c6c450a5ffa7ca50}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+16\+\_\+\+BIT\+\_\+\+ADDR\+\_\+L}~  (0x4)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_a93db5f30ce1f9a77a55f23807a97cc54}\label{DW__apb__ssi_8h_a93db5f30ce1f9a77a55f23807a97cc54}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+20\+\_\+\+BIT\+\_\+\+ADDR\+\_\+L}~  (0x5)
+\item 
+\mbox{\Hypertarget{DW__apb__ssi_8h_ad8b0e9f6fc551e9a9c487f838071d2b8}\label{DW__apb__ssi_8h_ad8b0e9f6fc551e9a9c487f838071d2b8}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+SPI\+\_\+\+CTRL\+\_\+\+R0\+\_\+24\+\_\+\+BIT\+\_\+\+ADDR\+\_\+L}~  (0x6)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions related to flash subsector size, Page sizes. This file has definitions related to the registers required to configure for setting up the QSPI flash as slave device from Leo perspective. This file also has data structures related to clock, baudrate, macros and all the relevant function prototypes. 
+

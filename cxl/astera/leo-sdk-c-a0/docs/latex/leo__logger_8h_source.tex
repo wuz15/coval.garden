@@ -1,0 +1,62 @@
+\hypertarget{leo__logger_8h_source}{}\doxysection{leo\+\_\+logger.\+h}
+\label{leo__logger_8h_source}\index{leo-\/sdk-\/c/include/leo\_logger.h@{leo-\/sdk-\/c/include/leo\_logger.h}}
+\mbox{\hyperlink{leo__logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_LOGGER\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_LOGGER\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__api__types_8h}{leo\_api\_types.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__error_8h}{leo\_error.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__globals_8h}{leo\_globals.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ uint8\_t\ leoGetPecByte(uint8\_t\ *polynomial,\ uint8\_t\ length);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ leoGetStartLane(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link);}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_a71edfe0e151fcd213a40da47f0d70d15}{leoGetLoggerOneBatchModeEn}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}}\ loggerType,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *oneBatchModeEn);}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_af2832241bfefe06ca56f63749d8fc678}{leoGetLoggerOneBatchWrEn}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}}\ loggerType,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *oneBatchWrEn);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_af2832241bfefe06ca56f63749d8fc678}{leoGetLoggerOneBatchWrEn}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}}\ loggerType,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *oneBatchWrEn);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_aa72c176272061f96322a1be1394ce80c}{leoGetLoggerWriteOffset}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}}\ loggerType,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *writeOffset);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_a5e2d40d0382788815a8a3c839ed0f0a8}{leoGetLoggerFmtID}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}}\ loggerType,\ \textcolor{keywordtype}{int}\ offset,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *fmtID);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00111\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__logger_8h_ac140475e2e148c7ff6d0484d88e6b461}{leoCheckLinkHealth}}(\mbox{\hyperlink{structLeoLink}{LeoLinkType}}\ *link);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ASTERA\_LEO\_SDK\_LOGGER\_H\_}}
+
+\end{DoxyCode}

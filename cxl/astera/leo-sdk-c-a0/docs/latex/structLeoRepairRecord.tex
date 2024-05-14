@@ -1,0 +1,94 @@
+\hypertarget{structLeoRepairRecord}{}\doxysection{Leo\+Repair\+Record Struct Reference}
+\label{structLeoRepairRecord}\index{LeoRepairRecord@{LeoRepairRecord}}
+
+
+Struct defining Event\+Record for repair.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structLeoRepairRecord_a9ffa3f0d9c033d92e52698417886b4c6}\label{structLeoRepairRecord_a9ffa3f0d9c033d92e52698417886b4c6}} 
+uint8\+\_\+t {\bfseries channel}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_a19dfb8bb06e9851c07b9563fb42572f4}{rank}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_adc4ecf8a6649661dd9495f846cf3ecf7}{bank}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_ae723431d3edbb213561306d6400ca08e}{row}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_a67bcc79693c868e538e5375994a275f9}{bank\+Group}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_a467998bde5b06478e7ad6dc22f2fc4cb}{CID}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_a71ddee29076fc09c8a3a2913da1b8771}{nibble\+Mask}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_ac03a7a9c907fc59e1647af2e4333ce76}{p\+Resource}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoRepairRecord_ab13fe3fdffb5d0dc1bb68f0ae5c87ce8}{p\+Status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining Event\+Record for repair. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoRepairRecord_adc4ecf8a6649661dd9495f846cf3ecf7}\label{structLeoRepairRecord_adc4ecf8a6649661dd9495f846cf3ecf7}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!bank@{bank}}
+\index{bank@{bank}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::bank}
+
+DIMM Rank \mbox{\Hypertarget{structLeoRepairRecord_a67bcc79693c868e538e5375994a275f9}\label{structLeoRepairRecord_a67bcc79693c868e538e5375994a275f9}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!bankGroup@{bankGroup}}
+\index{bankGroup@{bankGroup}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{bankGroup}{bankGroup}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::bank\+Group}
+
+DRAM Row ~\newline
+ \mbox{\Hypertarget{structLeoRepairRecord_a467998bde5b06478e7ad6dc22f2fc4cb}\label{structLeoRepairRecord_a467998bde5b06478e7ad6dc22f2fc4cb}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!CID@{CID}}
+\index{CID@{CID}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{CID}{CID}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::\+CID}
+
+DRAM Bank Group \mbox{\Hypertarget{structLeoRepairRecord_a71ddee29076fc09c8a3a2913da1b8771}\label{structLeoRepairRecord_a71ddee29076fc09c8a3a2913da1b8771}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!nibbleMask@{nibbleMask}}
+\index{nibbleMask@{nibbleMask}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{nibbleMask}{nibbleMask}}
+{\footnotesize\ttfamily uint32\+\_\+t Leo\+Repair\+Record\+::nibble\+Mask}
+
+Future\+: 3DS\+: DRAM Logical ID for future \mbox{\Hypertarget{structLeoRepairRecord_ac03a7a9c907fc59e1647af2e4333ce76}\label{structLeoRepairRecord_ac03a7a9c907fc59e1647af2e4333ce76}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!pResource@{pResource}}
+\index{pResource@{pResource}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{pResource}{pResource}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::p\+Resource}
+
+DDR nibble mask \mbox{\Hypertarget{structLeoRepairRecord_ab13fe3fdffb5d0dc1bb68f0ae5c87ce8}\label{structLeoRepairRecord_ab13fe3fdffb5d0dc1bb68f0ae5c87ce8}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!pStatus@{pStatus}}
+\index{pStatus@{pStatus}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{pStatus}{pStatus}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::p\+Status}
+
+Future\+: HPPR\+: BGA resource usage \mbox{\Hypertarget{structLeoRepairRecord_a19dfb8bb06e9851c07b9563fb42572f4}\label{structLeoRepairRecord_a19dfb8bb06e9851c07b9563fb42572f4}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!rank@{rank}}
+\index{rank@{rank}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{rank}{rank}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Repair\+Record\+::rank}
+
+DDR Channel \mbox{\Hypertarget{structLeoRepairRecord_ae723431d3edbb213561306d6400ca08e}\label{structLeoRepairRecord_ae723431d3edbb213561306d6400ca08e}} 
+\index{LeoRepairRecord@{LeoRepairRecord}!row@{row}}
+\index{row@{row}!LeoRepairRecord@{LeoRepairRecord}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily uint32\+\_\+t Leo\+Repair\+Record\+::row}
+
+DRAM Bank ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

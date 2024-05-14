@@ -1,0 +1,44 @@
+\hypertarget{leo__tgc_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+tgc.c File Reference}
+\label{leo__tgc_8c}\index{leo-\/sdk-\/c/source/leo\_tgc.c@{leo-\/sdk-\/c/source/leo\_tgc.c}}
+
+
+Implementation of TGC test.  
+
+
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+tgc.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+tgc.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__tgc_8c_acdbb6f2a1e8a09ffb8acecd4ebc4af01}{leo\+Pattern\+Generatorand\+Checker}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}{Leo\+Config\+Tgc\+\_\+t}} $\ast$traffic\+Gen\+Info, \mbox{\hyperlink{leo__api__types_8h_a0d8cdbdbe608f1dddab405e061643588}{Leo\+Results\+Tgc\+\_\+t}} $\ast$tgc\+Results)
+\begin{DoxyCompactList}\small\item\em Leo start traffic generator and checker (TGC) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of TGC test. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__tgc_8c_acdbb6f2a1e8a09ffb8acecd4ebc4af01}\label{leo__tgc_8c_acdbb6f2a1e8a09ffb8acecd4ebc4af01}} 
+\index{leo\_tgc.c@{leo\_tgc.c}!leoPatternGeneratorandChecker@{leoPatternGeneratorandChecker}}
+\index{leoPatternGeneratorandChecker@{leoPatternGeneratorandChecker}!leo\_tgc.c@{leo\_tgc.c}}
+\doxysubsubsection{\texorpdfstring{leoPatternGeneratorandChecker()}{leoPatternGeneratorandChecker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Pattern\+Generatorand\+Checker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}{Leo\+Config\+Tgc\+\_\+t}} $\ast$}]{traffic\+Gen\+Info,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a0d8cdbdbe608f1dddab405e061643588}{Leo\+Results\+Tgc\+\_\+t}} $\ast$}]{tgc\+Results }\end{DoxyParamCaption})}
+
+
+
+Leo start traffic generator and checker (TGC) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Config\+Tgc\+\_\+t} & TGC settings Wr enable, Rd enable, trans count, start address and data pattern \\
+\hline
+\mbox{\texttt{ out}}  & {\em Leo\+Results\+Tgc\+\_\+t} & TGC results status, refer structre documentation \\
+\hline
+\mbox{\texttt{ out}}  & {\em Leo\+Errortype} & \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,98 @@
+\hypertarget{structLeoLinkState}{}\doxysection{Leo\+Link\+State Struct Reference}
+\label{structLeoLinkState}\index{LeoLinkState@{LeoLinkState}}
+
+
+Struct defining detailed Link status, including electrical parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+
+
+Collaboration diagram for Leo\+Link\+State\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structLeoLinkState_aaed222510750a8be4a4a7ebcd932431d}{width}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{Leo\+Link\+State\+Enum\+Type}} \mbox{\hyperlink{structLeoLinkState_ae7c2d8d9c0d57048c753ce6c075866e5}{state}}
+\item 
+int \mbox{\hyperlink{structLeoLinkState_a820c2957289a4ab9b75e1e5bd5b1eafd}{rate}}
+\item 
+bool \mbox{\hyperlink{structLeoLinkState_a817e7610d8ab91362f06a53192e7ad99}{link\+Okay}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}} \mbox{\hyperlink{structLeoLinkState_aa82714a38d386322a069277961907fa9}{uspp\+State}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}} \mbox{\hyperlink{structLeoLinkState_a373bc048c911ae79f5a9252a23c6781f}{dspp\+State}}
+\item 
+int \mbox{\hyperlink{structLeoLinkState_a138045c17b5f6df31fbe71d5cd468491}{link\+Min\+FoM}}
+\item 
+\mbox{\Hypertarget{structLeoLinkState_a76b89b1bb8543791aacda901e95856b7}\label{structLeoLinkState_a76b89b1bb8543791aacda901e95856b7}} 
+char $\ast$ {\bfseries link\+Min\+Fo\+MRx}
+\item 
+int \mbox{\hyperlink{structLeoLinkState_a377e9dc173c2c031eefefeb17591ed6e}{recovery\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed Link status, including electrical parameters. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoLinkState_a373bc048c911ae79f5a9252a23c6781f}\label{structLeoLinkState_a373bc048c911ae79f5a9252a23c6781f}} 
+\index{LeoLinkState@{LeoLinkState}!dsppState@{dsppState}}
+\index{dsppState@{dsppState}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{dsppState}{dsppState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}} Leo\+Link\+State\+::dspp\+State}
+
+Current DSPP state \mbox{\Hypertarget{structLeoLinkState_a138045c17b5f6df31fbe71d5cd468491}\label{structLeoLinkState_a138045c17b5f6df31fbe71d5cd468491}} 
+\index{LeoLinkState@{LeoLinkState}!linkMinFoM@{linkMinFoM}}
+\index{linkMinFoM@{linkMinFoM}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{linkMinFoM}{linkMinFoM}}
+{\footnotesize\ttfamily int Leo\+Link\+State\+::link\+Min\+FoM}
+
+Minimum FoM value across all Lanes on USPP and DSPP \mbox{\Hypertarget{structLeoLinkState_a817e7610d8ab91362f06a53192e7ad99}\label{structLeoLinkState_a817e7610d8ab91362f06a53192e7ad99}} 
+\index{LeoLinkState@{LeoLinkState}!linkOkay@{linkOkay}}
+\index{linkOkay@{linkOkay}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{linkOkay}{linkOkay}}
+{\footnotesize\ttfamily bool Leo\+Link\+State\+::link\+Okay}
+
+Link is healthy (true) or not (false) \mbox{\Hypertarget{structLeoLinkState_a820c2957289a4ab9b75e1e5bd5b1eafd}\label{structLeoLinkState_a820c2957289a4ab9b75e1e5bd5b1eafd}} 
+\index{LeoLinkState@{LeoLinkState}!rate@{rate}}
+\index{rate@{rate}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{rate}{rate}}
+{\footnotesize\ttfamily int Leo\+Link\+State\+::rate}
+
+Current data rate (1=Gen1, 5=Gen5) \mbox{\Hypertarget{structLeoLinkState_a377e9dc173c2c031eefefeb17591ed6e}\label{structLeoLinkState_a377e9dc173c2c031eefefeb17591ed6e}} 
+\index{LeoLinkState@{LeoLinkState}!recoveryCount@{recoveryCount}}
+\index{recoveryCount@{recoveryCount}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{recoveryCount}{recoveryCount}}
+{\footnotesize\ttfamily int Leo\+Link\+State\+::recovery\+Count}
+
+Receiver corresponding to minimum FoM \mbox{\Hypertarget{structLeoLinkState_ae7c2d8d9c0d57048c753ce6c075866e5}\label{structLeoLinkState_ae7c2d8d9c0d57048c753ce6c075866e5}} 
+\index{LeoLinkState@{LeoLinkState}!state@{state}}
+\index{state@{state}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{Leo\+Link\+State\+Enum\+Type}} Leo\+Link\+State\+::state}
+
+Current Link state \mbox{\Hypertarget{structLeoLinkState_aa82714a38d386322a069277961907fa9}\label{structLeoLinkState_aa82714a38d386322a069277961907fa9}} 
+\index{LeoLinkState@{LeoLinkState}!usppState@{usppState}}
+\index{usppState@{usppState}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{usppState}{usppState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}} Leo\+Link\+State\+::uspp\+State}
+
+Current USPP state \mbox{\Hypertarget{structLeoLinkState_aaed222510750a8be4a4a7ebcd932431d}\label{structLeoLinkState_aaed222510750a8be4a4a7ebcd932431d}} 
+\index{LeoLinkState@{LeoLinkState}!width@{width}}
+\index{width@{width}!LeoLinkState@{LeoLinkState}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Leo\+Link\+State\+::width}
+
+Current width of the Link 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\hypertarget{leo__memscrb__test_8c}{}\doxysection{leo-\/sdk-\/c/examples/leo\+\_\+memscrb\+\_\+test.c File Reference}
+\label{leo__memscrb__test_8c}\index{leo-\/sdk-\/c/examples/leo\_memscrb\_test.c@{leo-\/sdk-\/c/examples/leo\_memscrb\_test.c}}
+
+
+api test demonstrates usage of Leo SDK API calls related to memory scrubbing.  
+
+
+{\ttfamily \#include \char`\"{}../include/\+DW\+\_\+apb\+\_\+ssi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/aa.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/libi2c.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for leo\+\_\+memscrb\+\_\+test.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_aee6f4b0b74820d727dd8fba4f5efa061}\label{leo__memscrb__test_8c_aee6f4b0b74820d727dd8fba4f5efa061}} 
+\#define {\bfseries MAX\+\_\+\+ERRORS}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_ae8124a7b675da24438505c0bd71345a6}\label{leo__memscrb__test_8c_ae8124a7b675da24438505c0bd71345a6}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Mem\+Scrub\+Test} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, int leo\+Handle)
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{leo__memscrb__test_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_a27344cb41adf1fd8971aeaa73df8309f}\label{leo__memscrb__test_8c_a27344cb41adf1fd8971aeaa73df8309f}} 
+int {\bfseries is\+Background} = 0
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_a5ef25579537fd25f6d08d4eb82471b1d}\label{leo__memscrb__test_8c_a5ef25579537fd25f6d08d4eb82471b1d}} 
+int {\bfseries is\+Request} = 0
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_ab0c1e97b1b1e969bc10975809a1d1333}\label{leo__memscrb__test_8c_ab0c1e97b1b1e969bc10975809a1d1333}} 
+int {\bfseries is\+Ondemand} = 1
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_a01e98b863d44e8b966461bb2bfbf35b8}\label{leo__memscrb__test_8c_a01e98b863d44e8b966461bb2bfbf35b8}} 
+int {\bfseries is\+Interval} = 0
+\item 
+\mbox{\Hypertarget{leo__memscrb__test_8c_a8af1e07d0122fb0ca1dcad723ececa3b}\label{leo__memscrb__test_8c_a8af1e07d0122fb0ca1dcad723ececa3b}} 
+int {\bfseries bkgrd\+Scrb\+Timeout} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+api test demonstrates usage of Leo SDK API calls related to memory scrubbing. 
+
+This is recommended for 3 types of scrubbing\+: background -\/ command line argument when passed at running of test starts a background/patrol scrubbing test and this test can be configured to wait for a certain period (can be configured in leo\+\_\+memscrb\+\_\+test \#line 127 bkgrd\+Scrb\+Timeout = x secs), the test waits for the number seconds and reports status. The current default wait time is 5 seconds.
+
+request -\/ command line argument when passed at running of test starts Request scrubbing test -\/ User can enter the start and end address of the request scrub test, the test waits for the completion and reports status.
+
+On\+Demand scrubbing is the default option when the test is run with no arguments, This test injects error and intitiates the TGC (Pattern generator and checker) followed by on\+Demand scrubbing.
+\begin{DoxyItemize}
+\item For more details on the args supported \& usage sudo ./leo\+\_\+memscrb\+\_\+test -\/help 
+\end{DoxyItemize}

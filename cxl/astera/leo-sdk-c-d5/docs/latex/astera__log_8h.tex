@@ -1,0 +1,87 @@
+\hypertarget{astera__log_8h}{}\doxysection{leo-\/sdk-\/c/include/astera\+\_\+log.h File Reference}
+\label{astera__log_8h}\index{leo-\/sdk-\/c/include/astera\_log.h@{leo-\/sdk-\/c/include/astera\_log.h}}
+
+
+Logging module for Leo.  
+
+
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for astera\+\_\+log.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{astera__log_8h_aa48b2017856a8a9c33a9935afe604c8d}\label{astera__log_8h_aa48b2017856a8a9c33a9935afe604c8d}} 
+\#define {\bfseries LOG\+\_\+\+VERSION}~\char`\"{}0.\+2.\+0\char`\"{}
+\item 
+\mbox{\Hypertarget{astera__log_8h_a7375b421fa51cd993eef49cf701a6621}\label{astera__log_8h_a7375b421fa51cd993eef49cf701a6621}} 
+\#define {\bfseries ASTERA\+\_\+\+TRACE}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{astera__log_8h_a654a2e965629676f0f023d0e26ebd615}\label{astera__log_8h_a654a2e965629676f0f023d0e26ebd615}} 
+\#define {\bfseries ASTERA\+\_\+\+DEBUG}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+DEBUG, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{astera__log_8h_aa402a52805f427b8fd7625368ac4faab}\label{astera__log_8h_aa402a52805f427b8fd7625368ac4faab}} 
+\#define {\bfseries ASTERA\+\_\+\+INFO}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+INFO, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{astera__log_8h_a317556fd458bae312c16f32feac445bb}\label{astera__log_8h_a317556fd458bae312c16f32feac445bb}} 
+\#define {\bfseries ASTERA\+\_\+\+WARN}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+WARN, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{astera__log_8h_aefaa88546213d8ca130d4f97879a4534}\label{astera__log_8h_aefaa88546213d8ca130d4f97879a4534}} 
+\#define {\bfseries ASTERA\+\_\+\+ERROR}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{astera__log_8h_a184e220afd4d9bcf31c7329f80c23883}\label{astera__log_8h_a184e220afd4d9bcf31c7329f80c23883}} 
+\#define {\bfseries ASTERA\+\_\+\+FATAL}(...)~  astera\+Log\+Msg(ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+FATAL, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{astera__log_8h_a75c4cf0be0a61c357ed092e65fd9317d}\label{astera__log_8h_a75c4cf0be0a61c357ed092e65fd9317d}} 
+typedef void($\ast$ {\bfseries log\+Lock\+Fn}) (void $\ast$udata, int lock)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{astera__log_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{astera__log_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+enum \{ \newline
+{\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}
+, {\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+DEBUG}
+, {\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+INFO}
+, {\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+WARN}
+, \newline
+{\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR}
+, {\bfseries ASTERA\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+FATAL}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{astera__log_8h_a13088593ea772f40e14797f94fb1ca4a}\label{astera__log_8h_a13088593ea772f40e14797f94fb1ca4a}} 
+void {\bfseries astera\+Log\+Set\+Udata} (void $\ast$udata)
+\item 
+\mbox{\Hypertarget{astera__log_8h_a7f36c42f762e1da84d2189d6148ec92e}\label{astera__log_8h_a7f36c42f762e1da84d2189d6148ec92e}} 
+void {\bfseries astera\+Log\+Set\+Lock} (log\+Lock\+Fn fn)
+\item 
+\mbox{\Hypertarget{astera__log_8h_aad5ab5d8781a861866da1291c8a0745a}\label{astera__log_8h_aad5ab5d8781a861866da1291c8a0745a}} 
+void {\bfseries astera\+Log\+Set\+Fp} (FILE $\ast$fp)
+\item 
+\mbox{\Hypertarget{astera__log_8h_ab3597e5da36502a984e56aa9d328605d}\label{astera__log_8h_ab3597e5da36502a984e56aa9d328605d}} 
+void {\bfseries astera\+Log\+Set\+Level} (int level)
+\item 
+\mbox{\Hypertarget{astera__log_8h_ad0d1d43bd4b9a582ad750c09ab8bc069}\label{astera__log_8h_ad0d1d43bd4b9a582ad750c09ab8bc069}} 
+void {\bfseries astera\+Log\+Set\+Quiet} (int enable)
+\item 
+\mbox{\Hypertarget{astera__log_8h_a69482a6fc5b99aa5362d3a91afb9ded1}\label{astera__log_8h_a69482a6fc5b99aa5362d3a91afb9ded1}} 
+void {\bfseries astera\+Log\+Msg} (int level, const char $\ast$file, int line, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logging module for Leo. 
+

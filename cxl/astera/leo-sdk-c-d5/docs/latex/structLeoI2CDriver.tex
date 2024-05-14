@@ -1,0 +1,76 @@
+\hypertarget{structLeoI2CDriver}{}\doxysection{Leo\+I2\+CDriver Struct Reference}
+\label{structLeoI2CDriver}\index{LeoI2CDriver@{LeoI2CDriver}}
+
+
+Struct defining I2\+C/\+SMBus connection with a Leo device.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structLeoI2CDriver_a655f3cb786ea3bf0fb34b48681f92060}{handle}}
+\item 
+int \mbox{\hyperlink{structLeoI2CDriver_a2a5fc79c05bcda1262339f84c7e12246}{slave\+Addr}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}{Leo\+I2\+CFormat\+Type}} \mbox{\hyperlink{structLeoI2CDriver_a74a4338af93c7fa443542f4ebae62d3c}{i2c\+Format}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}{Leo\+I2\+CPECEnable\+Type}} \mbox{\hyperlink{structLeoI2CDriver_a683197849a7fd646abfc3d95997136bc}{pec\+Enable}}
+\item 
+\mbox{\Hypertarget{structLeoI2CDriver_ab871a26c9de82f78906db988bb1aad89}\label{structLeoI2CDriver_ab871a26c9de82f78906db988bb1aad89}} 
+int {\bfseries lock}
+\item 
+bool \mbox{\hyperlink{structLeoI2CDriver_a5222d3cb9f6b3bf86ca3fd0f6b9eedb9}{lock\+Init}}
+\item 
+const char $\ast$ \mbox{\hyperlink{structLeoI2CDriver_a71506fdeeab1684978b1b39b6475f533}{pciefile}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining I2\+C/\+SMBus connection with a Leo device. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoI2CDriver_a655f3cb786ea3bf0fb34b48681f92060}\label{structLeoI2CDriver_a655f3cb786ea3bf0fb34b48681f92060}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!handle@{handle}}
+\index{handle@{handle}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily int Leo\+I2\+CDriver\+::handle}
+
+File handle to I2C connection \mbox{\Hypertarget{structLeoI2CDriver_a74a4338af93c7fa443542f4ebae62d3c}\label{structLeoI2CDriver_a74a4338af93c7fa443542f4ebae62d3c}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!i2cFormat@{i2cFormat}}
+\index{i2cFormat@{i2cFormat}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{i2cFormat}{i2cFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}{Leo\+I2\+CFormat\+Type}} Leo\+I2\+CDriver\+::i2c\+Format}
+
+I2C format (Astera or Intel) \mbox{\Hypertarget{structLeoI2CDriver_a5222d3cb9f6b3bf86ca3fd0f6b9eedb9}\label{structLeoI2CDriver_a5222d3cb9f6b3bf86ca3fd0f6b9eedb9}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!lockInit@{lockInit}}
+\index{lockInit@{lockInit}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{lockInit}{lockInit}}
+{\footnotesize\ttfamily bool Leo\+I2\+CDriver\+::lock\+Init}
+
+Flag indicating if device reads are locked \mbox{\Hypertarget{structLeoI2CDriver_a71506fdeeab1684978b1b39b6475f533}\label{structLeoI2CDriver_a71506fdeeab1684978b1b39b6475f533}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!pciefile@{pciefile}}
+\index{pciefile@{pciefile}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{pciefile}{pciefile}}
+{\footnotesize\ttfamily const char$\ast$ Leo\+I2\+CDriver\+::pciefile}
+
+Flag indicating if lock has been initialized PCIe connection to Leo device \mbox{\Hypertarget{structLeoI2CDriver_a683197849a7fd646abfc3d95997136bc}\label{structLeoI2CDriver_a683197849a7fd646abfc3d95997136bc}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!pecEnable@{pecEnable}}
+\index{pecEnable@{pecEnable}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{pecEnable}{pecEnable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}{Leo\+I2\+CPECEnable\+Type}} Leo\+I2\+CDriver\+::pec\+Enable}
+
+Enable PEC (Packet Error Checking) \mbox{\Hypertarget{structLeoI2CDriver_a2a5fc79c05bcda1262339f84c7e12246}\label{structLeoI2CDriver_a2a5fc79c05bcda1262339f84c7e12246}} 
+\index{LeoI2CDriver@{LeoI2CDriver}!slaveAddr@{slaveAddr}}
+\index{slaveAddr@{slaveAddr}!LeoI2CDriver@{LeoI2CDriver}}
+\doxysubsubsection{\texorpdfstring{slaveAddr}{slaveAddr}}
+{\footnotesize\ttfamily int Leo\+I2\+CDriver\+::slave\+Addr}
+
+Slave Address 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

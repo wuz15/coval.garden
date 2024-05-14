@@ -1,0 +1,186 @@
+\hypertarget{leo__evt__rec__mgr_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+evt\+\_\+rec\+\_\+mgr.h File Reference}
+\label{leo__evt__rec__mgr_8h}\index{leo-\/sdk-\/c/include/leo\_evt\_rec\_mgr.h@{leo-\/sdk-\/c/include/leo\_evt\_rec\_mgr.h}}
+
+
+definitions related to Leo supported CXL event log/records  
+
+
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+evt\+\_\+rec\+\_\+mgr.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdram__evt__rec}{dram\+\_\+evt\+\_\+rec}}
+\item 
+struct \mbox{\hyperlink{structmem__mdl__evt__rec}{mem\+\_\+mdl\+\_\+evt\+\_\+rec}}
+\item 
+struct \mbox{\hyperlink{structgen__media__evt__rec}{gen\+\_\+media\+\_\+evt\+\_\+rec}}
+\item 
+union \mbox{\hyperlink{unionevt__spc__data}{evt\+\_\+spc\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structleo__evt__rec}{leo\+\_\+evt\+\_\+rec}}
+\item 
+struct \mbox{\hyperlink{structleo__one__evt__log}{leo\+\_\+one\+\_\+evt\+\_\+log}}
+\item 
+struct \mbox{\hyperlink{structleo__err__info}{leo\+\_\+err\+\_\+info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a4e98d77c7f7b1410df4b81223fdfbc00}\label{leo__evt__rec__mgr_8h_a4e98d77c7f7b1410df4b81223fdfbc00}} 
+\#define {\bfseries MAX\+\_\+\+EVT\+\_\+\+RECS}~(16)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_ae6e3fbf17e2088aff12fddf92d4d67f6}\label{leo__evt__rec__mgr_8h_ae6e3fbf17e2088aff12fddf92d4d67f6}} 
+typedef enum evt\+\_\+type {\bfseries evt\+\_\+type\+\_\+e}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_ada0fdbb6f302c923403522ba3ea47493}\label{leo__evt__rec__mgr_8h_ada0fdbb6f302c923403522ba3ea47493}} 
+typedef enum dram\+\_\+evt\+\_\+type {\bfseries dram\+\_\+evt\+\_\+type\+\_\+e}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a0c0927ecad125abee55a7cbfe7ae48c6}\label{leo__evt__rec__mgr_8h_a0c0927ecad125abee55a7cbfe7ae48c6}} 
+typedef enum dram\+\_\+transaction\+\_\+type {\bfseries dram\+\_\+transaction\+\_\+type\+\_\+e}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_aef9aa2abf9763e4ba8aff9bef8fd8f6a}\label{leo__evt__rec__mgr_8h_aef9aa2abf9763e4ba8aff9bef8fd8f6a}} 
+typedef enum media\+\_\+err\+\_\+rec\+\_\+type {\bfseries media\+\_\+err\+\_\+rec\+\_\+type\+\_\+e}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a0820789767830d59f1d5050d022080de}\label{leo__evt__rec__mgr_8h_a0820789767830d59f1d5050d022080de}} 
+typedef enum evt\+\_\+rec\+\_\+type {\bfseries evt\+\_\+rec\+\_\+type\+\_\+e}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_abbce488974445de04adc924dc4d8328a}\label{leo__evt__rec__mgr_8h_abbce488974445de04adc924dc4d8328a}} 
+typedef struct \mbox{\hyperlink{structdram__evt__rec}{dram\+\_\+evt\+\_\+rec}} {\bfseries dram\+\_\+evt\+\_\+rec\+\_\+t}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a8d237817f73fcc0f663908b463f0a804}\label{leo__evt__rec__mgr_8h_a8d237817f73fcc0f663908b463f0a804}} 
+typedef struct \mbox{\hyperlink{structmem__mdl__evt__rec}{mem\+\_\+mdl\+\_\+evt\+\_\+rec}} {\bfseries mem\+\_\+mdl\+\_\+evt\+\_\+rec\+\_\+t}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_adc6c65d8302697ca5728484ce8aef3f8}\label{leo__evt__rec__mgr_8h_adc6c65d8302697ca5728484ce8aef3f8}} 
+typedef struct \mbox{\hyperlink{structgen__media__evt__rec}{gen\+\_\+media\+\_\+evt\+\_\+rec}} {\bfseries gen\+\_\+media\+\_\+evt\+\_\+rec\+\_\+t}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a97d5df2782af0e753b95b266ae437a5c}\label{leo__evt__rec__mgr_8h_a97d5df2782af0e753b95b266ae437a5c}} 
+typedef union \mbox{\hyperlink{unionevt__spc__data}{evt\+\_\+spc\+\_\+data}} {\bfseries evt\+\_\+spc\+\_\+data\+\_\+t}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a6039b0ca35908145dc5315f6feb0d95f}\label{leo__evt__rec__mgr_8h_a6039b0ca35908145dc5315f6feb0d95f}} 
+typedef struct \mbox{\hyperlink{structleo__evt__rec}{leo\+\_\+evt\+\_\+rec}} {\bfseries leo\+\_\+evt\+\_\+rec\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a83b545b16a9ef8a46e68a44411cea935}\label{leo__evt__rec__mgr_8h_a83b545b16a9ef8a46e68a44411cea935}} 
+enum {\bfseries evt\+\_\+type} \{ {\bfseries INFO\+\_\+\+EVENT} = 0
+, {\bfseries WARN\+\_\+\+EVENT}
+, {\bfseries FAILURE\+\_\+\+EVENT}
+, {\bfseries FATAL\+\_\+\+EVENT}
+ \}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a469a5f2c0a539e81e6ae1d291d125dab}\label{leo__evt__rec__mgr_8h_a469a5f2c0a539e81e6ae1d291d125dab}} 
+enum {\bfseries dram\+\_\+evt\+\_\+type} \{ {\bfseries MEDIA\+\_\+\+ECC\+\_\+\+ERR} = 0
+, {\bfseries SCRUB\+\_\+\+MEDIA\+\_\+\+ECC\+\_\+\+ERR}
+, {\bfseries INVALID\+\_\+\+ADDR}
+, {\bfseries DATA\+\_\+\+PATH\+\_\+\+ERR}
+ \}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_af8d279b0f84b85f0a4c2a58a9c0258d7}\label{leo__evt__rec__mgr_8h_af8d279b0f84b85f0a4c2a58a9c0258d7}} 
+enum {\bfseries dram\+\_\+transaction\+\_\+type} \{ \newline
+{\bfseries UNKNOWN} = 0
+, {\bfseries HOST\+\_\+\+READ}
+, {\bfseries HOST\+\_\+\+WRITE}
+, {\bfseries HOST\+\_\+\+SCAN\+\_\+\+MEDIA}
+, \newline
+{\bfseries HOST\+\_\+\+INJECT\+\_\+\+POISON}
+, {\bfseries INTERNAL\+\_\+\+MEDIA\+\_\+\+SCRUB}
+, {\bfseries INTERNAL\+\_\+\+MEDIA\+\_\+\+MGT}
+ \}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a31fdc6fb3b47d128b54920acb90e00a9}\label{leo__evt__rec__mgr_8h_a31fdc6fb3b47d128b54920acb90e00a9}} 
+enum {\bfseries media\+\_\+err\+\_\+rec\+\_\+type} \{ \newline
+{\bfseries UNKNOWN\+\_\+\+ERR} = 0
+, {\bfseries EXTERNAL\+\_\+\+POISON}
+, {\bfseries INTERNAL\+\_\+\+POISON}
+, {\bfseries INJECTED\+\_\+\+POISON}
+, \newline
+{\bfseries VENDOR\+\_\+\+SPECIFIC}
+ \}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a0a3766d7dbccc75208ed934aed455f52}\label{leo__evt__rec__mgr_8h_a0a3766d7dbccc75208ed934aed455f52}} 
+enum {\bfseries evt\+\_\+rec\+\_\+type} \{ {\bfseries GEN\+\_\+\+MEDIA\+\_\+\+EVT\+\_\+\+REC}
+, {\bfseries DRAM\+\_\+\+EVT\+\_\+\+REC}
+, {\bfseries MEM\+\_\+\+MODULE\+\_\+\+EVT\+\_\+\+REC}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structleo__one__evt__log}{leo\+\_\+one\+\_\+evt\+\_\+log}} \mbox{\hyperlink{leo__evt__rec__mgr_8h_a3e2271e4367903323abd4657b4cf2397}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed, aligned(1))) leo\+\_\+one\+\_\+evt\+\_\+log\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a0cf5238d77dfd26667ab7509476ba6ef}\label{leo__evt__rec__mgr_8h_a0cf5238d77dfd26667ab7509476ba6ef}} 
+uint32\+\_\+t {\bfseries overflow}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_ac93e63a4dc3b34b3b0331d50cdfd5a79}\label{leo__evt__rec__mgr_8h_ac93e63a4dc3b34b3b0331d50cdfd5a79}} 
+uint32\+\_\+t {\bfseries more\+\_\+evt\+\_\+recs}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a6c6bfd6626cf591e245c5306a0944d7f}\label{leo__evt__rec__mgr_8h_a6c6bfd6626cf591e245c5306a0944d7f}} 
+uint32\+\_\+t {\bfseries rsvd0}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_af1ea752d393d8f7e1a3466ff7e470a52}\label{leo__evt__rec__mgr_8h_af1ea752d393d8f7e1a3466ff7e470a52}} 
+uint32\+\_\+t {\bfseries rsvd1}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_acc9ebea947cd691a1616bc725056fa53}\label{leo__evt__rec__mgr_8h_acc9ebea947cd691a1616bc725056fa53}} 
+uint32\+\_\+t {\bfseries overflow\+\_\+err\+\_\+cnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a5aaf51726d69e0b1b3a3cd33ca381cd7}\label{leo__evt__rec__mgr_8h_a5aaf51726d69e0b1b3a3cd33ca381cd7}} 
+\mbox{\hyperlink{unionqword}{qword\+\_\+t}} {\bfseries first\+\_\+overflow\+\_\+time}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_af2840c4d64de07cc5aa897e3374b2d74}\label{leo__evt__rec__mgr_8h_af2840c4d64de07cc5aa897e3374b2d74}} 
+\mbox{\hyperlink{unionqword}{qword\+\_\+t}} {\bfseries last\+\_\+overflow\+\_\+time}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a0f85b22e62441258a44fb08236b55208}\label{leo__evt__rec__mgr_8h_a0f85b22e62441258a44fb08236b55208}} 
+uint32\+\_\+t {\bfseries evt\+\_\+rec\+\_\+cnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a01649710a5ba47d9a93722fc0914127f}\label{leo__evt__rec__mgr_8h_a01649710a5ba47d9a93722fc0914127f}} 
+uint32\+\_\+t {\bfseries rsvd2}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a6e6d6472f52ab7290e1201e0e5c6aa8f}\label{leo__evt__rec__mgr_8h_a6e6d6472f52ab7290e1201e0e5c6aa8f}} 
+uint32\+\_\+t {\bfseries rsvd3} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_aad0812118eb28d6a0b1b272215375a4f}\label{leo__evt__rec__mgr_8h_aad0812118eb28d6a0b1b272215375a4f}} 
+\mbox{\hyperlink{structleo__evt__rec}{leo\+\_\+evt\+\_\+rec\+\_\+t}} {\bfseries rec}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_ab6af4198cabfd25582f9fa36b0884a08}\label{leo__evt__rec__mgr_8h_ab6af4198cabfd25582f9fa36b0884a08}} 
+uint32\+\_\+t {\bfseries corr\+\_\+ecc\+\_\+errcnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_aba920c679be75ad2e422cf8b8febebf2}\label{leo__evt__rec__mgr_8h_aba920c679be75ad2e422cf8b8febebf2}} 
+uint32\+\_\+t {\bfseries uncorr\+\_\+ecc\+\_\+errcnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_aabf3e3e521c50fb4125751f1a13a3b2d}\label{leo__evt__rec__mgr_8h_aabf3e3e521c50fb4125751f1a13a3b2d}} 
+uint32\+\_\+t {\bfseries scrb\+\_\+corr\+\_\+errcnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_acc7f3715b4fe1761635f77e0d47b0d42}\label{leo__evt__rec__mgr_8h_acc7f3715b4fe1761635f77e0d47b0d42}} 
+uint32\+\_\+t {\bfseries scrb\+\_\+uncorr\+\_\+errcnt}
+\item 
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a9402b87fcdbbbe6c7fb8f51253fe59a9}\label{leo__evt__rec__mgr_8h_a9402b87fcdbbbe6c7fb8f51253fe59a9}} 
+uint32\+\_\+t {\bfseries scrb\+\_\+other\+\_\+errcnt}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+definitions related to Leo supported CXL event log/records 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__evt__rec__mgr_8h_a3e2271e4367903323abd4657b4cf2397}\label{leo__evt__rec__mgr_8h_a3e2271e4367903323abd4657b4cf2397}} 
+\index{leo\_evt\_rec\_mgr.h@{leo\_evt\_rec\_mgr.h}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!leo\_evt\_rec\_mgr.h@{leo\_evt\_rec\_mgr.h}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structleo__err__info}{leo\+\_\+err\+\_\+info}} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed, aligned(1))}]{ }\end{DoxyParamCaption})}
+
+Leo event log\+: return payload structure for CXL mbox cmd Get\+\_\+\+Event\+\_\+\+Records (opcode\+: 0100h)
+
+Leo error info for FW housekeeping 

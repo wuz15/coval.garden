@@ -1,0 +1,68 @@
+C-SDK release is a tar file leo-sdk-c.tar
+
+Unpack in Linux:
+tar -xf leo-sdk-c.tar
+
+To build:
+make
+
+To Clean:
+make clean
+
+
+To Clean Build
+make clean all
+
+To Run
+User can run any of the executables generated in the ~examples/ directory 
+Note: sudo permission required to run examples as they use Aardvark device which requires sudo 
+      permissions to access the I2C 
+example1: run the test which calls all the available SDK APIs
+sudo ./leo-sdk-c/examples/leo_api_test
+
+example2: use Leo I2C tunneling mode to update FW (write/read and verify)
+Note: This method of FW update uses the fw mailbox to update the QSPI flash
+      which means, it works only on boards pre-loaded with working FW.
+sudo ./leo-sdk-c/examples/leo_fw_update_example
+
+
+example3:Leo Memory scrub tests (Background scrub, Request scrub and OnDemand scrub)
+In the following commands, option1 is for Background/patrol scrub
+                           option2 is for Request scrub
+                           no argument passed starts onDemand scrub + Error Injection + TGC
+sudo ./leo-sdk-c/examples/leo_memscrb_test.c option1
+sudo ./leo-sdk-c/examples/leo_memscrb_test.c option2
+sudo ./leo-sdk-c/examples/leo_memscrb_test.c
+
+example4:Leo Inject error tests
+brief api test demonstrates usage of Leo SDK Inject Error API calls.
+param[1-in]  start address, default 0
+param[2-in]  UC/CE 1 - UC 0 - CE
+param[3-in]  1 - enable 0 - disable
+no input paramer runs default values as 0
+sudo ./leo-sdk-c/examples/leo_inject_err_test 0 1 1
+
+example5: Leo TGC tests
+param[1-in]  start address, default 0
+param[2-in]  dataPattern, default value 0xaabbccdd
+param[3-in]  Transaction count[0 to 15], 0 for 256 ... and 15 for 32G
+param[4-in]  Write enable 0-disable 1-Enable
+param[5-in]  Read enable 0-disable 1-Enable
+no input paramer runs default values
+sudo ./leo-sdk-c/leo_tgc_test 0 0xaabbccdd 1 1 1
+
+example5:Leo pattern generator and checker tests
+     param1: TGC start address (default is 0x0)
+     param2: Data pattern (default 0xaabbccdd)
+     param3: Trans count (default 0x100) 
+     param4: WritEnable (Enable -1, Disable -0)
+     param5: ReadEnable (Enable -1, Disable -0)
+sudo ./leo-sdk-c/examples/leo_tgc_test
+
+
+To Generate Docs
+1. Make sure doxygen is installed (https://www.doxygen.nl/manual/doxygen_usage.html)
+2. sudo apt-get install graphviz
+2. doxygen Doxyfile
+
+this commaind in 2. will generate the documents in docs/ directory.

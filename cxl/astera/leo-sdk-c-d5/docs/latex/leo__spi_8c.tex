@@ -1,0 +1,506 @@
+\hypertarget{leo__spi_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+spi.c File Reference}
+\label{leo__spi_8c}\index{leo-\/sdk-\/c/source/leo\_spi.c@{leo-\/sdk-\/c/source/leo\_spi.c}}
+
+
+Implementation of public functions for the SDK SPI interface.  
+
+
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/\+DW\+\_\+apb\+\_\+ssi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+mailbox.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+spi.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__spi_8c_ae0214f3d2f6a079f836679f88bc43fdb}\label{leo__spi_8c_ae0214f3d2f6a079f836679f88bc43fdb}} 
+\#define {\bfseries FW\+\_\+\+ASSIST}~1
+\item 
+\mbox{\Hypertarget{leo__spi_8c_ad0e54695b83da41f2059f4250df44def}\label{leo__spi_8c_ad0e54695b83da41f2059f4250df44def}} 
+\#define {\bfseries ONE\+\_\+\+KB}~(1024)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_aee6f4b0b74820d727dd8fba4f5efa061}\label{leo__spi_8c_aee6f4b0b74820d727dd8fba4f5efa061}} 
+\#define {\bfseries MAX\+\_\+\+ERRORS}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__spi_8c_ae32fcaeffad7e654a8d5d7d617628e47}\label{leo__spi_8c_ae32fcaeffad7e654a8d5d7d617628e47}} 
+void {\bfseries flash\+\_\+boot\+\_\+load\+\_\+init\+\_\+ctrl\+\_\+info\+\_\+struct} (void)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_acdb1e507528900e13f78653d9898344f}\label{leo__spi_8c_acdb1e507528900e13f78653d9898344f}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries flash\+\_\+read\+\_\+32} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, uint32\+\_\+t $\ast$data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_ab4b8ab711b5a3c0185fbaebf58a32e81}\label{leo__spi_8c_ab4b8ab711b5a3c0185fbaebf58a32e81}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries find\+\_\+block\+\_\+end} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t block\+\_\+start\+\_\+addr, uint32\+\_\+t $\ast$block\+\_\+end\+\_\+addr, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a0bf963b970918823868ea211c4eddd32}\label{leo__spi_8c_a0bf963b970918823868ea211c4eddd32}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries find\+\_\+next\+\_\+block} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, uint32\+\_\+t skip, uint32\+\_\+t $\ast$next\+\_\+block\+\_\+addr, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a2033b6a67b244e313de92e613b8d6302}\label{leo__spi_8c_a2033b6a67b244e313de92e613b8d6302}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries get\+\_\+block\+\_\+size} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, uint32\+\_\+t $\ast$block\+\_\+size, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a7b4bceb29145bee0040b1537b80b40d8}\label{leo__spi_8c_a7b4bceb29145bee0040b1537b80b40d8}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries find\+\_\+block\+\_\+by\+\_\+type} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, BLOCKTYPE block\+\_\+type, \mbox{\hyperlink{structblock__info}{block\+\_\+info\+\_\+t}} $\ast$\mbox{\hyperlink{structblock__info}{block\+\_\+info}}, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a28328179ed1943d8b8af9047bf43173b}\label{leo__spi_8c_a28328179ed1943d8b8af9047bf43173b}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries get\+\_\+block\+\_\+info} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t block\+\_\+start\+\_\+addr, \mbox{\hyperlink{structblock__info}{block\+\_\+info\+\_\+t}} $\ast$\mbox{\hyperlink{structblock__info}{block\+\_\+info}}, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a19f24e4e3797154fa1b18b22addcd661}\label{leo__spi_8c_a19f24e4e3797154fa1b18b22addcd661}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries read\+\_\+block\+\_\+data} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, \mbox{\hyperlink{structblock__info}{block\+\_\+info\+\_\+t}} \mbox{\hyperlink{structblock__info}{block\+\_\+info}}, uint32\+\_\+t $\ast$block\+\_\+data, uint8\+\_\+t $\ast$mem\+\_\+data)
+\item 
+void \mbox{\hyperlink{leo__spi_8c_a8af0705d1a24d00713885b205c5d6840}{leo\+Spi\+Init}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\begin{DoxyCompactList}\small\item\em \+: dw apb ssi init \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a5235ae236a0f3ddd6938092e548429d6}{dw\+\_\+apb\+\_\+ssi\+\_\+\+SSIENR}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t enable)
+\begin{DoxyCompactList}\small\item\em low-\/level code to enable/disable the DW APB SSI \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_abf7b785d49d9ec872c4e155ef6fb38b3}{dw\+\_\+apb\+\_\+ssi\+\_\+\+SER}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t enable)
+\begin{DoxyCompactList}\small\item\em low-\/level code to select/not select slave device by using the Slave Enable Register in DW APB SSI Valid only when DW APB SSI is configured as a master device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a9295236392c024299336aea54004513c}{dw\+\_\+apb\+\_\+ssi\+\_\+\+CTRLR0}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t CTRLR0\+\_\+val)
+\begin{DoxyCompactList}\small\item\em low-\/level code to control the serial data transfer Cannot write into this register while DW APB SSI is enabled Valid only when DW APB SSI is configured as a master device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a9a312f0a56397e468f5c7dfecfafcdca}{dw\+\_\+apb\+\_\+ssi\+\_\+\+CTRLR1}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t CTRLR1\+\_\+val)
+\begin{DoxyCompactList}\small\item\em low-\/level code to control the end of serial data transfers when in Rx mode. Cannot write into this register while DW APB SSI is enabled Valid only when DW APB SSI is configured as a master device. The DW\+\_\+apb\+\_\+ssi continues to rx serial data until the number of data frames received is equal to this register value plus 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a86be803c04c299a120984588c3f1687d}{dw\+\_\+apb\+\_\+ssi\+\_\+\+RXFLR}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to check Rx FIFO level register read the register to get the number of valid data entries in the Rx FIFO memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_acdc9617db34e6fad7f78da066eb4632b}{dw\+\_\+apb\+\_\+ssi\+\_\+\+TXFLR}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to check Tx FIFO level register read the register to get the number of valid data entries in the Tx FIFO memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a5a73f35ef3c22fd0f14bb16e8e89abcc}{dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx\+\_\+read\+\_\+16\+\_\+dw}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read (16b) buffer from the transmit/receive FIFOs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a6b960dbcbe8c5b4eb8c0be518cececef}{dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx\+\_\+read}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read buffer from the transmit/receive FIFOs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_aeccc2948494f122b9815f97d001cf2ae}{dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t DRx\+\_\+val)
+\begin{DoxyCompactList}\small\item\em low-\/level code to write buffer to the transmit/receive FIFOs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__spi_8c_ad4c7137772ca9d858b0fecfee1cc30d6}\label{leo__spi_8c_ad4c7137772ca9d858b0fecfee1cc30d6}} 
+void {\bfseries dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx\+\_\+read\+\_\+direct} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\item 
+void \mbox{\hyperlink{leo__spi_8c_a1f7a8520c7a8b9fcef07d658b01008e5}{flash\+\_\+read\+\_\+sts\+\_\+reg}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read flash status register \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_ab0108db36b4e43e32ba4330361093e0a}{leo\+\_\+spi\+\_\+flash\+\_\+write\+\_\+block\+\_\+protect}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, int spi\+\_\+device, uint8\+\_\+t block\+\_\+protect\+\_\+en)
+\begin{DoxyCompactList}\small\item\em low-\/level code to enable/disable the flash write block protection \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_ac5647881f3f50ca5deb9fa445f48f789}{flash\+\_\+check\+\_\+write\+\_\+in\+\_\+prog}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to check flash write in progress bit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a372af0fad59593b4c804444c3661bd14}{flash\+\_\+write\+\_\+enable}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\begin{DoxyCompactList}\small\item\em low-\/level code to enable flash write \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a1e77e453cf060aff1a88b078633365fd}{flash\+\_\+subsector\+\_\+erase}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, int spi\+Device, int protect)
+\begin{DoxyCompactList}\small\item\em low-\/level code to erase flash subsectors (4KB) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__spi_8c_a17b72dc90c38d603b846022138f001d8}\label{leo__spi_8c_a17b72dc90c38d603b846022138f001d8}} 
+void {\bfseries flash\+\_\+block\+\_\+erase} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t addr, int spi\+Device, int protect)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__spi_8c_a89b82f93337b1320d4e718a8133a2fe1}{flash\+\_\+write}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t start\+\_\+addr, size\+\_\+t num\+\_\+words\+\_\+to\+\_\+write, uint32\+\_\+t $\ast$word\+\_\+arr)
+\begin{DoxyCompactList}\small\item\em low-\/level code to write words to flash \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__spi_8c_a4e22bdaeec9afbd43bde4be967e546a8}{flash\+\_\+read}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t start\+\_\+addr, size\+\_\+t num\+\_\+words\+\_\+to\+\_\+read, uint32\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read words from flash \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a555f6d11a9ce124e546ebb876b7d29bf}{leo\+\_\+spi\+\_\+flash\+\_\+bulk\+\_\+erase}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\begin{DoxyCompactList}\small\item\em low-\/level code to erase entire flash chip. The Chip-\/\+Erase instruction clears all bits in the device to ‘\+F’ The Chip-\/\+Erase instruction is ignored if any of the memory area is protected. Prior to any write operation, it is required to execute the \mbox{\hyperlink{leo__spi_8h_a372af0fad59593b4c804444c3661bd14}{flash\+\_\+write\+\_\+enable()}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a987e5a5d3d2d6a395058d764fa224886}{flash\+\_\+read\+\_\+jedec}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read the unique JEDEC ID of the flash chip \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__spi_8c_a7f558eae796949ed9bd0005a722791fa}{read\+\_\+fw\+\_\+version}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em low-\/level code to read the unique version of the FW \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__spi_8c_ad8bac07a3bc6fe9f3405dde69fded111}\label{leo__spi_8c_ad8bac07a3bc6fe9f3405dde69fded111}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries flash\+\_\+verify\+\_\+block\+\_\+crc} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t start\+Addr, size\+\_\+t len\+DWords, uint32\+\_\+t crc)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__spi_8c_acec3a54ac19f3190c1885ea203635be8}{leo\+\_\+spi\+\_\+program\+\_\+flash}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em program Leo SPI with the new flash memory \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__spi_8c_a5c44164a7ef3b87e7eaaaca1a6752725}\label{leo__spi_8c_a5c44164a7ef3b87e7eaaaca1a6752725}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries flash\+\_\+erase\+\_\+range} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, uint32\+\_\+t mem\+\_\+min, uint32\+\_\+t mem\+\_\+max)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a63cd7b2b9ee24c06ca23a0959cbf79db}\label{leo__spi_8c_a63cd7b2b9ee24c06ca23a0959cbf79db}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Spi\+Check\+Compatibility} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint8\+\_\+t $\ast$fw\+Buf)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a8266ac22047a8799fc589217e577089b}\label{leo__spi_8c_a8266ac22047a8799fc589217e577089b}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+\_\+spi\+\_\+update\+\_\+target} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, char $\ast$filename, int target, int verify)
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a2348486f5a15fc86ae72dcd4765003eb}\label{leo__spi_8c_a2348486f5a15fc86ae72dcd4765003eb}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+\_\+spi\+\_\+verify\+\_\+crc} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, char $\ast$filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__spi_8c_a90268c589d521c66f52f2e0055bce2de}\label{leo__spi_8c_a90268c589d521c66f52f2e0055bce2de}} 
+\mbox{\hyperlink{structflash__boot__load__ctrl__info__t}{flash\+\_\+boot\+\_\+load\+\_\+ctrl\+\_\+info\+\_\+t}} {\bfseries g\+\_\+flash\+\_\+boot\+\_\+load\+\_\+ctrl\+\_\+info}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of public functions for the SDK SPI interface. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__spi_8c_a9295236392c024299336aea54004513c}\label{leo__spi_8c_a9295236392c024299336aea54004513c}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_CTRLR0@{dw\_apb\_ssi\_CTRLR0}}
+\index{dw\_apb\_ssi\_CTRLR0@{dw\_apb\_ssi\_CTRLR0}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_CTRLR0()}{dw\_apb\_ssi\_CTRLR0()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+CTRLR0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{CTRLR0\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to control the serial data transfer Cannot write into this register while DW APB SSI is enabled Valid only when DW APB SSI is configured as a master device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em CTRLR0\+\_\+val} & SPI Frame format, Data \& Control Frame Size, transfer mode, Serial Clock Polarity, Serial Clock Phase. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a9a312f0a56397e468f5c7dfecfafcdca}\label{leo__spi_8c_a9a312f0a56397e468f5c7dfecfafcdca}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_CTRLR1@{dw\_apb\_ssi\_CTRLR1}}
+\index{dw\_apb\_ssi\_CTRLR1@{dw\_apb\_ssi\_CTRLR1}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_CTRLR1()}{dw\_apb\_ssi\_CTRLR1()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+CTRLR1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{CTRLR1\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to control the end of serial data transfers when in Rx mode. Cannot write into this register while DW APB SSI is enabled Valid only when DW APB SSI is configured as a master device. The DW\+\_\+apb\+\_\+ssi continues to rx serial data until the number of data frames received is equal to this register value plus 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em CTRLR1\+\_\+val} & Number of data frames in a transfer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_aeccc2948494f122b9815f97d001cf2ae}\label{leo__spi_8c_aeccc2948494f122b9815f97d001cf2ae}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_DRx@{dw\_apb\_ssi\_DRx}}
+\index{dw\_apb\_ssi\_DRx@{dw\_apb\_ssi\_DRx}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_DRx()}{dw\_apb\_ssi\_DRx()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{DRx\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to write buffer to the transmit/receive FIFOs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value to write to the transmit/receive FIFOs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a6b960dbcbe8c5b4eb8c0be518cececef}\label{leo__spi_8c_a6b960dbcbe8c5b4eb8c0be518cececef}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_DRx\_read@{dw\_apb\_ssi\_DRx\_read}}
+\index{dw\_apb\_ssi\_DRx\_read@{dw\_apb\_ssi\_DRx\_read}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_DRx\_read()}{dw\_apb\_ssi\_DRx\_read()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read buffer from the transmit/receive FIFOs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value read from the transmit/receive FIFOs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a5a73f35ef3c22fd0f14bb16e8e89abcc}\label{leo__spi_8c_a5a73f35ef3c22fd0f14bb16e8e89abcc}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_DRx\_read\_16\_dw@{dw\_apb\_ssi\_DRx\_read\_16\_dw}}
+\index{dw\_apb\_ssi\_DRx\_read\_16\_dw@{dw\_apb\_ssi\_DRx\_read\_16\_dw}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_DRx\_read\_16\_dw()}{dw\_apb\_ssi\_DRx\_read\_16\_dw()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+DRx\+\_\+read\+\_\+16\+\_\+dw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read (16b) buffer from the transmit/receive FIFOs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value read (16b) from the transmit/receive FIFOs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a86be803c04c299a120984588c3f1687d}\label{leo__spi_8c_a86be803c04c299a120984588c3f1687d}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_RXFLR@{dw\_apb\_ssi\_RXFLR}}
+\index{dw\_apb\_ssi\_RXFLR@{dw\_apb\_ssi\_RXFLR}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_RXFLR()}{dw\_apb\_ssi\_RXFLR()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+RXFLR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to check Rx FIFO level register read the register to get the number of valid data entries in the Rx FIFO memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & number of valid data entries in the Rx FIFO memory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_abf7b785d49d9ec872c4e155ef6fb38b3}\label{leo__spi_8c_abf7b785d49d9ec872c4e155ef6fb38b3}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_SER@{dw\_apb\_ssi\_SER}}
+\index{dw\_apb\_ssi\_SER@{dw\_apb\_ssi\_SER}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_SER()}{dw\_apb\_ssi\_SER()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+SER (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to select/not select slave device by using the Slave Enable Register in DW APB SSI Valid only when DW APB SSI is configured as a master device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em enable} & 1 means slave is selected, 0 means no slave is selected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a5235ae236a0f3ddd6938092e548429d6}\label{leo__spi_8c_a5235ae236a0f3ddd6938092e548429d6}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_SSIENR@{dw\_apb\_ssi\_SSIENR}}
+\index{dw\_apb\_ssi\_SSIENR@{dw\_apb\_ssi\_SSIENR}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_SSIENR()}{dw\_apb\_ssi\_SSIENR()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+SSIENR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to enable/disable the DW APB SSI 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em enable} & 1 to enable, 0 to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_acdc9617db34e6fad7f78da066eb4632b}\label{leo__spi_8c_acdc9617db34e6fad7f78da066eb4632b}} 
+\index{leo\_spi.c@{leo\_spi.c}!dw\_apb\_ssi\_TXFLR@{dw\_apb\_ssi\_TXFLR}}
+\index{dw\_apb\_ssi\_TXFLR@{dw\_apb\_ssi\_TXFLR}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{dw\_apb\_ssi\_TXFLR()}{dw\_apb\_ssi\_TXFLR()}}
+{\footnotesize\ttfamily void dw\+\_\+apb\+\_\+ssi\+\_\+\+TXFLR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to check Tx FIFO level register read the register to get the number of valid data entries in the Tx FIFO memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & number of valid data entries in the Transmit FIFO memory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_ac5647881f3f50ca5deb9fa445f48f789}\label{leo__spi_8c_ac5647881f3f50ca5deb9fa445f48f789}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_check\_write\_in\_prog@{flash\_check\_write\_in\_prog}}
+\index{flash\_check\_write\_in\_prog@{flash\_check\_write\_in\_prog}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_check\_write\_in\_prog()}{flash\_check\_write\_in\_prog()}}
+{\footnotesize\ttfamily void flash\+\_\+check\+\_\+write\+\_\+in\+\_\+prog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to check flash write in progress bit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value determines if flash write is in progress \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a4e22bdaeec9afbd43bde4be967e546a8}\label{leo__spi_8c_a4e22bdaeec9afbd43bde4be967e546a8}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_read@{flash\_read}}
+\index{flash\_read@{flash\_read}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_read()}{flash\_read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} flash\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{start\+\_\+addr,  }\item[{size\+\_\+t}]{num\+\_\+words\+\_\+to\+\_\+read,  }\item[{uint32\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read words from flash 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em start\+\_\+addr} & start address of the flash to be read \\
+\hline
+{\em num\+\_\+words} & number of words to be read \\
+\hline
+{\em word\+\_\+arr} & pointer to the data to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__spi_8c_a987e5a5d3d2d6a395058d764fa224886}\label{leo__spi_8c_a987e5a5d3d2d6a395058d764fa224886}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_read\_jedec@{flash\_read\_jedec}}
+\index{flash\_read\_jedec@{flash\_read\_jedec}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_read\_jedec()}{flash\_read\_jedec()}}
+{\footnotesize\ttfamily void flash\+\_\+read\+\_\+jedec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read the unique JEDEC ID of the flash chip 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value read (JEDEC ID) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a1f7a8520c7a8b9fcef07d658b01008e5}\label{leo__spi_8c_a1f7a8520c7a8b9fcef07d658b01008e5}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_read\_sts\_reg@{flash\_read\_sts\_reg}}
+\index{flash\_read\_sts\_reg@{flash\_read\_sts\_reg}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_read\_sts\_reg()}{flash\_read\_sts\_reg()}}
+{\footnotesize\ttfamily void flash\+\_\+read\+\_\+sts\+\_\+reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read flash status register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value read from the flash status register \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a1e77e453cf060aff1a88b078633365fd}\label{leo__spi_8c_a1e77e453cf060aff1a88b078633365fd}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_subsector\_erase@{flash\_subsector\_erase}}
+\index{flash\_subsector\_erase@{flash\_subsector\_erase}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_subsector\_erase()}{flash\_subsector\_erase()}}
+{\footnotesize\ttfamily void flash\+\_\+subsector\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int}]{spi\+Device,  }\item[{int}]{protect }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to erase flash subsectors (4KB) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em addr} & address of the flash subsector to be erased \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a89b82f93337b1320d4e718a8133a2fe1}\label{leo__spi_8c_a89b82f93337b1320d4e718a8133a2fe1}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_write@{flash\_write}}
+\index{flash\_write@{flash\_write}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_write()}{flash\_write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} flash\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{start\+\_\+addr,  }\item[{size\+\_\+t}]{num\+\_\+words\+\_\+to\+\_\+write,  }\item[{uint32\+\_\+t $\ast$}]{word\+\_\+arr }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to write words to flash 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em start\+\_\+addr} & start address of the flash to be written \\
+\hline
+{\em num\+\_\+words} & number of words to be written \\
+\hline
+{\em word\+\_\+arr} & pointer to the data to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__spi_8c_a372af0fad59593b4c804444c3661bd14}\label{leo__spi_8c_a372af0fad59593b4c804444c3661bd14}} 
+\index{leo\_spi.c@{leo\_spi.c}!flash\_write\_enable@{flash\_write\_enable}}
+\index{flash\_write\_enable@{flash\_write\_enable}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{flash\_write\_enable()}{flash\_write\_enable()}}
+{\footnotesize\ttfamily void flash\+\_\+write\+\_\+enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to enable flash write 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a555f6d11a9ce124e546ebb876b7d29bf}\label{leo__spi_8c_a555f6d11a9ce124e546ebb876b7d29bf}} 
+\index{leo\_spi.c@{leo\_spi.c}!leo\_spi\_flash\_bulk\_erase@{leo\_spi\_flash\_bulk\_erase}}
+\index{leo\_spi\_flash\_bulk\_erase@{leo\_spi\_flash\_bulk\_erase}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{leo\_spi\_flash\_bulk\_erase()}{leo\_spi\_flash\_bulk\_erase()}}
+{\footnotesize\ttfamily void leo\+\_\+spi\+\_\+flash\+\_\+bulk\+\_\+erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to erase entire flash chip. The Chip-\/\+Erase instruction clears all bits in the device to ‘\+F’ The Chip-\/\+Erase instruction is ignored if any of the memory area is protected. Prior to any write operation, it is required to execute the \mbox{\hyperlink{leo__spi_8h_a372af0fad59593b4c804444c3661bd14}{flash\+\_\+write\+\_\+enable()}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_ab0108db36b4e43e32ba4330361093e0a}\label{leo__spi_8c_ab0108db36b4e43e32ba4330361093e0a}} 
+\index{leo\_spi.c@{leo\_spi.c}!leo\_spi\_flash\_write\_block\_protect@{leo\_spi\_flash\_write\_block\_protect}}
+\index{leo\_spi\_flash\_write\_block\_protect@{leo\_spi\_flash\_write\_block\_protect}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{leo\_spi\_flash\_write\_block\_protect()}{leo\_spi\_flash\_write\_block\_protect()}}
+{\footnotesize\ttfamily void leo\+\_\+spi\+\_\+flash\+\_\+write\+\_\+block\+\_\+protect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{int}]{spi\+\_\+device,  }\item[{uint8\+\_\+t}]{block\+\_\+protect\+\_\+en }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to enable/disable the flash write block protection 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em spi\+\_\+device} & type of spi device -\/ some don\textquotesingle{}t support write block protect command \\
+\hline
+{\em value} & 1 to enable, 0 to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_acec3a54ac19f3190c1885ea203635be8}\label{leo__spi_8c_acec3a54ac19f3190c1885ea203635be8}} 
+\index{leo\_spi.c@{leo\_spi.c}!leo\_spi\_program\_flash@{leo\_spi\_program\_flash}}
+\index{leo\_spi\_program\_flash@{leo\_spi\_program\_flash}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{leo\_spi\_program\_flash()}{leo\_spi\_program\_flash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+\_\+spi\+\_\+program\+\_\+flash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{leo\+Device,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+program Leo SPI with the new flash memory 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em leo\+Device} & pointer to the device \\
+\hline
+\mbox{\texttt{ in}}  & {\em flash\+File\+Name} & filepath name \\
+\hline
+\mbox{\texttt{ in}}  & {\em persistent\+Data\+Buf} & data to be written into persistent data block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__spi_8c_a8af0705d1a24d00713885b205c5d6840}\label{leo__spi_8c_a8af0705d1a24d00713885b205c5d6840}} 
+\index{leo\_spi.c@{leo\_spi.c}!leoSpiInit@{leoSpiInit}}
+\index{leoSpiInit@{leoSpiInit}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{leoSpiInit()}{leoSpiInit()}}
+{\footnotesize\ttfamily void leo\+Spi\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver }\end{DoxyParamCaption})}
+
+
+
+\+: dw apb ssi init 
+
+Low-\/level code to initialize the DW APB. \mbox{\Hypertarget{leo__spi_8c_a7f558eae796949ed9bd0005a722791fa}\label{leo__spi_8c_a7f558eae796949ed9bd0005a722791fa}} 
+\index{leo\_spi.c@{leo\_spi.c}!read\_fw\_version@{read\_fw\_version}}
+\index{read\_fw\_version@{read\_fw\_version}!leo\_spi.c@{leo\_spi.c}}
+\doxysubsubsection{\texorpdfstring{read\_fw\_version()}{read\_fw\_version()}}
+{\footnotesize\ttfamily void read\+\_\+fw\+\_\+version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+low-\/level code to read the unique version of the FW 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leo\+Driver} & pointer to the Leo driver \\
+\hline
+{\em value} & value read (FW version) \\
+\hline
+\end{DoxyParams}

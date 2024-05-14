@@ -1,0 +1,14 @@
+digraph "LeoLinkState"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="LeoLinkState",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Struct defining detailed Link status, including electrical parameters."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" dsppState\nusppState" ];
+  Node2 [label="LeoPseudoPortState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoPseudoPortState.html",tooltip="Struct defining detailed Pseudo Port status, including electrical parameters."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" txState" ];
+  Node3 [label="LeoTxState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoTxState.html",tooltip="Struct defining detailed Transmitter status, including electrical parameters."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" rxState" ];
+  Node4 [label="LeoRxState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoRxState.html",tooltip="Struct defining detailed Receiver status, including electrical parameters."];
+}

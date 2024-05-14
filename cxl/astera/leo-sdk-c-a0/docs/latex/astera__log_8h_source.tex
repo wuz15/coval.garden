@@ -1,0 +1,66 @@
+\hypertarget{astera__log_8h_source}{}\doxysection{astera\+\_\+log.\+h}
+\label{astera__log_8h_source}\index{leo-\/sdk-\/c/include/astera\_log.h@{leo-\/sdk-\/c/include/astera\_log.h}}
+\mbox{\hyperlink{astera__log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LOG\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LOG\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ LOG\_VERSION\ "{}0.2.0"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ void\ (*logLockFn)(\textcolor{keywordtype}{void}\ *udata,\ \textcolor{keywordtype}{int}\ lock);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00036\ \ \ ASTERA\_LOG\_LEVEL\_TRACE,}
+\DoxyCodeLine{00037\ \ \ ASTERA\_LOG\_LEVEL\_DEBUG,}
+\DoxyCodeLine{00038\ \ \ ASTERA\_LOG\_LEVEL\_INFO,}
+\DoxyCodeLine{00039\ \ \ ASTERA\_LOG\_LEVEL\_WARN,}
+\DoxyCodeLine{00040\ \ \ ASTERA\_LOG\_LEVEL\_ERROR,}
+\DoxyCodeLine{00041\ \ \ ASTERA\_LOG\_LEVEL\_FATAL}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ASTERA\_TRACE(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_TRACE,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ASTERA\_DEBUG(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_DEBUG,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ASTERA\_INFO(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_INFO,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ASTERA\_WARN(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_WARN,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ASTERA\_ERROR(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_ERROR,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ASTERA\_FATAL(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ asteraLogMsg(ASTERA\_LOG\_LEVEL\_FATAL,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ asteraLogSetUdata(\textcolor{keywordtype}{void}\ *udata);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ asteraLogSetLock(logLockFn\ fn);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ asteraLogSetFp(FILE\ *fp);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ asteraLogSetLevel(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ asteraLogSetQuiet(\textcolor{keywordtype}{int}\ enable);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ asteraLogMsg(\textcolor{keywordtype}{int}\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file,\ \textcolor{keywordtype}{int}\ line,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ ...);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LOG\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

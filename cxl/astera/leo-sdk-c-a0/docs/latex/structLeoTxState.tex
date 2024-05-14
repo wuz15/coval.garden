@@ -1,0 +1,121 @@
+\hypertarget{structLeoTxState}{}\doxysection{Leo\+Tx\+State Struct Reference}
+\label{structLeoTxState}\index{LeoTxState@{LeoTxState}}
+
+
+Struct defining detailed Transmitter status, including electrical parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a2ed9fb39fbc1f9cd6cbe2230f4e02b1b}{logical\+Lane\+Num}}
+\item 
+char $\ast$ \mbox{\hyperlink{structLeoTxState_a9ed65217e2442da08c48313117b62457}{physical\+Pin\+Name}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a80018057f2e80e14a70abd09ec2ec26e}{elec\+Idle\+Status}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a8af5c4e7b73f7273423b165b97b56090}{de}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a1fe4113260ebae350edae648ee387afe}{pre}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_adbc7a92b936988aa1d21a9b048879781}{cur}}
+\item 
+float \mbox{\hyperlink{structLeoTxState_a2d59ce92ab06e0eda992a7d86acbe3cf}{pst}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_ab3964d5b73fd1cfc94012484e39a6238}{last\+Eq\+Rate}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_aa9c55a1eee73c25ee15a29eb95634689}{last\+Preset\+Req}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a0453751ba6589aa084de98916296fe88}{last\+Pre\+Req}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a9bc2f9885894c6f8a19890f357a6daae}{last\+Cur\+Req}}
+\item 
+int \mbox{\hyperlink{structLeoTxState_a2b82f37e72b3e5c47687b9a53bd58a72}{last\+Pst\+Req}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed Transmitter status, including electrical parameters. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoTxState_adbc7a92b936988aa1d21a9b048879781}\label{structLeoTxState_adbc7a92b936988aa1d21a9b048879781}} 
+\index{LeoTxState@{LeoTxState}!cur@{cur}}
+\index{cur@{cur}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{cur}{cur}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::cur}
+
+Current main-\/cursor value (Gen-\/3 and above) \mbox{\Hypertarget{structLeoTxState_a8af5c4e7b73f7273423b165b97b56090}\label{structLeoTxState_a8af5c4e7b73f7273423b165b97b56090}} 
+\index{LeoTxState@{LeoTxState}!de@{de}}
+\index{de@{de}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{de}{de}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::de}
+
+Current de-\/emphasis value (Gen-\/1/2 and above) \mbox{\Hypertarget{structLeoTxState_a80018057f2e80e14a70abd09ec2ec26e}\label{structLeoTxState_a80018057f2e80e14a70abd09ec2ec26e}} 
+\index{LeoTxState@{LeoTxState}!elecIdleStatus@{elecIdleStatus}}
+\index{elecIdleStatus@{elecIdleStatus}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{elecIdleStatus}{elecIdleStatus}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::elec\+Idle\+Status}
+
+Electrical idle status \mbox{\Hypertarget{structLeoTxState_a9bc2f9885894c6f8a19890f357a6daae}\label{structLeoTxState_a9bc2f9885894c6f8a19890f357a6daae}} 
+\index{LeoTxState@{LeoTxState}!lastCurReq@{lastCurReq}}
+\index{lastCurReq@{lastCurReq}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{lastCurReq}{lastCurReq}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::last\+Cur\+Req}
+
+If final request was a coefficient, this is the cur \mbox{\Hypertarget{structLeoTxState_ab3964d5b73fd1cfc94012484e39a6238}\label{structLeoTxState_ab3964d5b73fd1cfc94012484e39a6238}} 
+\index{LeoTxState@{LeoTxState}!lastEqRate@{lastEqRate}}
+\index{lastEqRate@{lastEqRate}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{lastEqRate}{lastEqRate}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::last\+Eq\+Rate}
+
+Last speed (e.\+g. 4 for Gen4) at which EQ was done \mbox{\Hypertarget{structLeoTxState_a0453751ba6589aa084de98916296fe88}\label{structLeoTxState_a0453751ba6589aa084de98916296fe88}} 
+\index{LeoTxState@{LeoTxState}!lastPreReq@{lastPreReq}}
+\index{lastPreReq@{lastPreReq}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{lastPreReq}{lastPreReq}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::last\+Pre\+Req}
+
+If final request was a coefficient, this is the pre \mbox{\Hypertarget{structLeoTxState_aa9c55a1eee73c25ee15a29eb95634689}\label{structLeoTxState_aa9c55a1eee73c25ee15a29eb95634689}} 
+\index{LeoTxState@{LeoTxState}!lastPresetReq@{lastPresetReq}}
+\index{lastPresetReq@{lastPresetReq}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReq}{lastPresetReq}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::last\+Preset\+Req}
+
+If final request was a preset, this is the value \mbox{\Hypertarget{structLeoTxState_a2b82f37e72b3e5c47687b9a53bd58a72}\label{structLeoTxState_a2b82f37e72b3e5c47687b9a53bd58a72}} 
+\index{LeoTxState@{LeoTxState}!lastPstReq@{lastPstReq}}
+\index{lastPstReq@{lastPstReq}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{lastPstReq}{lastPstReq}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::last\+Pst\+Req}
+
+If final request was a coefficient, this is the pst \mbox{\Hypertarget{structLeoTxState_a2ed9fb39fbc1f9cd6cbe2230f4e02b1b}\label{structLeoTxState_a2ed9fb39fbc1f9cd6cbe2230f4e02b1b}} 
+\index{LeoTxState@{LeoTxState}!logicalLaneNum@{logicalLaneNum}}
+\index{logicalLaneNum@{logicalLaneNum}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{logicalLaneNum}{logicalLaneNum}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::logical\+Lane\+Num}
+
+Captured logical Lane number \mbox{\Hypertarget{structLeoTxState_a9ed65217e2442da08c48313117b62457}\label{structLeoTxState_a9ed65217e2442da08c48313117b62457}} 
+\index{LeoTxState@{LeoTxState}!physicalPinName@{physicalPinName}}
+\index{physicalPinName@{physicalPinName}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{physicalPinName}{physicalPinName}}
+{\footnotesize\ttfamily char$\ast$ Leo\+Tx\+State\+::physical\+Pin\+Name}
+
+Physical pin name \mbox{\Hypertarget{structLeoTxState_a1fe4113260ebae350edae648ee387afe}\label{structLeoTxState_a1fe4113260ebae350edae648ee387afe}} 
+\index{LeoTxState@{LeoTxState}!pre@{pre}}
+\index{pre@{pre}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{pre}{pre}}
+{\footnotesize\ttfamily int Leo\+Tx\+State\+::pre}
+
+Current pre-\/cursor value (Gen-\/3 and above) \mbox{\Hypertarget{structLeoTxState_a2d59ce92ab06e0eda992a7d86acbe3cf}\label{structLeoTxState_a2d59ce92ab06e0eda992a7d86acbe3cf}} 
+\index{LeoTxState@{LeoTxState}!pst@{pst}}
+\index{pst@{pst}!LeoTxState@{LeoTxState}}
+\doxysubsubsection{\texorpdfstring{pst}{pst}}
+{\footnotesize\ttfamily float Leo\+Tx\+State\+::pst}
+
+Current post-\/cursor value (Gen-\/3 and above) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

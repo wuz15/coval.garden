@@ -1,0 +1,247 @@
+\hypertarget{misc_8h}{}\doxysection{leo-\/sdk-\/c/include/misc.h File Reference}
+\label{misc_8h}\index{leo-\/sdk-\/c/include/misc.h@{leo-\/sdk-\/c/include/misc.h}}
+
+
+Header file for miscellaneous defines used in the SDK.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/astera\+\_\+log.\+h\char`\"{}}\newline
+Include dependency graph for misc.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionqword}{qword}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{misc_8h_a3acffbd305ee72dcd4593c0d8af64a4f}\label{misc_8h_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\#define {\bfseries MIN}(a,  b)~(((a) $<$= (b)) ? (a) \+: (b))
+\item 
+\mbox{\Hypertarget{misc_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{misc_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\#define {\bfseries MAX}(a,  b)~(((a) $>$= (b)) ? (a) \+: (b))
+\item 
+\mbox{\Hypertarget{misc_8h_aef8cf19b4a5f6920ffbc13b6d856b135}\label{misc_8h_aef8cf19b4a5f6920ffbc13b6d856b135}} 
+\#define {\bfseries SIZE\+\_\+1K}~(1 $<$$<$ 10)
+\item 
+\mbox{\Hypertarget{misc_8h_afd486e122f5b3569bf8467011c2ff353}\label{misc_8h_afd486e122f5b3569bf8467011c2ff353}} 
+\#define {\bfseries SIZE\+\_\+4K}~(SIZE\+\_\+1K $<$$<$ 2)
+\item 
+\mbox{\Hypertarget{misc_8h_a5787b4e6227d1fe17ac2d7ef17998a24}\label{misc_8h_a5787b4e6227d1fe17ac2d7ef17998a24}} 
+\#define {\bfseries SIZE\+\_\+8K}~(SIZE\+\_\+1K $<$$<$ 3)
+\item 
+\mbox{\Hypertarget{misc_8h_abad13748b98f319878ee5cf4502f1343}\label{misc_8h_abad13748b98f319878ee5cf4502f1343}} 
+\#define {\bfseries SIZE\+\_\+16K}~(SIZE\+\_\+1K $<$$<$ 4)
+\item 
+\mbox{\Hypertarget{misc_8h_a441baa2349dd3ee263f3c7cfad4bdae7}\label{misc_8h_a441baa2349dd3ee263f3c7cfad4bdae7}} 
+\#define {\bfseries SIZE\+\_\+32K}~(SIZE\+\_\+1K $<$$<$ 5)
+\item 
+\mbox{\Hypertarget{misc_8h_a03f521176687712b981e65d129e8f56e}\label{misc_8h_a03f521176687712b981e65d129e8f56e}} 
+\#define {\bfseries SIZE\+\_\+64K}~(SIZE\+\_\+1K $<$$<$ 6)
+\item 
+\mbox{\Hypertarget{misc_8h_a36fe00de8d67df126b96b2c724cbf462}\label{misc_8h_a36fe00de8d67df126b96b2c724cbf462}} 
+\#define {\bfseries GET\+\_\+\+U64\+\_\+\+HIGH}(x)~((x) $>$$>$ 32)
+\item 
+\mbox{\Hypertarget{misc_8h_a884ce53c54ad257b9c74af61c43f750c}\label{misc_8h_a884ce53c54ad257b9c74af61c43f750c}} 
+\#define {\bfseries GET\+\_\+\+U64\+\_\+\+LOW}(x)~((x) \& (0x\+FFFFFFFF))
+\item 
+\mbox{\Hypertarget{misc_8h_ad4d25149f3542a00bf7541890d25901f}\label{misc_8h_ad4d25149f3542a00bf7541890d25901f}} 
+\#define {\bfseries GET\+\_\+\+U32\+\_\+\+HIGH}(x)~(((x) \& (0x\+FFFF0000)) $>$$>$ 16)
+\item 
+\mbox{\Hypertarget{misc_8h_a914a45026374771c8ccd5e8900a47022}\label{misc_8h_a914a45026374771c8ccd5e8900a47022}} 
+\#define {\bfseries GET\+\_\+\+U32\+\_\+\+LOW}(x)~((x) \& (0x\+FFFF))
+\item 
+\mbox{\Hypertarget{misc_8h_a77a11345165e901cdb93ea22411af882}\label{misc_8h_a77a11345165e901cdb93ea22411af882}} 
+\#define {\bfseries GET\+\_\+\+U16\+\_\+\+HIGH}(x)~(((x) \& (0x\+FF00)) $>$$>$ 8)
+\item 
+\mbox{\Hypertarget{misc_8h_a119b6ce141b76259fd413c9c03e43416}\label{misc_8h_a119b6ce141b76259fd413c9c03e43416}} 
+\#define {\bfseries GET\+\_\+\+U16\+\_\+\+LOW}(x)~((x) \& (0x\+FF))
+\item 
+\mbox{\Hypertarget{misc_8h_ab63b2993e1bb423cee1c21528682d013}\label{misc_8h_ab63b2993e1bb423cee1c21528682d013}} 
+\#define {\bfseries GET\+\_\+\+U8\+\_\+\+HIGH}(x)~(((x) \& (0x\+F0)) $>$$>$ 4)
+\item 
+\mbox{\Hypertarget{misc_8h_aadb2e66a959fd25c7a5320b18dbb60e6}\label{misc_8h_aadb2e66a959fd25c7a5320b18dbb60e6}} 
+\#define {\bfseries GET\+\_\+\+U8\+\_\+\+LOW}(x)~((x) \& (0xF))
+\item 
+\mbox{\Hypertarget{misc_8h_a816d1f39f9407dfc6ef0209b16e6ce18}\label{misc_8h_a816d1f39f9407dfc6ef0209b16e6ce18}} 
+\#define {\bfseries SWAP\+\_\+\+U16}(x)~((((x) $<$$<$ 8) \& 0x\+FF00) $\vert$ (((x) $>$$>$ 8) \& 0x\+FF))
+\item 
+\mbox{\Hypertarget{misc_8h_a59bbcd62be6c3ef9375aecfd1f7b324d}\label{misc_8h_a59bbcd62be6c3ef9375aecfd1f7b324d}} 
+\#define {\bfseries SWAP\+\_\+\+U32}(x)~  ((SWAP\+\_\+\+U16((x \& 0x\+FFFF)) $<$$<$ 16) $\vert$ SWAP\+\_\+\+U16(((x $>$$>$ 16) \& 0x\+FFFF)))
+\item 
+\mbox{\Hypertarget{misc_8h_a0f6978a1736dd4223d11104b8fc5c1f1}\label{misc_8h_a0f6978a1736dd4223d11104b8fc5c1f1}} 
+\#define {\bfseries DWORD\+\_\+\+OFFSET}(x)~((x) $>$$>$ 2)
+\item 
+\mbox{\Hypertarget{misc_8h_aaf0fd89f320cec7aa9406e03f6cfadbc}\label{misc_8h_aaf0fd89f320cec7aa9406e03f6cfadbc}} 
+\#define {\bfseries DWORD\+\_\+\+SIZE}(x)~((x) $>$$>$ 2)
+\item 
+\mbox{\Hypertarget{misc_8h_ac5efc4e08f7bd2fe5793a8d376e0fc57}\label{misc_8h_ac5efc4e08f7bd2fe5793a8d376e0fc57}} 
+\#define {\bfseries BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+WORD\+\_\+\+SIZE\+\_\+\+BITS\+\_\+\+SHIFT}~(5)
+\item 
+\mbox{\Hypertarget{misc_8h_a6f267c93d039828431c415192ca162a4}\label{misc_8h_a6f267c93d039828431c415192ca162a4}} 
+\#define {\bfseries BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+WORD\+\_\+\+SIZE\+\_\+\+BYTE\+\_\+\+SHIFT}~(2)
+\item 
+\mbox{\Hypertarget{misc_8h_a6edea37e896eb75973c3ecfa793cf745}\label{misc_8h_a6edea37e896eb75973c3ecfa793cf745}} 
+\#define {\bfseries BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+CHAR\+\_\+\+SIZE\+\_\+\+BITS\+\_\+\+SHIFT}~(3)
+\item 
+\#define \mbox{\hyperlink{misc_8h_a5a13ab655864fccd238602b218721202}{BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+WORDS}}(x)
+\item 
+\#define \mbox{\hyperlink{misc_8h_abd9a1221f68d0b7e38a6c0d0728a7441}{BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+BYTES}}(x)
+\item 
+\#define \mbox{\hyperlink{misc_8h_ac7c09b332c46ce5ec1ec1fc8487b4951}{BITMAP\+\_\+\+CHAR\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+BYTES}}(x)
+\item 
+\mbox{\Hypertarget{misc_8h_a76117585e8ddc62f21ca0e3061b7830e}\label{misc_8h_a76117585e8ddc62f21ca0e3061b7830e}} 
+\#define {\bfseries RET\+\_\+\+OK}~0
+\item 
+\mbox{\Hypertarget{misc_8h_a4f69e20d47a891d9823e64be8b537f7a}\label{misc_8h_a4f69e20d47a891d9823e64be8b537f7a}} 
+\#define {\bfseries RET\+\_\+\+FAIL}~1
+\item 
+\mbox{\Hypertarget{misc_8h_ae6d8e9b679a9085676b6d61942c1e532}\label{misc_8h_ae6d8e9b679a9085676b6d61942c1e532}} 
+\#define {\bfseries UNUSED\+\_\+\+FUNC\+\_\+\+ARG}(X)~(void)X
+\begin{DoxyCompactList}\small\item\em Macro to supress unferenced function argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{misc_8h_aa86d8daebae32ab2798d5287b29eb261}\label{misc_8h_aa86d8daebae32ab2798d5287b29eb261}} 
+\#define {\bfseries FW\+\_\+\+NONE}~0x0
+\item 
+\mbox{\Hypertarget{misc_8h_a92c7e7557c3efc2699111b1544493733}\label{misc_8h_a92c7e7557c3efc2699111b1544493733}} 
+\#define {\bfseries FW\+\_\+\+LOW}~0x1
+\item 
+\mbox{\Hypertarget{misc_8h_afacd0ea0efcbf4ef1b0afeb64a37d1d8}\label{misc_8h_afacd0ea0efcbf4ef1b0afeb64a37d1d8}} 
+\#define {\bfseries FW\+\_\+\+MEDIUM}~0x2
+\item 
+\mbox{\Hypertarget{misc_8h_a6a5a617aec0f265b790b2b84dd3489f1}\label{misc_8h_a6a5a617aec0f265b790b2b84dd3489f1}} 
+\#define {\bfseries FW\+\_\+\+HIGH}~0x3
+\item 
+\mbox{\Hypertarget{misc_8h_a900c629c562968a33daf54ecf411db8b}\label{misc_8h_a900c629c562968a33daf54ecf411db8b}} 
+\#define {\bfseries FW\+\_\+\+VERBOSITY}~FW\+\_\+\+NONE
+\item 
+\mbox{\Hypertarget{misc_8h_a1c3cc8ca17adb4ff4bbcf9f460de92d3}\label{misc_8h_a1c3cc8ca17adb4ff4bbcf9f460de92d3}} 
+\#define {\bfseries al\+\_\+print\+\_\+high}(...)
+\item 
+\mbox{\Hypertarget{misc_8h_aa4cc15eadb1d1f5df4a51599e0bdc897}\label{misc_8h_aa4cc15eadb1d1f5df4a51599e0bdc897}} 
+\#define {\bfseries al\+\_\+print\+\_\+medium}(...)
+\item 
+\mbox{\Hypertarget{misc_8h_a94e088e492ed36502a9fc4839654f9ae}\label{misc_8h_a94e088e492ed36502a9fc4839654f9ae}} 
+\#define {\bfseries al\+\_\+print\+\_\+low}(...)
+\item 
+\mbox{\Hypertarget{misc_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{misc_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\#define {\bfseries TRUE}~1
+\item 
+\mbox{\Hypertarget{misc_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{misc_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\#define {\bfseries FALSE}~0
+\item 
+\mbox{\Hypertarget{misc_8h_a514ad415fb6125ba296793df7d1a468a}\label{misc_8h_a514ad415fb6125ba296793df7d1a468a}} 
+\#define {\bfseries ENABLE}~1
+\item 
+\mbox{\Hypertarget{misc_8h_a99496f7308834e8b220f7894efa0b6ab}\label{misc_8h_a99496f7308834e8b220f7894efa0b6ab}} 
+\#define {\bfseries DISABLE}~0
+\item 
+\mbox{\Hypertarget{misc_8h_aee5a830eb8550c1a48c6c94a9c84200e}\label{misc_8h_aee5a830eb8550c1a48c6c94a9c84200e}} 
+\#define {\bfseries MSK\+\_\+\+BIT0}~0x01
+\item 
+\mbox{\Hypertarget{misc_8h_a0ef439a83b793037dbfe30000a9580a6}\label{misc_8h_a0ef439a83b793037dbfe30000a9580a6}} 
+\#define {\bfseries MSK\+\_\+\+BIT1}~0x02
+\item 
+\mbox{\Hypertarget{misc_8h_aeebb56831b5bf0f203773c7304231aaf}\label{misc_8h_aeebb56831b5bf0f203773c7304231aaf}} 
+\#define {\bfseries MSK\+\_\+\+BIT2}~0x04
+\item 
+\mbox{\Hypertarget{misc_8h_acbb4475828be9ec9780ad4280201c815}\label{misc_8h_acbb4475828be9ec9780ad4280201c815}} 
+\#define {\bfseries MSK\+\_\+\+BIT3}~0x08
+\item 
+\mbox{\Hypertarget{misc_8h_a933028e5161f39c7ec24fdc5ac145b0c}\label{misc_8h_a933028e5161f39c7ec24fdc5ac145b0c}} 
+\#define {\bfseries MSK\+\_\+\+BIT4}~0x10
+\item 
+\mbox{\Hypertarget{misc_8h_a405e38849e453fcea00286fc59afeac8}\label{misc_8h_a405e38849e453fcea00286fc59afeac8}} 
+\#define {\bfseries MSK\+\_\+\+BIT5}~0x20
+\item 
+\mbox{\Hypertarget{misc_8h_a21cb892f5b7e76573c37921fa3f6a142}\label{misc_8h_a21cb892f5b7e76573c37921fa3f6a142}} 
+\#define {\bfseries MSK\+\_\+\+BIT6}~0x40
+\item 
+\mbox{\Hypertarget{misc_8h_a4bd338ddb81d6d390a33a6aaf1f80209}\label{misc_8h_a4bd338ddb81d6d390a33a6aaf1f80209}} 
+\#define {\bfseries MSK\+\_\+\+BIT7}~0x80
+\item 
+\mbox{\Hypertarget{misc_8h_a749794776aee3b2b2fa87585db2381d8}\label{misc_8h_a749794776aee3b2b2fa87585db2381d8}} 
+\#define {\bfseries LANE0}~0x0
+\item 
+\mbox{\Hypertarget{misc_8h_a04376f926400994a5fe91c21b7af6781}\label{misc_8h_a04376f926400994a5fe91c21b7af6781}} 
+\#define {\bfseries LANE1}~0x1
+\item 
+\mbox{\Hypertarget{misc_8h_a81ea4b8f9c0b198519a180950def95b4}\label{misc_8h_a81ea4b8f9c0b198519a180950def95b4}} 
+\#define {\bfseries LANEX}~0xF
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{misc_8h_a669942a0b8e3f2c65007984d49b703ad}\label{misc_8h_a669942a0b8e3f2c65007984d49b703ad}} 
+typedef union \mbox{\hyperlink{unionqword}{qword}} {\bfseries qword\+\_\+t}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{misc_8h_aae3624cff005ca823ad1a0c7934168af}{p\+\_\+generic\+\_\+scheduler}}) (void $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Generic scheduler function prototype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for miscellaneous defines used in the SDK. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{misc_8h_ac7c09b332c46ce5ec1ec1fc8487b4951}\label{misc_8h_ac7c09b332c46ce5ec1ec1fc8487b4951}} 
+\index{misc.h@{misc.h}!BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES@{BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES}}
+\index{BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES@{BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES}!misc.h@{misc.h}}
+\doxysubsubsection{\texorpdfstring{BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES}{BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES}}
+{\footnotesize\ttfamily \#define BITMAP\+\_\+\+CHAR\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+BYTES(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_CHAR\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (BITMAP\_WORD\_ARRAY\_CHAR\_SIZE\_BITS\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{misc_8h_abd9a1221f68d0b7e38a6c0d0728a7441}\label{misc_8h_abd9a1221f68d0b7e38a6c0d0728a7441}} 
+\index{misc.h@{misc.h}!BITMAP\_WORD\_ARRAY\_SIZE\_BYTES@{BITMAP\_WORD\_ARRAY\_SIZE\_BYTES}}
+\index{BITMAP\_WORD\_ARRAY\_SIZE\_BYTES@{BITMAP\_WORD\_ARRAY\_SIZE\_BYTES}!misc.h@{misc.h}}
+\doxysubsubsection{\texorpdfstring{BITMAP\_WORD\_ARRAY\_SIZE\_BYTES}{BITMAP\_WORD\_ARRAY\_SIZE\_BYTES}}
+{\footnotesize\ttfamily \#define BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+BYTES(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ (BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BYTE\_SHIFT)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{misc_8h_a5a13ab655864fccd238602b218721202}\label{misc_8h_a5a13ab655864fccd238602b218721202}} 
+\index{misc.h@{misc.h}!BITMAP\_WORD\_ARRAY\_SIZE\_WORDS@{BITMAP\_WORD\_ARRAY\_SIZE\_WORDS}}
+\index{BITMAP\_WORD\_ARRAY\_SIZE\_WORDS@{BITMAP\_WORD\_ARRAY\_SIZE\_WORDS}!misc.h@{misc.h}}
+\doxysubsubsection{\texorpdfstring{BITMAP\_WORD\_ARRAY\_SIZE\_WORDS}{BITMAP\_WORD\_ARRAY\_SIZE\_WORDS}}
+{\footnotesize\ttfamily \#define BITMAP\+\_\+\+WORD\+\_\+\+ARRAY\+\_\+\+SIZE\+\_\+\+WORDS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{misc_8h_aae3624cff005ca823ad1a0c7934168af}\label{misc_8h_aae3624cff005ca823ad1a0c7934168af}} 
+\index{misc.h@{misc.h}!p\_generic\_scheduler@{p\_generic\_scheduler}}
+\index{p\_generic\_scheduler@{p\_generic\_scheduler}!misc.h@{misc.h}}
+\doxysubsubsection{\texorpdfstring{p\_generic\_scheduler}{p\_generic\_scheduler}}
+{\footnotesize\ttfamily typedef void($\ast$ p\+\_\+generic\+\_\+scheduler) (void $\ast$ctx)}
+
+
+
+Generic scheduler function prototype. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctx} & -\/ context to be passed to the scheduler \\
+\hline
+\end{DoxyParams}

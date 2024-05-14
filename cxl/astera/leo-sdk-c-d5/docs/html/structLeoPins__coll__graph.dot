@@ -1,0 +1,10 @@
+digraph "LeoPins"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="LeoPins",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Struct defining one set of pseudo port pins for a give lane."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" pinSet1\npinSet2" ];
+  Node2 [label="LeoPseudoPortPins",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoPseudoPortPins.html",tooltip="Struct defining pesudo port physical info."];
+}

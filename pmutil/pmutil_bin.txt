@@ -1,0 +1,3 @@
+Version 2.53
+Added Platform Power inside power dump interface per socket level
+Developed a API for calculating tpmi read latency

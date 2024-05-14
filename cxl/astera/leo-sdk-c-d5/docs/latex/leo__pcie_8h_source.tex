@@ -1,0 +1,79 @@
+\hypertarget{leo__pcie_8h_source}{}\doxysection{leo\+\_\+pcie.\+h}
+\label{leo__pcie_8h_source}\index{leo-\/sdk-\/c/include/leo\_pcie.h@{leo-\/sdk-\/c/include/leo\_pcie.h}}
+\mbox{\hyperlink{leo__pcie_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_PCIE\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_PCIE\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}../include/misc.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{astera__log_8h}{astera\_log.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__api__types_8h}{leo\_api\_types.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__connection_8h}{leo\_connection.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__error_8h}{leo\_error.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__globals_8h}{leo\_globals.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <errno.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <fcntl.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <sys/mman.h>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <termios.h>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CHECK\_SUCCESS(rc)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ if\ (rc\ !=\ LEO\_SUCCESS)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ ASTERA\_ERROR("{}Unexpected\ return\ code:\ \%d"{}},\ rc);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ return\ rc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00055\ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ container\_of(ptr,\ type,\ member)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ ((type\ *)((char\ *)(ptr)-\/offsetof(type,\ member)))}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ PRINT\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ fprintf(stderr,\ "{}Error\ at\ line\ \%d,\ file\ \%s\ (\%d)\ [\%s]\(\backslash\)n"{}},\ \_\_LINE\_\_,\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_FILE\_\_,\ errno,\ strerror(errno));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00065\ \ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00066\ \ \ \}\ while\ (0)}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__pcie_8h_a1cd1b39686751b3bfa1d8ab756c16357}{leoWriteWordPcie}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *barfile,\ off\_t\ baroff,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ writeval);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00091\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__pcie_8h_a7a97930b948dacb0c14a7cadca3f18f1}{leoReadWordPcie}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *barfile,\ off\_t\ baroff,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *value);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_PCIE\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

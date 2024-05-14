@@ -1,0 +1,130 @@
+\hypertarget{leo__scrb_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+scrb.c File Reference}
+\label{leo__scrb_8c}\index{leo-\/sdk-\/c/source/leo\_scrb.c@{leo-\/sdk-\/c/source/leo\_scrb.c}}
+
+
+Implementation of Leo memory scrubbing APIs.  
+
+
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+scrb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/misc.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+scrb.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{leo__scrb_8c_ad8a9fd8dcd36f716fcee26ddad0345cd}{config\+Bkgrd\+Scrb}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t bkgrd\+\_\+scrb\+\_\+en, uint64\+\_\+t bkgrd\+\_\+dpa\+\_\+end\+\_\+addr, uint32\+\_\+t bkgrd\+\_\+round\+\_\+interval, uint32\+\_\+t bkgrd\+\_\+cmd\+\_\+interval, uint32\+\_\+t bkgrd\+\_\+wrpoison\+\_\+if\+\_\+uncorr\+\_\+err)
+\begin{DoxyCompactList}\small\item\em low level implementation of Configure background scrub \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__scrb_8c_adbf9c96e857bf35f6340e6b020d228ee}{config\+Req\+Scrb}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t req\+\_\+scrb\+\_\+en, uint64\+\_\+t req\+\_\+scrb\+\_\+dpa\+\_\+start\+\_\+addr, uint64\+\_\+t req\+\_\+scrb\+\_\+dpa\+\_\+end\+\_\+addr, uint32\+\_\+t req\+\_\+scrb\+\_\+cmd\+\_\+interval)
+\begin{DoxyCompactList}\small\item\em low level implementation of Configure Request scrub \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__scrb_8c_aae315556826d9bd5dffe7cdd89d95827}{wait4\+Req\+Scrb\+Done}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver)
+\begin{DoxyCompactList}\small\item\em low level implementation of wait for request scrub done signal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__scrb_8c_a8b69de8d0fdd63f9578343253b1cb221}{read\+Scrb\+Status}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em low level implementation to read status of scrubbing activity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__scrb_8c_ab5e88a80f5f4f8bc2321dc2e6bd8aabf}{config\+On\+Demand\+Scrb}} (\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$leo\+Driver, uint32\+\_\+t on\+Demand\+\_\+scrb\+\_\+en, uint32\+\_\+t wrpoison\+\_\+if\+\_\+uncorr\+\_\+err)
+\begin{DoxyCompactList}\small\item\em low level implementation of On\+Demand Scrub configuration \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Leo memory scrubbing APIs. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__scrb_8c_ad8a9fd8dcd36f716fcee26ddad0345cd}\label{leo__scrb_8c_ad8a9fd8dcd36f716fcee26ddad0345cd}} 
+\index{leo\_scrb.c@{leo\_scrb.c}!configBkgrdScrb@{configBkgrdScrb}}
+\index{configBkgrdScrb@{configBkgrdScrb}!leo\_scrb.c@{leo\_scrb.c}}
+\doxysubsubsection{\texorpdfstring{configBkgrdScrb()}{configBkgrdScrb()}}
+{\footnotesize\ttfamily void config\+Bkgrd\+Scrb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{Leo\+I2\+CDriver,  }\item[{uint32\+\_\+t}]{bkgrd\+\_\+scrb\+\_\+en,  }\item[{uint64\+\_\+t}]{bkgrd\+\_\+dpa\+\_\+end\+\_\+addr,  }\item[{uint32\+\_\+t}]{bkgrd\+\_\+round\+\_\+interval,  }\item[{uint32\+\_\+t}]{bkgrd\+\_\+cmd\+\_\+interval,  }\item[{uint32\+\_\+t}]{bkgrd\+\_\+wrpoison\+\_\+if\+\_\+uncorr\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+low level implementation of Configure background scrub 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{structLeoI2CDriver}{Leo\+I2\+CDriver}}} & I2C device driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em bkgrd\+\_\+scrb\+\_\+en} & 1 or 0 -\/ wheter to enable/disable background scrub \\
+\hline
+\mbox{\texttt{ in}}  & {\em bkgrd\+\_\+dpa\+\_\+end\+\_\+addr} & size of total memory capacity (End of dpa address for background scrub) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bkgrd\+\_\+round\+\_\+interval} & This is the interval in seconds between two consecutive rounds of scrubbing rounds (default = 12 hrs) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bkgrd\+\_\+cmd\+\_\+interval} & Number of cycles between two consecutive scrubbing commands (default 1024 cycles) \\
+\hline
+\mbox{\texttt{ in}}  & {\em bkgrd\+\_\+wrpoison\+\_\+if\+\_\+uncorr\+\_\+err} & Poison DDR Cache line if uncorrectable error is detected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__scrb_8c_ab5e88a80f5f4f8bc2321dc2e6bd8aabf}\label{leo__scrb_8c_ab5e88a80f5f4f8bc2321dc2e6bd8aabf}} 
+\index{leo\_scrb.c@{leo\_scrb.c}!configOnDemandScrb@{configOnDemandScrb}}
+\index{configOnDemandScrb@{configOnDemandScrb}!leo\_scrb.c@{leo\_scrb.c}}
+\doxysubsubsection{\texorpdfstring{configOnDemandScrb()}{configOnDemandScrb()}}
+{\footnotesize\ttfamily void config\+On\+Demand\+Scrb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver,  }\item[{uint32\+\_\+t}]{on\+Demand\+\_\+scrb\+\_\+en,  }\item[{uint32\+\_\+t}]{wrpoison\+\_\+if\+\_\+uncorr\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+low level implementation of On\+Demand Scrub configuration 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Driver} & I2C device driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em on\+Demand\+\_\+scrb\+\_\+en} & 1 or 0 -\/ On\+Demand Scrub enable/disable \\
+\hline
+\mbox{\texttt{ in}}  & {\em wrpoison\+\_\+if\+\_\+uncorr\+\_\+err} & Poison DDR Cache line if uncorrectable error is detected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__scrb_8c_adbf9c96e857bf35f6340e6b020d228ee}\label{leo__scrb_8c_adbf9c96e857bf35f6340e6b020d228ee}} 
+\index{leo\_scrb.c@{leo\_scrb.c}!configReqScrb@{configReqScrb}}
+\index{configReqScrb@{configReqScrb}!leo\_scrb.c@{leo\_scrb.c}}
+\doxysubsubsection{\texorpdfstring{configReqScrb()}{configReqScrb()}}
+{\footnotesize\ttfamily void config\+Req\+Scrb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{Leo\+I2\+CDriver,  }\item[{uint32\+\_\+t}]{req\+\_\+scrb\+\_\+en,  }\item[{uint64\+\_\+t}]{req\+\_\+scrb\+\_\+dpa\+\_\+start\+\_\+addr,  }\item[{uint64\+\_\+t}]{req\+\_\+scrb\+\_\+dpa\+\_\+end\+\_\+addr,  }\item[{uint32\+\_\+t}]{req\+\_\+scrb\+\_\+cmd\+\_\+interval }\end{DoxyParamCaption})}
+
+
+
+low level implementation of Configure Request scrub 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \mbox{\hyperlink{structLeoI2CDriver}{Leo\+I2\+CDriver}}} & I2C device driver \\
+\hline
+\mbox{\texttt{ in}}  & {\em req\+\_\+scrb\+\_\+en} & 1 or 0 -\/ Request Scrub enable/disable \\
+\hline
+\mbox{\texttt{ in}}  & {\em req\+\_\+scrb\+\_\+dpa\+\_\+start\+\_\+addr} & start of address to start req scrub \\
+\hline
+\mbox{\texttt{ in}}  & {\em req\+\_\+scrb\+\_\+dpa\+\_\+end\+\_\+addr} & (End of address for request scrub) \\
+\hline
+\mbox{\texttt{ in}}  & {\em req\+\_\+scrb\+\_\+cmd\+\_\+interval} & command interval \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__scrb_8c_a8b69de8d0fdd63f9578343253b1cb221}\label{leo__scrb_8c_a8b69de8d0fdd63f9578343253b1cb221}} 
+\index{leo\_scrb.c@{leo\_scrb.c}!readScrbStatus@{readScrbStatus}}
+\index{readScrbStatus@{readScrbStatus}!leo\_scrb.c@{leo\_scrb.c}}
+\doxysubsubsection{\texorpdfstring{readScrbStatus()}{readScrbStatus()}}
+{\footnotesize\ttfamily void read\+Scrb\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+low level implementation to read status of scrubbing activity. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__scrb_8c_aae315556826d9bd5dffe7cdd89d95827}\label{leo__scrb_8c_aae315556826d9bd5dffe7cdd89d95827}} 
+\index{leo\_scrb.c@{leo\_scrb.c}!wait4ReqScrbDone@{wait4ReqScrbDone}}
+\index{wait4ReqScrbDone@{wait4ReqScrbDone}!leo\_scrb.c@{leo\_scrb.c}}
+\doxysubsubsection{\texorpdfstring{wait4ReqScrbDone()}{wait4ReqScrbDone()}}
+{\footnotesize\ttfamily void wait4\+Req\+Scrb\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$}]{leo\+Driver }\end{DoxyParamCaption})}
+
+
+
+low level implementation of wait for request scrub done signal 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Driver} & Leo I2C device driver \\
+\hline
+\end{DoxyParams}

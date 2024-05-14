@@ -1,0 +1,91 @@
+
+This is the specification for PTU and pcstate software package.
+
+Both PTU application and pcstate driver need to be built and run on Linux kernel version 4.0.0 or later.
+
+PTU application expects two drivers: ptusys.ko and pcstateMwaitLKM.ko
+
+PTU application and pcstate driver have been built and run in the following Linux kernels:
+
+Fedora	5.6.6-300.fc32.x86_64	 SPR
+Fedora	5.11.19-100.fc32.x86_64  CLX
+Redhat	4.1.8			 ICX
+
+pcstate driver and application now support a total of 512 CPU cores.
+
+Even though PTU can be run regardless of hyperthread mode, pcstate mode needs hyperthread to be disable.
+PTU needs "root" mode to run.
+
+=========================
+How to build pcstate driver:
+=========================
+Go to pcstate driver directory: server/linux/driver/pcstate/
+Type "make clean", then "make"
+
+========================
+How to load pcstate driver:
+========================
+Go to pcstate driver directory: server/linux/driver/pcstate/
+We need to be "root" to load Linux device driver.
+Type "insmod pcstateMwaitLKM.ko"
+
+==================================
+How to build PTU_pcstate application:
+==================================
+PTU_pcstate image "ptu" is pre-built.
+
+================================
+How to run PTU_pcstate application:
+================================
+Go to directory which has "ptu" executable image.
+Type "./ptu" followed by arguments.
+Type "./ptu -h" for a list of arguments.
+
+===================
+pcstate driver inputs:
+===================
+One needs to write a structure into Linux filesystem:  /proc/pcstate_module/cstate_command
+
+The structure includes:
+	char type					restricts to DEBUG_C to execute c-state command
+	uint32_t coreMaskArray [MAX_CORES/32]		A bit mask array where each bit specifies one core
+	uint8_t state					c-state to execute, must be between 0 and 12
+	uint32_t time					Non-zero interval less than 15,000,0000 micro-seconds.
+
+========================
+pcstate application inputs:
+========================
+
+To activate pcstate mode, -cst argument is needed.
+-cst will make the default values for each of these options.
+	required arguments:
+	-mon			with no argument
+	-moncpu			has no default value
+	-moncore		has no default value
+		Under pcstate mode, moncpu and moncore support bitmask greater than 64 bits.
+		Thus it is an array of 64 bits. This array can hold MAX_CORES bits.
+		MAX_CORES now support 512 cores in both driver and application.
+
+		Both moncpu and moncore can accept inputs as:
+			(1) a long hex number of bit mask.
+			(2) a list of core numbers or core ranges separate with commas.
+
+	optional arguments to override defaults:
+	-cstatenum		can be overriden the default value of 0			MAX value=12
+	-cstatetime		can be overriden the default value of 3,000,0000	MAX value=15,000,000
+	-cstaterepeat		can be overriden the default value of 5			MAX value=100, 0 to run forever.
+
+-cst can also runs with argument -test where all values must be specified:
+	"cstate:package_list:core_list:time:repeat" where
+
+	cstate 		is specified with csXXX, where XXX is c-state number to execute.
+	package_list	is specified with pXXX, where XXX is a list of package numbers.
+		package numbers can be specified as numbers or range of numbers separated with commas.
+	core_list 	is specified with cXXX, where XXX is a list of core numbers.
+		core numbers can be specified as numbers or range of numbers separated with commas.
+	time		is specified with a decimal number of micro-seconds.
+	repeat		is specified with a decimal number.
+
+
+
+

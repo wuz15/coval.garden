@@ -1,0 +1,66 @@
+\hypertarget{leo__err__inject_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+err\+\_\+inject.c File Reference}
+\label{leo__err__inject_8c}\index{leo-\/sdk-\/c/source/leo\_err\_inject.c@{leo-\/sdk-\/c/source/leo\_err\_inject.c}}
+
+
+Implementation of public functions for the SDK err inject interface.  
+
+
+{\ttfamily \#include \char`\"{}../include/hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+err\+\_\+inject.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/misc.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+err\+\_\+inject.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__err__inject_8c_a9ceeb39c2f79dca0ce582903e667e3d3}{leo\+Inject\+Error}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint64\+\_\+t start\+Addr, uint32\+\_\+t err\+Type, uint32\+\_\+t enable)
+\begin{DoxyCompactList}\small\item\em Leo set or clear Error Inject. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__err__inject_8c_a7c9abde124e5baef39bf28333a3accc7}{leo\+Inject\+Viral}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Leo Inject Viral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of public functions for the SDK err inject interface. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__err__inject_8c_a9ceeb39c2f79dca0ce582903e667e3d3}\label{leo__err__inject_8c_a9ceeb39c2f79dca0ce582903e667e3d3}} 
+\index{leo\_err\_inject.c@{leo\_err\_inject.c}!leoInjectError@{leoInjectError}}
+\index{leoInjectError@{leoInjectError}!leo\_err\_inject.c@{leo\_err\_inject.c}}
+\doxysubsubsection{\texorpdfstring{leoInjectError()}{leoInjectError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Inject\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint64\+\_\+t}]{start\+Addr,  }\item[{uint32\+\_\+t}]{err\+Type,  }\item[{uint32\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+Leo set or clear Error Inject. 
+
+Leo Set the capability for errory inejction in DDR modules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em 1} & I2C device handle \\
+\hline
+{\em 2} & Error inject start address \\
+\hline
+{\em 3} & Error type CE or UE 1-\/ Uncorrectable error \\
+\hline
+{\em 4} & Enable or disable error injection, 1 -\/ Enable Returns Leo\+Error\+Type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__err__inject_8c_a7c9abde124e5baef39bf28333a3accc7}\label{leo__err__inject_8c_a7c9abde124e5baef39bf28333a3accc7}} 
+\index{leo\_err\_inject.c@{leo\_err\_inject.c}!leoInjectViral@{leoInjectViral}}
+\index{leoInjectViral@{leoInjectViral}!leo\_err\_inject.c@{leo\_err\_inject.c}}
+\doxysubsubsection{\texorpdfstring{leoInjectViral()}{leoInjectViral()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Inject\+Viral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Leo Inject Viral. 
+
+Enables and injects viral in Leo 
+\begin{DoxyParams}{Parameters}
+{\em 1} & I2C device handle Returns Leo\+Error\+Type \\
+\hline
+\end{DoxyParams}

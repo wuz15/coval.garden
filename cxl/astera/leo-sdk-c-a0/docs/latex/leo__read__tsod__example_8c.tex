@@ -1,0 +1,58 @@
+\hypertarget{leo__read__tsod__example_8c}{}\doxysection{leo-\/sdk-\/c/examples/leo\+\_\+read\+\_\+tsod\+\_\+example.c File Reference}
+\label{leo__read__tsod__example_8c}\index{leo-\/sdk-\/c/examples/leo\_read\_tsod\_example.c@{leo-\/sdk-\/c/examples/leo\_read\_tsod\_example.c}}
+
+
+Read DIMM TSOD data.  
+
+
+{\ttfamily \#include \char`\"{}../include/hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/board.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for leo\+\_\+read\+\_\+tsod\+\_\+example.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{leo__read__tsod__example_8c_ad2c7eb204fb9616fd266b5d65051e50c}{LEO\+\_\+\+BW\+\_\+\+THROTTLE\+\_\+10}}~2
+\item 
+\mbox{\Hypertarget{leo__read__tsod__example_8c_ad7645da82027819e849cced62ad65f3f}\label{leo__read__tsod__example_8c_ad7645da82027819e849cced62ad65f3f}} 
+\#define {\bfseries LEO\+\_\+\+BW\+\_\+\+THROTTLE\+\_\+25}~4
+\item 
+\mbox{\Hypertarget{leo__read__tsod__example_8c_af04e34c3f718f4dd5543e65a5cb2f3e0}\label{leo__read__tsod__example_8c_af04e34c3f718f4dd5543e65a5cb2f3e0}} 
+\#define {\bfseries LEO\+\_\+\+BW\+\_\+\+THROTTLE\+\_\+50}~10
+\item 
+\mbox{\Hypertarget{leo__read__tsod__example_8c_a9b3e962803e59d2d55279d634b754ac4}\label{leo__read__tsod__example_8c_a9b3e962803e59d2d55279d634b754ac4}} 
+\#define {\bfseries LEO\+\_\+\+BW\+\_\+\+THROTTLE\+\_\+75}~12
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__read__tsod__example_8c_ad530dd113a2497314ab39395e7943014}\label{leo__read__tsod__example_8c_ad530dd113a2497314ab39395e7943014}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Tsod\+Read} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, int leo\+Handle, int threshold\+Temp, int is\+\_\+throttle)
+\item 
+\mbox{\Hypertarget{leo__read__tsod__example_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{leo__read__tsod__example_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Read DIMM TSOD data. 
+
+When running this example for the first time, expect to wait for about 2 minutes for the DIMM temperature to be measured and reported.
+
+For more details on the args supported \& usage ./leo\+\_\+read\+\_\+tsod\+\_\+example -\/help 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{leo__read__tsod__example_8c_ad2c7eb204fb9616fd266b5d65051e50c}\label{leo__read__tsod__example_8c_ad2c7eb204fb9616fd266b5d65051e50c}} 
+\index{leo\_read\_tsod\_example.c@{leo\_read\_tsod\_example.c}!LEO\_BW\_THROTTLE\_10@{LEO\_BW\_THROTTLE\_10}}
+\index{LEO\_BW\_THROTTLE\_10@{LEO\_BW\_THROTTLE\_10}!leo\_read\_tsod\_example.c@{leo\_read\_tsod\_example.c}}
+\doxysubsubsection{\texorpdfstring{LEO\_BW\_THROTTLE\_10}{LEO\_BW\_THROTTLE\_10}}
+{\footnotesize\ttfamily \#define LEO\+\_\+\+BW\+\_\+\+THROTTLE\+\_\+10~2}
+
+The following code for throttling is completely experimental and is specific to the GSA test we ran for 30sec The actual values to be used should be determined by the customer 

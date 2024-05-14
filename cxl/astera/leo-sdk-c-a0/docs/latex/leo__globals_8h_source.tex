@@ -1,0 +1,68 @@
+\hypertarget{leo__globals_8h_source}{}\doxysection{leo\+\_\+globals.\+h}
+\label{leo__globals_8h_source}\index{leo-\/sdk-\/c/include/leo\_globals.h@{leo-\/sdk-\/c/include/leo\_globals.h}}
+\mbox{\hyperlink{leo__globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_GLOBALS\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_GLOBALS\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LEO\_CRC8\_POLYNOMIAL\ 0x107}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_MUX\ 0x77\ \ \ \ \ \ }\textcolor{comment}{//TODO:\ A0\ access\ through\ Leo}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_GPIO\_0\ 0x20\ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_GPIO\_1\ 0x21}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ CHIP\_D5}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_LEO\_0\ 0x27}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_LEO\_1\ 0x26}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_FRU\ \ \ 0x56\ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DPM\ \ \ 0x11}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_VRM\ \ \ 0x60}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#elif\ CHIP\_A0}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_LEO\_0\ 0x1D}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_LEO\_1\ 0x26\ \ \ }\textcolor{comment}{//TODO\ YW:\ later\ to\ ERROR\ when\ used}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_FRU\ \ \ 0x53\ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DPM\ \ \ 0x33}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_VRM\ \ \ 0x68}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#error\ No\ chip\ revision\ provided}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DIM0\ 0x50}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DIM1\ 0x51}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DIM2\ 0x50}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LEO\_DEV\_DIM3\ 0x51}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ LEO\_MM\_PRINT\_INFO\_NUM\_PRINT\_CLASS\_EN\ 8}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LEO\_MM\_PRINT\_INFO\_NUM\_PRINT\_BUFFER\_SIZE\ 512}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LEO\_PM\_PRINT\_INFO\_NUM\_PRINT\_CLASS\_EN\ 16}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ LEO\_PM\_PRINT\_INFO\_NUM\_PRINT\_BUFFER\_SIZE\ 256}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__globals_8h_a78fc6fad19bf25235e84873e7dc87b27}{AsteraProduct}}\ \{}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{leo__globals_8h_a78fc6fad19bf25235e84873e7dc87b27abe4eadf1c30e0a858f9adfd9f74f0e10}{ASTERA\_ARIES}},\ \ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{leo__globals_8h_a78fc6fad19bf25235e84873e7dc87b27ab04e9e9dae568800efa980d49f3346b2}{ASTERA\_TAURUS}},\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{leo__globals_8h_a78fc6fad19bf25235e84873e7dc87b27a535959bea83a9d93811d17fb816e0343}{ASTERA\_LEO}}\ \ \ \ \ }
+\DoxyCodeLine{00079\ \}\ \mbox{\hyperlink{leo__globals_8h_adea96f6482bfe75f7a5df44d48142691}{AsteraProductType}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_GLOBALS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

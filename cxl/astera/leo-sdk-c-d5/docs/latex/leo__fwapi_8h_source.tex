@@ -1,0 +1,94 @@
+\hypertarget{leo__fwapi_8h_source}{}\doxysection{leo\+\_\+fwapi.\+h}
+\label{leo__fwapi_8h_source}\index{leo-\/sdk-\/c/include/leo\_fwapi.h@{leo-\/sdk-\/c/include/leo\_fwapi.h}}
+\mbox{\hyperlink{leo__fwapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_FWAPI\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_FWAPI\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__api__types_8h}{leo\_api\_types.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__error_8h}{leo\_error.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Standard\ includes.\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoFWUpdateMode__t}{LeoFWUpdateMode\_t}}\ \{}
+\DoxyCodeLine{00036\ \ \ uint8\_t\ raw;}
+\DoxyCodeLine{00037\ \ \ uint8\_t\ direct;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{structLeoFWUpdateMode__t}{LeoFWUpdateModeType}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoFwImageFormat__t}{LeoFwImageFormat\_t}}\ \{}
+\DoxyCodeLine{00042\ \ \ uint8\_t\ ImageA;}
+\DoxyCodeLine{00043\ \ \ uint8\_t\ ImageB;}
+\DoxyCodeLine{00044\ \ \ uint8\_t\ ImageG;}
+\DoxyCodeLine{00045\ \}\ \mbox{\hyperlink{structLeoFwImageFormat__t}{LeoFwImageFormatType}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00056\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__fwapi_8h_af57f6e08002d9e9869f67758b2271444}{leoFWStatusCheck}}(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00067\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__fwapi_8h_a9dda1f56069050925c9640d95ed3331f}{leoFWUpdateMode}}(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,\ \mbox{\hyperlink{structLeoFWUpdateMode__t}{LeoFWUpdateModeType}}\ mode);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__fwapi_8h_ae166024c40eed042259c8fbb63d533a4}{leoDoFwUpdate}}(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fwImagePath);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00093\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}}\ \mbox{\hyperlink{leo__fwapi_8h_ac88389cf812e615a25ee5f13f3838263}{leoDoFwUpdateinLTModeRaw}}(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *fwImageBuffer);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a0cc0b9f7204cd66b51c16575d24a1b3b}{leoCheckforFwUpdate}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fwImagePath);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \mbox{\hyperlink{structLeoFwImageFormat__t}{LeoFwImageFormatType}}\ \mbox{\hyperlink{leo__fwapi_8h_a8d0bf74d371dbd74c901036e25f994f2}{leoGetCurrentFWVersion}}(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a3b668397073a7aaf3d605808b85746a2}{LeoLoadCurrentFW}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fwImagePath);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a280d966fa3b72df2603a1c2a3a6c2a3d}{LeoSwitchCurrentFW}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00138\ int8\_t\ \mbox{\hyperlink{leo__fwapi_8h_a9184a90f5df70d71c8c9def1ebe3f509}{LeoGetErasableBlockSize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_aa279da79caa7800226e134b88e15bdef}{LeoFlashIndexDump}}(uint32\_t\ startAddress,\ uint32\_t\ endAddress,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fileName);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a36584b9f6da150751e4cc2d878a0cc6d}{LeoFlashIndexWrite}}(int8\_t\ blockSize);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a411da42279179adc68793de6ac4f7f85}{LeoSysConfigReset}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_a91fe7ac71d91484cfcf4b9932bbbfc0f}{LeoSysConfigWrite}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int8\_t\ blockSize);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00184\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_ad224392c63c47e2f73938ed237256f09}{LeoSysConfigDump}}(\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}}\ fwImageFormatType,\ int8\_t\ blockSize);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00190\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_abed93ee539a187c133b98a6fa93db2d9}{LeoPersistentDataDump}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_adc05ef99c5c9dec5f561be293ba72f0f}{LeoPersistentDataWrite}}(int8\_t\ blockSize);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{leo__fwapi_8h_adda5d0aba202d433a5cafa00ce4f576c}{LeoPersistentDataErase}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00207\ \}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_FWAPI\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

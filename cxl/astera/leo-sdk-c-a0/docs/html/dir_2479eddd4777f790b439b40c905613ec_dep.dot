@@ -1,0 +1,14 @@
+digraph "leo-sdk-c/source"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_d42a07b2115f6ca15f9c9983df0e71e7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="leo-sdk-c", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_d42a07b2115f6ca15f9c9983df0e71e7.html",tooltip=""]
+  dir_6bfd95c2b288859999b069e676501644 [label="include", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_6bfd95c2b288859999b069e676501644.html",tooltip=""];
+  dir_2479eddd4777f790b439b40c905613ec [label="source", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_2479eddd4777f790b439b40c905613ec.html",tooltip=""];
+  }
+  dir_2479eddd4777f790b439b40c905613ec->dir_6bfd95c2b288859999b069e676501644 [headlabel="31", labeldistance=1.5 headhref="dir_000003_000001.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,89 @@
+\hypertarget{unionLeoLinkStatusRegisterType}{}\doxysection{Leo\+Link\+Status\+Register\+Type Union Reference}
+\label{unionLeoLinkStatusRegisterType}\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+
+
+Struct defining detailed the Link Status register (offset 12h) about the PCIExpress link specific parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unionLeoLinkStatusRegisterType_ac82671e04e71fb8a05dad02244d08668}\label{unionLeoLinkStatusRegisterType_ac82671e04e71fb8a05dad02244d08668}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_aea4f2c4ca063d2aa4f34c4e6a17ed879}{link\+Speed}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a7369bdcdcaa262f8ad5bf151392d0999}{link\+Width}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_aeddf936d3e993feef6fdf462e1b35d5a}{undefined}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a26379713c733d492c3ae799713fd0e31}{link\+Training}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_af679364e57201f154aed1d06cb2a53fe}{slot\+Clock\+Config}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a8e390d3ef0ebdfb806cfcc0438b97c00}{data\+Link\+Layer\+Link\+Active}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_ade4d09b10b8243ed7066b62d80594185}{link\+Bandwidth\+Management\+Status}}: 1\\
+\}; \\
+
+\end{tabbing}\item 
+uint8\+\_\+t \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a9dbb54b8f0f1b9344be49b8396e63233}{link\+Autonomous\+Bandwidth\+Status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed the Link Status register (offset 12h) about the PCIExpress link specific parameters. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{unionLeoLinkStatusRegisterType_a8e390d3ef0ebdfb806cfcc0438b97c00}\label{unionLeoLinkStatusRegisterType_a8e390d3ef0ebdfb806cfcc0438b97c00}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!dataLinkLayerLinkActive@{dataLinkLayerLinkActive}}
+\index{dataLinkLayerLinkActive@{dataLinkLayerLinkActive}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{dataLinkLayerLinkActive}{dataLinkLayerLinkActive}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::data\+Link\+Layer\+Link\+Active}
+
+Data Link Layer Link Active \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_a9dbb54b8f0f1b9344be49b8396e63233}\label{unionLeoLinkStatusRegisterType_a9dbb54b8f0f1b9344be49b8396e63233}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!linkAutonomousBandwidthStatus@{linkAutonomousBandwidthStatus}}
+\index{linkAutonomousBandwidthStatus@{linkAutonomousBandwidthStatus}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkAutonomousBandwidthStatus}{linkAutonomousBandwidthStatus}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::link\+Autonomous\+Bandwidth\+Status}
+
+Link Autonomous Bandwidth Status \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_ade4d09b10b8243ed7066b62d80594185}\label{unionLeoLinkStatusRegisterType_ade4d09b10b8243ed7066b62d80594185}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!linkBandwidthManagementStatus@{linkBandwidthManagementStatus}}
+\index{linkBandwidthManagementStatus@{linkBandwidthManagementStatus}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkBandwidthManagementStatus}{linkBandwidthManagementStatus}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::link\+Bandwidth\+Management\+Status}
+
+Link Bandwidth Management Status \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_aea4f2c4ca063d2aa4f34c4e6a17ed879}\label{unionLeoLinkStatusRegisterType_aea4f2c4ca063d2aa4f34c4e6a17ed879}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!linkSpeed@{linkSpeed}}
+\index{linkSpeed@{linkSpeed}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkSpeed}{linkSpeed}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::link\+Speed}
+
+Link speed \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_a26379713c733d492c3ae799713fd0e31}\label{unionLeoLinkStatusRegisterType_a26379713c733d492c3ae799713fd0e31}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!linkTraining@{linkTraining}}
+\index{linkTraining@{linkTraining}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkTraining}{linkTraining}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::link\+Training}
+
+Link training state \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_a7369bdcdcaa262f8ad5bf151392d0999}\label{unionLeoLinkStatusRegisterType_a7369bdcdcaa262f8ad5bf151392d0999}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!linkWidth@{linkWidth}}
+\index{linkWidth@{linkWidth}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkWidth}{linkWidth}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::link\+Width}
+
+Link width \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_af679364e57201f154aed1d06cb2a53fe}\label{unionLeoLinkStatusRegisterType_af679364e57201f154aed1d06cb2a53fe}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!slotClockConfig@{slotClockConfig}}
+\index{slotClockConfig@{slotClockConfig}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{slotClockConfig}{slotClockConfig}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::slot\+Clock\+Config}
+
+Slot clock configuration \mbox{\Hypertarget{unionLeoLinkStatusRegisterType_aeddf936d3e993feef6fdf462e1b35d5a}\label{unionLeoLinkStatusRegisterType_aeddf936d3e993feef6fdf462e1b35d5a}} 
+\index{LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}!undefined@{undefined}}
+\index{undefined@{undefined}!LeoLinkStatusRegisterType@{LeoLinkStatusRegisterType}}
+\doxysubsubsection{\texorpdfstring{undefined}{undefined}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Status\+Register\+Type\+::undefined}
+
+Undefined 
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

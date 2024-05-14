@@ -1,0 +1,307 @@
+\hypertarget{structLeoDevice}{}\doxysection{Leo\+Device Struct Reference}
+\label{structLeoDevice}\index{LeoDevice@{LeoDevice}}
+
+
+Struct defining Leo CXL device.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+
+
+Collaboration diagram for Leo\+Device\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}} $\ast$ \mbox{\hyperlink{structLeoDevice_ae468f157123f60e4cf1b79d70cc4e00c}{i2c\+Driver}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}{Leo\+SPIDriver\+Type}} \mbox{\hyperlink{structLeoDevice_a3594bac94d5d085bc846834432886981}{spi}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a64ef63ed95cb9a771c7ebdc44a90984a}{Leo\+FWVersion\+Type}} \mbox{\hyperlink{structLeoDevice_a5125848a65c66cbd2223a8eccb8ca8bd}{fw\+Version}}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a838ca359cb720c0b8ff27c8f4026e267}{Leo\+Asic\+Version\+Type}} \mbox{\hyperlink{structLeoDevice_a95c6a538399c7754e1177f2ce9280e60}{asic\+Version}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_ae5fd1554347aa30f3d4099c467570460}{i2c\+Bus}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a6c7b497e3ba55d4cba45f37805a4d9c7}{rev\+Number}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a8afe523d3b11ef0b86dfa58090958b31}{device\+Id}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_aedd0b376e9084dcc420b419b33d319b3}{vendor\+Id}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_ac78e1d222ad9926be520d0fddbf0be3d}{controller\+Index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a5c243022155ff2ee098173df1cd6755b}{lot\+Number}} \mbox{[}6\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_afc5150d110d5dd7fc569ecb9f2a22318}{chip\+ID}} \mbox{[}12\mbox{]}
+\item 
+bool \mbox{\hyperlink{structLeoDevice_a44a5482104f369b9455017673bf70df0}{arp\+Enable}}
+\item 
+bool \mbox{\hyperlink{structLeoDevice_a6c74f7ab857273ae3c390bffe93bf600}{code\+Load\+Okay}}
+\item 
+bool \mbox{\hyperlink{structLeoDevice_aabf7231fc1d340bafceed1582227e8ef}{mm\+Heartbeat\+Okay}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a69c77ce4f22954f69c2275ef33d5ee04}{mm\+\_\+print\+\_\+info\+\_\+struct\+\_\+addr}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a6fdacd373a0dcde49b5e2ef5da275c26}{pm\+\_\+print\+\_\+info\+\_\+struct\+\_\+addr}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a4206d7fea0e0933b90463dd45f65cd6c}{mm\+\_\+gp\+\_\+ctrl\+\_\+sts\+\_\+struct\+\_\+addr}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_a19ab7ca59c0a49175a6f301073c5b5b4}{pm\+\_\+gp\+\_\+ctrl\+\_\+sts\+\_\+struct\+\_\+addr}}
+\item 
+\mbox{\Hypertarget{structLeoDevice_a11a49e66ff714458440a5595783f307a}\label{structLeoDevice_a11a49e66ff714458440a5595783f307a}} 
+int {\bfseries link\+Path\+Struct\+Size}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a5f5c120f7eae1897814b2be1049d53bc}{temp\+Cal\+Code\+PmaA}} \mbox{[}4\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_ada5ee3fd05379066938bb91d86f3a376}{temp\+Cal\+Code\+PmaB}} \mbox{[}4\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a60da766b64830b87e5d09550bb4bfd21}{temp\+Cal\+Code\+Avg}}
+\item 
+float \mbox{\hyperlink{structLeoDevice_a10ffd997978908af3930cb099a0af7a0}{temp\+Alert\+ThreshC}}
+\item 
+float \mbox{\hyperlink{structLeoDevice_affa65a66da651289d318591cda92dbff}{temp\+Warn\+ThreshC}}
+\item 
+float \mbox{\hyperlink{structLeoDevice_afc6740ad2746f20b6cdd7b10a7388f0b}{max\+TempC}}
+\item 
+float \mbox{\hyperlink{structLeoDevice_ad4db9205e68f7ad89347093df7b39c40}{current\+TempC}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a433a5ece40663eeef260cc745730f84b}{min\+Link\+Fo\+MAlert}}
+\item 
+bool \mbox{\hyperlink{structLeoDevice_acf7bf0ba88a7a93a38d00d50d8d86ff8}{device\+Okay}}
+\item 
+bool \mbox{\hyperlink{structLeoDevice_a5508c35382cd383ffb48f848a5e3a13b}{overtemp\+Alert}}
+\item 
+\mbox{\Hypertarget{structLeoDevice_ac035fb211babbea28dcbf9514208a988}\label{structLeoDevice_ac035fb211babbea28dcbf9514208a988}} 
+\mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{Leo\+Device\+Part\+Type}} {\bfseries part\+Number}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_ade92df856a5f94efc2605c0bd1d83427}{Leo\+Pins\+Type}} \mbox{\hyperlink{structLeoDevice_aa74800de4c5bad3f4fbb7e42c72dbc5b}{pins}} \mbox{[}16\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structLeoDevice_a4fa6393f284208f2ddecc00c216bfe30}{min\+DPLLFreq\+Alert}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structLeoDevice_af723f3114e68bc05df84a16e87b2eb7b}{max\+DPLLFreq\+Alert}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a5f1011a8a6d4edb86778fedba045fb3b}{ignore\+Persistent\+Data\+Flag}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structLeoDevice_a66da301721ad5435ff561a2467f4a7f8}{ignore\+Compatibility\+Check\+Flag}}
+\item 
+int \mbox{\hyperlink{structLeoDevice_ac3de389df7e0047cb5d667a650f3e03d}{spi\+Device}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining Leo CXL device. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoDevice_a44a5482104f369b9455017673bf70df0}\label{structLeoDevice_a44a5482104f369b9455017673bf70df0}} 
+\index{LeoDevice@{LeoDevice}!arpEnable@{arpEnable}}
+\index{arpEnable@{arpEnable}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{arpEnable}{arpEnable}}
+{\footnotesize\ttfamily bool Leo\+Device\+::arp\+Enable}
+
+Flag indicating if ARP is enabled or not \mbox{\Hypertarget{structLeoDevice_a95c6a538399c7754e1177f2ce9280e60}\label{structLeoDevice_a95c6a538399c7754e1177f2ce9280e60}} 
+\index{LeoDevice@{LeoDevice}!asicVersion@{asicVersion}}
+\index{asicVersion@{asicVersion}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{asicVersion}{asicVersion}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a838ca359cb720c0b8ff27c8f4026e267}{Leo\+Asic\+Version\+Type}} Leo\+Device\+::asic\+Version}
+
+Asic version loaded on Leo device \mbox{\Hypertarget{structLeoDevice_afc5150d110d5dd7fc569ecb9f2a22318}\label{structLeoDevice_afc5150d110d5dd7fc569ecb9f2a22318}} 
+\index{LeoDevice@{LeoDevice}!chipID@{chipID}}
+\index{chipID@{chipID}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{chipID}{chipID}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::chip\+ID\mbox{[}12\mbox{]}}
+
+12-\/byte unique chip ID \mbox{\Hypertarget{structLeoDevice_a6c74f7ab857273ae3c390bffe93bf600}\label{structLeoDevice_a6c74f7ab857273ae3c390bffe93bf600}} 
+\index{LeoDevice@{LeoDevice}!codeLoadOkay@{codeLoadOkay}}
+\index{codeLoadOkay@{codeLoadOkay}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{codeLoadOkay}{codeLoadOkay}}
+{\footnotesize\ttfamily bool Leo\+Device\+::code\+Load\+Okay}
+
+Flag to indicate if code load reg value is expected \mbox{\Hypertarget{structLeoDevice_ac78e1d222ad9926be520d0fddbf0be3d}\label{structLeoDevice_ac78e1d222ad9926be520d0fddbf0be3d}} 
+\index{LeoDevice@{LeoDevice}!controllerIndex@{controllerIndex}}
+\index{controllerIndex@{controllerIndex}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{controllerIndex}{controllerIndex}}
+{\footnotesize\ttfamily int Leo\+Device\+::controller\+Index}
+
+controller Index \mbox{\Hypertarget{structLeoDevice_ad4db9205e68f7ad89347093df7b39c40}\label{structLeoDevice_ad4db9205e68f7ad89347093df7b39c40}} 
+\index{LeoDevice@{LeoDevice}!currentTempC@{currentTempC}}
+\index{currentTempC@{currentTempC}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{currentTempC}{currentTempC}}
+{\footnotesize\ttfamily float Leo\+Device\+::current\+TempC}
+
+Current average temp across all sensors \mbox{\Hypertarget{structLeoDevice_a8afe523d3b11ef0b86dfa58090958b31}\label{structLeoDevice_a8afe523d3b11ef0b86dfa58090958b31}} 
+\index{LeoDevice@{LeoDevice}!deviceId@{deviceId}}
+\index{deviceId@{deviceId}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{deviceId}{deviceId}}
+{\footnotesize\ttfamily int Leo\+Device\+::device\+Id}
+
+Leo device ID \mbox{\Hypertarget{structLeoDevice_acf7bf0ba88a7a93a38d00d50d8d86ff8}\label{structLeoDevice_acf7bf0ba88a7a93a38d00d50d8d86ff8}} 
+\index{LeoDevice@{LeoDevice}!deviceOkay@{deviceOkay}}
+\index{deviceOkay@{deviceOkay}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{deviceOkay}{deviceOkay}}
+{\footnotesize\ttfamily bool Leo\+Device\+::device\+Okay}
+
+Device state \mbox{\Hypertarget{structLeoDevice_a5125848a65c66cbd2223a8eccb8ca8bd}\label{structLeoDevice_a5125848a65c66cbd2223a8eccb8ca8bd}} 
+\index{LeoDevice@{LeoDevice}!fwVersion@{fwVersion}}
+\index{fwVersion@{fwVersion}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{fwVersion}{fwVersion}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a64ef63ed95cb9a771c7ebdc44a90984a}{Leo\+FWVersion\+Type}} Leo\+Device\+::fw\+Version}
+
+FW version loaded on Leo device \mbox{\Hypertarget{structLeoDevice_ae5fd1554347aa30f3d4099c467570460}\label{structLeoDevice_ae5fd1554347aa30f3d4099c467570460}} 
+\index{LeoDevice@{LeoDevice}!i2cBus@{i2cBus}}
+\index{i2cBus@{i2cBus}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{i2cBus}{i2cBus}}
+{\footnotesize\ttfamily int Leo\+Device\+::i2c\+Bus}
+
+I2C Bus connection to host BMC \mbox{\Hypertarget{structLeoDevice_ae468f157123f60e4cf1b79d70cc4e00c}\label{structLeoDevice_ae468f157123f60e4cf1b79d70cc4e00c}} 
+\index{LeoDevice@{LeoDevice}!i2cDriver@{i2cDriver}}
+\index{i2cDriver@{i2cDriver}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{i2cDriver}{i2cDriver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{Leo\+I2\+CDriver\+Type}}$\ast$ Leo\+Device\+::i2c\+Driver}
+
+I2C connection to Leo device \mbox{\Hypertarget{structLeoDevice_a66da301721ad5435ff561a2467f4a7f8}\label{structLeoDevice_a66da301721ad5435ff561a2467f4a7f8}} 
+\index{LeoDevice@{LeoDevice}!ignoreCompatibilityCheckFlag@{ignoreCompatibilityCheckFlag}}
+\index{ignoreCompatibilityCheckFlag@{ignoreCompatibilityCheckFlag}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{ignoreCompatibilityCheckFlag}{ignoreCompatibilityCheckFlag}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::ignore\+Compatibility\+Check\+Flag}
+
+Overwrite persistent data when updating firmware \mbox{\Hypertarget{structLeoDevice_a5f1011a8a6d4edb86778fedba045fb3b}\label{structLeoDevice_a5f1011a8a6d4edb86778fedba045fb3b}} 
+\index{LeoDevice@{LeoDevice}!ignorePersistentDataFlag@{ignorePersistentDataFlag}}
+\index{ignorePersistentDataFlag@{ignorePersistentDataFlag}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{ignorePersistentDataFlag}{ignorePersistentDataFlag}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::ignore\+Persistent\+Data\+Flag}
+
+Max. DPLL frequency expected \mbox{\Hypertarget{structLeoDevice_a5c243022155ff2ee098173df1cd6755b}\label{structLeoDevice_a5c243022155ff2ee098173df1cd6755b}} 
+\index{LeoDevice@{LeoDevice}!lotNumber@{lotNumber}}
+\index{lotNumber@{lotNumber}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{lotNumber}{lotNumber}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::lot\+Number\mbox{[}6\mbox{]}}
+
+6-\/byte silicon lot number \mbox{\Hypertarget{structLeoDevice_af723f3114e68bc05df84a16e87b2eb7b}\label{structLeoDevice_af723f3114e68bc05df84a16e87b2eb7b}} 
+\index{LeoDevice@{LeoDevice}!maxDPLLFreqAlert@{maxDPLLFreqAlert}}
+\index{maxDPLLFreqAlert@{maxDPLLFreqAlert}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{maxDPLLFreqAlert}{maxDPLLFreqAlert}}
+{\footnotesize\ttfamily uint16\+\_\+t Leo\+Device\+::max\+DPLLFreq\+Alert}
+
+Min. DPLL frequency expected \mbox{\Hypertarget{structLeoDevice_afc6740ad2746f20b6cdd7b10a7388f0b}\label{structLeoDevice_afc6740ad2746f20b6cdd7b10a7388f0b}} 
+\index{LeoDevice@{LeoDevice}!maxTempC@{maxTempC}}
+\index{maxTempC@{maxTempC}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{maxTempC}{maxTempC}}
+{\footnotesize\ttfamily float Leo\+Device\+::max\+TempC}
+
+Max. temp seen across all temp sensors \mbox{\Hypertarget{structLeoDevice_a4fa6393f284208f2ddecc00c216bfe30}\label{structLeoDevice_a4fa6393f284208f2ddecc00c216bfe30}} 
+\index{LeoDevice@{LeoDevice}!minDPLLFreqAlert@{minDPLLFreqAlert}}
+\index{minDPLLFreqAlert@{minDPLLFreqAlert}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{minDPLLFreqAlert}{minDPLLFreqAlert}}
+{\footnotesize\ttfamily uint16\+\_\+t Leo\+Device\+::min\+DPLLFreq\+Alert}
+
+Device physical pin information \mbox{\Hypertarget{structLeoDevice_a433a5ece40663eeef260cc745730f84b}\label{structLeoDevice_a433a5ece40663eeef260cc745730f84b}} 
+\index{LeoDevice@{LeoDevice}!minLinkFoMAlert@{minLinkFoMAlert}}
+\index{minLinkFoMAlert@{minLinkFoMAlert}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{minLinkFoMAlert}{minLinkFoMAlert}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::min\+Link\+Fo\+MAlert}
+
+Min. FoM value expected \mbox{\Hypertarget{structLeoDevice_a4206d7fea0e0933b90463dd45f65cd6c}\label{structLeoDevice_a4206d7fea0e0933b90463dd45f65cd6c}} 
+\index{LeoDevice@{LeoDevice}!mm\_gp\_ctrl\_sts\_struct\_addr@{mm\_gp\_ctrl\_sts\_struct\_addr}}
+\index{mm\_gp\_ctrl\_sts\_struct\_addr@{mm\_gp\_ctrl\_sts\_struct\_addr}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{mm\_gp\_ctrl\_sts\_struct\_addr}{mm\_gp\_ctrl\_sts\_struct\_addr}}
+{\footnotesize\ttfamily int Leo\+Device\+::mm\+\_\+gp\+\_\+ctrl\+\_\+sts\+\_\+struct\+\_\+addr}
+
+GP ctrl status struct offset (Main Micro) \mbox{\Hypertarget{structLeoDevice_a69c77ce4f22954f69c2275ef33d5ee04}\label{structLeoDevice_a69c77ce4f22954f69c2275ef33d5ee04}} 
+\index{LeoDevice@{LeoDevice}!mm\_print\_info\_struct\_addr@{mm\_print\_info\_struct\_addr}}
+\index{mm\_print\_info\_struct\_addr@{mm\_print\_info\_struct\_addr}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{mm\_print\_info\_struct\_addr}{mm\_print\_info\_struct\_addr}}
+{\footnotesize\ttfamily int Leo\+Device\+::mm\+\_\+print\+\_\+info\+\_\+struct\+\_\+addr}
+
+AL print info struct offset (Main Micro) \mbox{\Hypertarget{structLeoDevice_aabf7231fc1d340bafceed1582227e8ef}\label{structLeoDevice_aabf7231fc1d340bafceed1582227e8ef}} 
+\index{LeoDevice@{LeoDevice}!mmHeartbeatOkay@{mmHeartbeatOkay}}
+\index{mmHeartbeatOkay@{mmHeartbeatOkay}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{mmHeartbeatOkay}{mmHeartbeatOkay}}
+{\footnotesize\ttfamily bool Leo\+Device\+::mm\+Heartbeat\+Okay}
+
+Flag indicating if Main Micro heartbeat is good \mbox{\Hypertarget{structLeoDevice_a5508c35382cd383ffb48f848a5e3a13b}\label{structLeoDevice_a5508c35382cd383ffb48f848a5e3a13b}} 
+\index{LeoDevice@{LeoDevice}!overtempAlert@{overtempAlert}}
+\index{overtempAlert@{overtempAlert}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{overtempAlert}{overtempAlert}}
+{\footnotesize\ttfamily bool Leo\+Device\+::overtemp\+Alert}
+
+Over temp alert indicated by reg \mbox{\Hypertarget{structLeoDevice_aa74800de4c5bad3f4fbb7e42c72dbc5b}\label{structLeoDevice_aa74800de4c5bad3f4fbb7e42c72dbc5b}} 
+\index{LeoDevice@{LeoDevice}!pins@{pins}}
+\index{pins@{pins}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{pins}{pins}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_ade92df856a5f94efc2605c0bd1d83427}{Leo\+Pins\+Type}} Leo\+Device\+::pins\mbox{[}16\mbox{]}}
+
+Retimer part number -\/ x16 or x8 \mbox{\Hypertarget{structLeoDevice_a19ab7ca59c0a49175a6f301073c5b5b4}\label{structLeoDevice_a19ab7ca59c0a49175a6f301073c5b5b4}} 
+\index{LeoDevice@{LeoDevice}!pm\_gp\_ctrl\_sts\_struct\_addr@{pm\_gp\_ctrl\_sts\_struct\_addr}}
+\index{pm\_gp\_ctrl\_sts\_struct\_addr@{pm\_gp\_ctrl\_sts\_struct\_addr}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{pm\_gp\_ctrl\_sts\_struct\_addr}{pm\_gp\_ctrl\_sts\_struct\_addr}}
+{\footnotesize\ttfamily int Leo\+Device\+::pm\+\_\+gp\+\_\+ctrl\+\_\+sts\+\_\+struct\+\_\+addr}
+
+GP ctrl status struct offset (Path Micro) \mbox{\Hypertarget{structLeoDevice_a6fdacd373a0dcde49b5e2ef5da275c26}\label{structLeoDevice_a6fdacd373a0dcde49b5e2ef5da275c26}} 
+\index{LeoDevice@{LeoDevice}!pm\_print\_info\_struct\_addr@{pm\_print\_info\_struct\_addr}}
+\index{pm\_print\_info\_struct\_addr@{pm\_print\_info\_struct\_addr}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{pm\_print\_info\_struct\_addr}{pm\_print\_info\_struct\_addr}}
+{\footnotesize\ttfamily int Leo\+Device\+::pm\+\_\+print\+\_\+info\+\_\+struct\+\_\+addr}
+
+AL print info struct offset (Path Micro) \mbox{\Hypertarget{structLeoDevice_a6c7b497e3ba55d4cba45f37805a4d9c7}\label{structLeoDevice_a6c7b497e3ba55d4cba45f37805a4d9c7}} 
+\index{LeoDevice@{LeoDevice}!revNumber@{revNumber}}
+\index{revNumber@{revNumber}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{revNumber}{revNumber}}
+{\footnotesize\ttfamily int Leo\+Device\+::rev\+Number}
+
+Leo revision num \mbox{\Hypertarget{structLeoDevice_a3594bac94d5d085bc846834432886981}\label{structLeoDevice_a3594bac94d5d085bc846834432886981}} 
+\index{LeoDevice@{LeoDevice}!spi@{spi}}
+\index{spi@{spi}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{spi}{spi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}{Leo\+SPIDriver\+Type}} Leo\+Device\+::spi}
+
+SPI connection to Leo device \mbox{\Hypertarget{structLeoDevice_ac3de389df7e0047cb5d667a650f3e03d}\label{structLeoDevice_ac3de389df7e0047cb5d667a650f3e03d}} 
+\index{LeoDevice@{LeoDevice}!spiDevice@{spiDevice}}
+\index{spiDevice@{spiDevice}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{spiDevice}{spiDevice}}
+{\footnotesize\ttfamily int Leo\+Device\+::spi\+Device}
+
+Ignore asic version check when updating firmware \mbox{\Hypertarget{structLeoDevice_a10ffd997978908af3930cb099a0af7a0}\label{structLeoDevice_a10ffd997978908af3930cb099a0af7a0}} 
+\index{LeoDevice@{LeoDevice}!tempAlertThreshC@{tempAlertThreshC}}
+\index{tempAlertThreshC@{tempAlertThreshC}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{tempAlertThreshC}{tempAlertThreshC}}
+{\footnotesize\ttfamily float Leo\+Device\+::temp\+Alert\+ThreshC}
+
+temp alert (celsius) \mbox{\Hypertarget{structLeoDevice_a60da766b64830b87e5d09550bb4bfd21}\label{structLeoDevice_a60da766b64830b87e5d09550bb4bfd21}} 
+\index{LeoDevice@{LeoDevice}!tempCalCodeAvg@{tempCalCodeAvg}}
+\index{tempCalCodeAvg@{tempCalCodeAvg}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{tempCalCodeAvg}{tempCalCodeAvg}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::temp\+Cal\+Code\+Avg}
+
+average temp calibration code \mbox{\Hypertarget{structLeoDevice_a5f5c120f7eae1897814b2be1049d53bc}\label{structLeoDevice_a5f5c120f7eae1897814b2be1049d53bc}} 
+\index{LeoDevice@{LeoDevice}!tempCalCodePmaA@{tempCalCodePmaA}}
+\index{tempCalCodePmaA@{tempCalCodePmaA}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{tempCalCodePmaA}{tempCalCodePmaA}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::temp\+Cal\+Code\+PmaA\mbox{[}4\mbox{]}}
+
+Num bytes in link path struct temp calibration codes for PMA A \mbox{\Hypertarget{structLeoDevice_ada5ee3fd05379066938bb91d86f3a376}\label{structLeoDevice_ada5ee3fd05379066938bb91d86f3a376}} 
+\index{LeoDevice@{LeoDevice}!tempCalCodePmaB@{tempCalCodePmaB}}
+\index{tempCalCodePmaB@{tempCalCodePmaB}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{tempCalCodePmaB}{tempCalCodePmaB}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Device\+::temp\+Cal\+Code\+PmaB\mbox{[}4\mbox{]}}
+
+temp calibration codes for PMA B \mbox{\Hypertarget{structLeoDevice_affa65a66da651289d318591cda92dbff}\label{structLeoDevice_affa65a66da651289d318591cda92dbff}} 
+\index{LeoDevice@{LeoDevice}!tempWarnThreshC@{tempWarnThreshC}}
+\index{tempWarnThreshC@{tempWarnThreshC}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{tempWarnThreshC}{tempWarnThreshC}}
+{\footnotesize\ttfamily float Leo\+Device\+::temp\+Warn\+ThreshC}
+
+temp warning (celsius) \mbox{\Hypertarget{structLeoDevice_aedd0b376e9084dcc420b419b33d319b3}\label{structLeoDevice_aedd0b376e9084dcc420b419b33d319b3}} 
+\index{LeoDevice@{LeoDevice}!vendorId@{vendorId}}
+\index{vendorId@{vendorId}!LeoDevice@{LeoDevice}}
+\doxysubsubsection{\texorpdfstring{vendorId}{vendorId}}
+{\footnotesize\ttfamily int Leo\+Device\+::vendor\+Id}
+
+Leo vendor ID 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

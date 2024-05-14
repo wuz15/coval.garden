@@ -1,0 +1,32 @@
+digraph "LeoLink"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="LeoLink",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Struct defining an Leo Link."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" device" ];
+  Node2 [label="LeoDevice",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoDevice.html",tooltip="Struct defining Leo CXL device."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" i2cDriver" ];
+  Node3 [label="LeoI2CDriver",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoI2CDriver.html",tooltip="Struct defining I2C/SMBus connection with a Leo device."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" spi" ];
+  Node4 [label="LeoSPIDriver",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoSPIDriver.html",tooltip="SPI types SPI is a synchronous serial interface communications are controlled by SPI master and used ..."];
+  Node5 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" fwVersion" ];
+  Node5 [label="LeoFWVersion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoFWVersion.html",tooltip="Struct defining FW version loaded on a Leo device."];
+  Node6 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" asicVersion" ];
+  Node6 [label="LeoAsicVersion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoAsicVersion.html",tooltip="Struct defining FW version loaded on a Leo device."];
+  Node7 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" pins" ];
+  Node7 [label="LeoPins",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoPins.html",tooltip="Struct defining one set of pseudo port pins for a give lane."];
+  Node8 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" pinSet1\npinSet2" ];
+  Node8 [label="LeoPseudoPortPins",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoPseudoPortPins.html",tooltip="Struct defining pesudo port physical info."];
+  Node9 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" config" ];
+  Node9 [label="LeoLinkConfig",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoLinkConfig.html",tooltip="Struct defining an Leo chip Link configuration."];
+  Node10 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" state" ];
+  Node10 [label="LeoLinkState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoLinkState.html",tooltip="Struct defining detailed Link status, including electrical parameters."];
+  Node11 -> Node10 [dir="back",color="darkorchid3",style="dashed",label=" dsppState\nusppState" ];
+  Node11 [label="LeoPseudoPortState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoPseudoPortState.html",tooltip="Struct defining detailed Pseudo Port status, including electrical parameters."];
+  Node12 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" txState" ];
+  Node12 [label="LeoTxState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoTxState.html",tooltip="Struct defining detailed Transmitter status, including electrical parameters."];
+  Node13 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" rxState" ];
+  Node13 [label="LeoRxState",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structLeoRxState.html",tooltip="Struct defining detailed Receiver status, including electrical parameters."];
+}

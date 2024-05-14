@@ -1,0 +1,175 @@
+\hypertarget{leo__evt__rec__mgr_8h_source}{}\doxysection{leo\+\_\+evt\+\_\+rec\+\_\+mgr.\+h}
+\label{leo__evt__rec__mgr_8h_source}\index{leo-\/sdk-\/c/include/leo\_evt\_rec\_mgr.h@{leo-\/sdk-\/c/include/leo\_evt\_rec\_mgr.h}}
+\mbox{\hyperlink{leo__evt__rec__mgr_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_EVT\_REC\_MGR\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_EVT\_REC\_MGR\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MAX\_EVT\_RECS\ \ \ \ \ \ \ \ (16)}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Enums}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ evt\_type\ \{}
+\DoxyCodeLine{00033\ \ \ INFO\_EVENT\ =\ 0,}
+\DoxyCodeLine{00034\ \ \ WARN\_EVENT,}
+\DoxyCodeLine{00035\ \ \ FAILURE\_EVENT,}
+\DoxyCodeLine{00036\ \ \ FATAL\_EVENT}
+\DoxyCodeLine{00037\ \}\ evt\_type\_e;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ dram\_evt\_type\ \{}
+\DoxyCodeLine{00040\ \ \ MEDIA\_ECC\_ERR\ =\ 0,}
+\DoxyCodeLine{00041\ \ \ SCRUB\_MEDIA\_ECC\_ERR,}
+\DoxyCodeLine{00042\ \ \ INVALID\_ADDR,}
+\DoxyCodeLine{00043\ \ \ DATA\_PATH\_ERR}
+\DoxyCodeLine{00044\ \}\ dram\_evt\_type\_e;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ dram\_transaction\_type\ \{}
+\DoxyCodeLine{00047\ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00048\ \ \ HOST\_READ,}
+\DoxyCodeLine{00049\ \ \ HOST\_WRITE,}
+\DoxyCodeLine{00050\ \ \ HOST\_SCAN\_MEDIA,}
+\DoxyCodeLine{00051\ \ \ HOST\_INJECT\_POISON,}
+\DoxyCodeLine{00052\ \ \ INTERNAL\_MEDIA\_SCRUB,}
+\DoxyCodeLine{00053\ \ \ INTERNAL\_MEDIA\_MGT}
+\DoxyCodeLine{00054\ \}\ dram\_transaction\_type\_e;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ media\_err\_rec\_type\ \{}
+\DoxyCodeLine{00057\ \ \ UNKNOWN\_ERR\ =\ 0,}
+\DoxyCodeLine{00058\ \ \ EXTERNAL\_POISON,}
+\DoxyCodeLine{00059\ \ \ INTERNAL\_POISON,}
+\DoxyCodeLine{00060\ \ \ INJECTED\_POISON,}
+\DoxyCodeLine{00061\ \ \ VENDOR\_SPECIFIC}
+\DoxyCodeLine{00062\ \}\ media\_err\_rec\_type\_e;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ evt\_rec\_type\ \{}
+\DoxyCodeLine{00065\ \ \ GEN\_MEDIA\_EVT\_REC,}
+\DoxyCodeLine{00066\ \ \ DRAM\_EVT\_REC,}
+\DoxyCodeLine{00067\ \ \ MEM\_MODULE\_EVT\_REC}
+\DoxyCodeLine{00068\ \}\ evt\_rec\_type\_e;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Structures}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ DRAM\ related\ event\ record\ */}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdram__evt__rec}{dram\_evt\_rec}}\ \{}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ dpa;}
+\DoxyCodeLine{00077\ \ \ uint8\_t\ uncorr\_evt\ :\ 1;}
+\DoxyCodeLine{00078\ \ \ uint8\_t\ threshold\_evt\ :\ 1;}
+\DoxyCodeLine{00079\ \ \ uint8\_t\ poison\_list\_overflow\ :\ 1;}
+\DoxyCodeLine{00080\ \ \ uint8\_t\ rsvd0\ :\ 5;}
+\DoxyCodeLine{00081\ \ \ uint8\_t\ evt\_type;}
+\DoxyCodeLine{00082\ \ \ uint8\_t\ txn\_type;}
+\DoxyCodeLine{00083\ \ \ uint8\_t\ validity[2];}
+\DoxyCodeLine{00084\ \ \ uint8\_t\ channel;}
+\DoxyCodeLine{00085\ \ \ uint8\_t\ rank;}
+\DoxyCodeLine{00086\ \ \ uint8\_t\ nibble\_mask[3];}
+\DoxyCodeLine{00087\ \ \ uint8\_t\ bank\_group;}
+\DoxyCodeLine{00088\ \ \ uint8\_t\ bank;}
+\DoxyCodeLine{00089\ \ \ uint8\_t\ row[3];}
+\DoxyCodeLine{00090\ \ \ uint8\_t\ col[2];}
+\DoxyCodeLine{00091\ \ \ uint8\_t\ corr\_mask[32];}
+\DoxyCodeLine{00092\ \ \ uint8\_t\ rsvd1[23];}
+\DoxyCodeLine{00093\ \}\ \mbox{\hyperlink{structdram__evt__rec}{dram\_evt\_rec\_t}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{/*\ general\ device\ related\ event\ record\ */}}
+\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmem__mdl__evt__rec}{mem\_mdl\_evt\_rec}}\ \{}
+\DoxyCodeLine{00097\ \ \ uint8\_t\ evt\_type;}
+\DoxyCodeLine{00098\ \ \ uint8\_t\ health\_sts;}
+\DoxyCodeLine{00099\ \ \ uint8\_t\ media\_sts;}
+\DoxyCodeLine{00100\ \ \ uint8\_t\ extra\_sts;}
+\DoxyCodeLine{00101\ \ \ uint8\_t\ life\_used;}
+\DoxyCodeLine{00102\ \ \ uint8\_t\ dev\_temp[2];}
+\DoxyCodeLine{00103\ \ \ uint8\_t\ dirty\_shn\_cnt[4];}
+\DoxyCodeLine{00104\ \ \ uint8\_t\ corr\_vol\_err\_cnt[4];}
+\DoxyCodeLine{00105\ \ \ uint8\_t\ corr\_pers\_err\_cnt[4];}
+\DoxyCodeLine{00106\ \ \ uint8\_t\ rsvd[61];}
+\DoxyCodeLine{00107\ \}\ \mbox{\hyperlink{structmem__mdl__evt__rec}{mem\_mdl\_evt\_rec\_t}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*\ general\ media\ related\ event\ record\ */}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgen__media__evt__rec}{gen\_media\_evt\_rec}}\ \{}
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ \ \ \ \ dpa;}
+\DoxyCodeLine{00112\ \ \ uint8\_t\ \ \ \ \ uncorr\_evt\ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ 1;\ \ \ \ \textcolor{comment}{/*\ 1=uncorr,\ 0=corr\ */}}
+\DoxyCodeLine{00113\ \ \ uint8\_t\ \ \ \ \ threshold\_evt\ \ \ \ \ \ \ \ \ \ \ :\ 1;}
+\DoxyCodeLine{00114\ \ \ uint8\_t\ \ \ \ \ poison\_list\_overflow\ \ \ \ :\ 1;}
+\DoxyCodeLine{00115\ \ \ uint8\_t\ \ \ \ \ rsvd0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ 5;}
+\DoxyCodeLine{00116\ \ \ uint8\_t\ \ \ \ \ evt\_type;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ memory\ event\ type,\ media\ or\ scrub\ */}}
+\DoxyCodeLine{00117\ \ \ uint8\_t\ \ \ \ \ txn\_type;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ host\ rw\ or\ scrub\ rw\ or\ poison\ injection\ */}}
+\DoxyCodeLine{00118\ \ \ uint8\_t\ \ \ \ \ validity[2];}
+\DoxyCodeLine{00119\ \ \ uint8\_t\ \ \ \ \ channel;}
+\DoxyCodeLine{00120\ \ \ uint8\_t\ \ \ \ \ rank;}
+\DoxyCodeLine{00121\ \ \ uint8\_t\ \ \ \ \ device[3];}
+\DoxyCodeLine{00122\ \ \ uint8\_t\ \ \ \ \ comp\_id[16];}
+\DoxyCodeLine{00123\ \ \ uint8\_t\ \ \ \ \ rsvd1[46];}
+\DoxyCodeLine{00124\ \}\ \mbox{\hyperlink{structgen__media__evt__rec}{gen\_media\_evt\_rec\_t}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionevt__spc__data}{evt\_spc\_data}}\ \{}
+\DoxyCodeLine{00127\ \ \ uint32\_t\ data[20];}
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{structdram__evt__rec}{dram\_evt\_rec\_t}}\ dram\_rec;}
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{structmem__mdl__evt__rec}{mem\_mdl\_evt\_rec\_t}}\ mem\_mdl\_rec;}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{structgen__media__evt__rec}{gen\_media\_evt\_rec\_t}}\ media\_rec;}
+\DoxyCodeLine{00131\ \}\ \mbox{\hyperlink{unionevt__spc__data}{evt\_spc\_data\_t}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/*\ common\ event\ record\ */}}
+\DoxyCodeLine{00134\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structleo__evt__rec}{leo\_evt\_rec}}\ \{}
+\DoxyCodeLine{00135\ \ \ uint32\_t\ \textcolor{keywordtype}{id}[4];\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Specific\ Event\ Record\ format\ UUID\ */}}
+\DoxyCodeLine{00136\ \ \ uint32\_t\ len\ :\ 8;\ \ \ \ \ \ \textcolor{comment}{/*\ Event\ Record\ length\ including\ data\ and\ all\ fields\ */}}
+\DoxyCodeLine{00137\ \ \ uint32\_t\ severity\ :\ 2;\ \textcolor{comment}{/*\ Severity\ flag\ */}}
+\DoxyCodeLine{00138\ \ \ uint32\_t\ pc\ :\ 1;\ \ \ \ \ \ \ \textcolor{comment}{/*\ Permanent\ Condition\ flag\ */}}
+\DoxyCodeLine{00139\ \ \ uint32\_t\ mn\ :\ 1;\ \ \ \ \ \ \ \textcolor{comment}{/*\ Maintenance\ Needed\ flag\ */}}
+\DoxyCodeLine{00140\ \ \ uint32\_t\ pd\ :\ 1;\ \ \ \ \ \ \ \textcolor{comment}{/*\ Performance\ Degraded\ flag\ */}}
+\DoxyCodeLine{00141\ \ \ uint32\_t\ hrn\ :\ 1;\ \ \ \ \ \ \textcolor{comment}{/*\ Hardware\ Replacement\ Needed\ flag\ */}}
+\DoxyCodeLine{00142\ \ \ uint32\_t\ rsvd0\ :\ 18;}
+\DoxyCodeLine{00143\ \ \ uint32\_t\ handle\ :\ 16;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ non-\/zero\ Unique\ Handle\ for\ Event\ Record\ */}}
+\DoxyCodeLine{00144\ \ \ uint32\_t\ related\_handle\ :\ 16;\ \textcolor{comment}{/*\ Handle\ of\ another\ event\ of\ same\ type\ and\ log,}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Optional\ */}}
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ timestamp;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ nanoseconds\ since\ 01-\/Jan-\/1970,\ Optional\ */}}
+\DoxyCodeLine{00147\ \ \ uint32\_t\ rsvd[4];}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{unionevt__spc__data}{evt\_spc\_data\_t}}\ evt\_data;\ \textcolor{comment}{/*\ Specific\ Event\ log\ type\ Event\ Record\ */}}
+\DoxyCodeLine{00149\ \}\ \mbox{\hyperlink{structleo__evt__rec}{leo\_evt\_rec\_t}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structleo__one__evt__log}{leo\_one\_evt\_log}}\ \{}
+\DoxyCodeLine{00156\ \ \ uint32\_t\ overflow\ :\ 1;\ \ \ \ \ \ \textcolor{comment}{/*\ log\ overflow\ occurred\ */}}
+\DoxyCodeLine{00157\ \ \ uint32\_t\ more\_evt\_recs\ :\ 1;\ \textcolor{comment}{/*\ more\ evt\ rec\ available\ to\ fetch\ than\ can\ fit\ in}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ payload\ */}}
+\DoxyCodeLine{00159\ \ \ uint32\_t\ rsvd0\ :\ 6;}
+\DoxyCodeLine{00160\ \ \ uint32\_t\ rsvd1\ :\ 8;}
+\DoxyCodeLine{00161\ \ \ uint32\_t\ overflow\_err\_cnt\ :\ 16;\ \ \textcolor{comment}{/*\ no\ of\ events\ occurred\ since\ overflow\ */}}
+\DoxyCodeLine{00162\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ first\_overflow\_time;\ \textcolor{comment}{/*\ timestamp\ of\ first\ event\ that\ caused}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overflow\ */}}
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ last\_overflow\_time;\ \ \textcolor{comment}{/*\ timestamp\ of\ last\ event\ detected\ since}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ overflow\ */}}
+\DoxyCodeLine{00166\ \ \ uint32\_t\ evt\_rec\_cnt\ :\ 16;\ \textcolor{comment}{/*\ no\ of\ event\ records\ in\ list,\ 0\ =\ no\ events\ present\ */}}
+\DoxyCodeLine{00167\ \ \ uint32\_t\ rsvd2\ :\ 16;}
+\DoxyCodeLine{00168\ \ \ uint32\_t\ rsvd3[2];}
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{structleo__evt__rec}{leo\_evt\_rec\_t}}\ rec;}
+\DoxyCodeLine{00170\ \}\ \mbox{\hyperlink{leo__evt__rec__mgr_8h_a3e2271e4367903323abd4657b4cf2397}{\_\_attribute\_\_}}((packed,\ aligned(1)))\ leo\_one\_evt\_log\_t;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00175\ typedef\ struct\ \mbox{\hyperlink{structleo__err__info}{leo\_err\_info}}\ \{}
+\DoxyCodeLine{00176\ \ \ uint32\_t\ \ \ \ corr\_ecc\_errcnt;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ correctable\ error\ count,\ cumulative\ */}}
+\DoxyCodeLine{00177\ \ \ uint32\_t\ \ \ \ uncorr\_ecc\_errcnt;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ uncorrectable\ error\ count,\ cumulative*/}}
+\DoxyCodeLine{00178\ \ \ uint32\_t\ \ \ \ scrb\_corr\_errcnt;}
+\DoxyCodeLine{00179\ \ \ uint32\_t\ \ \ \ scrb\_uncorr\_errcnt;}
+\DoxyCodeLine{00180\ \ \ uint32\_t\ \ \ \ scrb\_other\_errcnt;}
+\DoxyCodeLine{00181\ \}\ \mbox{\hyperlink{leo__evt__rec__mgr_8h_a3e2271e4367903323abd4657b4cf2397}{\_\_attribute\_\_}}((packed,\ aligned(1)))\ leo\_err\_info\_t;}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

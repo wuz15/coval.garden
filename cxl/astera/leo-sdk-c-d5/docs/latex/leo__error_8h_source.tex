@@ -1,0 +1,58 @@
+\hypertarget{leo__error_8h_source}{}\doxysection{leo\+\_\+error.\+h}
+\label{leo__error_8h_source}\index{leo-\/sdk-\/c/include/leo\_error.h@{leo-\/sdk-\/c/include/leo\_error.h}}
+\mbox{\hyperlink{leo__error_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_ERROR\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_ERROR\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ Used\ to\ avoid\ warnings\ in\ case\ of\ unused\ parameters\ in\ function\ pointers\ */}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LEO\_UNUSED(x)\ (void)(x)}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{/*\ General\ purpose\ errors\ */}}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a3d72d460d19ae77549b045922a4e33f7}{LEO\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a10ff7d3839134a941724cd43e48880ff}{LEO\_FAILURE}}\ =\ -\/1,}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1ac29036d5217ee04dc879bba5670606eb}{LEO\_INVALID\_ARGUMENT}}\ =\ -\/2,}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1ad056c17957c5706dd1e5657b92b2e1aa}{LEO\_I2C\_OPEN\_FAILURE}}\ =\ -\/3,}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{/*\ I2C\ Access\ failures*/}}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a37e9fe6620a2bfc82db5988e2a9d865a}{LEO\_I2C\_BLOCK\_READ\_FAILURE}}\ =\ -\/4,}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a653458b7f2e28775532c03aea5a7aa1b}{LEO\_I2C\_BLOCK\_WRITE\_FAILURE}}\ =\ -\/5,}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a6710bb019f4acfab5a1b7bc1d9fb370e}{LEO\_FAILURE\_SRAM\_IND\_ACCESS\_TIMEOUT}}\ =\ -\/6,}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{/*\ Main\ Micro\ access\ failures\ */}}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a2c7ab14b82cee261017226382c938320}{LEO\_PMA\_MM\_ACCESS\_FAILURE}}\ =\ -\/7,}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a7ca98d7d2415bc6e1019b9a05e9e2a41}{LEO\_FUNCTION\_NOT\_IMPLEMENTED}}\ =\ -\/8,}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a6afd7af786d63769e2d9ed3f7ae44590}{LEO\_FW\_NOT\_RUNNING}}\ =\ -\/9,}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a5c1271f53eb4927e1ae64bf743729a73}{LEO\_FW\_SDK\_VERSION\_MISMATCH}}\ =\ -\/10,}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1a603d671f8b5c0e3682bae9057169c74f}{LEO\_FUNCTION\_UNSUCCESSFUL}}\ =\ -\/16}
+\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{LeoErrorType}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_ERROR\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,177 @@
+\hypertarget{misc_8h_source}{}\doxysection{misc.\+h}
+\label{misc_8h_source}\index{leo-\/sdk-\/c/include/misc.h@{leo-\/sdk-\/c/include/misc.h}}
+\mbox{\hyperlink{misc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_MISC\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_MISC\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}../include/astera\_log.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MIN(a,\ b)\ (((a)\ <=\ (b))\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MAX(a,\ b)\ (((a)\ >=\ (b))\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SIZE\_1K\ (1\ <<\ 10)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ SIZE\_4K\ (SIZE\_1K\ <<\ 2)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SIZE\_8K\ (SIZE\_1K\ <<\ 3)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ SIZE\_16K\ (SIZE\_1K\ <<\ 4)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SIZE\_32K\ (SIZE\_1K\ <<\ 5)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SIZE\_64K\ (SIZE\_1K\ <<\ 6)}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ GET\_U64\_HIGH(x)\ ((x)\ >>\ 32)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ GET\_U64\_LOW(x)\ ((x)\ \&\ (0xFFFFFFFF))}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ GET\_U32\_HIGH(x)\ (((x)\ \&\ (0xFFFF0000))\ >>\ 16)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ GET\_U32\_LOW(x)\ ((x)\ \&\ (0xFFFF))}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ GET\_U16\_HIGH(x)\ (((x)\ \&\ (0xFF00))\ >>\ 8)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ GET\_U16\_LOW(x)\ ((x)\ \&\ (0xFF))}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ GET\_U8\_HIGH(x)\ (((x)\ \&\ (0xF0))\ >>\ 4)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ GET\_U8\_LOW(x)\ ((x)\ \&\ (0xF))}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ SWAP\_U16(x)\ ((((x)\ <<\ 8)\ \&\ 0xFF00)\ |\ (((x)\ >>\ 8)\ \&\ 0xFF))}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SWAP\_U32(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ ((SWAP\_U16((x\ \&\ 0xFFFF))\ <<\ 16)\ |\ SWAP\_U16(((x\ >>\ 16)\ \&\ 0xFFFF)))}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ DWORD\_OFFSET(x)\ ((x)\ >>\ 2)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ DWORD\_SIZE(x)\ ((x)\ >>\ 2)}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{static}\ \_\_inline\_\_\ uint32\_t\ align\_down(uint32\_t\ val,\ uint32\_t\ align)\ \{}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordflow}{return}\ (val\ \&\ (\string~(align\ -\/\ 1)));}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{static}\ \_\_inline\_\_\ uint32\_t\ align\_up(uint32\_t\ val,\ uint32\_t\ align)\ \{}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordflow}{return}\ ((val\ +\ align)\ \&\ (\string~(align\ -\/\ 1)));}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Each\ word\ is\ 32\ bits.}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT\ (5)}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Each\ word\ is\ 4\ bytes.}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BYTE\_SHIFT\ (2)}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Each\ word\ is\ 8\ bits.}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ BITMAP\_WORD\_ARRAY\_CHAR\_SIZE\_BITS\_SHIFT\ (3)}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ BITMAP\_WORD\_ARRAY\_SIZE\_WORDS(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ ((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ (BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ BITMAP\_WORD\_ARRAY\_SIZE\_BYTES(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\ \ (((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ (BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BYTE\_SHIFT)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ BITMAP\_CHAR\_ARRAY\_SIZE\_BYTES(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ ((x\ +\ (1\ <<\ BITMAP\_WORD\_ARRAY\_CHAR\_SIZE\_BITS\_SHIFT))\ >>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ (BITMAP\_WORD\_ARRAY\_CHAR\_SIZE\_BITS\_SHIFT))}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{static}\ \_\_inline\_\_\ \textcolor{keywordtype}{bool}\ bitmap\_word\_array\_is\_bitset(uint32\_t\ *p\_bmp,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ bit\_num)\ \{}
+\DoxyCodeLine{00090\ \ \ uint32\_t\ bmp\_ar\_idx\ =\ bit\_num\ >>\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT;}
+\DoxyCodeLine{00091\ \ \ uint32\_t\ bmp\_bit\_idx\ =}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ bit\_num\ -\/\ (bmp\_ar\_idx\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordflow}{return}\ ((p\_bmp[bmp\_ar\_idx]\ \&\ (1\ <<\ bmp\_bit\_idx))\ >>\ bmp\_bit\_idx);}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{static}\ \_\_inline\_\_\ \textcolor{keywordtype}{void}\ bitmap\_word\_array\_bit\_set(uint32\_t\ *p\_bmp,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ bit\_num)\ \{}
+\DoxyCodeLine{00106\ \ \ uint32\_t\ bmp\_ar\_idx\ =\ bit\_num\ >>\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT;}
+\DoxyCodeLine{00107\ \ \ uint32\_t\ bmp\_bit\_idx\ =}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ bit\_num\ -\/\ (bmp\_ar\_idx\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ p\_bmp[bmp\_ar\_idx]\ |=\ (1\ <<\ bmp\_bit\_idx);}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{static}\ \_\_inline\_\_\ \textcolor{keywordtype}{void}\ bitmap\_word\_array\_bit\_clear(uint32\_t\ *p\_bmp,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ bit\_num)\ \{}
+\DoxyCodeLine{00122\ \ \ uint32\_t\ bmp\_ar\_idx\ =\ bit\_num\ >>\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT;}
+\DoxyCodeLine{00123\ \ \ uint32\_t\ bmp\_bit\_idx\ =}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ bit\_num\ -\/\ (bmp\_ar\_idx\ <<\ BITMAP\_WORD\_ARRAY\_WORD\_SIZE\_BITS\_SHIFT);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ p\_bmp[bmp\_ar\_idx]\ \&=\ (\string~(1\ <<\ bmp\_bit\_idx));}
+\DoxyCodeLine{00127\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ RET\_OK\ 0}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ RET\_FAIL\ 1}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ UNUSED\_FUNC\_ARG(X)\ (void)X}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ Debug\ printing\ for\ simulations}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ FW\_NONE\ 0x0}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ FW\_LOW\ 0x1}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ FW\_MEDIUM\ 0x2}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ FW\_HIGH\ 0x3}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#ifndef\ FW\_VERBOSITY}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ FW\_VERBOSITY\ FW\_NONE}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#if\ FW\_VERBOSITY\ ==\ FW\_HIGH}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ al\_print\_high(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ al\_print\_medium(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ al\_print\_low(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#elif\ FW\_VERBOSITY\ ==\ FW\_MEDIUM}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ al\_print\_high(...)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ al\_print\_medium(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ al\_print\_low(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#elif\ FW\_VERBOSITY\ ==\ FW\_LOW}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ al\_print\_high(...)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ al\_print\_medium(...)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ al\_print\_low(...)\ al\_print(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#elif\ FW\_VERBOSITY\ ==\ FW\_NONE}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ al\_print\_high(...)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ al\_print\_medium(...)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ al\_print\_low(...)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ TRUE\ 1}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ FALSE\ 0}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ ENABLE\ 1}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ DISABLE\ 0}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ MSK\_BIT0\ 0x01}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ MSK\_BIT1\ 0x02}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ MSK\_BIT2\ 0x04}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ MSK\_BIT3\ 0x08}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ MSK\_BIT4\ 0x10}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ MSK\_BIT5\ 0x20}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ MSK\_BIT6\ 0x40}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ MSK\_BIT7\ 0x80}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ LANE0\ 0x0}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ LANE1\ 0x1}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ LANEX\ 0xF}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionqword}{qword}}\ \{}
+\DoxyCodeLine{00184\ \ \ uint8\_t\ \textcolor{keywordtype}{byte}[8];}
+\DoxyCodeLine{00185\ \ \ uint16\_t\ word[4];}
+\DoxyCodeLine{00186\ \ \ uint32\_t\ dw[2];}
+\DoxyCodeLine{00187\ \ \ uint64\_t\ qw;}
+\DoxyCodeLine{00188\ \}\ \mbox{\hyperlink{unionqword}{qword\_t}};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00194\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{misc_8h_aae3624cff005ca823ad1a0c7934168af}{p\_generic\_scheduler}})(\textcolor{keywordtype}{void}\ *ctx);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#ifdef\ CHIP\_D5}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#include\ "{}d5/leo\_top\_csr\_pub\_d5.h"{}}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#elif\ CHIP\_A0}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#include\ "{}a0/leo\_top\_csr\_pub\_a0.h"{}}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#error\ Unknown\ CHIP\ verison}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

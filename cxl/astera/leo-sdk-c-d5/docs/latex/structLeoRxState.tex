@@ -1,0 +1,236 @@
+\hypertarget{structLeoRxState}{}\doxysection{Leo\+Rx\+State Struct Reference}
+\label{structLeoRxState}\index{LeoRxState@{LeoRxState}}
+
+
+Struct defining detailed Receiver status, including electrical parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structLeoRxState_af1aad50b395af8c8270e4195015035fa}{logical\+Lane\+Num}}
+\item 
+char $\ast$ \mbox{\hyperlink{structLeoRxState_aa5a5bf83b92e6c4b7cdad2eacb5baffd}{physical\+Pin\+Name}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_aa72b2e7a51ad661d5dcfe13fe383e328}{termination}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a6000a700a3960d43364ff0ba5db78396}{polarity}}
+\item 
+\mbox{\Hypertarget{structLeoRxState_ac9c85d19d9e62d67cf21fadfa98aba4f}\label{structLeoRxState_ac9c85d19d9e62d67cf21fadfa98aba4f}} 
+float {\bfseries attdB}
+\item 
+float \mbox{\hyperlink{structLeoRxState_ab812566260716c2fe5a93117c74c6324}{vgadB}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_ac0a8467447efd7b32da78fb121eaf5de}{ctle\+BoostdB}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_afd2d0f1c2b5f9fe0fe4c97c809b6f146}{ctle\+Pole}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_a2e7db2bb9caa2d4ca29e92c5a86eb26f}{dfe1}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_a5046193c2168d2927d01de4d007b752b}{dfe2}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_aa655138ac0cd5ab9105e0a1dca7b8e2c}{dfe3}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_ab9423d59218f32568001043fd00a8629}{dfe4}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_a9507cac09443e6630db94142a71163e3}{dfe5}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_a916b1f5ac77efb1ee3ca6993e8b4ff5f}{dfe6}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_aa2ec0c74d84ad8399b177440547abf6f}{dfe7}}
+\item 
+float \mbox{\hyperlink{structLeoRxState_a6210e61edca4cf6e6601818876991010}{dfe8}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_aa2a7125f8a5133e4f47512c9c03ceab8}{FoM}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a34fb91ca670f273b5ed7cfe6e3319dcc}{last\+Eq\+Rate}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a2315817326efffbc12f04e44ee8fd58d}{last\+Preset\+Req}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_ada118bc7c7dc7b39a2418f10b989be72}{last\+Preset\+Req\+Fom}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a1be04fc96b8a576a667287df47e6d56a}{last\+Preset\+Req\+M1}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_ac3199a5f1772d66fef64795644647507}{last\+Preset\+Req\+Fom\+M1}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a03679e4d3b37a740366bcbda318146c7}{last\+Preset\+Req\+M2}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a24bad903505cb627ef1ccea554f1d024}{last\+Preset\+Req\+Fom\+M2}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_aca8af1722a422097f6c2afba3ffd9d96}{last\+Preset\+Req\+M3}}
+\item 
+int \mbox{\hyperlink{structLeoRxState_a1e70ef79979f723a0e8c2c4216fda51e}{last\+Preset\+Req\+Fom\+M3}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structLeoRxState_af467439f4d7ecac1a53b17bda23fa2fa}{DPLLCode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed Receiver status, including electrical parameters. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoRxState_ac0a8467447efd7b32da78fb121eaf5de}\label{structLeoRxState_ac0a8467447efd7b32da78fb121eaf5de}} 
+\index{LeoRxState@{LeoRxState}!ctleBoostdB@{ctleBoostdB}}
+\index{ctleBoostdB@{ctleBoostdB}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{ctleBoostdB}{ctleBoostdB}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::ctle\+BoostdB}
+
+Rx VGA, in DB CTLE boost, in dB \mbox{\Hypertarget{structLeoRxState_afd2d0f1c2b5f9fe0fe4c97c809b6f146}\label{structLeoRxState_afd2d0f1c2b5f9fe0fe4c97c809b6f146}} 
+\index{LeoRxState@{LeoRxState}!ctlePole@{ctlePole}}
+\index{ctlePole@{ctlePole}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{ctlePole}{ctlePole}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::ctle\+Pole}
+
+CTLE pole code setting \mbox{\Hypertarget{structLeoRxState_a2e7db2bb9caa2d4ca29e92c5a86eb26f}\label{structLeoRxState_a2e7db2bb9caa2d4ca29e92c5a86eb26f}} 
+\index{LeoRxState@{LeoRxState}!dfe1@{dfe1}}
+\index{dfe1@{dfe1}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe1}{dfe1}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe1}
+
+DFE tap 1 value, in mV \mbox{\Hypertarget{structLeoRxState_a5046193c2168d2927d01de4d007b752b}\label{structLeoRxState_a5046193c2168d2927d01de4d007b752b}} 
+\index{LeoRxState@{LeoRxState}!dfe2@{dfe2}}
+\index{dfe2@{dfe2}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe2}{dfe2}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe2}
+
+DFE tap 2 value, in mV \mbox{\Hypertarget{structLeoRxState_aa655138ac0cd5ab9105e0a1dca7b8e2c}\label{structLeoRxState_aa655138ac0cd5ab9105e0a1dca7b8e2c}} 
+\index{LeoRxState@{LeoRxState}!dfe3@{dfe3}}
+\index{dfe3@{dfe3}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe3}{dfe3}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe3}
+
+DFE tap 3 value, in mV \mbox{\Hypertarget{structLeoRxState_ab9423d59218f32568001043fd00a8629}\label{structLeoRxState_ab9423d59218f32568001043fd00a8629}} 
+\index{LeoRxState@{LeoRxState}!dfe4@{dfe4}}
+\index{dfe4@{dfe4}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe4}{dfe4}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe4}
+
+DFE tap 4 value, in mV \mbox{\Hypertarget{structLeoRxState_a9507cac09443e6630db94142a71163e3}\label{structLeoRxState_a9507cac09443e6630db94142a71163e3}} 
+\index{LeoRxState@{LeoRxState}!dfe5@{dfe5}}
+\index{dfe5@{dfe5}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe5}{dfe5}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe5}
+
+DFE tap 5 value, in mV \mbox{\Hypertarget{structLeoRxState_a916b1f5ac77efb1ee3ca6993e8b4ff5f}\label{structLeoRxState_a916b1f5ac77efb1ee3ca6993e8b4ff5f}} 
+\index{LeoRxState@{LeoRxState}!dfe6@{dfe6}}
+\index{dfe6@{dfe6}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe6}{dfe6}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe6}
+
+DFE tap 6 value, in mV \mbox{\Hypertarget{structLeoRxState_aa2ec0c74d84ad8399b177440547abf6f}\label{structLeoRxState_aa2ec0c74d84ad8399b177440547abf6f}} 
+\index{LeoRxState@{LeoRxState}!dfe7@{dfe7}}
+\index{dfe7@{dfe7}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe7}{dfe7}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe7}
+
+DFE tap 7 value, in mV \mbox{\Hypertarget{structLeoRxState_a6210e61edca4cf6e6601818876991010}\label{structLeoRxState_a6210e61edca4cf6e6601818876991010}} 
+\index{LeoRxState@{LeoRxState}!dfe8@{dfe8}}
+\index{dfe8@{dfe8}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{dfe8}{dfe8}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::dfe8}
+
+DFE tap 8 value, in mV \mbox{\Hypertarget{structLeoRxState_af467439f4d7ecac1a53b17bda23fa2fa}\label{structLeoRxState_af467439f4d7ecac1a53b17bda23fa2fa}} 
+\index{LeoRxState@{LeoRxState}!DPLLCode@{DPLLCode}}
+\index{DPLLCode@{DPLLCode}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{DPLLCode}{DPLLCode}}
+{\footnotesize\ttfamily uint16\+\_\+t Leo\+Rx\+State\+::\+DPLLCode}
+
+Current DPLL code \mbox{\Hypertarget{structLeoRxState_aa2a7125f8a5133e4f47512c9c03ceab8}\label{structLeoRxState_aa2a7125f8a5133e4f47512c9c03ceab8}} 
+\index{LeoRxState@{LeoRxState}!FoM@{FoM}}
+\index{FoM@{FoM}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{FoM}{FoM}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::\+FoM}
+
+Current FoM value \mbox{\Hypertarget{structLeoRxState_a34fb91ca670f273b5ed7cfe6e3319dcc}\label{structLeoRxState_a34fb91ca670f273b5ed7cfe6e3319dcc}} 
+\index{LeoRxState@{LeoRxState}!lastEqRate@{lastEqRate}}
+\index{lastEqRate@{lastEqRate}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastEqRate}{lastEqRate}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Eq\+Rate}
+
+Last speed (e.\+g. 4 for Gen4) at which EQ was done \mbox{\Hypertarget{structLeoRxState_a2315817326efffbc12f04e44ee8fd58d}\label{structLeoRxState_a2315817326efffbc12f04e44ee8fd58d}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReq@{lastPresetReq}}
+\index{lastPresetReq@{lastPresetReq}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReq}{lastPresetReq}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req}
+
+Final preset request \mbox{\Hypertarget{structLeoRxState_ada118bc7c7dc7b39a2418f10b989be72}\label{structLeoRxState_ada118bc7c7dc7b39a2418f10b989be72}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqFom@{lastPresetReqFom}}
+\index{lastPresetReqFom@{lastPresetReqFom}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqFom}{lastPresetReqFom}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+Fom}
+
+Final preset request FoM value \mbox{\Hypertarget{structLeoRxState_ac3199a5f1772d66fef64795644647507}\label{structLeoRxState_ac3199a5f1772d66fef64795644647507}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqFomM1@{lastPresetReqFomM1}}
+\index{lastPresetReqFomM1@{lastPresetReqFomM1}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqFomM1}{lastPresetReqFomM1}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+Fom\+M1}
+
+Final-\/1 preset request FoM value \mbox{\Hypertarget{structLeoRxState_a24bad903505cb627ef1ccea554f1d024}\label{structLeoRxState_a24bad903505cb627ef1ccea554f1d024}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqFomM2@{lastPresetReqFomM2}}
+\index{lastPresetReqFomM2@{lastPresetReqFomM2}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqFomM2}{lastPresetReqFomM2}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+Fom\+M2}
+
+Final-\/2 preset request FoM value \mbox{\Hypertarget{structLeoRxState_a1e70ef79979f723a0e8c2c4216fda51e}\label{structLeoRxState_a1e70ef79979f723a0e8c2c4216fda51e}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqFomM3@{lastPresetReqFomM3}}
+\index{lastPresetReqFomM3@{lastPresetReqFomM3}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqFomM3}{lastPresetReqFomM3}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+Fom\+M3}
+
+Final-\/3 preset request FoM value \mbox{\Hypertarget{structLeoRxState_a1be04fc96b8a576a667287df47e6d56a}\label{structLeoRxState_a1be04fc96b8a576a667287df47e6d56a}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqM1@{lastPresetReqM1}}
+\index{lastPresetReqM1@{lastPresetReqM1}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqM1}{lastPresetReqM1}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+M1}
+
+Final-\/1 preset request \mbox{\Hypertarget{structLeoRxState_a03679e4d3b37a740366bcbda318146c7}\label{structLeoRxState_a03679e4d3b37a740366bcbda318146c7}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqM2@{lastPresetReqM2}}
+\index{lastPresetReqM2@{lastPresetReqM2}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqM2}{lastPresetReqM2}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+M2}
+
+Final-\/2 preset request \mbox{\Hypertarget{structLeoRxState_aca8af1722a422097f6c2afba3ffd9d96}\label{structLeoRxState_aca8af1722a422097f6c2afba3ffd9d96}} 
+\index{LeoRxState@{LeoRxState}!lastPresetReqM3@{lastPresetReqM3}}
+\index{lastPresetReqM3@{lastPresetReqM3}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{lastPresetReqM3}{lastPresetReqM3}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::last\+Preset\+Req\+M3}
+
+Final-\/3 preset request \mbox{\Hypertarget{structLeoRxState_af1aad50b395af8c8270e4195015035fa}\label{structLeoRxState_af1aad50b395af8c8270e4195015035fa}} 
+\index{LeoRxState@{LeoRxState}!logicalLaneNum@{logicalLaneNum}}
+\index{logicalLaneNum@{logicalLaneNum}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{logicalLaneNum}{logicalLaneNum}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::logical\+Lane\+Num}
+
+Captured logical Lane number \mbox{\Hypertarget{structLeoRxState_aa5a5bf83b92e6c4b7cdad2eacb5baffd}\label{structLeoRxState_aa5a5bf83b92e6c4b7cdad2eacb5baffd}} 
+\index{LeoRxState@{LeoRxState}!physicalPinName@{physicalPinName}}
+\index{physicalPinName@{physicalPinName}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{physicalPinName}{physicalPinName}}
+{\footnotesize\ttfamily char$\ast$ Leo\+Rx\+State\+::physical\+Pin\+Name}
+
+Physical pin name \mbox{\Hypertarget{structLeoRxState_a6000a700a3960d43364ff0ba5db78396}\label{structLeoRxState_a6000a700a3960d43364ff0ba5db78396}} 
+\index{LeoRxState@{LeoRxState}!polarity@{polarity}}
+\index{polarity@{polarity}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{polarity}{polarity}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::polarity}
+
+Polarity normal (0) or inverted (1) status \mbox{\Hypertarget{structLeoRxState_aa72b2e7a51ad661d5dcfe13fe383e328}\label{structLeoRxState_aa72b2e7a51ad661d5dcfe13fe383e328}} 
+\index{LeoRxState@{LeoRxState}!termination@{termination}}
+\index{termination@{termination}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{termination}{termination}}
+{\footnotesize\ttfamily int Leo\+Rx\+State\+::termination}
+
+Termination enable (1) or disable (0) status \mbox{\Hypertarget{structLeoRxState_ab812566260716c2fe5a93117c74c6324}\label{structLeoRxState_ab812566260716c2fe5a93117c74c6324}} 
+\index{LeoRxState@{LeoRxState}!vgadB@{vgadB}}
+\index{vgadB@{vgadB}!LeoRxState@{LeoRxState}}
+\doxysubsubsection{\texorpdfstring{vgadB}{vgadB}}
+{\footnotesize\ttfamily float Leo\+Rx\+State\+::vgadB}
+
+Rx Attenuator, in DB 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

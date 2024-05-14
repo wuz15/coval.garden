@@ -1,0 +1,103 @@
+\hypertarget{unionLeoLinkControlRegisterType}{}\doxysection{Leo\+Link\+Control\+Register\+Type Union Reference}
+\label{unionLeoLinkControlRegisterType}\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+
+
+Struct defining detailed the Link Control register (offset 10h) which controls PCIe link parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unionLeoLinkControlRegisterType_ab2d2d8226ade91a3cf5545fa639ad729}\label{unionLeoLinkControlRegisterType_ab2d2d8226ade91a3cf5545fa639ad729}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_aab1bdb1f9ee9a24e940d4b2c1270d978}{ASPMControl}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_a45b80632315f1632e0ef7775e49b5b46}{Rsvd\+P1}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_acc8ff5833f029ab055bf64c7213912df}{read\+Completion\+Boundary}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_a24a44a60634ba43454bb014c4754a440}{link\+Disable}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_ad3b589716bc3dfb0f745a3f9cc1a28f4}{retrain\+Link}}: 2\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_aa5245c9c72e33e7168648cca6acb3519}{common\+Clock\+Config}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_a28c6c5258e03d5e5842cc144bff8e55a}{extended\+Sync}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_a823872ea90de83832027210ae3941a08}{enable\+Clock\+Power\+Management}}: 1\\
+\>uint8\_t \mbox{\hyperlink{unionLeoLinkControlRegisterType_aa66462517024cba8bfb9114de0169115}{Rsvd\+P2}}: 7\\
+\}; \\
+
+\end{tabbing}\item 
+uint8\+\_\+t \mbox{\hyperlink{unionLeoLinkControlRegisterType_ab3e5166a0d64988770861495cf00224c}{link\+Autonomous\+Bandwidth\+Status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed the Link Control register (offset 10h) which controls PCIe link parameters. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{unionLeoLinkControlRegisterType_aab1bdb1f9ee9a24e940d4b2c1270d978}\label{unionLeoLinkControlRegisterType_aab1bdb1f9ee9a24e940d4b2c1270d978}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!ASPMControl@{ASPMControl}}
+\index{ASPMControl@{ASPMControl}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{ASPMControl}{ASPMControl}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::\+ASPMControl}
+
+ASPM -\/Active State Power Management Control \mbox{\Hypertarget{unionLeoLinkControlRegisterType_aa5245c9c72e33e7168648cca6acb3519}\label{unionLeoLinkControlRegisterType_aa5245c9c72e33e7168648cca6acb3519}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!commonClockConfig@{commonClockConfig}}
+\index{commonClockConfig@{commonClockConfig}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{commonClockConfig}{commonClockConfig}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::common\+Clock\+Config}
+
+Data Link Layer Link Active \mbox{\Hypertarget{unionLeoLinkControlRegisterType_a823872ea90de83832027210ae3941a08}\label{unionLeoLinkControlRegisterType_a823872ea90de83832027210ae3941a08}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!enableClockPowerManagement@{enableClockPowerManagement}}
+\index{enableClockPowerManagement@{enableClockPowerManagement}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{enableClockPowerManagement}{enableClockPowerManagement}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::enable\+Clock\+Power\+Management}
+
+Clock power management enabled \mbox{\Hypertarget{unionLeoLinkControlRegisterType_a28c6c5258e03d5e5842cc144bff8e55a}\label{unionLeoLinkControlRegisterType_a28c6c5258e03d5e5842cc144bff8e55a}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!extendedSync@{extendedSync}}
+\index{extendedSync@{extendedSync}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{extendedSync}{extendedSync}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::extended\+Sync}
+
+Link Bandwidth Management Status \mbox{\Hypertarget{unionLeoLinkControlRegisterType_ab3e5166a0d64988770861495cf00224c}\label{unionLeoLinkControlRegisterType_ab3e5166a0d64988770861495cf00224c}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!linkAutonomousBandwidthStatus@{linkAutonomousBandwidthStatus}}
+\index{linkAutonomousBandwidthStatus@{linkAutonomousBandwidthStatus}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkAutonomousBandwidthStatus}{linkAutonomousBandwidthStatus}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::link\+Autonomous\+Bandwidth\+Status}
+
+Link Autonomous Bandwidth Status \mbox{\Hypertarget{unionLeoLinkControlRegisterType_a24a44a60634ba43454bb014c4754a440}\label{unionLeoLinkControlRegisterType_a24a44a60634ba43454bb014c4754a440}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!linkDisable@{linkDisable}}
+\index{linkDisable@{linkDisable}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{linkDisable}{linkDisable}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::link\+Disable}
+
+Link training state \mbox{\Hypertarget{unionLeoLinkControlRegisterType_acc8ff5833f029ab055bf64c7213912df}\label{unionLeoLinkControlRegisterType_acc8ff5833f029ab055bf64c7213912df}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!readCompletionBoundary@{readCompletionBoundary}}
+\index{readCompletionBoundary@{readCompletionBoundary}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{readCompletionBoundary}{readCompletionBoundary}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::read\+Completion\+Boundary}
+
+Read completion boundary value for root port or upstream from endpoint 0-\/\texorpdfstring{$>$}{>}64 byte and 1-\/\texorpdfstring{$>$}{>} 128 byte \mbox{\Hypertarget{unionLeoLinkControlRegisterType_ad3b589716bc3dfb0f745a3f9cc1a28f4}\label{unionLeoLinkControlRegisterType_ad3b589716bc3dfb0f745a3f9cc1a28f4}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!retrainLink@{retrainLink}}
+\index{retrainLink@{retrainLink}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{retrainLink}{retrainLink}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::retrain\+Link}
+
+Slot clock configuration \mbox{\Hypertarget{unionLeoLinkControlRegisterType_a45b80632315f1632e0ef7775e49b5b46}\label{unionLeoLinkControlRegisterType_a45b80632315f1632e0ef7775e49b5b46}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!RsvdP1@{RsvdP1}}
+\index{RsvdP1@{RsvdP1}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{RsvdP1}{RsvdP1}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::\+Rsvd\+P1}
+
+Reserved \mbox{\Hypertarget{unionLeoLinkControlRegisterType_aa66462517024cba8bfb9114de0169115}\label{unionLeoLinkControlRegisterType_aa66462517024cba8bfb9114de0169115}} 
+\index{LeoLinkControlRegisterType@{LeoLinkControlRegisterType}!RsvdP2@{RsvdP2}}
+\index{RsvdP2@{RsvdP2}!LeoLinkControlRegisterType@{LeoLinkControlRegisterType}}
+\doxysubsubsection{\texorpdfstring{RsvdP2}{RsvdP2}}
+{\footnotesize\ttfamily uint8\+\_\+t Leo\+Link\+Control\+Register\+Type\+::\+Rsvd\+P2}
+
+Reserved 
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

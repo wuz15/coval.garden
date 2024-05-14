@@ -1,0 +1,381 @@
+\hypertarget{leo__fwapi_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+fwapi.h File Reference}
+\label{leo__fwapi_8h}\index{leo-\/sdk-\/c/include/leo\_fwapi.h@{leo-\/sdk-\/c/include/leo\_fwapi.h}}
+
+
+Definition of public functions for the SDK.  
+
+
+{\ttfamily \#include \char`\"{}leo\+\_\+api\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for leo\+\_\+fwapi.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLeoFWUpdateMode__t}{Leo\+FWUpdate\+Mode\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structLeoFwImageFormat__t}{Leo\+Fw\+Image\+Format\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__fwapi_8h_aab2d3a5b92e97216725c7d32208f11c9}\label{leo__fwapi_8h_aab2d3a5b92e97216725c7d32208f11c9}} 
+typedef struct \mbox{\hyperlink{structLeoFWUpdateMode__t}{Leo\+FWUpdate\+Mode\+\_\+t}} {\bfseries Leo\+FWUpdate\+Mode\+Type}
+\item 
+\mbox{\Hypertarget{leo__fwapi_8h_a2df7d0de23a73a83c38257b0a481a855}\label{leo__fwapi_8h_a2df7d0de23a73a83c38257b0a481a855}} 
+typedef struct \mbox{\hyperlink{structLeoFwImageFormat__t}{Leo\+Fw\+Image\+Format\+\_\+t}} {\bfseries Leo\+Fw\+Image\+Format\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__fwapi_8h_af57f6e08002d9e9869f67758b2271444}{leo\+FWStatus\+Check}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Check status of FW loaded. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__fwapi_8h_a9dda1f56069050925c9640d95ed3331f}{leo\+FWUpdate\+Mode}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoFWUpdateMode__t}{Leo\+FWUpdate\+Mode\+Type}} mode)
+\begin{DoxyCompactList}\small\item\em Set FW update mode (Raw or Direct Mode) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__fwapi_8h_ae166024c40eed042259c8fbb63d533a4}{leo\+Do\+Fw\+Update}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, const char $\ast$fw\+Image\+Path)
+\begin{DoxyCompactList}\small\item\em Update the firmware image on the flash connected to Leo device using the SPI interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__fwapi_8h_ac88389cf812e615a25ee5f13f3838263}{leo\+Do\+Fw\+Updatein\+LTMode\+Raw}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, const uint8\+\_\+t $\ast$fw\+Image\+Buffer)
+\begin{DoxyCompactList}\small\item\em Update the firmware image on the flash connected to Leo device using the Leo Tunneling mode (I2C interface) The Leo Tunnel mode SDK API will support firmware update in-\/band via the CXL through the PCIe interface in the later release (Not supported yet) Only planned for the future releases. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a0cc0b9f7204cd66b51c16575d24a1b3b}{leo\+Checkfor\+Fw\+Update}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, const char $\ast$fw\+Image\+Path)
+\begin{DoxyCompactList}\small\item\em Check if there is an updated firmware image available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLeoFwImageFormat__t}{Leo\+Fw\+Image\+Format\+Type}} \mbox{\hyperlink{leo__fwapi_8h_a8d0bf74d371dbd74c901036e25f994f2}{leo\+Get\+Current\+FWVersion}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Get current firmware version/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a3b668397073a7aaf3d605808b85746a2}{Leo\+Load\+Current\+FW}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, const char $\ast$fw\+Image\+Path)
+\begin{DoxyCompactList}\small\item\em Load current firmware version/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a280d966fa3b72df2603a1c2a3a6c2a3d}{Leo\+Switch\+Current\+FW}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type)
+\begin{DoxyCompactList}\small\item\em Switch the current firmware version/type (A, B or G) \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{leo__fwapi_8h_a9184a90f5df70d71c8c9def1ebe3f509}{Leo\+Get\+Erasable\+Block\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Get the block size of erasable flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_aa279da79caa7800226e134b88e15bdef}{Leo\+Flash\+Index\+Dump}} (uint32\+\_\+t start\+Address, uint32\+\_\+t end\+Address, const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em dump selected flash area or the entire flash device \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a36584b9f6da150751e4cc2d878a0cc6d}{Leo\+Flash\+Index\+Write}} (int8\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em speed up access to wrote to the flash device \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a411da42279179adc68793de6ac4f7f85}{Leo\+Sys\+Config\+Reset}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type)
+\begin{DoxyCompactList}\small\item\em System Configuration reset to factory default values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_a91fe7ac71d91484cfcf4b9932bbbfc0f}{Leo\+Sys\+Config\+Write}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, int8\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em System Configuration Write. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_ad224392c63c47e2f73938ed237256f09}{Leo\+Sys\+Config\+Dump}} (\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, int8\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em System Configuration dump block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_abed93ee539a187c133b98a6fa93db2d9}{Leo\+Persistent\+Data\+Dump}} (void)
+\begin{DoxyCompactList}\small\item\em Persistent data dump from the flash device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_adc05ef99c5c9dec5f561be293ba72f0f}{Leo\+Persistent\+Data\+Write}} (int8\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Persistent data write to the flash device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{leo__fwapi_8h_adda5d0aba202d433a5cafa00ce4f576c}{Leo\+Persistent\+Data\+Erase}} (void)
+\begin{DoxyCompactList}\small\item\em Persistent data erase from the flash device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of public functions for the SDK. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__fwapi_8h_a0cc0b9f7204cd66b51c16575d24a1b3b}\label{leo__fwapi_8h_a0cc0b9f7204cd66b51c16575d24a1b3b}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoCheckforFwUpdate@{leoCheckforFwUpdate}}
+\index{leoCheckforFwUpdate@{leoCheckforFwUpdate}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoCheckforFwUpdate()}{leoCheckforFwUpdate()}}
+{\footnotesize\ttfamily void leo\+Checkfor\+Fw\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{const char $\ast$}]{fw\+Image\+Path }\end{DoxyParamCaption})}
+
+
+
+Check if there is an updated firmware image available. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ out}}  & {\em fw\+Image\+Path} & Pointer to the firmware image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_ae166024c40eed042259c8fbb63d533a4}\label{leo__fwapi_8h_ae166024c40eed042259c8fbb63d533a4}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoDoFwUpdate@{leoDoFwUpdate}}
+\index{leoDoFwUpdate@{leoDoFwUpdate}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoDoFwUpdate()}{leoDoFwUpdate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Do\+Fw\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{const char $\ast$}]{fw\+Image\+Path }\end{DoxyParamCaption})}
+
+
+
+Update the firmware image on the flash connected to Leo device using the SPI interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Path} & Pointer to the firmware image \\
+\hline
+\mbox{\texttt{ in}}  & {\em char$\ast$} & FW Image format type -\/ A, B or G \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_ac88389cf812e615a25ee5f13f3838263}\label{leo__fwapi_8h_ac88389cf812e615a25ee5f13f3838263}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoDoFwUpdateinLTModeRaw@{leoDoFwUpdateinLTModeRaw}}
+\index{leoDoFwUpdateinLTModeRaw@{leoDoFwUpdateinLTModeRaw}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoDoFwUpdateinLTModeRaw()}{leoDoFwUpdateinLTModeRaw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Do\+Fw\+Updatein\+LTMode\+Raw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{const uint8\+\_\+t $\ast$}]{fw\+Image\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Update the firmware image on the flash connected to Leo device using the Leo Tunneling mode (I2C interface) The Leo Tunnel mode SDK API will support firmware update in-\/band via the CXL through the PCIe interface in the later release (Not supported yet) Only planned for the future releases. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ in}}  & {\em uint8\+\_\+t$\ast$} & Address or Pointer to the firmware image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_aa279da79caa7800226e134b88e15bdef}\label{leo__fwapi_8h_aa279da79caa7800226e134b88e15bdef}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoFlashIndexDump@{LeoFlashIndexDump}}
+\index{LeoFlashIndexDump@{LeoFlashIndexDump}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoFlashIndexDump()}{LeoFlashIndexDump()}}
+{\footnotesize\ttfamily void Leo\+Flash\+Index\+Dump (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{start\+Address,  }\item[{uint32\+\_\+t}]{end\+Address,  }\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+dump selected flash area or the entire flash device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+Address} & start address of the flash area to be dumped \\
+\hline
+\mbox{\texttt{ in}}  & {\em end\+Address} & end address of the flash area to be dumped \\
+\hline
+\mbox{\texttt{ in}}  & {\em dump\+File\+Path} & file path to dump the flash area \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_a36584b9f6da150751e4cc2d878a0cc6d}\label{leo__fwapi_8h_a36584b9f6da150751e4cc2d878a0cc6d}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoFlashIndexWrite@{LeoFlashIndexWrite}}
+\index{LeoFlashIndexWrite@{LeoFlashIndexWrite}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoFlashIndexWrite()}{LeoFlashIndexWrite()}}
+{\footnotesize\ttfamily void Leo\+Flash\+Index\+Write (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+speed up access to wrote to the flash device 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Block\+Size\+\_\+t} & block size to be used for the write \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_af57f6e08002d9e9869f67758b2271444}\label{leo__fwapi_8h_af57f6e08002d9e9869f67758b2271444}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoFWStatusCheck@{leoFWStatusCheck}}
+\index{leoFWStatusCheck@{leoFWStatusCheck}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoFWStatusCheck()}{leoFWStatusCheck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+FWStatus\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Check status of FW loaded. 
+
+Check the code load register and the Main Micro heartbeat. If all is good, then read the firmware version
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code
+\end{DoxyReturn}
+
+
+Check the code load register and the Main Micro heartbeat. If all is good, then read the firmware version
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_a9dda1f56069050925c9640d95ed3331f}\label{leo__fwapi_8h_a9dda1f56069050925c9640d95ed3331f}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoFWUpdateMode@{leoFWUpdateMode}}
+\index{leoFWUpdateMode@{leoFWUpdateMode}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoFWUpdateMode()}{leoFWUpdateMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+FWUpdate\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoFWUpdateMode__t}{Leo\+FWUpdate\+Mode\+Type}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Set FW update mode (Raw or Direct Mode) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em mode} & Leo\+FWUpdate\+Mode\+Type -\/ FW update mode (Raw or Direct Mode) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_a8d0bf74d371dbd74c901036e25f994f2}\label{leo__fwapi_8h_a8d0bf74d371dbd74c901036e25f994f2}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!leoGetCurrentFWVersion@{leoGetCurrentFWVersion}}
+\index{leoGetCurrentFWVersion@{leoGetCurrentFWVersion}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{leoGetCurrentFWVersion()}{leoGetCurrentFWVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLeoFwImageFormat__t}{Leo\+Fw\+Image\+Format\+Type}} leo\+Get\+Current\+FWVersion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Get current firmware version/type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Fw\+Image\+Format\+Type -\/ FW image format type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_a9184a90f5df70d71c8c9def1ebe3f509}\label{leo__fwapi_8h_a9184a90f5df70d71c8c9def1ebe3f509}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoGetErasableBlockSize@{LeoGetErasableBlockSize}}
+\index{LeoGetErasableBlockSize@{LeoGetErasableBlockSize}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoGetErasableBlockSize()}{LeoGetErasableBlockSize()}}
+{\footnotesize\ttfamily int8\+\_\+t Leo\+Get\+Erasable\+Block\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the block size of erasable flash. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Block Size\+\_\+t -\/ size of an erasable block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_a3b668397073a7aaf3d605808b85746a2}\label{leo__fwapi_8h_a3b668397073a7aaf3d605808b85746a2}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoLoadCurrentFW@{LeoLoadCurrentFW}}
+\index{LeoLoadCurrentFW@{LeoLoadCurrentFW}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoLoadCurrentFW()}{LeoLoadCurrentFW()}}
+{\footnotesize\ttfamily void Leo\+Load\+Current\+FW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{const char $\ast$}]{fw\+Image\+Path }\end{DoxyParamCaption})}
+
+
+
+Load current firmware version/type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Path} & Pointer to the firmware image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_abed93ee539a187c133b98a6fa93db2d9}\label{leo__fwapi_8h_abed93ee539a187c133b98a6fa93db2d9}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoPersistentDataDump@{LeoPersistentDataDump}}
+\index{LeoPersistentDataDump@{LeoPersistentDataDump}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoPersistentDataDump()}{LeoPersistentDataDump()}}
+{\footnotesize\ttfamily void Leo\+Persistent\+Data\+Dump (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Persistent data dump from the flash device. 
+
+\mbox{\Hypertarget{leo__fwapi_8h_adda5d0aba202d433a5cafa00ce4f576c}\label{leo__fwapi_8h_adda5d0aba202d433a5cafa00ce4f576c}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoPersistentDataErase@{LeoPersistentDataErase}}
+\index{LeoPersistentDataErase@{LeoPersistentDataErase}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoPersistentDataErase()}{LeoPersistentDataErase()}}
+{\footnotesize\ttfamily void Leo\+Persistent\+Data\+Erase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Persistent data erase from the flash device. 
+
+\mbox{\Hypertarget{leo__fwapi_8h_adc05ef99c5c9dec5f561be293ba72f0f}\label{leo__fwapi_8h_adc05ef99c5c9dec5f561be293ba72f0f}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoPersistentDataWrite@{LeoPersistentDataWrite}}
+\index{LeoPersistentDataWrite@{LeoPersistentDataWrite}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoPersistentDataWrite()}{LeoPersistentDataWrite()}}
+{\footnotesize\ttfamily void Leo\+Persistent\+Data\+Write (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Persistent data write to the flash device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Block\+Size\+\_\+t} & block size to be used for the write \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_a280d966fa3b72df2603a1c2a3a6c2a3d}\label{leo__fwapi_8h_a280d966fa3b72df2603a1c2a3a6c2a3d}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoSwitchCurrentFW@{LeoSwitchCurrentFW}}
+\index{LeoSwitchCurrentFW@{LeoSwitchCurrentFW}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoSwitchCurrentFW()}{LeoSwitchCurrentFW()}}
+{\footnotesize\ttfamily void Leo\+Switch\+Current\+FW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type }\end{DoxyParamCaption})}
+
+
+
+Switch the current firmware version/type (A, B or G) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unit8\+\_\+t -\/ FW versio 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__fwapi_8h_ad224392c63c47e2f73938ed237256f09}\label{leo__fwapi_8h_ad224392c63c47e2f73938ed237256f09}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoSysConfigDump@{LeoSysConfigDump}}
+\index{LeoSysConfigDump@{LeoSysConfigDump}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoSysConfigDump()}{LeoSysConfigDump()}}
+{\footnotesize\ttfamily void Leo\+Sys\+Config\+Dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{int8\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+System Configuration dump block. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ in}}  & {\em Block\+Size\+\_\+t} & block size to be used for the read/dump \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_a411da42279179adc68793de6ac4f7f85}\label{leo__fwapi_8h_a411da42279179adc68793de6ac4f7f85}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoSysConfigReset@{LeoSysConfigReset}}
+\index{LeoSysConfigReset@{LeoSysConfigReset}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoSysConfigReset()}{LeoSysConfigReset()}}
+{\footnotesize\ttfamily void Leo\+Sys\+Config\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type }\end{DoxyParamCaption})}
+
+
+
+System Configuration reset to factory default values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__fwapi_8h_a91fe7ac71d91484cfcf4b9932bbbfc0f}\label{leo__fwapi_8h_a91fe7ac71d91484cfcf4b9932bbbfc0f}} 
+\index{leo\_fwapi.h@{leo\_fwapi.h}!LeoSysConfigWrite@{LeoSysConfigWrite}}
+\index{LeoSysConfigWrite@{LeoSysConfigWrite}!leo\_fwapi.h@{leo\_fwapi.h}}
+\doxysubsubsection{\texorpdfstring{LeoSysConfigWrite()}{LeoSysConfigWrite()}}
+{\footnotesize\ttfamily void Leo\+Sys\+Config\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{int8\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+System Configuration Write. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ in}}  & {\em Block\+Size\+\_\+t} & block size to be used for the write \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,186 @@
+Usage: ptu -h |
+    [-cpu bitmask] [-cpucore bitmask] 
+    [-mem bitmask] [-memcore bitmask] 
+    [-moncpu bitmask] [-monmem bitmask] [-moncore bitmask] 
+    [-filter bitmask]
+    [-cst | -pst] [-staterepeat num] [-statetime interval] [-statenum num] [-test teststring]
+    [-ct cputest] [-mt memtest]
+    [-cp power] [-mi intensity]
+    [-s0 time] [s1 time] [-s2 time]
+    [-noclear]
+    [-t time] [-ts] [-wf] [-nd] [-naw] [-l monlevel]
+    [-log] [-logdir path] [-logname] [-csv] [-s] [-q] [-y] [-v]
+    [-id]
+
+OPTIONS
+    -cpu <bitmask>
+        Specify the CPU mask value for CPU tests. Default is all CPUs.
+
+    -cpucore <bitmask>
+        Specify the 64-bit core mask value for CPU tests. Default is all cores.
+
+
+    -mem <bitmask>
+        Specify the MEM mask value for Memory tests. Default is all MEMs.
+	
+    -memcore <bitmask>
+        Specify the 64-bit core mask value for Memory tests. Default is all cores.
+	
+    -moncpu <bitmask>
+        Specify the CPU mask value for PTU Mon and Log. Default is all CPUs.
+	
+    -monmem <bitmask>
+        Specify the MEM mask value for PTU Mon and Log. Default is all MEMs.
+	
+    -memcore <bitmask>
+        Specify the 64-bit core mask value for PTU Mon and Log. Default is all cores.
+
+    -filter <bitmask>
+        Specify the filter mask value for PTU Mon and Log. Default is 0x17.
+        bit[0]: CPU/uncore frequency, utilization, and IPC.
+        bit[]1: CPU power and voltage.
+        bit[2]: CPU temperature, DTS, and thermal status/log/margin.
+        bit[3]: CPU C/Pkg-C states
+        bit[4]: Memory power, temperature, and thermal log.
+        bit[5]: Memory read/write bandwidth.
+        bit[6]: PCH temperature.
+        	
+    -ct <test number>
+        Specify which CPU test to run. Default is 0.
+        0: None
+        1: TDP Test
+        2: nTDP Test (NOTE: this test will override the core and CLM voltages)
+        3: Turbo Test
+        4: Core Test
+        5: PMAX Test
+	
+    -mt <test number>
+        Specify which memory test to run. Default is 0.
+        0: None
+        1: Memory Read Test
+        2: Memory Write Test
+        3: Memory Rd/Wr Test
+
+     -mi <intensity level> 
+        This option must be used with Memory Test (-mt) 
+        Specify the intensity level for Memory tests. The default is 5, representing the maximum intensity.
+        Valid intensity levels are 0 to 5.
+        E.g. ./ptat -mt <test number> -mi <intensity level>
+
+    -mtsize <size>
+	    Specify the size in MB for workload
+		For Linux PTU the default is set to 100MB 
+
+    -l <0,1>
+        Show PTU Mon data in short/long version. Default is level 0.
+        0: Show package level data only (short). 
+        1: Show package, per core, and per memory channel data.
+
+    -cp <power level>
+        Specify the power level for CPU tests. Default is 100.
+        Valid power level is 50, 60, 70, 80, 90, and 100.
+        Note: This option is not available for TDP/nTDP, or Pmax/Pmax.App.
+	
+    -s0 <time>
+        Specify the Pmax Idle time (1-60000 ms). Default is 2000.
+
+    -s1 <time>
+        Specify the Pmax pre-sync time (1-60000 ms). Default is 5000.
+
+    -s2 <time>
+        Specify the Pmax post-sync time (1-300000 ms). Default is 3000.
+
+    -noclear
+        Do not clear TLog when program launches.
+	
+    -norestore
+        Do not restore turbo settings.
+	
+    -t <time>
+        Specify the run-time value in seconds to run PTU. Default is 0 (forever).
+	
+    -ts
+        This option will include the timestamp in PTU Mon and Log. 
+
+    -wf
+        Show PTU Mon data in wide format. All sockets data will print in one line.
+        NOTE: this option is for Linux PTU only.
+	
+    -nd
+        Do not show empty data with dash (-).
+        NOTE: this option is for Linux PTU only.
+
+    -i <interval>
+        Specify the update interval in microseconds. Default is 1000000 (1 sec).
+        NOTE: Windows PTAT uses miliseconds.
+
+    -naw
+        Disable auto-wrap line output.
+        NOTE: this option is for Linux PTU only.
+	
+    -log
+        Enable logging to file.
+	
+    -logdir <path>
+        Specify the log directory where the log files will be saved. 
+		Default is /root/ptu/log (for Linux PTU).
+		Default is C:\ptu (for Windows PTU).
+    -csv
+        Specify this option to save log file as CSV format.
+	
+    -s
+        Print summary info and exit.
+	
+    -q
+        Suppress informational messages (quiet mode).
+	
+    -y
+        Accept the license agreement in advance. 
+	
+    -v
+        Print the program version and exit.
+	
+    -id
+        ignore driver - PTAT runs without driver, some functionality may not work.
+	
+    -h
+        Print the program usage.
+	
+FIELDS / COLUMNS
+    Timestamp -- Show the timestamp info. The time field consist of mm/dd/yy, 24 hours, minutes, seconds and milliseconds.
+    TSDLT     -- Show the time delta between last sample and current. If delta is more than one second, it will display >1sec.
+    Index     -- Show the sample index number.
+    Device    -- Show the monitored devices: CPU, MEM, PCH, and FPGA.
+    Cor       -- Show the core number of the monitored CPU.
+    CFreq     -- Show current average CPU, core, and thread frequency in Megahertz (MHz).
+    UFreq     -- Show current uncore frequency in Megahertz (MHz).
+    Util      -- Show current average CPU, core and thread utilization in percente (%).
+    IPC       -- Show the average of retired instructions per cycle of the monitored core/thread. 
+    C0        -- Show the core in active state.
+    C1        -- Show the core in halt state.
+    C6        -- Show the core in low power state.
+    PC2       -- Show the CPU in Package C2 state.
+    PC3       -- Show the CPU in Package C3 state (for ICX only).
+    PC6       -- Show the CPU in Package C6 state.
+    PC7       -- Show the CPU in Package C7 state (for ICX only).
+    MC        -- The memory controller number of the monitored memory.
+    Ch        -- The memory channel number of the monitored memory.
+    Sl        -- The DIMM slot number of the monitored memory.
+    Read      -- Show the current memory read bandwidth (per channel).
+    Write     -- Show the current memory write bandwidth (per channel).
+    DDRT-Rd   -- Show the current DCPMM read bandwidth (per channel).
+    DDRT-Wr   -- Show the current DCPMM write bandwidth (per channel).
+    Temp      -- Show the current maximum package/average of core, memory, PCH, and FPGA temperature.
+    DTS       -- Show the current maximum package/average of core DTS.
+    Volt      -- Show the current average CPU and core voltage.
+    UVolt     -- Show the current uncore voltage (for ICX only).
+    Power     -- Show the current power in Watts (W) of CPU/Memory/FPGA.
+    TStat     -- Show thermal status of the monitored CPU
+                 bit[0]: Thermal Throttle - this indicates whether the thermal sensor high temperature signal is active.
+                 bit[1]: PROCHOT - this indicates whether PROCHOT# signal is asserted.
+                 bit[2]: Critical Temperature - this indicates whether the temperature is above the max. operating temperature.
+                 bit[3]: Pmax - this indicates whether PMAX detector circuit has asserted.
+    TLog      -- Show the thermal status log of the monitored CPU/Memory (see TStat for bit field descriptions).
+    #TL       -- Show number of TLog events being hits.
+    TMargin   -- Show the thermal margin of the monitored CPU.
+

@@ -1,0 +1,41 @@
+{
+  "cxl2x8": null,
+  "ddr2dpc": null,
+  "compliance": null,
+  "ddrinterleaving": null,
+  "speed": null,
+  "sbrefresh": null,
+  "temp_threshold": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "c": null
+  },
+  "bw_throttle": {
+    "0": null,
+    "1": null,
+    "2": null
+  },
+  "temp_sample_interval_s": null,
+  "ddr_page_close": null,
+  "cxl_temp_threshold": {
+    "warning_lo": null,
+    "warning_hi": null,
+    "critical_lo": null,
+    "critical_hi": null
+  },
+  "cxl_correctable_err_threshold": null,
+  "cxl_mem_size": null,
+  "ddr_interleave_ways": null,
+  "pmic_current_mode": null,
+  "aes_mode": null,
+  "ddr_check_guard_rails": null,
+  "guard_rx_margin_width": null,
+  "guard_rx_margin_height": null,
+  "guard_tx_margin_height": null,
+  "guard_tx_margin_width": null,
+  "cxl_mb_ready_time": null,
+  "bis_lat": null,
+  "bis_bw": null,
+  "power_gate_mode": null
+}

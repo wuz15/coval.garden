@@ -1,0 +1,49 @@
+\hypertarget{leo__mbox__cmds_8h_source}{}\doxysection{leo\+\_\+mbox\+\_\+cmds.\+h}
+\label{leo__mbox__cmds_8h_source}\index{leo-\/sdk-\/c/include/leo\_mbox\_cmds.h@{leo-\/sdk-\/c/include/leo\_mbox\_cmds.h}}
+\mbox{\hyperlink{leo__mbox__cmds_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_LEO\_MBOX\_CMDS\_H\_}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_LEO\_MBOX\_CMDS\_H\_}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ poison\ list\ error\ record\ */}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__err__rec}{media\_err\_rec}}\ \{}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{unionqword}{qword\_t}}\ dpa;}
+\DoxyCodeLine{00030\ \ \ uint32\_t\ len;\ \textcolor{comment}{//\ must\ be\ non-\/zero,\ no\ of\ adjescent\ DPAs}}
+\DoxyCodeLine{00031\ \ \ uint32\_t\ rsvd;}
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{structmedia__err__rec}{media\_err\_rec\_t}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ Poison\ record\ list,\ to\ be\ used\ for\ output\ payload\ to\ get\_poison\_list\ mailbox}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ command\ */}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcxl__poison__list}{cxl\_poison\_list}}\ \{}
+\DoxyCodeLine{00037\ \ \ uint8\_t}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ more\_err\_recs\ :\ 1;\ \textcolor{comment}{//\ more\ records\ in\ log\ then\ host\ can\ fetch\ in\ payload}}
+\DoxyCodeLine{00039\ \ \ uint8\_t\ overflow\ :\ 1;\ \ \textcolor{comment}{//\ poison\ list\ overflow\ occurred}}
+\DoxyCodeLine{00040\ \ \ uint8\_t\ scan\_in\_progress\ :\ 1;\ \textcolor{comment}{//\ media\ scan\ in\ progress}}
+\DoxyCodeLine{00041\ \ \ uint8\_t\ rsvd0\ :\ 5;}
+\DoxyCodeLine{00042\ \ \ uint8\_t\ rsvd1;}
+\DoxyCodeLine{00043\ \ \ uint8\_t\ overflow\_timestamp[8];\ \textcolor{comment}{//\ poison\ list\ overflow\ timestamp}}
+\DoxyCodeLine{00044\ \ \ uint8\_t\ err\_cnt[2];\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ no\ of\ error\ record\ in\ poison\ list\ payload}}
+\DoxyCodeLine{00045\ \ \ uint32\_t\ rsvd2[5];}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{structmedia__err__rec}{media\_err\_rec\_t}}\ err\_rec[16];}
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{structcxl__poison__list}{cxl\_poison\_list\_t}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,162 @@
+\hypertarget{leo__err__inject_8h_source}{}\doxysection{leo\+\_\+err\+\_\+inject.\+h}
+\label{leo__err__inject_8h_source}\index{leo-\/sdk-\/c/include/leo\_err\_inject.h@{leo-\/sdk-\/c/include/leo\_err\_inject.h}}
+\mbox{\hyperlink{leo__err__inject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}stdio.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__api_8h}{leo\_api.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__error_8h}{leo\_error.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__globals_8h}{leo\_globals.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__i2c_8h}{leo\_i2c.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ LEO\_DDR\_ECCCTL\_VAL\ 0x71f}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LEO\_DDR\_POISON\_DATA\_BITS\ 0xfff}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LEO\_ADV\_ECC\ 0x5}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LEO\_ECC\_UE\ 0}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LEO\_ECC\_CE\ 1}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LEO\_ECC\_SIDE\_BAND\ 0}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_TYPE\_MODIFY(r,\ x)\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 4)\ \&\ 0x00000030)\ |\ ((r)\&0xffffffcf))}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG1\_POISON\_CHIP\_EN\_MODIFY(r,\ x)\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 2)\ \&\ 0x00000004)\ |\ ((r)\&0xfffffffb))}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG1\_DATA\_POISON\_EN\_MODIFY(r,\ x)\ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ (((x)\&0x00000001)\ |\ ((r)\&0xfffffffe))}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG1\_DATA\_POISON\_BIT\_MODIFY(r,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 1)\ \&\ 0x00000002)\ |\ ((r)\&0xfffffffd))}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR0\_ECC\_POISON\_RANK\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 24)\ \&\ 0x03000000)\ |\ ((r)\&0xfcffffff))}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR0\_ECC\_POISON\_CID\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 16)\ \&\ 0x000f0000)\ |\ ((r)\&0xfff0ffff))}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR0\_ECC\_POISON\_COL\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ (((x)\&0x00000fff)\ |\ ((r)\&0xfffff000))}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR1\_ECC\_POISON\_BG\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 28)\ \&\ 0x70000000)\ |\ ((r)\&0x8fffffff))}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR1\_ECC\_POISON\_BANK\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 24)\ \&\ 0x03000000)\ |\ ((r)\&0xfcffffff))}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR1\_ECC\_POISON\_ROW\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ (((x)\&0x0003ffff)\ |\ ((r)\&0xfffc0000))}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ADVECCINDEX\_ECC\_POISON\_BEATS\_SEL\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 5)\ \&\ 0x000001e0)\ |\ ((r)\&0xfffffe1f))}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ADVECCINDEX\_ECC\_ERR\_SYMBOL\_SEL\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 3)\ \&\ 0x00000018)\ |\ ((r)\&0xffffffe7))}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ADVECCINDEX\_ECC\_SYNDROME\_SEL\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ (((x)\&0x00000007)\ |\ ((r)\&0xfffffff8))}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT0\_ECC\_POISON\_DATA\_31\_0\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ ((x)\&0xffffffff)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT1\_ECC\_POISON\_DATA\_63\_32\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ ((x)\&0xffffffff)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT2\_ECC\_POISON\_DATA\_71\_64\_MODIFY(\ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ r,\ x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ (((x)\&0x000000ff)\ |\ ((r)\&0xffffff00))}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG2\_FLIP\_BIT\_POS0\_MODIFY(r,\ x)\ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 16)\ \&\ 0x007f0000)\ |\ ((r)\&0xff80ffff))}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG2\_FLIP\_BIT\_POS1\_MODIFY(r,\ x)\ \ \(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 24)\ \&\ 0x7f000000)\ |\ ((r)\&0x80ffffff))}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/*\ Field\ member:\ DWC\_ddrctl\_APB\_slave::REGB\_DDRC\_CH0::ECCCFG0.test\_mode\ \ \ \ */}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_MSB\ 3}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_LSB\ 3}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_WIDTH\ 1}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_READ\_ACCESS\ 1}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_WRITE\_ACCESS\ 1}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_RESET\ 0x0}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_FIELD\_MASK\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ 0x00000008}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_GET(x)\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ (((x)\&0x00000008)\ >>\ 3)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_SET(x)\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ (((x)\ <<\ 3)\ \&\ 0x00000008)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_TEST\_MODE\_MODIFY(r,\ x)\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ ((((x)\ <<\ 3)\ \&\ 0x00000008)\ |\ ((r)\&0xfffffff7))}}
+\DoxyCodeLine{00105\ \textcolor{comment}{/*\ Field\ member:\ DWC\_ddrctl\_APB\_slave::REGB\_DDRC\_CH0::ECCCFG0.ecc\_mode\ \ \ \ \ */}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_MSB\ 2}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_LSB\ 0}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_WIDTH\ 3}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_READ\_ACCESS\ 1}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_WRITE\_ACCESS\ 1}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_RESET\ 0x0}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_FIELD\_MASK\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ 0x00000007}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_GET(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ ((x)\&0x00000007)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_SET(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ ((x)\&0x00000007)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ECC\_MODE\_MODIFY(r,\ x)\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ (((x)\&0x00000007)\ |\ ((r)\&0xfffffff8))}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.SWCTL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_SWCTL\_ADDRESS\ 0x10c80}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_SWCTL\_BYTE\_ADDRESS\ 0x10c80}}
+\DoxyCodeLine{00124\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCCFG0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_ADDRESS\ 0x10600}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG0\_BYTE\_ADDRESS\ 0x10600}}
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCCFG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG1\_ADDRESS\ 0x10604}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG1\_BYTE\_ADDRESS\ 0x10604}}
+\DoxyCodeLine{00130\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCPOISONADDR0\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR0\_ADDRESS\ 0x10648}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR0\_BYTE\_ADDRESS\ 0x10648}}
+\DoxyCodeLine{00133\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCPOISONADDR1\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR1\_ADDRESS\ 0x1064c}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONADDR1\_BYTE\_ADDRESS\ 0x1064c}}
+\DoxyCodeLine{00136\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ADVECCINDEX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ADVECCINDEX\_ADDRESS\ 0x10650}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ADVECCINDEX\_BYTE\_ADDRESS\ 0x10650}}
+\DoxyCodeLine{00139\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCPOISONPAT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT0\_ADDRESS\ 0x10658}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT0\_BYTE\_ADDRESS\ 0x10658}}
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCPOISONPAT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT1\_ADDRESS\ 0x1065c}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT1\_BYTE\_ADDRESS\ 0x1065c}}
+\DoxyCodeLine{00145\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCPOISONPAT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT2\_ADDRESS\ 0x10660}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCPOISONPAT2\_BYTE\_ADDRESS\ 0x10660}}
+\DoxyCodeLine{00148\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCCFG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG2\_ADDRESS\ 0x10668}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCFG2\_BYTE\_ADDRESS\ 0x10668}}
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ Register:\ DWC\_ddrctl.APB\_slave.REGB\_DDRC\_CH0.ECCCTL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCTL\_ADDRESS\ 0x1060c}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ DWC\_DDRCTL\_APB\_SLAVE\_REGB\_DDRC\_CH0\_ECCCTL\_BYTE\_ADDRESS\ 0x1060c}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structerrorInjectStruct}{errorInjectStruct}}\ \{}
+\DoxyCodeLine{00158\ \ \ uint32\_t\ startAddr;}
+\DoxyCodeLine{00159\ \ \ uint32\_t\ row;}
+\DoxyCodeLine{00160\ \ \ uint32\_t\ col;}
+\DoxyCodeLine{00161\ \ \ uint32\_t\ bg;}
+\DoxyCodeLine{00162\ \ \ uint32\_t\ bank;}
+\DoxyCodeLine{00163\ \ \ uint32\_t\ rank;}
+\DoxyCodeLine{00164\ \ \ uint8\_t\ uncorr;}
+\DoxyCodeLine{00165\ \ \ uint8\_t\ errinj\_enable;}
+\DoxyCodeLine{00166\ \ \ uint8\_t\ dqWidth;}
+\DoxyCodeLine{00167\ \};}
+
+\end{DoxyCode}

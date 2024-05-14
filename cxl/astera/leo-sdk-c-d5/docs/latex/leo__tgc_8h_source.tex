@@ -1,0 +1,80 @@
+\hypertarget{leo__tgc_8h_source}{}\doxysection{leo\+\_\+tgc.\+h}
+\label{leo__tgc_8h_source}\index{leo-\/sdk-\/c/include/leo\_tgc.h@{leo-\/sdk-\/c/include/leo\_tgc.h}}
+\mbox{\hyperlink{leo__tgc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_TGC\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_TGC\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}stdio.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}string.h"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__error_8h}{leo\_error.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__globals_8h}{leo\_globals.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__i2c_8h}{leo\_i2c.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtgcSramEntryStruct}{tgcSramEntryStruct}}\ \{}
+\DoxyCodeLine{00045\ \ \ uint16\_t\ seqEnd;\ \textcolor{comment}{//\ Value\ =\ 1\ indicates\ last\ entry\ in\ RAM}}
+\DoxyCodeLine{00046\ \ \ uint16\_t\ rsvd126121;}
+\DoxyCodeLine{00047\ \ \ uint16\_t\ encryptDis;\ \textcolor{comment}{//\ (Used\ as\ initialize\ in\ the\ seq)\ Value\ =\ 1\ indicates}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CMAL\ not\ to\ encrypt\ the\ write\ data\ with\ write\ commands}}
+\DoxyCodeLine{00049\ \ \ uint16\_t\ rsvd119;}
+\DoxyCodeLine{00050\ \ \ uint16\_t\ dataCtrl;\ \textcolor{comment}{//\ Indicates\ the\ kind\ of\ data\ pattern\ to\ generate}}
+\DoxyCodeLine{00051\ \ \ uint16\_t\ rsvd115102;}
+\DoxyCodeLine{00052\ \ \ uint16\_t\ wrEn;\ \textcolor{comment}{//\ Enable\ writes}}
+\DoxyCodeLine{00053\ \ \ uint16\_t\ rdEn;\ \textcolor{comment}{//\ Enable\ reads}}
+\DoxyCodeLine{00054\ \ \ uint16\_t\ rsvd9997;}
+\DoxyCodeLine{00055\ \ \ uint16\_t\ addrInc;\ \ \textcolor{comment}{//\ 1\ =\ Address\ counter\ with\ increment,\ 0\ =\ Address\ counter}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ with\ decrement}}
+\DoxyCodeLine{00057\ \ \ uint16\_t\ addrSkip;\ \textcolor{comment}{//\ 0\ =\ Issue\ all\ rd\ and\ wr\ to\ same\ address,\ 1\ =\ Increment}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ address\ sequentially\ >1\ New\ address\ =\ Old\ address\ +/-\/}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Address\ skip}}
+\DoxyCodeLine{00060\ \ \ uint16\_t\ rsvd8781;}
+\DoxyCodeLine{00061\ \ \ uint16\_t\ tranCnt;\ \textcolor{comment}{//\ Transaction\ count}}
+\DoxyCodeLine{00062\ \ \ uint16\_t\ rsvd71;}
+\DoxyCodeLine{00063\ \ \ uint16\_t\ poison;}
+\DoxyCodeLine{00064\ \ \ uint16\_t\ meta;}
+\DoxyCodeLine{00065\ \ \ uint16\_t\ rsvd67;}
+\DoxyCodeLine{00066\ \ \ uint64\_t\ startAddr;}
+\DoxyCodeLine{00067\ \ \ uint32\_t\ dataPattern;\ \textcolor{comment}{//\ will\ use\ this\ pattern\ to\ create\ 512b\ write\ data\ based}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ on\ [119:116]}}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{static}\ uint32\_t\ *packedSramEntry(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structtgcSramEntryStruct}{tgcSramEntryStruct}}\ data);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ indirectTgcSramAccess(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,\ uint32\_t\ entryNum,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *tgcSramEntryDataArray);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ configTgc(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,\ uint16\_t\ wrEn,\ uint16\_t\ rdEn,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ tranCnt,\ uint64\_t\ startAddr,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ dataPattern);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ initTgc(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ wait4tgcDone(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ readTgcStatus(\mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *device,\ \mbox{\hyperlink{structLeoResultsTgc}{LeoResultsTgc\_t}}\ *tgcResults);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_TGC\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,272 @@
+Usage: ptat -h |
+    [-cpu bitmask] [-cpucore bitmask] [-cputhr bitmask]
+    [-mem bitmask] [-memcore bitmask] [-memthr bitmask]
+    [-pmem bitmask] [-pmemcore bitmask] [-pmemthr bitmask]
+    [-fpga bitmask]
+    [-moncpu bitmask] [-monmem bitmask] [-moncore bitmask] [-monfpga bitmask]
+    [-cst | -pst] [-staterepeat num] [-statetime interval] [-statenum num] [-test teststring]
+    [-filter bitmask]
+    [-ct cputest] [-mt memtest] [-pt pmemtest] [-ft fpgatest]
+    [-cp power] [-mp power] [-fp power] [-mi intensity]
+    [-s0 time] [s1 time] [-s2 time]
+    [-avx level] [-b turbo] [-u ratio]
+    [-noclear] [-norestore]
+    [-i interval] [-t time] [-ts] [-l monlevel] [-scr] [-wf] [-nd] [-naw]
+    [-log] [-logdir path] [-csv] [-s] [-q] [-y] [-v]
+    [-id]
+
+OPTIONS
+    -cpu <bitmask>
+        Specify the CPU mask value for CPU tests. Default is all CPUs.
+
+    -cpucore <bitmask>
+        Specify the 64-bit core mask value for CPU tests. Default is all cores.
+
+    -cputhr <bitmask>
+        Specify the thread mask value for the CPU tests. Default is all threads.
+	
+    -mem <bitmask>
+        Specify the MEM mask value for Memory tests. Default is all MEMs.
+	
+    -memcore <bitmask>
+        Specify the 64-bit core mask value for Memory tests. Default is all cores.
+	
+    -memthr <bitmask>
+        Specify the thread mask value for Memory tests. Default is all threads.
+	
+    -pmem <bitmask>
+        Specify the PMEM mask value for PMEM Memory tests. Default is all MEMs.
+	
+    -pmemcore <bitmask>
+        Specify the 64-bit core mask value for PMEM Memory tests. Default is all cores.
+	
+    -pmemthr <bitmask>
+        Specify the thread mask value for PMEM Memory tests. Default is all threads.
+
+    -fpga <bitmask>
+        Specify the fpga mask value for FPGA tests. Default is all FPGAs.
+	
+    -moncpu <bitmask>
+        Specify the CPU mask value for PTAT Mon and Log. Default is all CPUs.
+	
+    -monmem <bitmask>
+        Specify the MEM mask value for PTAT Mon and Log. Default is all MEMs.
+	
+    -memcore <bitmask>
+        Specify the 64-bit core mask value for PTAT Mon and Log. Default is all cores.
+
+    -cst
+         C State Test
+         Run CSTATE test. This test is applicable to CPU cores specified in -moncpu and -moncore.
+         The following are the default values:
+             -mon, -staterepeat 5, -statenum 0, -statetime 3000000, -l 1, -filter 0x8
+    -pst
+         P State Test
+         Run PSTATE test. This test is applicable to CPU cores specified in -moncpu and -moncore.
+         The following are the default values:
+             -mon, -staterepeat 5, -statenum 0, -statetime 5000000, -l 1, -filter 0x1
+
+    -staterepeat <num>
+        Specify number of times the cstate tests should be run.
+
+    -statenum <num>
+        Specify cstate number.
+
+    -statetime <time>
+        Specify duration of the test in microseconds.
+
+    -test <teststring>
+	Preformatted cstate test command
+	"cs0:p0:c0-3:5000000:3"
+	"-test" option and any other "-cst" option cannot be combined.
+
+    -filter <bitmask>
+        Specify the filter mask value for PTAT Mon and Log. Default is 0x17.
+        bit[0]: CPU/uncore frequency, utilization, and IPC.
+        bit[]1: CPU power and voltage.
+        bit[2]: CPU temperature, DTS, and thermal status/log/margin.
+        bit[3]: CPU C/Pkg-C states
+        bit[4]: Memory power, temperature, and thermal log.
+        bit[5]: Memory read/write & DDR-T bandwidth.
+        bit[6]: PCH temperature.
+        bit[7]: FPGA power and temperature (if FPGA is present).
+	
+    -ct <test number>
+        Specify which CPU test to run. Default is 0.
+        0: None
+        1: TDP Test
+        2: nTDP Test (NOTE: this test will override the core and CLM voltages)
+        3: Core AVX1 Test
+        4: Core AVX2 Test
+        5: Core AVX-512 Test
+        6: Pmax Test
+        7: Pmax.App Test
+        8: Turbo Test
+        9: AMX Test
+        10: SSE Test
+	
+    -mt <test number>
+        Specify which memory test to run. Default is 0.
+        0: None
+        1: Memory Read Test
+        2: Memory Write Test
+        3: Memory Rd/Wr Test
+
+     -mi <intensity level> 
+        This option must be used with Memory Test (-mt) 
+        Specify the intensity level for Memory tests. The default is 5, representing the maximum intensity.
+        Valid intensity levels are 0 to 5.
+        E.g. ./ptat -mt <test number> -mi <intensity level>
+
+    -mtsize <size>
+	Specify the size in MB for workload
+		For Linux PTAT the default is set to 100MB 
+
+    -ft <test number>
+        Specify which FPGA test to run. Default is 0 (if FPGA is present).
+        0: None
+        1: FPGA TDP Test
+
+    -cp <power level>
+        Specify the power level for CPU tests. Default is 100.
+        Valid power level is 50, 60, 70, 80, 90, and 100.
+        Note: This option is not available for TDP/nTDP, or Pmax/Pmax.App.
+	
+    -mp <power level>
+        Specify the power level for Memory tests. Default is 100.
+        Valid power level is 50, 60, 70, 80, 90, and 100.
+	
+    -fp <power level>
+        Specify the power level for FPGA tests. Default is 100.
+        Valid power level is 50, 60, 70, 80, 90, and 100.
+	
+    -s0 <time>
+        Specify the Pmax Idle time (1-60000 ms). Default is 2000.
+	
+    -s1 <time>
+        Specify the Pmax pre-sync time (1-60000 ms). Default is 5000.
+	
+    -s2 <time>
+        Specify the Pmax post-sync time (1-300000 ms). Default is 3000.
+	
+    -avx <0..3>
+        This option is for Pmax.App and Turbo test. Default is 1.
+        0: Run all versions (for Turbo test only)
+        1: Run IA/SSE version
+        2: Run AVX2 version
+        3: Run AVX-512 version
+		
+    -b <0|1>
+        Enable/disable turbo. 
+	
+    -u <ratio>
+        Set uncore ratio limit.
+	
+    -noclear
+        Do not clear TLog when program launches.
+	
+    -norestore
+        Do not restore turbo settings.
+	
+    -i <interval>
+        Specify the update interval in microseconds. Default is 1000000 (1 sec).
+        NOTE: Windows PTAT uses miliseconds.
+	
+    -t <time>
+        Specify the run-time value in seconds to run PTAT. Default is 0 (forever).
+	
+    -ts
+        This option will include the timestamp in PTAT Mon and Log. 
+	
+    -l <0,1,2>
+        Show PTAT Mon data in short/long version. Default is level 0.
+        0: Show package level data only (short). 
+        1: Show package, per core, and per memory channel data.
+        2: Show package, per core & thread, and per memory channel & DIMM slot data.
+	
+    -scr
+        Run PTAT Mon in screen mode.
+	
+    -wf
+        Show PTAT Mon data in wide format. All sockets data will print in one line.
+        NOTE: this option is for Linux PTAT only.
+	
+    -nd
+        Do not show empty data with dash (-).
+        NOTE: this option is for Linux PTAT only.
+
+    -naw
+        Disable auto-wrap line output.
+        NOTE: this option is for Linux PTAT only.
+	
+    -log
+        Enable logging to file.
+	
+    -logdir <path>
+        Specify the log directory where the log files will be saved. 
+		Default is /root/ptat/log (for Linux PTAT).
+		Default is C:\ptat (for Windows PTAT).
+    -pmdir <path>
+        Path for PMEM data provisioning
+		For Linux PTAT the default is /mnt/pmem 
+    -csv
+        Specify this option to save log file as CSV format.
+	
+    -s
+        Print summary info and exit.
+	
+    -q
+        Suppress informational messages (quiet mode).
+	
+    -y
+        Accept the license agreement in advance. 
+	
+    -v
+        Print the program version and exit.
+	
+    -id
+        ignore driver - PTAT runs without driver, some functionality may not work.
+	
+    -h
+        Print the program usage.
+	
+FIELDS / COLUMNS
+    Timestamp -- Show the timestamp info. The time field consist of mm/dd/yy, 24 hours, minutes, seconds and milliseconds.
+    TSDLT     -- Show the time delta between last sample and current. If delta is more than one second, it will display >1sec.
+    Index     -- Show the sample index number.
+    Device    -- Show the monitored devices: CPU, MEM, PCH, and FPGA.
+    Cor       -- Show the core number of the monitored CPU.
+    Thr       -- Show the thread number of the monitored core.
+    CFreq     -- Show current average CPU, core, and thread frequency in Megahertz (MHz).
+    UFreq     -- Show current uncore frequency in Megahertz (MHz).
+    PState    -- Show the performance state
+    Util      -- Show current average CPU, core and thread utilization in percente (%).
+    IPC       -- Show the average of retired instructions per cycle of the monitored core/thread. 
+    C0        -- Show the core in active state.
+    C1        -- Show the core in halt state.
+    C6        -- Show the core in low power state.
+    PC2       -- Show the CPU in Package C2 state.
+    PC3       -- Show the CPU in Package C3 state (for ICX only).
+    PC6       -- Show the CPU in Package C6 state.
+    PC7       -- Show the CPU in Package C7 state (for ICX only).
+    MC        -- The memory controller number of the monitored memory.
+    Ch        -- The memory channel number of the monitored memory.
+    Sl        -- The DIMM slot number of the monitored memory.
+    Read      -- Show the current memory read bandwidth (per channel).
+    Write     -- Show the current memory write bandwidth (per channel).
+    DDRT-Rd   -- Show the current DCPMM read bandwidth (per channel).
+    DDRT-Wr   -- Show the current DCPMM write bandwidth (per channel).
+    Temp      -- Show the current maximum package/average of core, memory, PCH, and FPGA temperature.
+    DTS       -- Show the current maximum package/average of core DTS.
+    Volt      -- Show the current average CPU and core voltage.
+    UVolt     -- Show the current uncore voltage (for ICX only).
+    Power     -- Show the current power in Watts (W) of CPU/Memory/FPGA.
+    TStat     -- Show thermal status of the monitored CPU
+                 bit[0]: Thermal Throttle - this indicates whether the thermal sensor high temperature signal is active.
+                 bit[1]: PROCHOT - this indicates whether PROCHOT# signal is asserted.
+                 bit[2]: Critical Temperature - this indicates whether the temperature is above the max. operating temperature.
+                 bit[3]: Pmax - this indicates whether PMAX detector circuit has asserted.
+    TLog      -- Show the thermal status log of the monitored CPU/Memory (see TStat for bit field descriptions).
+    #TL       -- Show number of TLog events being hits.
+    TMargin   -- Show the thermal margin of the monitored CPU.
+

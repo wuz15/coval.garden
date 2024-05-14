@@ -1,0 +1,1098 @@
+\hypertarget{leo__api_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+api.c File Reference}
+\label{leo__api_8c}\index{leo-\/sdk-\/c/source/leo\_api.c@{leo-\/sdk-\/c/source/leo\_api.c}}
+
+
+Implementation of public functions for the SDK.  
+
+
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/\+DWC\+\_\+pcie\+\_\+dbi\+\_\+mbar0.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/misc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for leo\+\_\+api.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{leo__api_8c_a07aec8591c1d0b4e395f632a7995239d}{leo\+Get\+SDKVersion}} (void)
+\begin{DoxyCompactList}\small\item\em Return the SDK version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_af57f6e08002d9e9869f67758b2271444}{leo\+FWStatus\+Check}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Check status of FW loaded. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a0189838a302109b75c1e6bbb3686839f}{leo\+Get\+FWVersion}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Return the running FW version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a10d065366bbcc1cf89cd369bfb1f1f5d}{leo\+Get\+Asic\+Version}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Return the ASIC version. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{leo__api_8c_a2fee3ca8898661ce456937eca35fb2ad}{leo\+SDKVersion\+Compatibility\+Check}} (char $\ast$fw\+Version, char $\ast$sdk\+Version)
+\begin{DoxyCompactList}\small\item\em Check the SDK and FW version compatibility SDK version must be \texorpdfstring{$>$}{>}= FW version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a90e73c4f28769c9398fdf1dc1deaf8e2}{leo\+Init\+Device}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Initialize Leo device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a66331a7512e2eb32d1d634d3d8ddebad}{leo\+Fw\+Update\+From\+File}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, char $\ast$flash\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Update FW from a .mem file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a812be52c46b24919e92b2bb9bbfa63dc}{leo\+Fw\+Update\+Target}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, char $\ast$flash\+File\+Name, int target, int verify)
+\begin{DoxyCompactList}\small\item\em Update FW from a .mem file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ac88389cf812e615a25ee5f13f3838263}{leo\+Do\+Fw\+Updatein\+LTMode\+Raw}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}} fw\+Image\+Format\+Type, const uint8\+\_\+t $\ast$fw\+Image\+Buffer)
+\begin{DoxyCompactList}\small\item\em Update the firmware image on the flash connected to Leo device using the Leo Tunneling mode (I2C interface) The Leo Tunnel mode SDK API will support firmware update in-\/band via the CXL through the PCIe interface in the later release (Not supported yet) Only planned for the future releases. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_aaa5171168846421d0772cc01ea3996c4}\label{leo__api_8c_aaa5171168846421d0772cc01ea3996c4}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Reset\+Asic} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a4eb4e005fb1fb220680a4162e824e3dc}{leo\+Get\+Link\+Status}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoLinkStatusType}{Leo\+Link\+Status\+Type}} $\ast$link\+Status)
+\begin{DoxyCompactList}\small\item\em Leo get link status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a484085eb56ed5a1a7535feaf7c8c7940}{leo\+Get\+Memory\+Status}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoMemoryStatusType}{Leo\+Memory\+Status\+Type}} $\ast$mem\+Status)
+\begin{DoxyCompactList}\small\item\em check Memory channel status \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a5cd62c632dea4e88b151dbb6fb48227a}{leo\+Memory\+Scrubbing}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_a68a07d672539f7615f60123264179182}{Leo\+Scrub\+Config\+Info\+Type}} $\ast$scrub\+Config)
+\begin{DoxyCompactList}\small\item\em Leo DDR Memory scrubbing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_a26f5e4933e960f96481d237f242142a9}\label{leo__api_8c_a26f5e4933e960f96481d237f242142a9}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+LTSSMLogger\+Init} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, uint8\+\_\+t one\+Batch\+Mode, \mbox{\hyperlink{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}{Leo\+LTSSMVerbosity\+Type}} verbosity)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_af3b0521ee74381bdd3b45b5a23b3a427}{leo\+LTSSMLogger\+Print\+En}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, uint8\+\_\+t print\+En)
+\begin{DoxyCompactList}\small\item\em Enable or disable LTSSM logger. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a78e3a362fbdb44f68f6141989272a76a}{leo\+Check\+Device\+Health}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Perform an all-\/in-\/one health check on the device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a6accd150ba1b2d290249ae03cfe1de47}{leo\+Get\+Link\+State\+Detailed}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Get the current detailed Link state, including electrical parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a1dc46622ec052cc9b853759ea76a918d}{leo\+LTSSMLogger\+Read\+Entry}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} log, int $\ast$offset, \mbox{\hyperlink{leo__api__types_8h_a607b09f3380427e3059debe5ef5289d2}{Leo\+LTSSMEntry\+Type}} $\ast$entry)
+\begin{DoxyCompactList}\small\item\em Read an entry from the LTSSM logger. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a5e2d40d0382788815a8a3c839ed0f0a8}{leo\+Get\+Logger\+Fmt\+ID}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} logger\+Type, int offset, int $\ast$fmt\+ID)
+\begin{DoxyCompactList}\small\item\em Get the format ID at offset int he print buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_aa72c176272061f96322a1be1394ce80c}{leo\+Get\+Logger\+Write\+Offset}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} logger\+Type, int $\ast$write\+Offset)
+\begin{DoxyCompactList}\small\item\em Get the write pointer location in the LTSSM logger. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a2185e48259dcae7622a26b04b9304a25}{leo\+Get\+Spd\+Info}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}} $\ast$spd\+Info, uint8\+\_\+t dimm\+Idx)
+\begin{DoxyCompactList}\small\item\em Get the key SPD-\/\+Serial Presence detect values for the DDR modules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ab337dffc2d32592f71707440b020d28c}{leo\+Get\+Spd\+Manufacturing\+Info}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}} $\ast$spd\+Info, uint8\+\_\+t dimm\+Idx)
+\begin{DoxyCompactList}\small\item\em Get the key SPD-\/\+Serial Presence detect values for the DDR modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_a8f5ea8a42f7b553b82cafad3953fff67}\label{leo__api_8c_a8f5ea8a42f7b553b82cafad3953fff67}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Spd\+Dump} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t dimm\+\_\+idx, uint32\+\_\+t $\ast$data)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a61d4c4d6b635096fe37244b16d786e5c}{leo\+Get\+Tsod\+Data}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}{Leo\+Dimm\+Tsod\+Data\+Type}} $\ast$tsod\+Data, uint8\+\_\+t dimm\+Idx)
+\begin{DoxyCompactList}\small\item\em Leo Get the TSOD data for the DDR modules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ae49cc505edc985b0f3ae7bd3020febca}{leo\+Get\+Preboot\+Ddr\+Config}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoDdrConfig}{Leo\+Ddr\+Config\+Type}} $\ast$ddr\+Config)
+\begin{DoxyCompactList}\small\item\em Leo get Preboot DDR config. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a33f5b860669bdd882260f314325a95cf}{leo\+Get\+Preboot\+Cxl\+Config}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlConfig}{Leo\+Cxl\+Config\+Type}} $\ast$cxl\+Config)
+\begin{DoxyCompactList}\small\item\em Leo get Preboot CXL config. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a0b5834e6382a22c8951df9997e0bb6ac}{leo\+Get\+Leo\+Id\+Info}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoIdInfo}{Leo\+Id\+Info\+Type}} $\ast$leo\+Id\+Info)
+\begin{DoxyCompactList}\small\item\em Leo get ID Info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a8c7c7270cc4fdb14924a35c8f9198562}{leo\+Get\+Cmal\+Stats}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCmalStats}{Leo\+Cmal\+Stats\+Type}} $\ast$leo\+Cmal\+Stats)
+\begin{DoxyCompactList}\small\item\em Leo get CMAL Stats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a893c9dcd4eda119efd024fce93ebc55b}{leo\+Get\+Fail\+Vector}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoFailVector}{Leo\+Fail\+Vector\+Type}} $\ast$leo\+Fail\+Vector)
+\begin{DoxyCompactList}\small\item\em Leo get fail vector information return information about fatal errors on the Leo ASIC Reads Leo registers to get CMAL stats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ab3755c92259818ab002b64bc5c2da3f8}{leo\+Set\+Cxl\+Compliance\+Mode}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, int cmpl\+Mode)
+\begin{DoxyCompactList}\small\item\em Set Leo Compliance mode for compliance testing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a3d6a542cce61335dd33fd5cb537537c2}{leo\+Get\+Cxl\+Stats}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats\+Type}} $\ast$cxl\+Stats, int link\+Num)
+\begin{DoxyCompactList}\small\item\em Get CXL stats including bandwidth. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_a733945215a83a5188e87fa98ed604244}\label{leo__api_8c_a733945215a83a5188e87fa98ed604244}} 
+uint64\+\_\+t {\bfseries leo\+Get\+Ddr\+Sram\+Telemetry} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, int ddrch, int sram\+Offset)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a80d231a17d0003cf654e8b8a6ed8c83f}\label{leo__api_8c_a80d231a17d0003cf654e8b8a6ed8c83f}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Datapath\+Telemetry\+Int} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry\+Type}} $\ast$tel)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a97359abc3ce674f5e02c3c765c75d540}\label{leo__api_8c_a97359abc3ce674f5e02c3c765c75d540}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Ddr\+Telemetry\+Int} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry\+Type}} $\ast$tel, int ddrch)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a5bbee914eb79a78a33c8236dab5588bb}\label{leo__api_8c_a5bbee914eb79a78a33c8236dab5588bb}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Clock\+Telemetry} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$tel)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a6c4fadbb68818fa4d3bde83ba8f39a72}\label{leo__api_8c_a6c4fadbb68818fa4d3bde83ba8f39a72}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Cxl\+Link\+Err\+Telemetry} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$tel, int link\+Num)
+\item 
+\mbox{\Hypertarget{leo__api_8c_af3552d34f94c7c31734876f47e1c951d}\label{leo__api_8c_af3552d34f94c7c31734876f47e1c951d}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Cxl\+Link\+Telemetry} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$tel, int link\+Num)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a7ac99fafe567255f1a405affe317842b}\label{leo__api_8c_a7ac99fafe567255f1a405affe317842b}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Get\+Cxl\+Telemetry\+Int} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$tel, int num\+Links, int cxllink)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a2b6ff39513c68342e29c2b5b0aac1e2a}{leo\+Get\+Ddr\+Telemetry}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, int ddrch, \mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry\+Type}} $\ast$full, \mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry\+Type}} $\ast$sample, int seconds)
+\begin{DoxyCompactList}\small\item\em Sample Telemetry stats over a period of time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a18a52d3e0af7fc0463a34877559d749e}{leo\+Get\+Datapath\+Telemetry}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry\+Type}} $\ast$full, \mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry\+Type}} $\ast$sample, int seconds)
+\begin{DoxyCompactList}\small\item\em Sample Telemetry stats over a period of time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_afd829a318a78a7cafae7c14c42a683e9}{leo\+Get\+Cxl\+Telemetry}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, int cxllink, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$full, \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$sample, int seconds)
+\begin{DoxyCompactList}\small\item\em Sample Telemetry stats over a period of time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_af0a0adb29fec589e7400098334459517}{leo\+Sample\+Cxl\+Stats}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats\+Type}} $\ast$res\+Cxl\+Stats, int seconds)
+\begin{DoxyCompactList}\small\item\em Sample CXL stats over a period of time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ab7b0988c697a93c2d86a18f7a8b649b7}{leo\+Get\+Dsid}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint64\+\_\+t $\ast$dsid)
+\begin{DoxyCompactList}\small\item\em Read Leo device serial ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a6333b46418552c8981ed8e15de09ac50}{leo\+Get\+Persistent\+Data}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t persistent\+Data\+Id, \mbox{\hyperlink{structLeoPersistentDataValue}{Leo\+Persistent\+Data\+Value\+Type}} $\ast$persistent\+Data\+Value)
+\begin{DoxyCompactList}\small\item\em Get persistent data via ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ad401e0699e871bf60c65bce84d8ed768}{leo\+Cmnd\+Throttle}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, uint32\+\_\+t count, uint32\+\_\+t max\+\_\+\+BW, uint32\+\_\+t enable)
+\begin{DoxyCompactList}\small\item\em set the throttle count and max BW \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a98fdca2296ec66021c9b67f03c562f51}{leo\+Get\+Max\+Dimm\+Temp}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, int leo\+Handle, int $\ast$max\+Temp, uint32\+\_\+t thresold\+Temp, \mbox{\hyperlink{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}{Leo\+Dimm\+Tsod\+Data\+Type}} $\ast$getleo\+Dimm\+Tsod\+Data)
+\begin{DoxyCompactList}\small\item\em Get max DIMM temperature on Leo card. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_a265facfc09c335fc278c74a20f40fd4e}\label{leo__api_8c_a265facfc09c335fc278c74a20f40fd4e}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries leo\+Temp\+Based\+BWThrottle} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, int leo\+Handle, int max, int count)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a7c1e9487007dd7e054d49e30cc8ce960}{leo\+Get\+Ddrphy\+Rx\+Tx\+Training\+Margins}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t ddrc\+Id, \mbox{\hyperlink{unionLeoDdrphyRxTxMarginType}{Leo\+Ddrphy\+Rx\+Tx\+Margin\+Type}} $\ast$ddrphy\+Rx\+Tx\+Margin)
+\begin{DoxyCompactList}\small\item\em Get Rx\+Tx training margin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a3f7b4cac9cfbaeffd0fa0370f83958f8}{leo\+Get\+Ddrphy\+Cs\+Ca\+Training\+Margins}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t ddrc\+Id, \mbox{\hyperlink{unionLeoDdrphyCsCaMarginType}{Leo\+Ddrphy\+Cs\+Ca\+Margin\+Type}} $\ast$ddrphy\+Cs\+Ca\+Margin)
+\begin{DoxyCompactList}\small\item\em Get ddrphy training margin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a4ba0266a9a3bc66219df0e9c2a5e5577}{leo\+Get\+Ddrphy\+Qcs\+Qca\+Training\+Margins}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t ddrc\+Id, \mbox{\hyperlink{unionLeoDdrphyQcsQcaMarginType}{Leo\+Ddrphy\+Qcs\+Qca\+Margin\+Type}} $\ast$ddrphy\+Qcs\+Qca\+Margin)
+\begin{DoxyCompactList}\small\item\em Get ddrphy training margin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a30fd0fef089fabfafcc0d30688b03246}{leo\+Write\+DDR}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint64\+\_\+t dpa)
+\begin{DoxyCompactList}\small\item\em Set Leo DDR Access to test write. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a697912c614ad981fdebea315136a00ad}{leo\+Read\+DDR}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint64\+\_\+t dpa)
+\begin{DoxyCompactList}\small\item\em Set Leo DDR Access to test read. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ae0727048f81fc1a8afed8a1b5e4748de}{leo\+Read\+Eeprom\+Word}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, uint32\+\_\+t addr, uint32\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read Leo EEPROM word. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a41e7e8c33aea2a66b890cd5ff454d6dd}{leo\+Get\+Recent\+Uart\+Rx}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, char $\ast$uart\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Read recent UART rx character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_ae5d3ee4e180a3c5ee60d369f5d372bba}{leo\+Get\+Err\+Info}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, leo\+\_\+err\+\_\+info\+\_\+t $\ast$\mbox{\hyperlink{structleo__err__info}{leo\+\_\+err\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Read Leo error information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__api_8c_a2ac9ceb106656ad7c8ec3f8255c77fb7}{leo\+Run\+SPPR}} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$device, \mbox{\hyperlink{leo__api__types_8h_a32b41397428434de3dab670e1b15e595}{Leo\+Repair\+Record\+Type}} $\ast$repair\+Record)
+\begin{DoxyCompactList}\small\item\em Leo repair given row in a DIMM. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api_8c_a2ed8918902ec83c258dd01beed7ef134}\label{leo__api_8c_a2ed8918902ec83c258dd01beed7ef134}} 
+uint32\+\_\+t {\bfseries leo\+Get\+Ddr\+Ctl\+Addr} (uint32\+\_\+t top\+\_\+csr\+\_\+addr, uint8\+\_\+t ctl\+\_\+id)
+\item 
+\mbox{\Hypertarget{leo__api_8c_a4c9a694b262193c9e8d239da983c1e2e}\label{leo__api_8c_a4c9a694b262193c9e8d239da983c1e2e}} 
+uint32\+\_\+t {\bfseries leo\+Get\+Cxl\+Ctr\+Addr} (uint32\+\_\+t top\+\_\+csr\+\_\+addr, uint8\+\_\+t ctl\+\_\+id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of public functions for the SDK. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__api_8c_a78e3a362fbdb44f68f6141989272a76a}\label{leo__api_8c_a78e3a362fbdb44f68f6141989272a76a}} 
+\index{leo\_api.c@{leo\_api.c}!leoCheckDeviceHealth@{leoCheckDeviceHealth}}
+\index{leoCheckDeviceHealth@{leoCheckDeviceHealth}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoCheckDeviceHealth()}{leoCheckDeviceHealth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Check\+Device\+Health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Perform an all-\/in-\/one health check on the device. 
+
+Check if regular accesses to the EEPROM are working, and if the EEPROM has loaded correctly (i.\+e. Main Mircocode, Path Microcode and PMA code have loaded correctly).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Pointer to Leo Device struct object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ad401e0699e871bf60c65bce84d8ed768}\label{leo__api_8c_ad401e0699e871bf60c65bce84d8ed768}} 
+\index{leo\_api.c@{leo\_api.c}!leoCmndThrottle@{leoCmndThrottle}}
+\index{leoCmndThrottle@{leoCmndThrottle}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoCmndThrottle()}{leoCmndThrottle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Cmnd\+Throttle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{leo\+Device,  }\item[{uint32\+\_\+t}]{count,  }\item[{uint32\+\_\+t}]{max\+\_\+\+BW,  }\item[{uint32\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+set the throttle count and max BW 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & throttle count \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+\+BW} & max BW \\
+\hline
+\mbox{\texttt{ in}}  & {\em enable} & enable/disable throttle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__api_8c_ac88389cf812e615a25ee5f13f3838263}\label{leo__api_8c_ac88389cf812e615a25ee5f13f3838263}} 
+\index{leo\_api.c@{leo\_api.c}!leoDoFwUpdateinLTModeRaw@{leoDoFwUpdateinLTModeRaw}}
+\index{leoDoFwUpdateinLTModeRaw@{leoDoFwUpdateinLTModeRaw}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoDoFwUpdateinLTModeRaw()}{leoDoFwUpdateinLTModeRaw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Do\+Fw\+Updatein\+LTMode\+Raw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{Leo\+FWImage\+Format\+Type}}}]{fw\+Image\+Format\+Type,  }\item[{const uint8\+\_\+t $\ast$}]{fw\+Image\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Update the firmware image on the flash connected to Leo device using the Leo Tunneling mode (I2C interface) The Leo Tunnel mode SDK API will support firmware update in-\/band via the CXL through the PCIe interface in the later release (Not supported yet) Only planned for the future releases. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\mbox{\texttt{ in}}  & {\em fw\+Image\+Format\+Type} & FW Image format type -\/ A, B or G \\
+\hline
+\mbox{\texttt{ in}}  & {\em uint8\+\_\+t$\ast$} & Address or Pointer to the firmware image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_af57f6e08002d9e9869f67758b2271444}\label{leo__api_8c_af57f6e08002d9e9869f67758b2271444}} 
+\index{leo\_api.c@{leo\_api.c}!leoFWStatusCheck@{leoFWStatusCheck}}
+\index{leoFWStatusCheck@{leoFWStatusCheck}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoFWStatusCheck()}{leoFWStatusCheck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+FWStatus\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Check status of FW loaded. 
+
+Check the code load register and the Main Micro heartbeat. If all is good, then read the firmware version
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a66331a7512e2eb32d1d634d3d8ddebad}\label{leo__api_8c_a66331a7512e2eb32d1d634d3d8ddebad}} 
+\index{leo\_api.c@{leo\_api.c}!leoFwUpdateFromFile@{leoFwUpdateFromFile}}
+\index{leoFwUpdateFromFile@{leoFwUpdateFromFile}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoFwUpdateFromFile()}{leoFwUpdateFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Fw\+Update\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{char $\ast$}]{flash\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Update FW from a .mem file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Pointer to Leo Device struct object \\
+\hline
+\mbox{\texttt{ in}}  & {\em flash\+File\+Name} & file path to the flash .mem file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a812be52c46b24919e92b2bb9bbfa63dc}\label{leo__api_8c_a812be52c46b24919e92b2bb9bbfa63dc}} 
+\index{leo\_api.c@{leo\_api.c}!leoFwUpdateTarget@{leoFwUpdateTarget}}
+\index{leoFwUpdateTarget@{leoFwUpdateTarget}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoFwUpdateTarget()}{leoFwUpdateTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Fw\+Update\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{char $\ast$}]{flash\+File\+Name,  }\item[{int}]{target,  }\item[{int}]{verify }\end{DoxyParamCaption})}
+
+
+
+Update FW from a .mem file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Pointer to Leo Device struct object \\
+\hline
+\mbox{\texttt{ in}}  & {\em flash\+File\+Name} & file path to the flash .mem file \\
+\hline
+\mbox{\texttt{ in}}  & {\em target} & 0/1/2 Which slot to update (not implemented in 0.\+8) \\
+\hline
+\mbox{\texttt{ in}}  & {\em verify} & Verify the flash contents after update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a10d065366bbcc1cf89cd369bfb1f1f5d}\label{leo__api_8c_a10d065366bbcc1cf89cd369bfb1f1f5d}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetAsicVersion@{leoGetAsicVersion}}
+\index{leoGetAsicVersion@{leoGetAsicVersion}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetAsicVersion()}{leoGetAsicVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Asic\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Return the ASIC version. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type\+: LEO\+\_\+\+SUCCESS or LEO\+\_\+\+FAILURE ASIC Version updated in device.\+asic\+Version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a8c7c7270cc4fdb14924a35c8f9198562}\label{leo__api_8c_a8c7c7270cc4fdb14924a35c8f9198562}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetCmalStats@{leoGetCmalStats}}
+\index{leoGetCmalStats@{leoGetCmalStats}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetCmalStats()}{leoGetCmalStats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Cmal\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoCmalStats}{Leo\+Cmal\+Stats\+Type}} $\ast$}]{leo\+Cmal\+Stats }\end{DoxyParamCaption})}
+
+
+
+Leo get CMAL Stats. 
+
+Reads Leo registers to get CMAL stats 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Cmal\+Stats\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a3d6a542cce61335dd33fd5cb537537c2}\label{leo__api_8c_a3d6a542cce61335dd33fd5cb537537c2}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetCxlStats@{leoGetCxlStats}}
+\index{leoGetCxlStats@{leoGetCxlStats}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetCxlStats()}{leoGetCxlStats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Cxl\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats\+Type}} $\ast$}]{cxl\+Stats,  }\item[{int}]{link\+Num }\end{DoxyParamCaption})}
+
+
+
+Get CXL stats including bandwidth. 
+
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_afd829a318a78a7cafae7c14c42a683e9}\label{leo__api_8c_afd829a318a78a7cafae7c14c42a683e9}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetCxlTelemetry@{leoGetCxlTelemetry}}
+\index{leoGetCxlTelemetry@{leoGetCxlTelemetry}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetCxlTelemetry()}{leoGetCxlTelemetry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Cxl\+Telemetry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{int}]{cxllink,  }\item[{\mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$}]{full,  }\item[{\mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry\+Type}} $\ast$}]{sample,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Sample Telemetry stats over a period of time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em seconds} & Time period to sample the counters \\
+\hline
+\mbox{\texttt{ in}}  & {\em cxllink} & CXL Link to sample the counters \\
+\hline
+\mbox{\texttt{ out}}  & {\em full} & pointer to structure holding raw telemetry values \\
+\hline
+\mbox{\texttt{ out}}  & {\em sample} & pointer to structure holding sampled telemetry values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a18a52d3e0af7fc0463a34877559d749e}\label{leo__api_8c_a18a52d3e0af7fc0463a34877559d749e}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDatapathTelemetry@{leoGetDatapathTelemetry}}
+\index{leoGetDatapathTelemetry@{leoGetDatapathTelemetry}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDatapathTelemetry()}{leoGetDatapathTelemetry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Datapath\+Telemetry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry\+Type}} $\ast$}]{full,  }\item[{\mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry\+Type}} $\ast$}]{sample,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Sample Telemetry stats over a period of time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em seconds} & Time period to sample the counters \\
+\hline
+\mbox{\texttt{ out}}  & {\em full} & pointer to structure holding raw telemetry values \\
+\hline
+\mbox{\texttt{ out}}  & {\em sample} & pointer to structure holding sampled telemetry values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a3f7b4cac9cfbaeffd0fa0370f83958f8}\label{leo__api_8c_a3f7b4cac9cfbaeffd0fa0370f83958f8}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDdrphyCsCaTrainingMargins@{leoGetDdrphyCsCaTrainingMargins}}
+\index{leoGetDdrphyCsCaTrainingMargins@{leoGetDdrphyCsCaTrainingMargins}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDdrphyCsCaTrainingMargins()}{leoGetDdrphyCsCaTrainingMargins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Ddrphy\+Cs\+Ca\+Training\+Margins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint32\+\_\+t}]{ddrc\+Id,  }\item[{\mbox{\hyperlink{unionLeoDdrphyCsCaMarginType}{Leo\+Ddrphy\+Cs\+Ca\+Margin\+Type}} $\ast$}]{ddrphy\+Cs\+Ca\+Margin }\end{DoxyParamCaption})}
+
+
+
+Get ddrphy training margin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em ddrc\+Id} & -\/ ddr controller 0 or 1 \\
+\hline
+\mbox{\texttt{ out}}  & {\em ddrphy\+Cs\+Ca\+Margin} & -\/ output if cs\+\_\+ca margin type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a4ba0266a9a3bc66219df0e9c2a5e5577}\label{leo__api_8c_a4ba0266a9a3bc66219df0e9c2a5e5577}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDdrphyQcsQcaTrainingMargins@{leoGetDdrphyQcsQcaTrainingMargins}}
+\index{leoGetDdrphyQcsQcaTrainingMargins@{leoGetDdrphyQcsQcaTrainingMargins}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDdrphyQcsQcaTrainingMargins()}{leoGetDdrphyQcsQcaTrainingMargins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Ddrphy\+Qcs\+Qca\+Training\+Margins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint32\+\_\+t}]{ddrc\+Id,  }\item[{\mbox{\hyperlink{unionLeoDdrphyQcsQcaMarginType}{Leo\+Ddrphy\+Qcs\+Qca\+Margin\+Type}} $\ast$}]{ddrphy\+Qcs\+Qca\+Margin }\end{DoxyParamCaption})}
+
+
+
+Get ddrphy training margin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em ddrc\+Id} & -\/ ddr controller 0 or 1 \\
+\hline
+\mbox{\texttt{ out}}  & {\em ddrphy\+Qcs\+Qca\+Margin} & -\/ output if Qcs\+Qca margin type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a7c1e9487007dd7e054d49e30cc8ce960}\label{leo__api_8c_a7c1e9487007dd7e054d49e30cc8ce960}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDdrphyRxTxTrainingMargins@{leoGetDdrphyRxTxTrainingMargins}}
+\index{leoGetDdrphyRxTxTrainingMargins@{leoGetDdrphyRxTxTrainingMargins}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDdrphyRxTxTrainingMargins()}{leoGetDdrphyRxTxTrainingMargins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Ddrphy\+Rx\+Tx\+Training\+Margins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint32\+\_\+t}]{ddrc\+Id,  }\item[{\mbox{\hyperlink{unionLeoDdrphyRxTxMarginType}{Leo\+Ddrphy\+Rx\+Tx\+Margin\+Type}} $\ast$}]{ddrphy\+Rx\+Tx\+Margin }\end{DoxyParamCaption})}
+
+
+
+Get Rx\+Tx training margin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em ddrc\+Id} & -\/ ddr controller 0 or 1 \\
+\hline
+\mbox{\texttt{ out}}  & {\em ddrphy\+Rx\+Tx\+Margin} & -\/ output if rx\+\_\+tx margin type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a2b6ff39513c68342e29c2b5b0aac1e2a}\label{leo__api_8c_a2b6ff39513c68342e29c2b5b0aac1e2a}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDdrTelemetry@{leoGetDdrTelemetry}}
+\index{leoGetDdrTelemetry@{leoGetDdrTelemetry}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDdrTelemetry()}{leoGetDdrTelemetry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Ddr\+Telemetry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{int}]{ddrch,  }\item[{\mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry\+Type}} $\ast$}]{full,  }\item[{\mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry\+Type}} $\ast$}]{sample,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Sample Telemetry stats over a period of time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em seconds} & Time period to sample the counters \\
+\hline
+\mbox{\texttt{ in}}  & {\em ddrch} & DDR Channel number to sample the counters \\
+\hline
+\mbox{\texttt{ out}}  & {\em full} & pointer to structure holding raw telemetry values \\
+\hline
+\mbox{\texttt{ out}}  & {\em sample} & pointer to structure holding sampled telemetry values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ab7b0988c697a93c2d86a18f7a8b649b7}\label{leo__api_8c_ab7b0988c697a93c2d86a18f7a8b649b7}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetDsid@{leoGetDsid}}
+\index{leoGetDsid@{leoGetDsid}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetDsid()}{leoGetDsid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Dsid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint64\+\_\+t $\ast$}]{dsid }\end{DoxyParamCaption})}
+
+
+
+Read Leo device serial ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ out}}  & {\em dsid} & -\/ value of dsid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ae5d3ee4e180a3c5ee60d369f5d372bba}\label{leo__api_8c_ae5d3ee4e180a3c5ee60d369f5d372bba}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetErrInfo@{leoGetErrInfo}}
+\index{leoGetErrInfo@{leoGetErrInfo}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetErrInfo()}{leoGetErrInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Err\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{leo\+\_\+err\+\_\+info\+\_\+t $\ast$}]{leo\+\_\+err\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Read Leo error information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ out}}  & {\em \mbox{\hyperlink{structleo__err__info}{leo\+\_\+err\+\_\+info}}} & address of leo error info \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a893c9dcd4eda119efd024fce93ebc55b}\label{leo__api_8c_a893c9dcd4eda119efd024fce93ebc55b}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetFailVector@{leoGetFailVector}}
+\index{leoGetFailVector@{leoGetFailVector}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetFailVector()}{leoGetFailVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Fail\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoFailVector}{Leo\+Fail\+Vector\+Type}} $\ast$}]{leo\+Fail\+Vector }\end{DoxyParamCaption})}
+
+
+
+Leo get fail vector information return information about fatal errors on the Leo ASIC Reads Leo registers to get CMAL stats. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Fail\+Vector\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a0189838a302109b75c1e6bbb3686839f}\label{leo__api_8c_a0189838a302109b75c1e6bbb3686839f}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetFWVersion@{leoGetFWVersion}}
+\index{leoGetFWVersion@{leoGetFWVersion}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetFWVersion()}{leoGetFWVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+FWVersion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Return the running FW version. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type\+: LEO\+\_\+\+SUCCESS or LEO\+\_\+\+FAILURE FW Version updated in device.\+FWVersion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a0b5834e6382a22c8951df9997e0bb6ac}\label{leo__api_8c_a0b5834e6382a22c8951df9997e0bb6ac}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetLeoIdInfo@{leoGetLeoIdInfo}}
+\index{leoGetLeoIdInfo@{leoGetLeoIdInfo}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLeoIdInfo()}{leoGetLeoIdInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Leo\+Id\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoIdInfo}{Leo\+Id\+Info\+Type}} $\ast$}]{leo\+Id\+Info }\end{DoxyParamCaption})}
+
+
+
+Leo get ID Info. 
+
+Reads Leo EEPROM information from attached EEPROM
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Id\+Info\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a6accd150ba1b2d290249ae03cfe1de47}\label{leo__api_8c_a6accd150ba1b2d290249ae03cfe1de47}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetLinkStateDetailed@{leoGetLinkStateDetailed}}
+\index{leoGetLinkStateDetailed@{leoGetLinkStateDetailed}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLinkStateDetailed()}{leoGetLinkStateDetailed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Link\+State\+Detailed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Get the current detailed Link state, including electrical parameters. 
+
+Read the current Link state and return the parameters for the current links Returns a negative error code, else zero on success.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em link} & Pointer to Leo Link struct object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a4eb4e005fb1fb220680a4162e824e3dc}\label{leo__api_8c_a4eb4e005fb1fb220680a4162e824e3dc}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetLinkStatus@{leoGetLinkStatus}}
+\index{leoGetLinkStatus@{leoGetLinkStatus}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLinkStatus()}{leoGetLinkStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Link\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoLinkStatusType}{Leo\+Link\+Status\+Type}} $\ast$}]{link\+Status }\end{DoxyParamCaption})}
+
+
+
+Leo get link status. 
+
+Reads FoM values for each side and lane and populates an array
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em controller\+Index} & index of the controller \\
+\hline
+\mbox{\texttt{ out}}  & {\em pointer} & to link\+Status array of 16 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a5e2d40d0382788815a8a3c839ed0f0a8}\label{leo__api_8c_a5e2d40d0382788815a8a3c839ed0f0a8}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetLoggerFmtID@{leoGetLoggerFmtID}}
+\index{leoGetLoggerFmtID@{leoGetLoggerFmtID}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLoggerFmtID()}{leoGetLoggerFmtID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Logger\+Fmt\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}]{logger\+Type,  }\item[{int}]{offset,  }\item[{int $\ast$}]{fmt\+ID }\end{DoxyParamCaption})}
+
+
+
+Get the format ID at offset int he print buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Link struct created by user \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger\+Type} & Logger type (main or which path) \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & Print buffer offset \\
+\hline
+ & {\em \mbox{[}in/out\mbox{]}} & fmt\+ID Format ID from logger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_aa72c176272061f96322a1be1394ce80c}\label{leo__api_8c_aa72c176272061f96322a1be1394ce80c}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetLoggerWriteOffset@{leoGetLoggerWriteOffset}}
+\index{leoGetLoggerWriteOffset@{leoGetLoggerWriteOffset}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLoggerWriteOffset()}{leoGetLoggerWriteOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Logger\+Write\+Offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}]{logger\+Type,  }\item[{int $\ast$}]{write\+Offset }\end{DoxyParamCaption})}
+
+
+
+Get the write pointer location in the LTSSM logger. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Link struct created by user \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger\+Type} & Logger type (main or which path) \\
+\hline
+ & {\em \mbox{[}in/out\mbox{]}} & write\+Offset Current write offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a98fdca2296ec66021c9b67f03c562f51}\label{leo__api_8c_a98fdca2296ec66021c9b67f03c562f51}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetMaxDimmTemp@{leoGetMaxDimmTemp}}
+\index{leoGetMaxDimmTemp@{leoGetMaxDimmTemp}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetMaxDimmTemp()}{leoGetMaxDimmTemp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Max\+Dimm\+Temp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{leo\+Device,  }\item[{int}]{leo\+Handle,  }\item[{int $\ast$}]{max\+Temp,  }\item[{uint32\+\_\+t}]{thresold\+Temp,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}{Leo\+Dimm\+Tsod\+Data\+Type}} $\ast$}]{getleo\+Dimm\+Tsod\+Data }\end{DoxyParamCaption})}
+
+
+
+Get max DIMM temperature on Leo card. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em handle} & Handle to the device \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em max\+Temp} & Pointer to max DIMM temperature variable \\
+\hline
+\mbox{\texttt{ in}}  & {\em thresold\+Temp} & Thresold temperature \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em getleo\+Dimm\+Tsod\+Data} & Pointer to DIMM TSOD data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a484085eb56ed5a1a7535feaf7c8c7940}\label{leo__api_8c_a484085eb56ed5a1a7535feaf7c8c7940}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetMemoryStatus@{leoGetMemoryStatus}}
+\index{leoGetMemoryStatus@{leoGetMemoryStatus}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetMemoryStatus()}{leoGetMemoryStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Memory\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoMemoryStatusType}{Leo\+Memory\+Status\+Type}} $\ast$}]{mem\+Status }\end{DoxyParamCaption})}
+
+
+
+check Memory channel status 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo} & Device pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em pointer} & to mem\+Status \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a6333b46418552c8981ed8e15de09ac50}\label{leo__api_8c_a6333b46418552c8981ed8e15de09ac50}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetPersistentData@{leoGetPersistentData}}
+\index{leoGetPersistentData@{leoGetPersistentData}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetPersistentData()}{leoGetPersistentData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Persistent\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint32\+\_\+t}]{persistent\+Data\+Id,  }\item[{\mbox{\hyperlink{structLeoPersistentDataValue}{Leo\+Persistent\+Data\+Value\+Type}} $\ast$}]{persistent\+Data\+Value }\end{DoxyParamCaption})}
+
+
+
+Get persistent data via ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em persistent\+Data\+Id} & -\/ the ID of data to get \\
+\hline
+\mbox{\texttt{ out}}  & {\em persistent\+Data\+Value} & -\/ value of persistent data field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a33f5b860669bdd882260f314325a95cf}\label{leo__api_8c_a33f5b860669bdd882260f314325a95cf}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetPrebootCxlConfig@{leoGetPrebootCxlConfig}}
+\index{leoGetPrebootCxlConfig@{leoGetPrebootCxlConfig}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetPrebootCxlConfig()}{leoGetPrebootCxlConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Preboot\+Cxl\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoCxlConfig}{Leo\+Cxl\+Config\+Type}} $\ast$}]{cxl\+Config }\end{DoxyParamCaption})}
+
+
+
+Leo get Preboot CXL config. 
+
+Reads and decodes CXL config information from Leo registers
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Cxl\+Config\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ae49cc505edc985b0f3ae7bd3020febca}\label{leo__api_8c_ae49cc505edc985b0f3ae7bd3020febca}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetPrebootDdrConfig@{leoGetPrebootDdrConfig}}
+\index{leoGetPrebootDdrConfig@{leoGetPrebootDdrConfig}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetPrebootDdrConfig()}{leoGetPrebootDdrConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Preboot\+Ddr\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoDdrConfig}{Leo\+Ddr\+Config\+Type}} $\ast$}]{ddr\+Config }\end{DoxyParamCaption})}
+
+
+
+Leo get Preboot DDR config. 
+
+Reads and decodes DDR config information from Leo registers
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Ddr\+Config\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a41e7e8c33aea2a66b890cd5ff454d6dd}\label{leo__api_8c_a41e7e8c33aea2a66b890cd5ff454d6dd}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetRecentUartRx@{leoGetRecentUartRx}}
+\index{leoGetRecentUartRx@{leoGetRecentUartRx}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetRecentUartRx()}{leoGetRecentUartRx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Recent\+Uart\+Rx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{char $\ast$}]{uart\+\_\+char }\end{DoxyParamCaption})}
+
+
+
+Read recent UART rx character. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ out}}  & {\em uart\+\_\+char} & Most recent uart character rx \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a07aec8591c1d0b4e395f632a7995239d}\label{leo__api_8c_a07aec8591c1d0b4e395f632a7995239d}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetSDKVersion@{leoGetSDKVersion}}
+\index{leoGetSDKVersion@{leoGetSDKVersion}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetSDKVersion()}{leoGetSDKVersion()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$ leo\+Get\+SDKVersion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the SDK version. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t$\ast$ -\/ SDK version number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a2185e48259dcae7622a26b04b9304a25}\label{leo__api_8c_a2185e48259dcae7622a26b04b9304a25}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetSpdInfo@{leoGetSpdInfo}}
+\index{leoGetSpdInfo@{leoGetSpdInfo}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetSpdInfo()}{leoGetSpdInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Spd\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}} $\ast$}]{spd\+Info,  }\item[{uint8\+\_\+t}]{dimm\+Idx }\end{DoxyParamCaption})}
+
+
+
+Get the key SPD-\/\+Serial Presence detect values for the DDR modules. 
+
+Get a quick read of the SPD values
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Spd\+Info\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em dimm\+Idx} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em Leo\+Errortype} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__api_8c_ab337dffc2d32592f71707440b020d28c}\label{leo__api_8c_ab337dffc2d32592f71707440b020d28c}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetSpdManufacturingInfo@{leoGetSpdManufacturingInfo}}
+\index{leoGetSpdManufacturingInfo@{leoGetSpdManufacturingInfo}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetSpdManufacturingInfo()}{leoGetSpdManufacturingInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Spd\+Manufacturing\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}} $\ast$}]{spd\+Info,  }\item[{uint8\+\_\+t}]{dimm\+Idx }\end{DoxyParamCaption})}
+
+
+
+Get the key SPD-\/\+Serial Presence detect values for the DDR modules. 
+
+This API gets the manufacturing related info from SPD
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Spd\+Info\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em dimm\+Idx} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em Leo\+Errortype} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__api_8c_a61d4c4d6b635096fe37244b16d786e5c}\label{leo__api_8c_a61d4c4d6b635096fe37244b16d786e5c}} 
+\index{leo\_api.c@{leo\_api.c}!leoGetTsodData@{leoGetTsodData}}
+\index{leoGetTsodData@{leoGetTsodData}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoGetTsodData()}{leoGetTsodData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Tsod\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}{Leo\+Dimm\+Tsod\+Data\+Type}} $\ast$}]{tsod\+Data,  }\item[{uint8\+\_\+t}]{dimm\+Idx }\end{DoxyParamCaption})}
+
+
+
+Leo Get the TSOD data for the DDR modules. 
+
+Get the TSOD data for the DDR modules Must be called after DDR modules are trained, and several seconds after leo\+Init\+Device is called, otherwise data may be inaccurate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Leo\+Device\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em Leo\+Dimm\+Tsod\+Data\+Type} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em dimm\+Idx} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em Leo\+Errortype} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{leo__api_8c_a90e73c4f28769c9398fdf1dc1deaf8e2}\label{leo__api_8c_a90e73c4f28769c9398fdf1dc1deaf8e2}} 
+\index{leo\_api.c@{leo\_api.c}!leoInitDevice@{leoInitDevice}}
+\index{leoInitDevice@{leoInitDevice}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoInitDevice()}{leoInitDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Init\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Initialize Leo device. 
+
+Capture the FW version, device id, vendor id and revision id and store the values in the device struct
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em device} & Leo device struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_af3b0521ee74381bdd3b45b5a23b3a427}\label{leo__api_8c_af3b0521ee74381bdd3b45b5a23b3a427}} 
+\index{leo\_api.c@{leo\_api.c}!leoLTSSMLoggerPrintEn@{leoLTSSMLoggerPrintEn}}
+\index{leoLTSSMLoggerPrintEn@{leoLTSSMLoggerPrintEn}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoLTSSMLoggerPrintEn()}{leoLTSSMLoggerPrintEn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+LTSSMLogger\+Print\+En (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{uint8\+\_\+t}]{print\+En }\end{DoxyParamCaption})}
+
+
+
+Enable or disable LTSSM logger. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Pointer to Leo Link struct object \\
+\hline
+\mbox{\texttt{ in}}  & {\em print\+En} & Enable (1) or disable (0) printing for this Link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a1dc46622ec052cc9b853759ea76a918d}\label{leo__api_8c_a1dc46622ec052cc9b853759ea76a918d}} 
+\index{leo\_api.c@{leo\_api.c}!leoLTSSMLoggerReadEntry@{leoLTSSMLoggerReadEntry}}
+\index{leoLTSSMLoggerReadEntry@{leoLTSSMLoggerReadEntry}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoLTSSMLoggerReadEntry()}{leoLTSSMLoggerReadEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+LTSSMLogger\+Read\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}]{log,  }\item[{int $\ast$}]{offset,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a607b09f3380427e3059debe5ef5289d2}{Leo\+LTSSMEntry\+Type}} $\ast$}]{entry }\end{DoxyParamCaption})}
+
+
+
+Read an entry from the LTSSM logger. 
+
+The LTSSM log entry starting at offset is returned, and offset is updated to point to the next entry. Returns a negative error code, including LEO\+\_\+\+LTSSM\+\_\+\+INVALID\+\_\+\+ENTRY if the the end of the log is reached, else zero on success.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Pointer to Leo Link struct object \\
+\hline
+\mbox{\texttt{ in}}  & {\em log} & The specific log to read from \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em offset} & Pointer to the log offset value \\
+\hline
+\mbox{\texttt{ out}}  & {\em entry} & Pointer to Leo LTSSM Logger Entry struct returned by this function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a5cd62c632dea4e88b151dbb6fb48227a}\label{leo__api_8c_a5cd62c632dea4e88b151dbb6fb48227a}} 
+\index{leo\_api.c@{leo\_api.c}!leoMemoryScrubbing@{leoMemoryScrubbing}}
+\index{leoMemoryScrubbing@{leoMemoryScrubbing}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoMemoryScrubbing()}{leoMemoryScrubbing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Memory\+Scrubbing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a68a07d672539f7615f60123264179182}{Leo\+Scrub\+Config\+Info\+Type}} $\ast$}]{scrub\+Config }\end{DoxyParamCaption})}
+
+
+
+Leo DDR Memory scrubbing. 
+
+Start patrol (background) scrubbing to systematically correct errors that are correctable.
+
+req\+Scrb\+En ( starts from start to end addr) on demand launch it and wait for status
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em req\+Scrb\+En} & -\/ 1 to enable Request scrubbing, 0 to just Background scrubbing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo Error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a697912c614ad981fdebea315136a00ad}\label{leo__api_8c_a697912c614ad981fdebea315136a00ad}} 
+\index{leo\_api.c@{leo\_api.c}!leoReadDDR@{leoReadDDR}}
+\index{leoReadDDR@{leoReadDDR}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoReadDDR()}{leoReadDDR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+DDR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint64\+\_\+t}]{dpa }\end{DoxyParamCaption})}
+
+
+
+Set Leo DDR Access to test read. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em dpa} & Device Physical Address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ae0727048f81fc1a8afed8a1b5e4748de}\label{leo__api_8c_ae0727048f81fc1a8afed8a1b5e4748de}} 
+\index{leo\_api.c@{leo\_api.c}!leoReadEepromWord@{leoReadEepromWord}}
+\index{leoReadEepromWord@{leoReadEepromWord}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoReadEepromWord()}{leoReadEepromWord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Read\+Eeprom\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read Leo EEPROM word. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em addr} & Address of the EEPROM to read \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Value of EEPROM at given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a2ac9ceb106656ad7c8ec3f8255c77fb7}\label{leo__api_8c_a2ac9ceb106656ad7c8ec3f8255c77fb7}} 
+\index{leo\_api.c@{leo\_api.c}!leoRunSPPR@{leoRunSPPR}}
+\index{leoRunSPPR@{leoRunSPPR}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoRunSPPR()}{leoRunSPPR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Run\+SPPR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{leo__api__types_8h_a32b41397428434de3dab670e1b15e595}{Leo\+Repair\+Record\+Type}} $\ast$}]{repair\+Record }\end{DoxyParamCaption})}
+
+
+
+Leo repair given row in a DIMM. 
+
+Takes the channel, rank, bankgroup, bank and row to repair if possible
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em repair\+Record} & that has the inputs \\
+\hline
+\mbox{\texttt{ in}}  & {\em sets} & p\+Status to Leo\+Success if SPPR is successful else Leo\+Failure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_af0a0adb29fec589e7400098334459517}\label{leo__api_8c_af0a0adb29fec589e7400098334459517}} 
+\index{leo\_api.c@{leo\_api.c}!leoSampleCxlStats@{leoSampleCxlStats}}
+\index{leoSampleCxlStats@{leoSampleCxlStats}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoSampleCxlStats()}{leoSampleCxlStats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Sample\+Cxl\+Stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats\+Type}} $\ast$}]{res\+Cxl\+Stats,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Sample CXL stats over a period of time. 
+
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a2fee3ca8898661ce456937eca35fb2ad}\label{leo__api_8c_a2fee3ca8898661ce456937eca35fb2ad}} 
+\index{leo\_api.c@{leo\_api.c}!leoSDKVersionCompatibilityCheck@{leoSDKVersionCompatibilityCheck}}
+\index{leoSDKVersionCompatibilityCheck@{leoSDKVersionCompatibilityCheck}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoSDKVersionCompatibilityCheck()}{leoSDKVersionCompatibilityCheck()}}
+{\footnotesize\ttfamily int leo\+SDKVersion\+Compatibility\+Check (\begin{DoxyParamCaption}\item[{char $\ast$}]{fw\+Version,  }\item[{char $\ast$}]{sdk\+Version }\end{DoxyParamCaption})}
+
+
+
+Check the SDK and FW version compatibility SDK version must be \texorpdfstring{$>$}{>}= FW version. 
+
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_ab3755c92259818ab002b64bc5c2da3f8}\label{leo__api_8c_ab3755c92259818ab002b64bc5c2da3f8}} 
+\index{leo\_api.c@{leo\_api.c}!leoSetCxlComplianceMode@{leoSetCxlComplianceMode}}
+\index{leoSetCxlComplianceMode@{leoSetCxlComplianceMode}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoSetCxlComplianceMode()}{leoSetCxlComplianceMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Set\+Cxl\+Compliance\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{devicei,  }\item[{int}]{cmpl\+Mode }\end{DoxyParamCaption})}
+
+
+
+Set Leo Compliance mode for compliance testing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em cmpl\+Mode} & Compliance mdoe (1 = CXL Spec 1.\+1) or (2 = CXL Spec 2.\+0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__api_8c_a30fd0fef089fabfafcc0d30688b03246}\label{leo__api_8c_a30fd0fef089fabfafcc0d30688b03246}} 
+\index{leo\_api.c@{leo\_api.c}!leoWriteDDR@{leoWriteDDR}}
+\index{leoWriteDDR@{leoWriteDDR}!leo\_api.c@{leo\_api.c}}
+\doxysubsubsection{\texorpdfstring{leoWriteDDR()}{leoWriteDDR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Write\+DDR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$}]{device,  }\item[{uint64\+\_\+t}]{dpa }\end{DoxyParamCaption})}
+
+
+
+Set Leo DDR Access to test write. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & Struct containing device information \\
+\hline
+\mbox{\texttt{ in}}  & {\em dpa} & Device Physical Address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}

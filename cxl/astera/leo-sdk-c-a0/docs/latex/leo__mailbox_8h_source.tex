@@ -1,0 +1,119 @@
+\hypertarget{leo__mailbox_8h_source}{}\doxysection{leo\+\_\+mailbox.\+h}
+\label{leo__mailbox_8h_source}\index{leo-\/sdk-\/c/include/leo\_mailbox.h@{leo-\/sdk-\/c/include/leo\_mailbox.h}}
+\mbox{\hyperlink{leo__mailbox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_LEO\_SDK\_MAILBOX\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_LEO\_SDK\_MAILBOX\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__api__types_8h}{leo\_api\_types.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leo__i2c_8h}{leo\_i2c.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MMB\_STS\_OK\ 0x1}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MMB\_STS\_PENDING\ 0x40000000}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ MMB\_STS\_ERROR\ 0x80000000}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CSR\_READ\ 0x1}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CSR\_WRITE\ 0x11}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_PING\ 0x16}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_FW\_TESTS\ 0x17}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_FW\_CRC\_VERIFY\ 0x21}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CHK\_DIMM\_TSOD\ 0x23}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CHK\_DIMM\_SPD\_INFO\ 0x24}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_DUMP\_DIMM\_SPD\ 0x25}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CHK\_EEPROM\_LEO\_ID\ 0x26}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_CHK\_PERSISTENT\_DATA\ 0x27}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_GET\_DDRPHY\_TRAINING\_MARGIN\ 0x28}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_RD\_EEPROM\ 0x29}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_GET\_RECENT\_UART\_RX\ 0x30}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_GET\_LEO\_ERR\_INFO\ 0x31}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_ACCESS\_DRAM\_DBG\_INTF\ 0x32}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_CMD\_OPCODE\_MMB\_SPPR\ 0x40}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_PAYLOAD\_MMB\_FW\_TESTS\_FLASH\_ACCESS\_TEST\_PAYLOAD\ 0x1}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_PAYLOAD\_MMB\_FW\_TESTS\_PHY\_CONTEXT\_SEL\_SWITCH\_DEFAULT\ 0x0100}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_PAYLOAD\_MMB\_FW\_TESTS\_PHY\_CONTEXT\_SEL\_SWITCH\_MPLL\_A\_B\_DIRECT\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ 0x0101}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_RET\_FW\_TESTS\_FLASH\_ACCESS\_TESTS\_SUCCESS\ 0x0}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ FW\_API\_MMB\_RET\_FW\_TESTS\_FLASH\_ACCESS\_TESTS\_FAIL\ 0xFFFFFFFF}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_CAP\_REG\ 0x01012000}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_CTL\_REG\ 0x01012004}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_CMD\_REG\ 0x01012008}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_STS\_REG\ 0x01012010}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_BCS\_REG\ 0x01012018}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ CXL\_BAR2\_PMBOX\_PAYL\_REG\ 0x01012020}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_EVT\_RECS\ \ \ \ \ \ \ (0x0100)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLR\_EVT\_RECS\ \ \ \ \ \ \ (0x0101)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_INTR\_POLICY\ (0x0102)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_SET\_INTR\_POLICY\ (0x0103)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_POISON\_LIST\ \ \ (0x4300)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_INJECT\_POISON\ \ \ \ \ (0x4301)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLEAR\_POISON\ \ \ \ \ \ (0x4302)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_ALERT\_CONFIG\ \ (0x4201)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_SET\_ALERT\_CONFIG\ \ (0x4202)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_CMD\_IN\_LEN\ 0x1}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLR\_CMD\_IN\_LEN\ 0x8}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_GET\_CMD\_LEN\_SHIFT\ 16}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLR\_CMD\_LEN\_SHIFT\ 16}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLRALL\_PAYL\_SZ\ (256)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_INFO\_LOG\ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_WARN\_LOG\ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_FAILURE\_LOG\ \ \ (2)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_FATAL\_LOG\ \ \ \ \ (3)}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ CXL\_PMBOX\_CLR\_ALL\ 0x1}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ CXL\_EVENT\_REC\_SZ\ 160}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ LEO\_CXL\_MBOX\_MAX\_PAYLOAD\_SIZE\ (256)}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoMailboxInfo}{LeoMailboxInfo}}\ \{}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{int}\ operationInProgress;}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{size\_t}\ timeoutCnt;}
+\DoxyCodeLine{00095\ \ \ uint32\_t\ *payloadReg;}
+\DoxyCodeLine{00096\ \}\ \mbox{\hyperlink{structLeoMailboxInfo}{LeoMailboxInfoType}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ MailboxStatus\ \{}
+\DoxyCodeLine{00099\ \ \ AL\_MM\_STS\_SUCCESS\ =\ 0,}
+\DoxyCodeLine{00100\ \ \ AL\_MM\_STS\_ERROR\ =\ 0x4,}
+\DoxyCodeLine{00101\ \}\ MailboxStatusType;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ sendMailboxCmd(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver,\ uint32\_t\ addr,\ uint32\_t\ cmd,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ payloadLen);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{size\_t}\ sendMailboxPayload(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver,\ uint32\_t\ *payload,\ \textcolor{keywordtype}{size\_t}\ inPayloadLen);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ uint32\_t\ checkDoorbell(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver);}
+\DoxyCodeLine{00108\ MailboxStatusType\ getMailboxStatus(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver);}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{size\_t}\ getReturnData(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver,\ uint32\_t\ *data,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ expDataLen);}
+\DoxyCodeLine{00111\ MailboxStatusType\ execOperation(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver,\ uint32\_t\ addr,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ cmd,\ uint32\_t\ *dataIn,\ \textcolor{keywordtype}{size\_t}\ inPayloadLen,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *dataOut,\ \textcolor{keywordtype}{size\_t}\ expReturnDataLen);}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ printPayload(uint32\_t\ *payload,\ \textcolor{keywordtype}{size\_t}\ payloadLen);}
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{int}\ waitForDoorbell(\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *leoDriver);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_LEO\_SDK\_MAILBOX\_H}}
+
+\end{DoxyCode}

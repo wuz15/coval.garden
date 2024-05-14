@@ -1,0 +1,65 @@
+\hypertarget{leo__inject__err__test_8c}{}\doxysection{leo-\/sdk-\/c/examples/leo\+\_\+inject\+\_\+err\+\_\+test.c File Reference}
+\label{leo__inject__err__test_8c}\index{leo-\/sdk-\/c/examples/leo\_inject\_err\_test.c@{leo-\/sdk-\/c/examples/leo\_inject\_err\_test.c}}
+
+
+api test demonstrates usage of Leo SDK Inject Error API calls. This is recommended for\+:  
+
+
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/libi2c.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for leo\+\_\+inject\+\_\+err\+\_\+test.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__inject__err__test_8c_a92bddec316d11cb4309b2d81ead71b83}\label{leo__inject__err__test_8c_a92bddec316d11cb4309b2d81ead71b83}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Inject\+Err\+Test} (\mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{Leo\+Device\+Type}} $\ast$leo\+Device, int leo\+Handle)
+\item 
+\mbox{\Hypertarget{leo__inject__err__test_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{leo__inject__err__test_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__inject__err__test_8c_a0cd92922fc8f27268e545ceedfb16cdd}\label{leo__inject__err__test_8c_a0cd92922fc8f27268e545ceedfb16cdd}} 
+uint64\+\_\+t {\bfseries start\+Addr} = 0
+\item 
+\mbox{\Hypertarget{leo__inject__err__test_8c_a0b6e7f95deb676067e0102cfcc4602a7}\label{leo__inject__err__test_8c_a0b6e7f95deb676067e0102cfcc4602a7}} 
+uint8\+\_\+t {\bfseries ecc\+Err\+Type} = 0
+\item 
+\mbox{\Hypertarget{leo__inject__err__test_8c_a226048c77f5049b0e35009d5caa85e89}\label{leo__inject__err__test_8c_a226048c77f5049b0e35009d5caa85e89}} 
+uint8\+\_\+t {\bfseries ecc\+En} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+api test demonstrates usage of Leo SDK Inject Error API calls. This is recommended for\+: 
+
+
+\begin{DoxyItemize}
+\item Print SDK version
+\item Iinitialize Leo device
+\item Set/\+Clear Error Inject registers example UC error sudo ./leo\+\_\+inject\+\_\+err\+\_\+test -\/switch 70 -\/addr 0 -\/errtype CE -\/enable 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}1-\/in\mbox{]}} & start address, default 0 \\
+\hline
+{\em \mbox{[}2-\/in\mbox{]}} & Error Type UCE or CE \\
+\hline
+{\em \mbox{[}3-\/in\mbox{]}} & (enable Or disable) For more details on the args supported \& usage sudo ./leo\+\_\+inject\+\_\+err\+\_\+test -\/help \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}

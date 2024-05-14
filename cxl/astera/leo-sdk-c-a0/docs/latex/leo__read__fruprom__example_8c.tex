@@ -1,0 +1,142 @@
+\hypertarget{leo__read__fruprom__example_8c}{}\doxysection{leo-\/sdk-\/c/examples/leo\+\_\+read\+\_\+fruprom\+\_\+example.c File Reference}
+\label{leo__read__fruprom__example_8c}\index{leo-\/sdk-\/c/examples/leo\_read\_fruprom\_example.c@{leo-\/sdk-\/c/examples/leo\_read\_fruprom\_example.c}}
+
+
+api test demonstrates reading Leo FRUPROM This is recommended for\+:  
+
+
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/astera\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./aardvark/aardvark.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./aardvark/aardvark\+\_\+setup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./include/aa.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./include/libi2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+read\+\_\+fruprom\+\_\+example.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_adb1cef27f63859fb22391236a5313024}\label{leo__read__fruprom__example_8c_adb1cef27f63859fb22391236a5313024}} 
+\#define {\bfseries PROM\+\_\+\+MARKER\+\_\+\+START}~0
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ab0660a2f50bfb9f2216970f883d9900c}\label{leo__read__fruprom__example_8c_ab0660a2f50bfb9f2216970f883d9900c}} 
+\#define {\bfseries PROM\+\_\+\+MARKER\+\_\+\+LENGTH}~2
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ab06c3aaa8cc0b99832300be3c91f2067}\label{leo__read__fruprom__example_8c_ab06c3aaa8cc0b99832300be3c91f2067}} 
+\#define {\bfseries PROM\+\_\+\+VERSION\+\_\+\+START}~2
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a77eb1664d61d83590ce4724063eb82d5}\label{leo__read__fruprom__example_8c_a77eb1664d61d83590ce4724063eb82d5}} 
+\#define {\bfseries PROM\+\_\+\+VERSION\+\_\+\+LENGTH}~2
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ab22273c2dd1c07c6d3b71476a63c5de8}\label{leo__read__fruprom__example_8c_ab22273c2dd1c07c6d3b71476a63c5de8}} 
+\#define {\bfseries PROM\+\_\+\+BOARD\+\_\+\+START}~4
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a0331c3728314a2948e95b97ffc9075d3}\label{leo__read__fruprom__example_8c_a0331c3728314a2948e95b97ffc9075d3}} 
+\#define {\bfseries PROM\+\_\+\+BOARD\+\_\+\+LENGTH}~4
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ac4b7438b0b29167a1aef9ac0ce08cd57}\label{leo__read__fruprom__example_8c_ac4b7438b0b29167a1aef9ac0ce08cd57}} 
+\#define {\bfseries PROM\+\_\+\+DATE\+\_\+\+START}~8
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a9464dc2934e921786e19119cc4075e39}\label{leo__read__fruprom__example_8c_a9464dc2934e921786e19119cc4075e39}} 
+\#define {\bfseries PROM\+\_\+\+DATE\+\_\+\+LENGTH}~8
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ab79c66b73ff22a5f80fd0edee2c7598e}\label{leo__read__fruprom__example_8c_ab79c66b73ff22a5f80fd0edee2c7598e}} 
+\#define {\bfseries PROM\+\_\+\+COMPANY\+\_\+\+START}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a259a070077ea7c28ee0737e848e3ac2f}\label{leo__read__fruprom__example_8c_a259a070077ea7c28ee0737e848e3ac2f}} 
+\#define {\bfseries PROM\+\_\+\+COMPANY\+\_\+\+LENGTH}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_aa762746bb72a4d91c32c900c5a8e7f56}\label{leo__read__fruprom__example_8c_aa762746bb72a4d91c32c900c5a8e7f56}} 
+\#define {\bfseries PROM\+\_\+\+SERIAL\+\_\+\+START}~32
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_aca8452371aa77782f1fa4704c4802085}\label{leo__read__fruprom__example_8c_aca8452371aa77782f1fa4704c4802085}} 
+\#define {\bfseries PROM\+\_\+\+SERIAL\+\_\+\+LENGTH}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a3723dcf29cfbcf06c68d02df950dfb24}\label{leo__read__fruprom__example_8c_a3723dcf29cfbcf06c68d02df950dfb24}} 
+\#define {\bfseries PROM\+\_\+\+PCA\+\_\+\+START}~48
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a2981a75df0c6a32522f3a5820c27fdb0}\label{leo__read__fruprom__example_8c_a2981a75df0c6a32522f3a5820c27fdb0}} 
+\#define {\bfseries PROM\+\_\+\+PCA\+\_\+\+LENGTH}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_adbbe6fbdb6bfbb8052ebf78bada20b0b}\label{leo__read__fruprom__example_8c_adbbe6fbdb6bfbb8052ebf78bada20b0b}} 
+\#define {\bfseries PROM\+\_\+\+SID\+\_\+\+START}~64
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a8c03d8204055462e923e4506813c2cf6}\label{leo__read__fruprom__example_8c_a8c03d8204055462e923e4506813c2cf6}} 
+\#define {\bfseries PROM\+\_\+\+SID\+\_\+\+LENGTH}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_afb535e9e334aacc673532571678156bd}\label{leo__read__fruprom__example_8c_afb535e9e334aacc673532571678156bd}} 
+\#define {\bfseries PROM\+\_\+\+HWBITS\+\_\+\+START}~80
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a5490cbd08a95f40a7a2f234e3551f1e1}\label{leo__read__fruprom__example_8c_a5490cbd08a95f40a7a2f234e3551f1e1}} 
+\#define {\bfseries PROM\+\_\+\+HWBITS\+\_\+\+LENGTH}~8
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a850ebaac3f9a059e4cbdb27747849e12}\label{leo__read__fruprom__example_8c_a850ebaac3f9a059e4cbdb27747849e12}} 
+\#define {\bfseries PROM\+\_\+\+DEVIATION\+\_\+\+START}~88
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a35381324a3044cb2f68318cabb45fdf4}\label{leo__read__fruprom__example_8c_a35381324a3044cb2f68318cabb45fdf4}} 
+\#define {\bfseries PROM\+\_\+\+DEVIATION\+\_\+\+NUM}~16
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a23e6165e9ea74ab9536ab875fa2d249e}\label{leo__read__fruprom__example_8c_a23e6165e9ea74ab9536ab875fa2d249e}} 
+\#define {\bfseries PROM\+\_\+\+CHECKSUM\+\_\+\+START}~142
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ad97902e2720557eec39363b0cce03f11}\label{leo__read__fruprom__example_8c_ad97902e2720557eec39363b0cce03f11}} 
+enum {\bfseries board\+\_\+type} \{ \newline
+{\bfseries AL\+\_\+\+BOARD\+\_\+\+LEO\+\_\+\+SVB\+\_\+e} = 0
+, {\bfseries AL\+\_\+\+BOARD\+\_\+\+LEO\+\_\+\+LBB\+\_\+e} = 1
+, {\bfseries AL\+\_\+\+BOARD\+\_\+\+AURORA1\+\_\+e} = 2
+, {\bfseries AL\+\_\+\+BOARD\+\_\+\+AURORA2\+\_\+e} = 3
+, \newline
+{\bfseries AL\+\_\+\+BOARD\+\_\+\+LAST\+\_\+e}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{leo__read__fruprom__example_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{leo__read__fruprom__example_8c_ae51a1b8e97f8d8fa9ce84b3882d8cb38}{board\+\_\+name\+\_\+str}} \mbox{[}$\,$\mbox{]}\mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+api test demonstrates reading Leo FRUPROM This is recommended for\+: 
+
+
+\begin{DoxyItemize}
+\item Print board information such as serial number and board type For more details on the args supported \& usage ./leo\+\_\+read\+\_\+fruprom\+\_\+example -\/help 
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{leo__read__fruprom__example_8c_ae51a1b8e97f8d8fa9ce84b3882d8cb38}\label{leo__read__fruprom__example_8c_ae51a1b8e97f8d8fa9ce84b3882d8cb38}} 
+\index{leo\_read\_fruprom\_example.c@{leo\_read\_fruprom\_example.c}!board\_name\_str@{board\_name\_str}}
+\index{board\_name\_str@{board\_name\_str}!leo\_read\_fruprom\_example.c@{leo\_read\_fruprom\_example.c}}
+\doxysubsubsection{\texorpdfstring{board\_name\_str}{board\_name\_str}}
+{\footnotesize\ttfamily char board\+\_\+name\+\_\+str\mbox{[}$\,$\mbox{]}\mbox{[}16\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}LEO-\/SVB"{}},\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}LEO-\/LBB"{}},\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}AURORA1"{}},\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}AURORA2"{}},\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}INVALID"{}},\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

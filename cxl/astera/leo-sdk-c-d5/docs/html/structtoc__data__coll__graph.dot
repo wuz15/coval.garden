@@ -1,0 +1,14 @@
+digraph "toc_data"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="toc_data",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" code_data" ];
+  Node2 [label="toc_code_data",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structtoc__code__data.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" toc_config" ];
+  Node3 [label="toc_config",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structtoc__config.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" syscfg_data" ];
+  Node4 [label="toc_syscfg_data",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structtoc__syscfg__data.html",tooltip=" "];
+}

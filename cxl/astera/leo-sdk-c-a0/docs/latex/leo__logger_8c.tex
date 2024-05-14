@@ -1,0 +1,117 @@
+\hypertarget{leo__logger_8c}{}\doxysection{leo-\/sdk-\/c/source/leo\+\_\+logger.c File Reference}
+\label{leo__logger_8c}\index{leo-\/sdk-\/c/source/leo\_logger.c@{leo-\/sdk-\/c/source/leo\_logger.c}}
+
+
+Implementation of miscellaneous functions for the SDK.  
+
+
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+logger.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+logger.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__logger_8c_acd3d3ac14f0d70fb7dd96d09a89371d0}\label{leo__logger_8c_acd3d3ac14f0d70fb7dd96d09a89371d0}} 
+\#define {\bfseries LEO\+\_\+\+PRINT\+\_\+\+INFO\+\_\+\+STRUCT\+\_\+\+ONE\+\_\+\+BATCH\+\_\+\+MODE\+\_\+\+EN\+\_\+\+OFFSET}~45
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__logger_8c_a6985d04e3ac9446673de46fea6e0fe56}\label{leo__logger_8c_a6985d04e3ac9446673de46fea6e0fe56}} 
+uint8\+\_\+t {\bfseries leo\+Get\+Pec\+Byte} (uint8\+\_\+t $\ast$polynomial, uint8\+\_\+t length)
+\item 
+\mbox{\Hypertarget{leo__logger_8c_a1a1fbd2587d22f2bbe1e83758290fe21}\label{leo__logger_8c_a1a1fbd2587d22f2bbe1e83758290fe21}} 
+int {\bfseries leo\+Get\+Start\+Lane} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link)
+\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__logger_8c_a71edfe0e151fcd213a40da47f0d70d15}{leo\+Get\+Logger\+One\+Batch\+Mode\+En}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} logger\+Type, int $\ast$one\+Batch\+Mode\+En)
+\begin{DoxyCompactList}\small\item\em Check if one batch mode in the LTSSM logger is enabled or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__logger_8c_af2832241bfefe06ca56f63749d8fc678}{leo\+Get\+Logger\+One\+Batch\+Wr\+En}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} logger\+Type, int $\ast$one\+Batch\+Wr\+En)
+\begin{DoxyCompactList}\small\item\em Check if one batch write in the LTSSM logger is enabled or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} \mbox{\hyperlink{leo__logger_8c_ac140475e2e148c7ff6d0484d88e6b461}{leo\+Check\+Link\+Health}} (\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Perform an all-\/in-\/one health check on a given Link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of miscellaneous functions for the SDK. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{leo__logger_8c_ac140475e2e148c7ff6d0484d88e6b461}\label{leo__logger_8c_ac140475e2e148c7ff6d0484d88e6b461}} 
+\index{leo\_logger.c@{leo\_logger.c}!leoCheckLinkHealth@{leoCheckLinkHealth}}
+\index{leoCheckLinkHealth@{leoCheckLinkHealth}!leo\_logger.c@{leo\_logger.c}}
+\doxysubsubsection{\texorpdfstring{leoCheckLinkHealth()}{leoCheckLinkHealth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Check\+Link\+Health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Perform an all-\/in-\/one health check on a given Link. 
+
+Check critical parameters like junction temperature, Link LTSSM state, and per-\/lane eye height/width against certain alert thresholds. Update link.\+link\+Okay member (bool).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Pointer to Leo Link struct object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__logger_8c_a71edfe0e151fcd213a40da47f0d70d15}\label{leo__logger_8c_a71edfe0e151fcd213a40da47f0d70d15}} 
+\index{leo\_logger.c@{leo\_logger.c}!leoGetLoggerOneBatchModeEn@{leoGetLoggerOneBatchModeEn}}
+\index{leoGetLoggerOneBatchModeEn@{leoGetLoggerOneBatchModeEn}!leo\_logger.c@{leo\_logger.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLoggerOneBatchModeEn()}{leoGetLoggerOneBatchModeEn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Logger\+One\+Batch\+Mode\+En (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}]{logger\+Type,  }\item[{int $\ast$}]{one\+Batch\+Mode\+En }\end{DoxyParamCaption})}
+
+
+
+Check if one batch mode in the LTSSM logger is enabled or not. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Link struct created by user \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger\+Type} & Logger type (main or which path) \\
+\hline
+ & {\em \mbox{[}in/out\mbox{]}} & one\+Batch\+Mode\+En One batch mode enabled or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{leo__logger_8c_af2832241bfefe06ca56f63749d8fc678}\label{leo__logger_8c_af2832241bfefe06ca56f63749d8fc678}} 
+\index{leo\_logger.c@{leo\_logger.c}!leoGetLoggerOneBatchWrEn@{leoGetLoggerOneBatchWrEn}}
+\index{leoGetLoggerOneBatchWrEn@{leoGetLoggerOneBatchWrEn}!leo\_logger.c@{leo\_logger.c}}
+\doxysubsubsection{\texorpdfstring{leoGetLoggerOneBatchWrEn()}{leoGetLoggerOneBatchWrEn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} leo\+Get\+Logger\+One\+Batch\+Wr\+En (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}} $\ast$}]{link,  }\item[{\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}]{logger\+Type,  }\item[{int $\ast$}]{one\+Batch\+Wr\+En }\end{DoxyParamCaption})}
+
+
+
+Check if one batch write in the LTSSM logger is enabled or not. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Link struct created by user \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger\+Type} & Logger type (main or which path) \\
+\hline
+ & {\em \mbox{[}in/out\mbox{]}} & one\+Batch\+Wr\+En One batch write enabled or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code
+\end{DoxyReturn}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em link} & Link struct created by user \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger\+Type} & Logger type (main or which path) \\
+\hline
+ & {\em \mbox{[}in/out\mbox{]}} & one\+Batch\+Wr\+En One batch write enabled or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leo\+Error\+Type -\/ Leo error code 
+\end{DoxyReturn}

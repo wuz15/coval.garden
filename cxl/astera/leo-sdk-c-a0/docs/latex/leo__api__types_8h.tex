@@ -1,0 +1,917 @@
+\hypertarget{leo__api__types_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+api\+\_\+types.h File Reference}
+\label{leo__api__types_8h}\index{leo-\/sdk-\/c/include/leo\_api\_types.h@{leo-\/sdk-\/c/include/leo\_api\_types.h}}
+
+
+Definition of enums and structs used by leo\+\_\+api.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for leo\+\_\+api\+\_\+types.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLeoPseudoPortPins}{Leo\+Pseudo\+Port\+Pins}}
+\begin{DoxyCompactList}\small\item\em Struct defining pesudo port physical info. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoPins}{Leo\+Pins}}
+\begin{DoxyCompactList}\small\item\em Struct defining one set of pseudo port pins for a give lane. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoI2CDriver}{Leo\+I2\+CDriver}}
+\begin{DoxyCompactList}\small\item\em Struct defining I2\+C/\+SMBus connection with a Leo device. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoFWVersion}{Leo\+FWVersion}}
+\begin{DoxyCompactList}\small\item\em Struct defining FW version loaded on a Leo device. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoAsicVersion}{Leo\+Asic\+Version}}
+\begin{DoxyCompactList}\small\item\em Struct defining FW version loaded on a Leo device. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoSPIDriver}{Leo\+SPIDriver}}
+\begin{DoxyCompactList}\small\item\em SPI types SPI is a synchronous serial interface communications are controlled by SPI master and used to access the serial Quad I/O Flash memory. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoLinkStatusType}{Leo\+Link\+Status\+Type}}
+\item 
+struct \mbox{\hyperlink{structLeoMemChannelStatusType}{Leo\+Mem\+Channel\+Status\+Type}}
+\item 
+struct \mbox{\hyperlink{structLeoMemoryStatusType}{Leo\+Memory\+Status\+Type}}
+\item 
+struct \mbox{\hyperlink{structLeoPcieLaneMarginInfo}{Leo\+Pcie\+Lane\+Margin\+Info}}
+\begin{DoxyCompactList}\small\item\em Leo Lane Margin Inforamtion. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoECSInfo}{Leo\+ECSInfo}}
+\begin{DoxyCompactList}\small\item\em Leo ECS Information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoScrubConfigInfo}{Leo\+Scrub\+Config\+Info}}
+\begin{DoxyCompactList}\small\item\em Leo Scrub Config Information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoSpdInfo}{Leo\+Spd\+Info}}
+\begin{DoxyCompactList}\small\item\em Leo SPD Status Information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoDimmTsodData}{Leo\+Dimm\+Tsod\+Data}}
+\begin{DoxyCompactList}\small\item\em struct to hold the temperature values we use four variables to hold the whole number and decimal portions of the temperature data. for example 33.\+56 degrees is \+: ts0\+Whole\+Num = 33 ts0\+Decimal = 56 ts0\+Whole\+Num.\+ts0\+Decimal \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoPPRInfo}{Leo\+PPRInfo}}
+\begin{DoxyCompactList}\small\item\em Leo PPR Information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoConfigTgc}{Leo\+Config\+Tgc}}
+\begin{DoxyCompactList}\small\item\em Leo Traffic Generator Checker Information. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoResultsTgc}{Leo\+Results\+Tgc}}
+\begin{DoxyCompactList}\small\item\em Struct defining Leo CXL device TGC results. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoDevice}{Leo\+Device}}
+\begin{DoxyCompactList}\small\item\em Struct defining Leo CXL device. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoTxState}{Leo\+Tx\+State}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Transmitter status, including electrical parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoRxState}{Leo\+Rx\+State}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Receiver status, including electrical parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoLinkConfig}{Leo\+Link\+Config}}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo chip Link configuration. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoPseudoPortState}{Leo\+Pseudo\+Port\+State}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Pseudo Port status, including electrical parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoLinkState}{Leo\+Link\+State}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Link status, including electrical parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoLink}{Leo\+Link}}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo Link. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoLTSSMEntry}{Leo\+LTSSMEntry}}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo LTSSM Logger entry. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionLeoLinkStatusRegisterType}{Leo\+Link\+Status\+Register\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed the Link Status register (offset 12h) about the PCIExpress link specific parameters. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionLeoLinkControlRegisterType}{Leo\+Link\+Control\+Register\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed the Link Control register (offset 10h) which controls PCIe link parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLeoDdrConfig}{Leo\+Ddr\+Config}}
+\item 
+struct \mbox{\hyperlink{structLeoCxlConfig}{Leo\+Cxl\+Config}}
+\item 
+struct \mbox{\hyperlink{structLeoIdInfo}{Leo\+Id\+Info}}
+\item 
+struct \mbox{\hyperlink{structLeoCmalStats}{Leo\+Cmal\+Stats}}
+\item 
+struct \mbox{\hyperlink{structLeoFailVector}{Leo\+Fail\+Vector}}
+\item 
+struct \mbox{\hyperlink{structLeoCxlDvsecHdr1Info}{Leo\+Cxl\+Dvsec\+Hdr1\+Info}}
+\item 
+struct \mbox{\hyperlink{structLeoCxlFlexbusRange2SizeLow}{Leo\+Cxl\+Flexbus\+Range2\+Size\+Low}}
+\item 
+struct \mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats}}
+\item 
+struct \mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry}}
+\item 
+struct \mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry}}
+\item 
+struct \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry}}
+\item 
+struct \mbox{\hyperlink{structLeoPersistentDataValue}{Leo\+Persistent\+Data\+Value}}
+\item 
+struct \mbox{\hyperlink{structLeoDDRSubChannelThrottleContrlConfig}{Leo\+DDRSub\+Channel\+Throttle\+Contrl\+Config}}
+\item 
+union \mbox{\hyperlink{unionLeoDdrphyRxTxMarginType}{Leo\+Ddrphy\+Rx\+Tx\+Margin\+Type}}
+\item 
+union \mbox{\hyperlink{unionLeoDdrphyCsCaMarginType}{Leo\+Ddrphy\+Cs\+Ca\+Margin\+Type}}
+\item 
+union \mbox{\hyperlink{unionLeoDdrphyQcsQcaMarginType}{Leo\+Ddrphy\+Qcs\+Qca\+Margin\+Type}}
+\item 
+struct \mbox{\hyperlink{structLeoRepairRecord}{Leo\+Repair\+Record}}
+\begin{DoxyCompactList}\small\item\em Struct defining Event\+Record for repair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a4e8ec355e47c6fd4f80d9be5f4186557}\label{leo__api__types_8h_a4e8ec355e47c6fd4f80d9be5f4186557}} 
+\#define {\bfseries LEO\+\_\+\+MEM\+\_\+\+CHANNEL\+\_\+\+COUNT}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_ad1d8eb55ee127ec7b02fdc9c1506a8a5}\label{leo__api__types_8h_ad1d8eb55ee127ec7b02fdc9c1506a8a5}} 
+typedef enum Leo\+Board {\bfseries Leo\+Board\+Type}
+\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}{Leo\+Device\+Part}} \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{Leo\+Device\+Part\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo device part number enum. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}\label{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}} 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}{Leo\+FWImage\+Format}} {\bfseries Leo\+FWImage\+Format\+Type}
+\begin{DoxyCompactList}\small\item\em Enumeration of Packet Error Checking (PEC) options for Leo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_afb8c3d24764cbc190e5e19c7535f33ef}\label{leo__api__types_8h_afb8c3d24764cbc190e5e19c7535f33ef}} 
+typedef struct \mbox{\hyperlink{structLeoPseudoPortPins}{Leo\+Pseudo\+Port\+Pins}} {\bfseries Leo\+Pseudo\+Port\+Pins\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining pesudo port physical info. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_ade92df856a5f94efc2605c0bd1d83427}\label{leo__api__types_8h_ade92df856a5f94efc2605c0bd1d83427}} 
+typedef struct \mbox{\hyperlink{structLeoPins}{Leo\+Pins}} {\bfseries Leo\+Pins\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining one set of pseudo port pins for a give lane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}\label{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}} 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}{Leo\+I2c\+Format}} {\bfseries Leo\+I2\+CFormat\+Type}
+\begin{DoxyCompactList}\small\item\em Enumeration of I2C transaction format options for Leo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}\label{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}} 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}{Leo\+I2c\+Pec\+Enable}} {\bfseries Leo\+I2\+CPECEnable\+Type}
+\begin{DoxyCompactList}\small\item\em Enumeration of Packet Error Checking (PEC) options for Leo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a832948999dcd7155d46bf434c64b0482}\label{leo__api__types_8h_a832948999dcd7155d46bf434c64b0482}} 
+typedef enum Leo\+PRBSPattern {\bfseries Leo\+PRBSPattern\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}\label{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}} 
+typedef struct \mbox{\hyperlink{structLeoI2CDriver}{Leo\+I2\+CDriver}} {\bfseries Leo\+I2\+CDriver\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining I2\+C/\+SMBus connection with a Leo device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a64ef63ed95cb9a771c7ebdc44a90984a}\label{leo__api__types_8h_a64ef63ed95cb9a771c7ebdc44a90984a}} 
+typedef struct \mbox{\hyperlink{structLeoFWVersion}{Leo\+FWVersion}} {\bfseries Leo\+FWVersion\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining FW version loaded on a Leo device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a838ca359cb720c0b8ff27c8f4026e267}\label{leo__api__types_8h_a838ca359cb720c0b8ff27c8f4026e267}} 
+typedef struct \mbox{\hyperlink{structLeoAsicVersion}{Leo\+Asic\+Version}} {\bfseries Leo\+Asic\+Version\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining FW version loaded on a Leo device. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoSPIDriver}{Leo\+SPIDriver}} \mbox{\hyperlink{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}{Leo\+SPIDriver\+Type}}
+\begin{DoxyCompactList}\small\item\em SPI types SPI is a synchronous serial interface communications are controlled by SPI master and used to access the serial Quad I/O Flash memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_aaad1b3fdbdda9d13363b58bcb5faa7c6}\label{leo__api__types_8h_aaad1b3fdbdda9d13363b58bcb5faa7c6}} 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}{Leo\+SPIStatus}} {\bfseries Leo\+SPIStatus\+Type}
+\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}{Leo\+Bifurcation}} \mbox{\hyperlink{leo__api__types_8h_a37c6a330a2cc77402d8f0435226b2610}{Leo\+Bifurcation\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo Bifurcation enum. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}{Leo\+DDRPhy\+Training\+Mode}} \mbox{\hyperlink{leo__api__types_8h_af6ee9fada912c83cc0ba098914ca96bf}{Leo\+DDRPhy\+Training\+Mode\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo DDR Phy Training enum. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}{Leo\+Per\+Dimm\+Capacity}} \mbox{\hyperlink{leo__api__types_8h_a52e2f623a7eabc5982a3b78021307b6b}{Leo\+Per\+Dimm\+Capacity\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo Per DIMM Capacity. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoPcieLaneMarginInfo}{Leo\+Pcie\+Lane\+Margin\+Info}} \mbox{\hyperlink{leo__api__types_8h_ac43b973feee1e9ccb7f4041a5871cc0f}{Leo\+Pcie\+Lane\+Margin\+Info\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo Lane Margin Inforamtion. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoECSInfo}{Leo\+ECSInfo}} \mbox{\hyperlink{leo__api__types_8h_aced88bcbbf51239e509ac8de09824b5e}{Leo\+ECSInfo\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo ECS Information. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoScrubConfigInfo}{Leo\+Scrub\+Config\+Info}} \mbox{\hyperlink{leo__api__types_8h_a68a07d672539f7615f60123264179182}{Leo\+Scrub\+Config\+Info\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo Scrub Config Information. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoSpdInfo}{Leo\+Spd\+Info}} \mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo SPD Status Information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}\label{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}} 
+typedef struct \mbox{\hyperlink{structLeoDimmTsodData}{Leo\+Dimm\+Tsod\+Data}} {\bfseries Leo\+Dimm\+Tsod\+Data\+Type}
+\begin{DoxyCompactList}\small\item\em struct to hold the temperature values we use four variables to hold the whole number and decimal portions of the temperature data. for example 33.\+56 degrees is \+: ts0\+Whole\+Num = 33 ts0\+Decimal = 56 ts0\+Whole\+Num.\+ts0\+Decimal \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoPPRInfo}{Leo\+PPRInfo}} \mbox{\hyperlink{leo__api__types_8h_a491a9e823fce7fe27dcae59a560269c5}{Leo\+PPRInfo\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo PPR Information. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoConfigTgc}{Leo\+Config\+Tgc}} \mbox{\hyperlink{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}{Leo\+Config\+Tgc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Leo Traffic Generator Checker Information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a0d8cdbdbe608f1dddab405e061643588}\label{leo__api__types_8h_a0d8cdbdbe608f1dddab405e061643588}} 
+typedef struct \mbox{\hyperlink{structLeoResultsTgc}{Leo\+Results\+Tgc}} {\bfseries Leo\+Results\+Tgc\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Struct defining Leo CXL device TGC results. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}\label{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}} 
+typedef struct \mbox{\hyperlink{structLeoDevice}{Leo\+Device}} {\bfseries Leo\+Device\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining Leo CXL device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a9c7eac0eab238969bdfa2c1db85bd5a3}\label{leo__api__types_8h_a9c7eac0eab238969bdfa2c1db85bd5a3}} 
+typedef struct \mbox{\hyperlink{structLeoTxState}{Leo\+Tx\+State}} {\bfseries Leo\+Tx\+State\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Transmitter status, including electrical parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_aedab81244ba6e5e64ea93aca78eaa0da}\label{leo__api__types_8h_aedab81244ba6e5e64ea93aca78eaa0da}} 
+typedef struct \mbox{\hyperlink{structLeoRxState}{Leo\+Rx\+State}} {\bfseries Leo\+Rx\+State\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Receiver status, including electrical parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a6bd69ce018cb49b9e24c121317c25a9c}\label{leo__api__types_8h_a6bd69ce018cb49b9e24c121317c25a9c}} 
+typedef enum Leo\+Max\+Data\+Rate {\bfseries Leo\+Max\+Data\+Rate\+Type}
+\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}{Leo\+LTSSMVerbosity}} \mbox{\hyperlink{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}{Leo\+LTSSMVerbosity\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo LTSSM Logger verbosity enum. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}{Leo\+Link\+State\+Enum}} \mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{Leo\+Link\+State\+Enum\+Type}}
+\begin{DoxyCompactList}\small\item\em Leo Link state enum. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a3276fff322f5b69c58ed4e370c0dd42c}\label{leo__api__types_8h_a3276fff322f5b69c58ed4e370c0dd42c}} 
+typedef enum \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}{Leo\+Sram\+Memory\+Check}} {\bfseries Leo\+Sram\+Memory\+Check\+Type}
+\begin{DoxyCompactList}\small\item\em Enumeration of values for the SRAM Program memory check. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoLinkConfig}{Leo\+Link\+Config}} \mbox{\hyperlink{leo__api__types_8h_a8ce13faac7212d130234a7e9911cbc22}{Leo\+Link\+Config\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo chip Link configuration. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoPseudoPortState}{Leo\+Pseudo\+Port\+State}} \mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Pseudo Port status, including electrical parameters. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoLinkState}{Leo\+Link\+State}} \mbox{\hyperlink{leo__api__types_8h_ae6d70a3ced5e1fc300915f151739f0c3}{Leo\+Link\+State\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed Link status, including electrical parameters. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLeoLink}{Leo\+Link}} \mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo Link. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a607b09f3380427e3059debe5ef5289d2}\label{leo__api__types_8h_a607b09f3380427e3059debe5ef5289d2}} 
+typedef struct \mbox{\hyperlink{structLeoLTSSMEntry}{Leo\+LTSSMEntry}} {\bfseries Leo\+LTSSMEntry\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining an Leo LTSSM Logger entry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a1651f2e9e039a6b2af151fb51523b4c8}\label{leo__api__types_8h_a1651f2e9e039a6b2af151fb51523b4c8}} 
+typedef union \mbox{\hyperlink{unionLeoLinkStatusRegisterType}{Leo\+Link\+Status\+Register\+Type}} {\bfseries Leo\+Link\+Status\+Register\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed the Link Status register (offset 12h) about the PCIExpress link specific parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a704657255b1f9bf852648b5483260326}\label{leo__api__types_8h_a704657255b1f9bf852648b5483260326}} 
+typedef union \mbox{\hyperlink{unionLeoLinkControlRegisterType}{Leo\+Link\+Control\+Register\+Type}} {\bfseries Leo\+Link\+Control\+Register\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining detailed the Link Control register (offset 10h) which controls PCIe link parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a6e3ca4326a47dada1cee868ce3e6d7a4}\label{leo__api__types_8h_a6e3ca4326a47dada1cee868ce3e6d7a4}} 
+typedef enum Leo\+Svb\+I2c\+SWMode {\bfseries Leo\+Svb\+I2c\+SWMode\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a7d1002c08f276365650965f2d8eb2f82}\label{leo__api__types_8h_a7d1002c08f276365650965f2d8eb2f82}} 
+typedef struct \mbox{\hyperlink{structLeoDdrConfig}{Leo\+Ddr\+Config}} {\bfseries Leo\+Ddr\+Config\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_ada591cbda3a85e137a1f8d45f357bef4}\label{leo__api__types_8h_ada591cbda3a85e137a1f8d45f357bef4}} 
+typedef struct \mbox{\hyperlink{structLeoCxlConfig}{Leo\+Cxl\+Config}} {\bfseries Leo\+Cxl\+Config\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_ac4c5845298b01ddc77bf59909f363e0a}\label{leo__api__types_8h_ac4c5845298b01ddc77bf59909f363e0a}} 
+typedef struct \mbox{\hyperlink{structLeoIdInfo}{Leo\+Id\+Info}} {\bfseries Leo\+Id\+Info\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a049f6d407090dce068520caae38ca7ef}\label{leo__api__types_8h_a049f6d407090dce068520caae38ca7ef}} 
+typedef struct \mbox{\hyperlink{structLeoCmalStats}{Leo\+Cmal\+Stats}} {\bfseries Leo\+Cmal\+Stats\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a558bf406f67e997871b167d853c8d789}\label{leo__api__types_8h_a558bf406f67e997871b167d853c8d789}} 
+typedef enum Leo\+Fail\+Vector\+Index {\bfseries Leo\+Fail\+Vector\+Index\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a90341e79d62dbb261c6563d856df4657}\label{leo__api__types_8h_a90341e79d62dbb261c6563d856df4657}} 
+typedef struct \mbox{\hyperlink{structLeoFailVector}{Leo\+Fail\+Vector}} {\bfseries Leo\+Fail\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_af6ee3ee2e94f3b1ae04d5c8455ad6808}\label{leo__api__types_8h_af6ee3ee2e94f3b1ae04d5c8455ad6808}} 
+typedef struct \mbox{\hyperlink{structLeoCxlDvsecHdr1Info}{Leo\+Cxl\+Dvsec\+Hdr1\+Info}} {\bfseries Leo\+Cxl\+Dv\+Sec\+Hdr1\+Info\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a6aa115cec46a91d88841e0699dec9963}\label{leo__api__types_8h_a6aa115cec46a91d88841e0699dec9963}} 
+typedef struct \mbox{\hyperlink{structLeoCxlFlexbusRange2SizeLow}{Leo\+Cxl\+Flexbus\+Range2\+Size\+Low}} {\bfseries Leo\+Cxl\+Flexbus\+Range2\+Size\+Low\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_aaa9c131c35785f730374ff3692417337}\label{leo__api__types_8h_aaa9c131c35785f730374ff3692417337}} 
+typedef struct \mbox{\hyperlink{structLeoCxlStats}{Leo\+Cxl\+Stats}} {\bfseries Leo\+Cxl\+Stats\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a9c0a8d85cbf4290d8d2b56041a6af568}\label{leo__api__types_8h_a9c0a8d85cbf4290d8d2b56041a6af568}} 
+typedef struct \mbox{\hyperlink{structLeoDdrTelemetry}{Leo\+Ddr\+Telemetry}} {\bfseries Leo\+Ddr\+Telemetry\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a56a455d94cc8f7dd66b7c05834461b99}\label{leo__api__types_8h_a56a455d94cc8f7dd66b7c05834461b99}} 
+typedef struct \mbox{\hyperlink{structLeoDatapathTelemetry}{Leo\+Datapath\+Telemetry}} {\bfseries Leo\+Datapath\+Telemetry\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a0fb0f1f138bad611e4b746eaac9cafe6}\label{leo__api__types_8h_a0fb0f1f138bad611e4b746eaac9cafe6}} 
+typedef struct \mbox{\hyperlink{structLeoCxlTelemetry}{Leo\+Cxl\+Telemetry}} {\bfseries Leo\+Cxl\+Telemetry\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a5affb09d58bb102750bf80a057499678}\label{leo__api__types_8h_a5affb09d58bb102750bf80a057499678}} 
+typedef struct \mbox{\hyperlink{structLeoPersistentDataValue}{Leo\+Persistent\+Data\+Value}} {\bfseries Leo\+Persistent\+Data\+Value\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_acfe95c9b2a757fb5ea629ac72fc4e15b}\label{leo__api__types_8h_acfe95c9b2a757fb5ea629ac72fc4e15b}} 
+typedef struct \mbox{\hyperlink{structLeoDDRSubChannelThrottleContrlConfig}{Leo\+DDRSub\+Channel\+Throttle\+Contrl\+Config}} {\bfseries Leo\+DDRSub\+Channel\+Throttle\+Contrl\+Config\+Type}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a32b41397428434de3dab670e1b15e595}\label{leo__api__types_8h_a32b41397428434de3dab670e1b15e595}} 
+typedef struct \mbox{\hyperlink{structLeoRepairRecord}{Leo\+Repair\+Record}} {\bfseries Leo\+Repair\+Record\+Type}
+\begin{DoxyCompactList}\small\item\em Struct defining Event\+Record for repair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_ac4d51f4abe2d1bc9f6a6c6f7a73c270c}\label{leo__api__types_8h_ac4d51f4abe2d1bc9f6a6c6f7a73c270c}} 
+enum {\bfseries Leo\+Board} \{ {\bfseries LEO\+\_\+\+SVB} = 1
+, {\bfseries LEO\+\_\+\+A1} = 2
+, {\bfseries LEO\+\_\+\+A2} = 3
+ \}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a221a2733197383fb0f2900a2305fa83b}\label{leo__api__types_8h_a221a2733197383fb0f2900a2305fa83b}} 
+enum {\bfseries Leo\+Asic\+Minor\+Version\+Type} \{ {\bfseries LEO\+\_\+\+ASIC\+\_\+\+D5} = 0
+, {\bfseries LEO\+\_\+\+ASIC\+\_\+\+A0} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}{Leo\+Device\+Part}} \{ \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a874176390ebd873f22f1c028357720fc}{LEO\+\_\+\+PTX16}} = 0x0
+, \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a6a908a63402de66b1d0d9def80765507}{LEO\+\_\+\+PTX08}} = 0x1
+ \}
+\begin{DoxyCompactList}\small\item\em Leo device part number enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}{Leo\+FWImage\+Format}} \{ \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a520162c2e76ae03f714bd308d7aad75e}{LEO\+\_\+\+FW\+\_\+\+IMAGE\+\_\+\+FORMAT\+\_\+\+IHX}}
+, \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a050ed5f6873003637759be9e4f00083e}{LEO\+\_\+\+FW\+\_\+\+IMAGE\+\_\+\+FORMAT\+\_\+\+BIN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of Packet Error Checking (PEC) options for Leo. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}{Leo\+I2c\+Format}} \{ \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a843f5a9aad5fa5f2e708e42e61e087e5}{LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+ASTERA}}
+, \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826ab168961671b01666a5cc009894fe2fb4}{LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+INTEL}}
+, \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a05f45be8dbc813b8ff60c2278a71bef4}{LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+SMBUS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of I2C transaction format options for Leo. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}{Leo\+I2c\+Pec\+Enable}} \{ \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653a407523057c1f54effd7a6fc46aec88fa}{LEO\+\_\+\+I2\+C\+\_\+\+PEC\+\_\+\+ENABLE}}
+, \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653afd6fcd65d57b3cd92af4db6a4b25cbe2}{LEO\+\_\+\+I2\+C\+\_\+\+PEC\+\_\+\+DISABLE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of Packet Error Checking (PEC) options for Leo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a095d5a236ea78e066bbf1d5a3b5b0ccf}\label{leo__api__types_8h_a095d5a236ea78e066bbf1d5a3b5b0ccf}} 
+enum {\bfseries Leo\+PRBSPattern} \{ \newline
+{\bfseries DISABLED} = 0
+, {\bfseries LFSR31} = 1
+, {\bfseries LFSR23} = 2
+, {\bfseries LFSR23\+\_\+\+ALT} = 3
+, \newline
+{\bfseries LFSR16} = 4
+, {\bfseries LFSR15} = 5
+, {\bfseries LFSR11} = 6
+, {\bfseries LFSR9} = 7
+, \newline
+{\bfseries LFSR7} = 8
+, {\bfseries FIXED\+\_\+\+PAT0} = 9
+, {\bfseries FIXED\+\_\+\+PAT0\+\_\+\+ALT} = 10
+, {\bfseries FIXED\+\_\+\+PAT0\+\_\+\+ALT\+\_\+\+PAD} = 11
+ \}
+\item 
+enum \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}{Leo\+SPIStatus}} \{ \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236ac1532ba89e17ff2f1309747cdca54cb6}{LEO\+\_\+\+SPI\+\_\+\+ISIN\+\_\+\+TXMODE}}
+, \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236a5f5f3a7e124aee9fcd28192a6613eff3}{LEO\+\_\+\+SPI\+\_\+\+ISIN\+\_\+\+RXMODE}}
+ \}
+\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}{Leo\+Bifurcation}} \{ {\bfseries LEO\+\_\+\+BIFUR\+\_\+1\+X16} = 0x0
+, \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634aa1e8db2afc9bbfe4f3e141cd8c1ac6a5}{LEO\+\_\+\+BIFUR\+\_\+2\+X8}} = 0x1
+ \}
+\begin{DoxyCompactList}\small\item\em Leo Bifurcation enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}{Leo\+DDRPhy\+Training\+Mode}} \{ {\bfseries DDR\+\_\+\+PHY\+\_\+\+TRAIN\+\_\+\+NORMAL} = 0
+, {\bfseries DDR\+\_\+\+PHY\+\_\+\+TRAIN\+\_\+\+SKIP} = 1
+, {\bfseries DDR\+\_\+\+PHY\+\_\+\+TRAIN\+\_\+\+INIT\+\_\+\+ONLY} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Leo DDR Phy Training enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}{Leo\+Per\+Dimm\+Capacity}} \{ {\bfseries PER\+\_\+\+DIMM\+\_\+\+CAPACITY\+\_\+16\+GB}
+, {\bfseries PER\+\_\+\+DIMM\+\_\+\+CAPACITY\+\_\+32\+GB}
+, {\bfseries PER\+\_\+\+DIMM\+\_\+\+CAPACITY\+\_\+64\+GB}
+, {\bfseries PER\+\_\+\+DIMM\+\_\+\+CAPACITY\+\_\+128\+GB}
+ \}
+\begin{DoxyCompactList}\small\item\em Leo Per DIMM Capacity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a7ae963a109413f202818f5e2bece0cd6}\label{leo__api__types_8h_a7ae963a109413f202818f5e2bece0cd6}} 
+enum {\bfseries Leo\+Max\+Data\+Rate} \{ {\bfseries Leo\+\_\+\+GEN1} = 1
+, {\bfseries Leo\+\_\+\+GEN2} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}{Leo\+LTSSMVerbosity}} \{ \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07fa56b7e9c7657af3e65ea8ba511e56c585}{LEO\+\_\+\+LTSSM\+\_\+\+VERBOSITY\+\_\+\+HIGH}} = 0x1
+ \}
+\begin{DoxyCompactList}\small\item\em Leo LTSSM Logger verbosity enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}{Leo\+Link\+State\+Enum}} \{ \newline
+\mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ac41888305aeda78000c2a47fbfb3a43b}{LEO\+\_\+\+STATE\+\_\+\+RESET}} = 0x0
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a7ca088252f39288b80f8d1d47295a656}{LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+0}} = 0x1
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a909979ceb23cdef376bed19611405332}{LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+1}} = 0x2
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a376f1a0b3dcc833bfc0a54185bce262a}{LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+2}} = 0x3
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ab7b8767886fde68c64377bf3cb82beac}{LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+3}} = 0x4
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a30a21d5145b798d2b81293fdc1e5b01f}{LEO\+\_\+\+STATE\+\_\+\+DETECT\+\_\+\+OR\+\_\+\+DESKEW}} = 0x5
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22acb2ab2aecc4c9a28c621b38193781cd4}{LEO\+\_\+\+STATE\+\_\+\+FWD}} = 0x6
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ae19f51a2e9c00fcc2ccbf828ab296dd1}{LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P2\+\_\+0}} = 0x7
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22adbe0ed25339a7c1d5813033dd2ab38b8}{LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P2\+\_\+1}} = 0x8
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a2f52b8437bf043be4bb824bf55d1714c}{LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P3\+\_\+0}} = 0x9
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a55112ebc073ccbd048ac69e12985a810}{LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P3\+\_\+1}} = 0xa
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a102b0987fc98fdf56bd1c5b320cc0ef6}{LEO\+\_\+\+STATE\+\_\+\+HOT\+\_\+\+PLUG}} = 0xb
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a19a19be89b058222ece8059154a74742}{LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+4}} = 0xc
+, \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ad4f914a185203ec734901f730d31a86e}{LEO\+\_\+\+STATE\+\_\+\+OTHER}} = 0xd
+ \}
+\begin{DoxyCompactList}\small\item\em Leo Link state enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}} \{ \newline
+\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a411e30037668f8c9a9ecc6865bb82a06}{LEO\+\_\+\+LTSSM\+\_\+\+LINK\+\_\+\+LOGGER}} = 0xff
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a9b28fd79b27e2cc45b81f581f48e2ca1}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+0\+\_\+1\+\_\+\+LOG}} = 0x0
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac91c25cfa6cf0991adb950f6d4032e16}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+2\+\_\+3\+\_\+\+LOG}} = 0x2
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3fa58edabd2c3c29c3c8356292bcccac}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+4\+\_\+5\+\_\+\+LOG}} = 0x4
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3f9a09e4d9a7ad2dd4c9e71c324cf67a}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+6\+\_\+7\+\_\+\+LOG}} = 0x6
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a0b806298cc5df03bc161443deb44c41f}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+8\+\_\+9\+\_\+\+LOG}} = 0x8
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a1b65112a105455841868209b85a10ebc}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+10\+\_\+11\+\_\+\+LOG}} = 0xa
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a5986287e91e661eaec0ade161d024c02}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+12\+\_\+13\+\_\+\+LOG}} = 0xc
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac4136f8c33a01ea99f53ae1e3de0e31a}{LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+14\+\_\+15\+\_\+\+LOG}} = 0xe
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a97f6c2753f2d43a7c3e78102b70a6d6c}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+0\+\_\+1\+\_\+\+LOG}} = 0x1
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a92d8b2e6358b947d128900b4770517c4}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+2\+\_\+3\+\_\+\+LOG}} = 0x3
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3a0f23f5044fccaf31a48f7044c42c01}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+4\+\_\+5\+\_\+\+LOG}} = 0x5
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac0e15533ac0d9d4b5bb98591e7450f6d}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+6\+\_\+7\+\_\+\+LOG}} = 0x7
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a76ddc6be1a2fbe737ba7555982205bc1}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+8\+\_\+9\+\_\+\+LOG}} = 0x9
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a892b78a5adc4dbc935755856267c9147}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+10\+\_\+11\+\_\+\+LOG}} = 0xb
+, \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ae6431558f9990877b6b69c52e249d4d7}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+12\+\_\+13\+\_\+\+LOG}} = 0xd
+, \newline
+\mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a49638e44e3bfbf946557a5329b8afafb}{LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+14\+\_\+15\+\_\+\+LOG}} = 0xf
+ \}
+\begin{DoxyCompactList}\small\item\em Leo LTSSM Logger type enum. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}{Leo\+Sram\+Memory\+Check}} \{ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7aaa9638e9da762c59b17de6fdecbe2bfd}{LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+IDLE}} = 0
+, \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a48ffa4cbdee098ff03f69ca3a7c377bc}{LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+IN\+\_\+\+PROGRESS}} = 1
+, \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a0502b2393c37b719eb3d63b4bc0f0b74}{LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+PASS}} = 2
+, \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7af897623d5d087f063994f772caa722e5}{LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+FAIL}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of values for the SRAM Program memory check. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__api__types_8h_a0c4966718374a671c2a87ba5f482289e}\label{leo__api__types_8h_a0c4966718374a671c2a87ba5f482289e}} 
+enum {\bfseries Leo\+Svb\+I2c\+SWMode} \{ {\bfseries I2\+C\+\_\+\+SW\+\_\+\+UNKNOW} = 0
+, {\bfseries I2\+C\+\_\+\+SW\+\_\+\+NORMAL} = 1
+, {\bfseries I2\+C\+\_\+\+SW\+\_\+\+DDRC\+\_\+0} = 2
+, {\bfseries I2\+C\+\_\+\+SW\+\_\+\+DDRC\+\_\+1} = 3
+ \}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_a4f160952e744af3bebab4567de7b55dd}\label{leo__api__types_8h_a4f160952e744af3bebab4567de7b55dd}} 
+enum {\bfseries Leo\+Fail\+Vector\+Index} \{ \newline
+{\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+CATRIP} = 0x3
+, {\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+DDR\+\_\+\+CLEAR\+\_\+\+COUNTERS} = 0x4
+, {\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+BAD\+\_\+\+DSID} = 0x5
+, {\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+GUARD\+\_\+\+CH0\+\_\+\+FAIL} = 0x6
+, \newline
+{\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+GUARD\+\_\+\+CH1\+\_\+\+FAIL} = 0x7
+, {\bfseries LEO\+\_\+\+FAIL\+\_\+\+VEC\+\_\+\+GUARD\+\_\+\+CHECK\+\_\+\+FAIL} = 0x8
+ \}
+\item 
+\mbox{\Hypertarget{leo__api__types_8h_ade928ec4e8773d2b71505057fdccc218}\label{leo__api__types_8h_ade928ec4e8773d2b71505057fdccc218}} 
+enum {\bfseries Leo\+Persistent\+Data\+Id} \{ {\bfseries PERSISTENT\+\_\+\+DATA\+\_\+\+ID\+\_\+\+VERSION} = 1
+, {\bfseries PERSISTENT\+\_\+\+DATA\+\_\+\+ID\+\_\+\+CATTRIP} = 3
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of enums and structs used by leo\+\_\+api. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{leo__api__types_8h_a37c6a330a2cc77402d8f0435226b2610}\label{leo__api__types_8h_a37c6a330a2cc77402d8f0435226b2610}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoBifurcationType@{LeoBifurcationType}}
+\index{LeoBifurcationType@{LeoBifurcationType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoBifurcationType}{LeoBifurcationType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}{Leo\+Bifurcation}} \mbox{\hyperlink{leo__api__types_8h_a37c6a330a2cc77402d8f0435226b2610}{Leo\+Bifurcation\+Type}}}
+
+
+
+Leo Bifurcation enum. 
+
+Enumeration of values for Link bifurcation modes. \mbox{\Hypertarget{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}\label{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoConfigTgc\_t@{LeoConfigTgc\_t}}
+\index{LeoConfigTgc\_t@{LeoConfigTgc\_t}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoConfigTgc\_t}{LeoConfigTgc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoConfigTgc}{Leo\+Config\+Tgc}} \mbox{\hyperlink{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}{Leo\+Config\+Tgc\+\_\+t}}}
+
+
+
+Leo Traffic Generator Checker Information. 
+
+struct defining the TGC traffic gen/checker Configuration \mbox{\Hypertarget{leo__api__types_8h_af6ee9fada912c83cc0ba098914ca96bf}\label{leo__api__types_8h_af6ee9fada912c83cc0ba098914ca96bf}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoDDRPhyTrainingModeType@{LeoDDRPhyTrainingModeType}}
+\index{LeoDDRPhyTrainingModeType@{LeoDDRPhyTrainingModeType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoDDRPhyTrainingModeType}{LeoDDRPhyTrainingModeType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}{Leo\+DDRPhy\+Training\+Mode}} \mbox{\hyperlink{leo__api__types_8h_af6ee9fada912c83cc0ba098914ca96bf}{Leo\+DDRPhy\+Training\+Mode\+Type}}}
+
+
+
+Leo DDR Phy Training enum. 
+
+Enumeration of DDR PHY training modes \mbox{\Hypertarget{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}\label{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoDevicePartType@{LeoDevicePartType}}
+\index{LeoDevicePartType@{LeoDevicePartType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoDevicePartType}{LeoDevicePartType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}{Leo\+Device\+Part}} \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{Leo\+Device\+Part\+Type}}}
+
+
+
+Leo device part number enum. 
+
+Enumeration of values for Leo products. \mbox{\Hypertarget{leo__api__types_8h_aced88bcbbf51239e509ac8de09824b5e}\label{leo__api__types_8h_aced88bcbbf51239e509ac8de09824b5e}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoECSInfoType@{LeoECSInfoType}}
+\index{LeoECSInfoType@{LeoECSInfoType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoECSInfoType}{LeoECSInfoType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoECSInfo}{Leo\+ECSInfo}} \mbox{\hyperlink{leo__api__types_8h_aced88bcbbf51239e509ac8de09824b5e}{Leo\+ECSInfo\+Type}}}
+
+
+
+Leo ECS Information. 
+
+struct defining Error Check and Scrub \mbox{\Hypertarget{leo__api__types_8h_a8ce13faac7212d130234a7e9911cbc22}\label{leo__api__types_8h_a8ce13faac7212d130234a7e9911cbc22}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLinkConfigType@{LeoLinkConfigType}}
+\index{LeoLinkConfigType@{LeoLinkConfigType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLinkConfigType}{LeoLinkConfigType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoLinkConfig}{Leo\+Link\+Config}} \mbox{\hyperlink{leo__api__types_8h_a8ce13faac7212d130234a7e9911cbc22}{Leo\+Link\+Config\+Type}}}
+
+
+
+Struct defining an Leo chip Link configuration. 
+
+Note that each Leo chip can support multiple multi-\/\+Lane Links. \mbox{\Hypertarget{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}\label{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLinkStateEnumType@{LeoLinkStateEnumType}}
+\index{LeoLinkStateEnumType@{LeoLinkStateEnumType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLinkStateEnumType}{LeoLinkStateEnumType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}{Leo\+Link\+State\+Enum}} \mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{Leo\+Link\+State\+Enum\+Type}}}
+
+
+
+Leo Link state enum. 
+
+Enumeration of values for Link states. \mbox{\Hypertarget{leo__api__types_8h_ae6d70a3ced5e1fc300915f151739f0c3}\label{leo__api__types_8h_ae6d70a3ced5e1fc300915f151739f0c3}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLinkStateType@{LeoLinkStateType}}
+\index{LeoLinkStateType@{LeoLinkStateType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLinkStateType}{LeoLinkStateType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoLinkState}{Leo\+Link\+State}} \mbox{\hyperlink{leo__api__types_8h_ae6d70a3ced5e1fc300915f151739f0c3}{Leo\+Link\+State\+Type}}}
+
+
+
+Struct defining detailed Link status, including electrical parameters. 
+
+\mbox{\Hypertarget{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}\label{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLinkType@{LeoLinkType}}
+\index{LeoLinkType@{LeoLinkType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLinkType}{LeoLinkType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoLink}{Leo\+Link}} \mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{Leo\+Link\+Type}}}
+
+
+
+Struct defining an Leo Link. 
+
+Note that each Leo Chip can support multiple multi-\/\+Lane Links. \mbox{\Hypertarget{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}\label{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLTSSMVerbosityType@{LeoLTSSMVerbosityType}}
+\index{LeoLTSSMVerbosityType@{LeoLTSSMVerbosityType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLTSSMVerbosityType}{LeoLTSSMVerbosityType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}{Leo\+LTSSMVerbosity}} \mbox{\hyperlink{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}{Leo\+LTSSMVerbosity\+Type}}}
+
+
+
+Leo LTSSM Logger verbosity enum. 
+
+Enumeration of values to define verbosity. \mbox{\Hypertarget{leo__api__types_8h_ac43b973feee1e9ccb7f4041a5871cc0f}\label{leo__api__types_8h_ac43b973feee1e9ccb7f4041a5871cc0f}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoPcieLaneMarginInfoType@{LeoPcieLaneMarginInfoType}}
+\index{LeoPcieLaneMarginInfoType@{LeoPcieLaneMarginInfoType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoPcieLaneMarginInfoType}{LeoPcieLaneMarginInfoType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoPcieLaneMarginInfo}{Leo\+Pcie\+Lane\+Margin\+Info}} \mbox{\hyperlink{leo__api__types_8h_ac43b973feee1e9ccb7f4041a5871cc0f}{Leo\+Pcie\+Lane\+Margin\+Info\+Type}}}
+
+
+
+Leo Lane Margin Inforamtion. 
+
+struct defining Lane Margin information \mbox{\Hypertarget{leo__api__types_8h_a52e2f623a7eabc5982a3b78021307b6b}\label{leo__api__types_8h_a52e2f623a7eabc5982a3b78021307b6b}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoPerDimmCapacityType@{LeoPerDimmCapacityType}}
+\index{LeoPerDimmCapacityType@{LeoPerDimmCapacityType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoPerDimmCapacityType}{LeoPerDimmCapacityType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}{Leo\+Per\+Dimm\+Capacity}} \mbox{\hyperlink{leo__api__types_8h_a52e2f623a7eabc5982a3b78021307b6b}{Leo\+Per\+Dimm\+Capacity\+Type}}}
+
+
+
+Leo Per DIMM Capacity. 
+
+Enumeration of per Dimm Capacity \mbox{\Hypertarget{leo__api__types_8h_a491a9e823fce7fe27dcae59a560269c5}\label{leo__api__types_8h_a491a9e823fce7fe27dcae59a560269c5}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoPPRInfoType@{LeoPPRInfoType}}
+\index{LeoPPRInfoType@{LeoPPRInfoType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoPPRInfoType}{LeoPPRInfoType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoPPRInfo}{Leo\+PPRInfo}} \mbox{\hyperlink{leo__api__types_8h_a491a9e823fce7fe27dcae59a560269c5}{Leo\+PPRInfo\+Type}}}
+
+
+
+Leo PPR Information. 
+
+struct defining PPR post package repair for DDR \mbox{\Hypertarget{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}\label{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoPseudoPortStateType@{LeoPseudoPortStateType}}
+\index{LeoPseudoPortStateType@{LeoPseudoPortStateType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoPseudoPortStateType}{LeoPseudoPortStateType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoPseudoPortState}{Leo\+Pseudo\+Port\+State}} \mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{Leo\+Pseudo\+Port\+State\+Type}}}
+
+
+
+Struct defining detailed Pseudo Port status, including electrical parameters. 
+
+Note that each Leo Link has two Pseudo Ports, and Upstream Pseudo Port (USPP) and a Downstream Pseudo Port (DSPP). \mbox{\Hypertarget{leo__api__types_8h_a68a07d672539f7615f60123264179182}\label{leo__api__types_8h_a68a07d672539f7615f60123264179182}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoScrubConfigInfoType@{LeoScrubConfigInfoType}}
+\index{LeoScrubConfigInfoType@{LeoScrubConfigInfoType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoScrubConfigInfoType}{LeoScrubConfigInfoType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoScrubConfigInfo}{Leo\+Scrub\+Config\+Info}} \mbox{\hyperlink{leo__api__types_8h_a68a07d672539f7615f60123264179182}{Leo\+Scrub\+Config\+Info\+Type}}}
+
+
+
+Leo Scrub Config Information. 
+
+struct configuration for DDR scrubbing \mbox{\Hypertarget{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}\label{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoSpdInfoType@{LeoSpdInfoType}}
+\index{LeoSpdInfoType@{LeoSpdInfoType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoSpdInfoType}{LeoSpdInfoType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoSpdInfo}{Leo\+Spd\+Info}} \mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{Leo\+Spd\+Info\+Type}}}
+
+
+
+Leo SPD Status Information. 
+
+struct defining DDR SPD data and information \mbox{\Hypertarget{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}\label{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoSPIDriverType@{LeoSPIDriverType}}
+\index{LeoSPIDriverType@{LeoSPIDriverType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoSPIDriverType}{LeoSPIDriverType}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLeoSPIDriver}{Leo\+SPIDriver}} \mbox{\hyperlink{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}{Leo\+SPIDriver\+Type}}}
+
+
+
+SPI types SPI is a synchronous serial interface communications are controlled by SPI master and used to access the serial Quad I/O Flash memory. 
+
+SPI 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}\label{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoBifurcation@{LeoBifurcation}}
+\index{LeoBifurcation@{LeoBifurcation}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoBifurcation}{LeoBifurcation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}{Leo\+Bifurcation}}}
+
+
+
+Leo Bifurcation enum. 
+
+Enumeration of values for Link bifurcation modes. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_BIFUR\_2X8@{LEO\_BIFUR\_2X8}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_BIFUR\_2X8@{LEO\_BIFUR\_2X8}}}\mbox{\Hypertarget{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634aa1e8db2afc9bbfe4f3e141cd8c1ac6a5}\label{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634aa1e8db2afc9bbfe4f3e141cd8c1ac6a5}} 
+LEO\+\_\+\+BIFUR\+\_\+2\+X8&1x16 mode \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}\label{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoDDRPhyTrainingMode@{LeoDDRPhyTrainingMode}}
+\index{LeoDDRPhyTrainingMode@{LeoDDRPhyTrainingMode}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoDDRPhyTrainingMode}{LeoDDRPhyTrainingMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}{Leo\+DDRPhy\+Training\+Mode}}}
+
+
+
+Leo DDR Phy Training enum. 
+
+Enumeration of DDR PHY training modes \mbox{\Hypertarget{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}\label{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoDevicePart@{LeoDevicePart}}
+\index{LeoDevicePart@{LeoDevicePart}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoDevicePart}{LeoDevicePart}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}{Leo\+Device\+Part}}}
+
+
+
+Leo device part number enum. 
+
+Enumeration of values for Leo products. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_PTX16@{LEO\_PTX16}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_PTX16@{LEO\_PTX16}}}\mbox{\Hypertarget{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a874176390ebd873f22f1c028357720fc}\label{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a874176390ebd873f22f1c028357720fc}} 
+LEO\+\_\+\+PTX16&PTx16xxx part numbers \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_PTX08@{LEO\_PTX08}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_PTX08@{LEO\_PTX08}}}\mbox{\Hypertarget{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a6a908a63402de66b1d0d9def80765507}\label{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a6a908a63402de66b1d0d9def80765507}} 
+LEO\+\_\+\+PTX08&PTx08xxx part numbers \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}\label{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoFWImageFormat@{LeoFWImageFormat}}
+\index{LeoFWImageFormat@{LeoFWImageFormat}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoFWImageFormat}{LeoFWImageFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}{Leo\+FWImage\+Format}}}
+
+
+
+Enumeration of Packet Error Checking (PEC) options for Leo. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_FW\_IMAGE\_FORMAT\_IHX@{LEO\_FW\_IMAGE\_FORMAT\_IHX}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_FW\_IMAGE\_FORMAT\_IHX@{LEO\_FW\_IMAGE\_FORMAT\_IHX}}}\mbox{\Hypertarget{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a520162c2e76ae03f714bd308d7aad75e}\label{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a520162c2e76ae03f714bd308d7aad75e}} 
+LEO\+\_\+\+FW\+\_\+\+IMAGE\+\_\+\+FORMAT\+\_\+\+IHX&Intel hex firmware image format \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_FW\_IMAGE\_FORMAT\_BIN@{LEO\_FW\_IMAGE\_FORMAT\_BIN}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_FW\_IMAGE\_FORMAT\_BIN@{LEO\_FW\_IMAGE\_FORMAT\_BIN}}}\mbox{\Hypertarget{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a050ed5f6873003637759be9e4f00083e}\label{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a050ed5f6873003637759be9e4f00083e}} 
+LEO\+\_\+\+FW\+\_\+\+IMAGE\+\_\+\+FORMAT\+\_\+\+BIN&Binary firmware image format \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}\label{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoI2cFormat@{LeoI2cFormat}}
+\index{LeoI2cFormat@{LeoI2cFormat}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoI2cFormat}{LeoI2cFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}{Leo\+I2c\+Format}}}
+
+
+
+Enumeration of I2C transaction format options for Leo. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_I2C\_FORMAT\_ASTERA@{LEO\_I2C\_FORMAT\_ASTERA}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_I2C\_FORMAT\_ASTERA@{LEO\_I2C\_FORMAT\_ASTERA}}}\mbox{\Hypertarget{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a843f5a9aad5fa5f2e708e42e61e087e5}\label{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a843f5a9aad5fa5f2e708e42e61e087e5}} 
+LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+ASTERA&Astera short format read/write transactions \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_I2C\_FORMAT\_INTEL@{LEO\_I2C\_FORMAT\_INTEL}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_I2C\_FORMAT\_INTEL@{LEO\_I2C\_FORMAT\_INTEL}}}\mbox{\Hypertarget{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826ab168961671b01666a5cc009894fe2fb4}\label{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826ab168961671b01666a5cc009894fe2fb4}} 
+LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+INTEL&Intel long format read/write transactions \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_I2C\_FORMAT\_SMBUS@{LEO\_I2C\_FORMAT\_SMBUS}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_I2C\_FORMAT\_SMBUS@{LEO\_I2C\_FORMAT\_SMBUS}}}\mbox{\Hypertarget{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a05f45be8dbc813b8ff60c2278a71bef4}\label{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a05f45be8dbc813b8ff60c2278a71bef4}} 
+LEO\+\_\+\+I2\+C\+\_\+\+FORMAT\+\_\+\+SMBUS&standard SMBus interface \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}\label{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoI2cPecEnable@{LeoI2cPecEnable}}
+\index{LeoI2cPecEnable@{LeoI2cPecEnable}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoI2cPecEnable}{LeoI2cPecEnable}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}{Leo\+I2c\+Pec\+Enable}}}
+
+
+
+Enumeration of Packet Error Checking (PEC) options for Leo. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_I2C\_PEC\_ENABLE@{LEO\_I2C\_PEC\_ENABLE}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_I2C\_PEC\_ENABLE@{LEO\_I2C\_PEC\_ENABLE}}}\mbox{\Hypertarget{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653a407523057c1f54effd7a6fc46aec88fa}\label{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653a407523057c1f54effd7a6fc46aec88fa}} 
+LEO\+\_\+\+I2\+C\+\_\+\+PEC\+\_\+\+ENABLE&Enable PEC during I2C transactions \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_I2C\_PEC\_DISABLE@{LEO\_I2C\_PEC\_DISABLE}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_I2C\_PEC\_DISABLE@{LEO\_I2C\_PEC\_DISABLE}}}\mbox{\Hypertarget{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653afd6fcd65d57b3cd92af4db6a4b25cbe2}\label{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653afd6fcd65d57b3cd92af4db6a4b25cbe2}} 
+LEO\+\_\+\+I2\+C\+\_\+\+PEC\+\_\+\+DISABLE&Disable PEC during I2C transactions \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLinkStateEnum@{LeoLinkStateEnum}}
+\index{LeoLinkStateEnum@{LeoLinkStateEnum}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLinkStateEnum}{LeoLinkStateEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}{Leo\+Link\+State\+Enum}}}
+
+
+
+Leo Link state enum. 
+
+Enumeration of values for Link states. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_RESET@{LEO\_STATE\_RESET}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_RESET@{LEO\_STATE\_RESET}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ac41888305aeda78000c2a47fbfb3a43b}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ac41888305aeda78000c2a47fbfb3a43b}} 
+LEO\+\_\+\+STATE\+\_\+\+RESET&Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_PROTOCOL\_RESET\_0@{LEO\_STATE\_PROTOCOL\_RESET\_0}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_PROTOCOL\_RESET\_0@{LEO\_STATE\_PROTOCOL\_RESET\_0}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a7ca088252f39288b80f8d1d47295a656}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a7ca088252f39288b80f8d1d47295a656}} 
+LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+0&Protocol Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_PROTOCOL\_RESET\_1@{LEO\_STATE\_PROTOCOL\_RESET\_1}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_PROTOCOL\_RESET\_1@{LEO\_STATE\_PROTOCOL\_RESET\_1}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a909979ceb23cdef376bed19611405332}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a909979ceb23cdef376bed19611405332}} 
+LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+1&Protocol Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_PROTOCOL\_RESET\_2@{LEO\_STATE\_PROTOCOL\_RESET\_2}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_PROTOCOL\_RESET\_2@{LEO\_STATE\_PROTOCOL\_RESET\_2}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a376f1a0b3dcc833bfc0a54185bce262a}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a376f1a0b3dcc833bfc0a54185bce262a}} 
+LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+2&Protocol Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_PROTOCOL\_RESET\_3@{LEO\_STATE\_PROTOCOL\_RESET\_3}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_PROTOCOL\_RESET\_3@{LEO\_STATE\_PROTOCOL\_RESET\_3}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ab7b8767886fde68c64377bf3cb82beac}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ab7b8767886fde68c64377bf3cb82beac}} 
+LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+3&Protocol Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_DETECT\_OR\_DESKEW@{LEO\_STATE\_DETECT\_OR\_DESKEW}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_DETECT\_OR\_DESKEW@{LEO\_STATE\_DETECT\_OR\_DESKEW}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a30a21d5145b798d2b81293fdc1e5b01f}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a30a21d5145b798d2b81293fdc1e5b01f}} 
+LEO\+\_\+\+STATE\+\_\+\+DETECT\+\_\+\+OR\+\_\+\+DESKEW&Receiver Detect or Deskew state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_FWD@{LEO\_STATE\_FWD}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_FWD@{LEO\_STATE\_FWD}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22acb2ab2aecc4c9a28c621b38193781cd4}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22acb2ab2aecc4c9a28c621b38193781cd4}} 
+LEO\+\_\+\+STATE\+\_\+\+FWD&Forwarding state (i.\+e. L0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_EQ\_P2\_0@{LEO\_STATE\_EQ\_P2\_0}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_EQ\_P2\_0@{LEO\_STATE\_EQ\_P2\_0}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ae19f51a2e9c00fcc2ccbf828ab296dd1}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ae19f51a2e9c00fcc2ccbf828ab296dd1}} 
+LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P2\+\_\+0&Equalization Phase 2 state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_EQ\_P2\_1@{LEO\_STATE\_EQ\_P2\_1}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_EQ\_P2\_1@{LEO\_STATE\_EQ\_P2\_1}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22adbe0ed25339a7c1d5813033dd2ab38b8}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22adbe0ed25339a7c1d5813033dd2ab38b8}} 
+LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P2\+\_\+1&Equalization Phase 2 state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_EQ\_P3\_0@{LEO\_STATE\_EQ\_P3\_0}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_EQ\_P3\_0@{LEO\_STATE\_EQ\_P3\_0}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a2f52b8437bf043be4bb824bf55d1714c}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a2f52b8437bf043be4bb824bf55d1714c}} 
+LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P3\+\_\+0&Equalization Phase 3 state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_EQ\_P3\_1@{LEO\_STATE\_EQ\_P3\_1}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_EQ\_P3\_1@{LEO\_STATE\_EQ\_P3\_1}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a55112ebc073ccbd048ac69e12985a810}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a55112ebc073ccbd048ac69e12985a810}} 
+LEO\+\_\+\+STATE\+\_\+\+EQ\+\_\+\+P3\+\_\+1&Equalization Phase 3 state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_HOT\_PLUG@{LEO\_STATE\_HOT\_PLUG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_HOT\_PLUG@{LEO\_STATE\_HOT\_PLUG}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a102b0987fc98fdf56bd1c5b320cc0ef6}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a102b0987fc98fdf56bd1c5b320cc0ef6}} 
+LEO\+\_\+\+STATE\+\_\+\+HOT\+\_\+\+PLUG&Hot Plug state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_PROTOCOL\_RESET\_4@{LEO\_STATE\_PROTOCOL\_RESET\_4}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_PROTOCOL\_RESET\_4@{LEO\_STATE\_PROTOCOL\_RESET\_4}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a19a19be89b058222ece8059154a74742}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a19a19be89b058222ece8059154a74742}} 
+LEO\+\_\+\+STATE\+\_\+\+PROTOCOL\+\_\+\+RESET\+\_\+4&Protocol Reset state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_STATE\_OTHER@{LEO\_STATE\_OTHER}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_STATE\_OTHER@{LEO\_STATE\_OTHER}}}\mbox{\Hypertarget{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ad4f914a185203ec734901f730d31a86e}\label{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ad4f914a185203ec734901f730d31a86e}} 
+LEO\+\_\+\+STATE\+\_\+\+OTHER&Other (unexpected) state \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLTSSMLoggerEnumType@{LeoLTSSMLoggerEnumType}}
+\index{LeoLTSSMLoggerEnumType@{LeoLTSSMLoggerEnumType}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLTSSMLoggerEnumType}{LeoLTSSMLoggerEnumType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{Leo\+LTSSMLogger\+Enum\+Type}}}
+
+
+
+Leo LTSSM Logger type enum. 
+
+Enumeration of values for the Link and Path log types. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_LINK\_LOGGER@{LEO\_LTSSM\_LINK\_LOGGER}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_LINK\_LOGGER@{LEO\_LTSSM\_LINK\_LOGGER}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a411e30037668f8c9a9ecc6865bb82a06}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a411e30037668f8c9a9ecc6865bb82a06}} 
+LEO\+\_\+\+LTSSM\+\_\+\+LINK\+\_\+\+LOGGER&Link-\/level logger \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_0\_1\_LOG@{LEO\_LTSSM\_DS\_LN\_0\_1\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_0\_1\_LOG@{LEO\_LTSSM\_DS\_LN\_0\_1\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a9b28fd79b27e2cc45b81f581f48e2ca1}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a9b28fd79b27e2cc45b81f581f48e2ca1}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+0\+\_\+1\+\_\+\+LOG&Downstream, lanes 0 \& 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_2\_3\_LOG@{LEO\_LTSSM\_DS\_LN\_2\_3\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_2\_3\_LOG@{LEO\_LTSSM\_DS\_LN\_2\_3\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac91c25cfa6cf0991adb950f6d4032e16}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac91c25cfa6cf0991adb950f6d4032e16}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+2\+\_\+3\+\_\+\+LOG&Downstream, lanes 2 \& 3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_4\_5\_LOG@{LEO\_LTSSM\_DS\_LN\_4\_5\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_4\_5\_LOG@{LEO\_LTSSM\_DS\_LN\_4\_5\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3fa58edabd2c3c29c3c8356292bcccac}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3fa58edabd2c3c29c3c8356292bcccac}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+4\+\_\+5\+\_\+\+LOG&Downstream, lanes 4 \& 5 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_6\_7\_LOG@{LEO\_LTSSM\_DS\_LN\_6\_7\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_6\_7\_LOG@{LEO\_LTSSM\_DS\_LN\_6\_7\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3f9a09e4d9a7ad2dd4c9e71c324cf67a}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3f9a09e4d9a7ad2dd4c9e71c324cf67a}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+6\+\_\+7\+\_\+\+LOG&Downstream, lanes 6 \& 7 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_8\_9\_LOG@{LEO\_LTSSM\_DS\_LN\_8\_9\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_8\_9\_LOG@{LEO\_LTSSM\_DS\_LN\_8\_9\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a0b806298cc5df03bc161443deb44c41f}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a0b806298cc5df03bc161443deb44c41f}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+8\+\_\+9\+\_\+\+LOG&Downstream, lanes 8 \& 9 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_10\_11\_LOG@{LEO\_LTSSM\_DS\_LN\_10\_11\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_10\_11\_LOG@{LEO\_LTSSM\_DS\_LN\_10\_11\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a1b65112a105455841868209b85a10ebc}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a1b65112a105455841868209b85a10ebc}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+10\+\_\+11\+\_\+\+LOG&Downstream, lanes 10 \& 11 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_12\_13\_LOG@{LEO\_LTSSM\_DS\_LN\_12\_13\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_12\_13\_LOG@{LEO\_LTSSM\_DS\_LN\_12\_13\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a5986287e91e661eaec0ade161d024c02}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a5986287e91e661eaec0ade161d024c02}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+12\+\_\+13\+\_\+\+LOG&Downstream, lanes 12 \& 13 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_DS\_LN\_14\_15\_LOG@{LEO\_LTSSM\_DS\_LN\_14\_15\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_DS\_LN\_14\_15\_LOG@{LEO\_LTSSM\_DS\_LN\_14\_15\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac4136f8c33a01ea99f53ae1e3de0e31a}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac4136f8c33a01ea99f53ae1e3de0e31a}} 
+LEO\+\_\+\+LTSSM\+\_\+\+DS\+\_\+\+LN\+\_\+14\+\_\+15\+\_\+\+LOG&Downstream, lanes 14 \& 15 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_0\_1\_LOG@{LEO\_LTSSM\_US\_LN\_0\_1\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_0\_1\_LOG@{LEO\_LTSSM\_US\_LN\_0\_1\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a97f6c2753f2d43a7c3e78102b70a6d6c}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a97f6c2753f2d43a7c3e78102b70a6d6c}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+0\+\_\+1\+\_\+\+LOG&Upstream, lanes 0 \& 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_2\_3\_LOG@{LEO\_LTSSM\_US\_LN\_2\_3\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_2\_3\_LOG@{LEO\_LTSSM\_US\_LN\_2\_3\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a92d8b2e6358b947d128900b4770517c4}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a92d8b2e6358b947d128900b4770517c4}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+2\+\_\+3\+\_\+\+LOG&Upstream, lanes 2 \& 3 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_4\_5\_LOG@{LEO\_LTSSM\_US\_LN\_4\_5\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_4\_5\_LOG@{LEO\_LTSSM\_US\_LN\_4\_5\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3a0f23f5044fccaf31a48f7044c42c01}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3a0f23f5044fccaf31a48f7044c42c01}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+4\+\_\+5\+\_\+\+LOG&Upstream, lanes 4 \& 5 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_6\_7\_LOG@{LEO\_LTSSM\_US\_LN\_6\_7\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_6\_7\_LOG@{LEO\_LTSSM\_US\_LN\_6\_7\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac0e15533ac0d9d4b5bb98591e7450f6d}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac0e15533ac0d9d4b5bb98591e7450f6d}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+6\+\_\+7\+\_\+\+LOG&Upstream, lanes 6 \& 7 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_8\_9\_LOG@{LEO\_LTSSM\_US\_LN\_8\_9\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_8\_9\_LOG@{LEO\_LTSSM\_US\_LN\_8\_9\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a76ddc6be1a2fbe737ba7555982205bc1}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a76ddc6be1a2fbe737ba7555982205bc1}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+8\+\_\+9\+\_\+\+LOG&Upstream, lanes 8 \& 9 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_10\_11\_LOG@{LEO\_LTSSM\_US\_LN\_10\_11\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_10\_11\_LOG@{LEO\_LTSSM\_US\_LN\_10\_11\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a892b78a5adc4dbc935755856267c9147}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a892b78a5adc4dbc935755856267c9147}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+10\+\_\+11\+\_\+\+LOG&Upstream, lanes 10 \& 11 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_12\_13\_LOG@{LEO\_LTSSM\_US\_LN\_12\_13\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_12\_13\_LOG@{LEO\_LTSSM\_US\_LN\_12\_13\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ae6431558f9990877b6b69c52e249d4d7}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ae6431558f9990877b6b69c52e249d4d7}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+12\+\_\+13\+\_\+\+LOG&Upstream, lanes 12 \& 13 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_US\_LN\_14\_15\_LOG@{LEO\_LTSSM\_US\_LN\_14\_15\_LOG}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_US\_LN\_14\_15\_LOG@{LEO\_LTSSM\_US\_LN\_14\_15\_LOG}}}\mbox{\Hypertarget{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a49638e44e3bfbf946557a5329b8afafb}\label{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a49638e44e3bfbf946557a5329b8afafb}} 
+LEO\+\_\+\+LTSSM\+\_\+\+US\+\_\+\+LN\+\_\+14\+\_\+15\+\_\+\+LOG&Upstream, lanes 14 \& 15 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}\label{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoLTSSMVerbosity@{LeoLTSSMVerbosity}}
+\index{LeoLTSSMVerbosity@{LeoLTSSMVerbosity}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoLTSSMVerbosity}{LeoLTSSMVerbosity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}{Leo\+LTSSMVerbosity}}}
+
+
+
+Leo LTSSM Logger verbosity enum. 
+
+Enumeration of values to define verbosity. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_LTSSM\_VERBOSITY\_HIGH@{LEO\_LTSSM\_VERBOSITY\_HIGH}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_LTSSM\_VERBOSITY\_HIGH@{LEO\_LTSSM\_VERBOSITY\_HIGH}}}\mbox{\Hypertarget{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07fa56b7e9c7657af3e65ea8ba511e56c585}\label{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07fa56b7e9c7657af3e65ea8ba511e56c585}} 
+LEO\+\_\+\+LTSSM\+\_\+\+VERBOSITY\+\_\+\+HIGH&High verbosity \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}\label{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoPerDimmCapacity@{LeoPerDimmCapacity}}
+\index{LeoPerDimmCapacity@{LeoPerDimmCapacity}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoPerDimmCapacity}{LeoPerDimmCapacity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}{Leo\+Per\+Dimm\+Capacity}}}
+
+
+
+Leo Per DIMM Capacity. 
+
+Enumeration of per Dimm Capacity \mbox{\Hypertarget{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}\label{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoSPIStatus@{LeoSPIStatus}}
+\index{LeoSPIStatus@{LeoSPIStatus}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoSPIStatus}{LeoSPIStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}{Leo\+SPIStatus}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SPI\_ISIN\_TXMODE@{LEO\_SPI\_ISIN\_TXMODE}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SPI\_ISIN\_TXMODE@{LEO\_SPI\_ISIN\_TXMODE}}}\mbox{\Hypertarget{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236ac1532ba89e17ff2f1309747cdca54cb6}\label{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236ac1532ba89e17ff2f1309747cdca54cb6}} 
+LEO\+\_\+\+SPI\+\_\+\+ISIN\+\_\+\+TXMODE&SPI is in transmit mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SPI\_ISIN\_RXMODE@{LEO\_SPI\_ISIN\_RXMODE}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SPI\_ISIN\_RXMODE@{LEO\_SPI\_ISIN\_RXMODE}}}\mbox{\Hypertarget{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236a5f5f3a7e124aee9fcd28192a6613eff3}\label{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236a5f5f3a7e124aee9fcd28192a6613eff3}} 
+LEO\+\_\+\+SPI\+\_\+\+ISIN\+\_\+\+RXMODE&SPI is in receive mode \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}\label{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}} 
+\index{leo\_api\_types.h@{leo\_api\_types.h}!LeoSramMemoryCheck@{LeoSramMemoryCheck}}
+\index{LeoSramMemoryCheck@{LeoSramMemoryCheck}!leo\_api\_types.h@{leo\_api\_types.h}}
+\doxysubsubsection{\texorpdfstring{LeoSramMemoryCheck}{LeoSramMemoryCheck}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}{Leo\+Sram\+Memory\+Check}}}
+
+
+
+Enumeration of values for the SRAM Program memory check. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SRAM\_MM\_CHECK\_IDLE@{LEO\_SRAM\_MM\_CHECK\_IDLE}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SRAM\_MM\_CHECK\_IDLE@{LEO\_SRAM\_MM\_CHECK\_IDLE}}}\mbox{\Hypertarget{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7aaa9638e9da762c59b17de6fdecbe2bfd}\label{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7aaa9638e9da762c59b17de6fdecbe2bfd}} 
+LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+IDLE&Idle state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SRAM\_MM\_CHECK\_IN\_PROGRESS@{LEO\_SRAM\_MM\_CHECK\_IN\_PROGRESS}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SRAM\_MM\_CHECK\_IN\_PROGRESS@{LEO\_SRAM\_MM\_CHECK\_IN\_PROGRESS}}}\mbox{\Hypertarget{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a48ffa4cbdee098ff03f69ca3a7c377bc}\label{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a48ffa4cbdee098ff03f69ca3a7c377bc}} 
+LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+IN\+\_\+\+PROGRESS&Memory self-\/check in progress \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SRAM\_MM\_CHECK\_PASS@{LEO\_SRAM\_MM\_CHECK\_PASS}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SRAM\_MM\_CHECK\_PASS@{LEO\_SRAM\_MM\_CHECK\_PASS}}}\mbox{\Hypertarget{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a0502b2393c37b719eb3d63b4bc0f0b74}\label{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a0502b2393c37b719eb3d63b4bc0f0b74}} 
+LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+PASS&Memory self-\/check has passed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEO\_SRAM\_MM\_CHECK\_FAIL@{LEO\_SRAM\_MM\_CHECK\_FAIL}!leo\_api\_types.h@{leo\_api\_types.h}}\index{leo\_api\_types.h@{leo\_api\_types.h}!LEO\_SRAM\_MM\_CHECK\_FAIL@{LEO\_SRAM\_MM\_CHECK\_FAIL}}}\mbox{\Hypertarget{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7af897623d5d087f063994f772caa722e5}\label{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7af897623d5d087f063994f772caa722e5}} 
+LEO\+\_\+\+SRAM\+\_\+\+MM\+\_\+\+CHECK\+\_\+\+FAIL&Memory self-\/check has failed \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,229 @@
+\hypertarget{leo__err__inject_8h}{}\doxysection{leo-\/sdk-\/c/include/leo\+\_\+err\+\_\+inject.h File Reference}
+\label{leo__err__inject_8h}\index{leo-\/sdk-\/c/include/leo\_err\_inject.h@{leo-\/sdk-\/c/include/leo\_err\_inject.h}}
+
+
+Definitions related to error inject data structure and functions.  
+
+
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}leo\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\newline
+Include dependency graph for leo\+\_\+err\+\_\+inject.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structerrorInjectStruct}{error\+Inject\+Struct}}
+\begin{DoxyCompactList}\small\item\em structure for error inject entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a9b3408506c20162341d379cd04477521}\label{leo__err__inject_8h_a9b3408506c20162341d379cd04477521}} 
+\#define {\bfseries LEO\+\_\+\+DDR\+\_\+\+ECCCTL\+\_\+\+VAL}~0x71f
+\begin{DoxyCompactList}\small\item\em Macro for LEO register address. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a61482980317e7a8711b75cdc049b089e}\label{leo__err__inject_8h_a61482980317e7a8711b75cdc049b089e}} 
+\#define {\bfseries LEO\+\_\+\+DDR\+\_\+\+POISON\+\_\+\+DATA\+\_\+\+BITS}~0xfff
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a213f23929b47591102b2a8f7a60c9728}\label{leo__err__inject_8h_a213f23929b47591102b2a8f7a60c9728}} 
+\#define {\bfseries LEO\+\_\+\+ADV\+\_\+\+ECC}~0x5
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a6bf9fcaabcb8820ed266821572846af1}\label{leo__err__inject_8h_a6bf9fcaabcb8820ed266821572846af1}} 
+\#define {\bfseries LEO\+\_\+\+ECC\+\_\+\+UE}~0
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a2915ba42d9edfaa19b3bb58f481a2dfd}\label{leo__err__inject_8h_a2915ba42d9edfaa19b3bb58f481a2dfd}} 
+\#define {\bfseries LEO\+\_\+\+ECC\+\_\+\+CE}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a6237c7710549759f01a033834d0bfae4}\label{leo__err__inject_8h_a6237c7710549759f01a033834d0bfae4}} 
+\#define {\bfseries LEO\+\_\+\+ECC\+\_\+\+SIDE\+\_\+\+BAND}~0
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a82936babd0c06177d8054743ca189c13}\label{leo__err__inject_8h_a82936babd0c06177d8054743ca189c13}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+TYPE\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 4) \& 0x00000030) $\vert$ ((r)\&0xffffffcf))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ad78358f70de9164cfc7df328316fa198}\label{leo__err__inject_8h_ad78358f70de9164cfc7df328316fa198}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG1\+\_\+\+POISON\+\_\+\+CHIP\+\_\+\+EN\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 2) \& 0x00000004) $\vert$ ((r)\&0xfffffffb))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a1dedaea276666e5c8a2e1899eae6991f}\label{leo__err__inject_8h_a1dedaea276666e5c8a2e1899eae6991f}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG1\+\_\+\+DATA\+\_\+\+POISON\+\_\+\+EN\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x00000001) $\vert$ ((r)\&0xfffffffe))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a8635d29e6301a9d2e95c9d64446b7cdd}\label{leo__err__inject_8h_a8635d29e6301a9d2e95c9d64446b7cdd}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG1\+\_\+\+DATA\+\_\+\+POISON\+\_\+\+BIT\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 1) \& 0x00000002) $\vert$ ((r)\&0xfffffffd))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a7d1b96385cb7b1f2ef3bfc2e43bfa2ef}\label{leo__err__inject_8h_a7d1b96385cb7b1f2ef3bfc2e43bfa2ef}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR0\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+RANK\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 24) \& 0x03000000) $\vert$ ((r)\&0xfcffffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ad1b79508d741a63788a25ce96a98e4d0}\label{leo__err__inject_8h_ad1b79508d741a63788a25ce96a98e4d0}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR0\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+CID\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 16) \& 0x000f0000) $\vert$ ((r)\&0xfff0ffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a57689c70697e2afd2f353017f9ab653d}\label{leo__err__inject_8h_a57689c70697e2afd2f353017f9ab653d}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR0\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+COL\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x00000fff) $\vert$ ((r)\&0xfffff000))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a561829c511f187f27e06aec1856f28f3}\label{leo__err__inject_8h_a561829c511f187f27e06aec1856f28f3}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR1\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+BG\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 28) \& 0x70000000) $\vert$ ((r)\&0x8fffffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ad658da9b8aedba8256a5e2e6a263af6b}\label{leo__err__inject_8h_ad658da9b8aedba8256a5e2e6a263af6b}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR1\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+BANK\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 24) \& 0x03000000) $\vert$ ((r)\&0xfcffffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a0d9ad374467a4c80ff2a7325120b0840}\label{leo__err__inject_8h_a0d9ad374467a4c80ff2a7325120b0840}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR1\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+ROW\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x0003ffff) $\vert$ ((r)\&0xfffc0000))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a922e7120c7a78b419ad9f23cff71edf2}\label{leo__err__inject_8h_a922e7120c7a78b419ad9f23cff71edf2}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ADVECCINDEX\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+BEATS\+\_\+\+SEL\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 5) \& 0x000001e0) $\vert$ ((r)\&0xfffffe1f))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a54207ac672c712e4e252b0d27fad0188}\label{leo__err__inject_8h_a54207ac672c712e4e252b0d27fad0188}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ADVECCINDEX\+\_\+\+ECC\+\_\+\+ERR\+\_\+\+SYMBOL\+\_\+\+SEL\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 3) \& 0x00000018) $\vert$ ((r)\&0xffffffe7))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a89a627d502210a81944747b316519d10}\label{leo__err__inject_8h_a89a627d502210a81944747b316519d10}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ADVECCINDEX\+\_\+\+ECC\+\_\+\+SYNDROME\+\_\+\+SEL\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x00000007) $\vert$ ((r)\&0xfffffff8))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ade064822e2304be4a493a2c7db29b78b}\label{leo__err__inject_8h_ade064822e2304be4a493a2c7db29b78b}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT0\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+DATA\+\_\+31\+\_\+0\+\_\+\+MODIFY}(r,  x)~  ((x)\&0xffffffff)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a63e1543def4130a2807ed98b08615164}\label{leo__err__inject_8h_a63e1543def4130a2807ed98b08615164}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT1\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+DATA\+\_\+63\+\_\+32\+\_\+\+MODIFY}(r,  x)~  ((x)\&0xffffffff)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a00fca122ff338949404d6e04270304c3}\label{leo__err__inject_8h_a00fca122ff338949404d6e04270304c3}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT2\+\_\+\+ECC\+\_\+\+POISON\+\_\+\+DATA\+\_\+71\+\_\+64\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x000000ff) $\vert$ ((r)\&0xffffff00))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ab51d969b789253f104aa6ed5b38b9230}\label{leo__err__inject_8h_ab51d969b789253f104aa6ed5b38b9230}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG2\+\_\+\+FLIP\+\_\+\+BIT\+\_\+\+POS0\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 16) \& 0x007f0000) $\vert$ ((r)\&0xff80ffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a1382af3a64c8f3dcfddce8d5eadeec77}\label{leo__err__inject_8h_a1382af3a64c8f3dcfddce8d5eadeec77}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG2\+\_\+\+FLIP\+\_\+\+BIT\+\_\+\+POS1\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 24) \& 0x7f000000) $\vert$ ((r)\&0x80ffffff))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a83645b4838e3870607580c3dd65d353b}\label{leo__err__inject_8h_a83645b4838e3870607580c3dd65d353b}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+MSB}~3
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a93add1ff5e4624619f3fda26f060f962}\label{leo__err__inject_8h_a93add1ff5e4624619f3fda26f060f962}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+LSB}~3
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a069760ad8030a9a11ebbcf9bdc393e8c}\label{leo__err__inject_8h_a069760ad8030a9a11ebbcf9bdc393e8c}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+WIDTH}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ae393adbd9d465e098910e946dd296973}\label{leo__err__inject_8h_ae393adbd9d465e098910e946dd296973}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+READ\+\_\+\+ACCESS}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ae15596289eeaf4e8c66fc9c472354d85}\label{leo__err__inject_8h_ae15596289eeaf4e8c66fc9c472354d85}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+WRITE\+\_\+\+ACCESS}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a13a7199a2e4fbf074fc730f4eee34db0}\label{leo__err__inject_8h_a13a7199a2e4fbf074fc730f4eee34db0}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+RESET}~0x0
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a4d17ce75fe175de0e8c74b0aae745f80}\label{leo__err__inject_8h_a4d17ce75fe175de0e8c74b0aae745f80}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+FIELD\+\_\+\+MASK}~  0x00000008
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a50be3b29bf1707a58a81f49f3d2ee54a}\label{leo__err__inject_8h_a50be3b29bf1707a58a81f49f3d2ee54a}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+GET}(x)~  (((x)\&0x00000008) $>$$>$ 3)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a0906a6a9ff4631122348505bb2b03e6c}\label{leo__err__inject_8h_a0906a6a9ff4631122348505bb2b03e6c}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+SET}(x)~  (((x) $<$$<$ 3) \& 0x00000008)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a67c9cf246c5fbcbc346e51ef4ab6a090}\label{leo__err__inject_8h_a67c9cf246c5fbcbc346e51ef4ab6a090}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+TEST\+\_\+\+MODE\+\_\+\+MODIFY}(r,  x)~  ((((x) $<$$<$ 3) \& 0x00000008) $\vert$ ((r)\&0xfffffff7))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a106aa3f35714d23c41a5f9fe6119ca67}\label{leo__err__inject_8h_a106aa3f35714d23c41a5f9fe6119ca67}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+MSB}~2
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a37c6491c7c86fea5705c557484f87671}\label{leo__err__inject_8h_a37c6491c7c86fea5705c557484f87671}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+LSB}~0
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a388f0ecea0c38aefd6340592db349c19}\label{leo__err__inject_8h_a388f0ecea0c38aefd6340592db349c19}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+WIDTH}~3
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a402667ce734bc6ebe908d7e6acbe9360}\label{leo__err__inject_8h_a402667ce734bc6ebe908d7e6acbe9360}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+READ\+\_\+\+ACCESS}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a44f99391a03de72a0833bd646072edc8}\label{leo__err__inject_8h_a44f99391a03de72a0833bd646072edc8}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+WRITE\+\_\+\+ACCESS}~1
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a8b672ce162196e67c9a40d898e331879}\label{leo__err__inject_8h_a8b672ce162196e67c9a40d898e331879}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+RESET}~0x0
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a9a4e5f53d14af18bcc9f5543a3a5a076}\label{leo__err__inject_8h_a9a4e5f53d14af18bcc9f5543a3a5a076}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+FIELD\+\_\+\+MASK}~  0x00000007
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a1907f3ad5276919821e221a78f60597e}\label{leo__err__inject_8h_a1907f3ad5276919821e221a78f60597e}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+GET}(x)~  ((x)\&0x00000007)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ae8d1270978daee7886d3ed997a0fa5f1}\label{leo__err__inject_8h_ae8d1270978daee7886d3ed997a0fa5f1}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+SET}(x)~  ((x)\&0x00000007)
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_adf2268f49b79895b9a48205452fd1dbb}\label{leo__err__inject_8h_adf2268f49b79895b9a48205452fd1dbb}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ECC\+\_\+\+MODE\+\_\+\+MODIFY}(r,  x)~  (((x)\&0x00000007) $\vert$ ((r)\&0xfffffff8))
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ae005a0da275e6399404698bcb50b61ce}\label{leo__err__inject_8h_ae005a0da275e6399404698bcb50b61ce}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+SWCTL\+\_\+\+ADDRESS}~0x10c80
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a01d7bfb180a2659a635f7e541226f331}\label{leo__err__inject_8h_a01d7bfb180a2659a635f7e541226f331}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+SWCTL\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10c80
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a2c5eb74352daa0f7752dbf770027e055}\label{leo__err__inject_8h_a2c5eb74352daa0f7752dbf770027e055}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+ADDRESS}~0x10600
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a6fb708b24cd0bfc2d714567eb451d265}\label{leo__err__inject_8h_a6fb708b24cd0bfc2d714567eb451d265}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG0\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10600
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_aeaf3a93816238724e113fd857fedd993}\label{leo__err__inject_8h_aeaf3a93816238724e113fd857fedd993}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG1\+\_\+\+ADDRESS}~0x10604
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a7d84f1a1380af76c799220dbcd3fdbbb}\label{leo__err__inject_8h_a7d84f1a1380af76c799220dbcd3fdbbb}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG1\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10604
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a04beeff6c5f2cf99e62189f50d6c4aa8}\label{leo__err__inject_8h_a04beeff6c5f2cf99e62189f50d6c4aa8}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR0\+\_\+\+ADDRESS}~0x10648
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_af7125f1a31ad207bf688abeb2c5ea4d9}\label{leo__err__inject_8h_af7125f1a31ad207bf688abeb2c5ea4d9}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR0\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10648
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a4506529baa2dc7c18450e67e6db42a70}\label{leo__err__inject_8h_a4506529baa2dc7c18450e67e6db42a70}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR1\+\_\+\+ADDRESS}~0x1064c
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ac3e3f0fd30b96243ba6707a8f589598c}\label{leo__err__inject_8h_ac3e3f0fd30b96243ba6707a8f589598c}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONADDR1\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x1064c
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_af3199758e69631f9efb05b34c169ca44}\label{leo__err__inject_8h_af3199758e69631f9efb05b34c169ca44}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ADVECCINDEX\+\_\+\+ADDRESS}~0x10650
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a36948a1bad5c83ab331d0e3c58eb75a5}\label{leo__err__inject_8h_a36948a1bad5c83ab331d0e3c58eb75a5}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ADVECCINDEX\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10650
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a7b689c6ff90a01109d90461dc04ed5d1}\label{leo__err__inject_8h_a7b689c6ff90a01109d90461dc04ed5d1}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT0\+\_\+\+ADDRESS}~0x10658
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ab998cd9aedac93068d3d21e1c3c3e4fa}\label{leo__err__inject_8h_ab998cd9aedac93068d3d21e1c3c3e4fa}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT0\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10658
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a83a345c8c411a27ed3d5a4b9f9afdb66}\label{leo__err__inject_8h_a83a345c8c411a27ed3d5a4b9f9afdb66}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT1\+\_\+\+ADDRESS}~0x1065c
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_abf52990ef02a32344a2d5c476b8c7384}\label{leo__err__inject_8h_abf52990ef02a32344a2d5c476b8c7384}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT1\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x1065c
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_abd9ff94048d81e133cbb32ed09b7f7ac}\label{leo__err__inject_8h_abd9ff94048d81e133cbb32ed09b7f7ac}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT2\+\_\+\+ADDRESS}~0x10660
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a46f1f0c5552d082fd40ae64972e0d9c6}\label{leo__err__inject_8h_a46f1f0c5552d082fd40ae64972e0d9c6}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCPOISONPAT2\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10660
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_aee70a30876ecad45b53b0003bd8dfdd2}\label{leo__err__inject_8h_aee70a30876ecad45b53b0003bd8dfdd2}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG2\+\_\+\+ADDRESS}~0x10668
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_a8baabf6118d237b222d81a6d4c6a35e6}\label{leo__err__inject_8h_a8baabf6118d237b222d81a6d4c6a35e6}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCFG2\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x10668
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_ab71106308a95033692153c94b30c2ec6}\label{leo__err__inject_8h_ab71106308a95033692153c94b30c2ec6}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCTL\+\_\+\+ADDRESS}~0x1060c
+\item 
+\mbox{\Hypertarget{leo__err__inject_8h_aeb75d6274d7a657840fab68fa74ac3c4}\label{leo__err__inject_8h_aeb75d6274d7a657840fab68fa74ac3c4}} 
+\#define {\bfseries DWC\+\_\+\+DDRCTL\+\_\+\+APB\+\_\+\+SLAVE\+\_\+\+REGB\+\_\+\+DDRC\+\_\+\+CH0\+\_\+\+ECCCTL\+\_\+\+BYTE\+\_\+\+ADDRESS}~0x1060c
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions related to error inject data structure and functions. 
+

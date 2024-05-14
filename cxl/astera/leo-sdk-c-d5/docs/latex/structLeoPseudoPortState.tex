@@ -1,0 +1,63 @@
+\hypertarget{structLeoPseudoPortState}{}\doxysection{Leo\+Pseudo\+Port\+State Struct Reference}
+\label{structLeoPseudoPortState}\index{LeoPseudoPortState@{LeoPseudoPortState}}
+
+
+Struct defining detailed Pseudo Port status, including electrical parameters.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+
+
+Collaboration diagram for Leo\+Pseudo\+Port\+State\+:
+% FIG 0
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_a9c7eac0eab238969bdfa2c1db85bd5a3}{Leo\+Tx\+State\+Type}} \mbox{\hyperlink{structLeoPseudoPortState_a53b871134388b388eca3038b411e023b}{tx\+State}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_aedab81244ba6e5e64ea93aca78eaa0da}{Leo\+Rx\+State\+Type}} \mbox{\hyperlink{structLeoPseudoPortState_a3399b2066e62788412300871b8bd309e}{rx\+State}} \mbox{[}16\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structLeoPseudoPortState_acf2f9785d0f358fc9e512b6b9ca55610}{min\+DPLLCode}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structLeoPseudoPortState_aa9293a957b072ea4c6eec1fc8493f2de}{max\+DPLLCode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining detailed Pseudo Port status, including electrical parameters. 
+
+Note that each Leo Link has two Pseudo Ports, and Upstream Pseudo Port (USPP) and a Downstream Pseudo Port (DSPP). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoPseudoPortState_aa9293a957b072ea4c6eec1fc8493f2de}\label{structLeoPseudoPortState_aa9293a957b072ea4c6eec1fc8493f2de}} 
+\index{LeoPseudoPortState@{LeoPseudoPortState}!maxDPLLCode@{maxDPLLCode}}
+\index{maxDPLLCode@{maxDPLLCode}!LeoPseudoPortState@{LeoPseudoPortState}}
+\doxysubsubsection{\texorpdfstring{maxDPLLCode}{maxDPLLCode}}
+{\footnotesize\ttfamily uint16\+\_\+t Leo\+Pseudo\+Port\+State\+::max\+DPLLCode}
+
+Max DPLL code seen \mbox{\Hypertarget{structLeoPseudoPortState_acf2f9785d0f358fc9e512b6b9ca55610}\label{structLeoPseudoPortState_acf2f9785d0f358fc9e512b6b9ca55610}} 
+\index{LeoPseudoPortState@{LeoPseudoPortState}!minDPLLCode@{minDPLLCode}}
+\index{minDPLLCode@{minDPLLCode}!LeoPseudoPortState@{LeoPseudoPortState}}
+\doxysubsubsection{\texorpdfstring{minDPLLCode}{minDPLLCode}}
+{\footnotesize\ttfamily uint16\+\_\+t Leo\+Pseudo\+Port\+State\+::min\+DPLLCode}
+
+Min DPLL code seen \mbox{\Hypertarget{structLeoPseudoPortState_a3399b2066e62788412300871b8bd309e}\label{structLeoPseudoPortState_a3399b2066e62788412300871b8bd309e}} 
+\index{LeoPseudoPortState@{LeoPseudoPortState}!rxState@{rxState}}
+\index{rxState@{rxState}!LeoPseudoPortState@{LeoPseudoPortState}}
+\doxysubsubsection{\texorpdfstring{rxState}{rxState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_aedab81244ba6e5e64ea93aca78eaa0da}{Leo\+Rx\+State\+Type}} Leo\+Pseudo\+Port\+State\+::rx\+State\mbox{[}16\mbox{]}}
+
+Detailed Tx state \mbox{\Hypertarget{structLeoPseudoPortState_a53b871134388b388eca3038b411e023b}\label{structLeoPseudoPortState_a53b871134388b388eca3038b411e023b}} 
+\index{LeoPseudoPortState@{LeoPseudoPortState}!txState@{txState}}
+\index{txState@{txState}!LeoPseudoPortState@{LeoPseudoPortState}}
+\doxysubsubsection{\texorpdfstring{txState}{txState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_a9c7eac0eab238969bdfa2c1db85bd5a3}{Leo\+Tx\+State\+Type}} Leo\+Pseudo\+Port\+State\+::tx\+State\mbox{[}16\mbox{]}}
+
+Detailed Tx state 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,315 @@
+\hypertarget{hal_8h_source}{}\doxysection{hal.\+h}
+\label{hal_8h_source}\index{leo-\/sdk-\/c/include/hal.h@{leo-\/sdk-\/c/include/hal.h}}
+\mbox{\hyperlink{hal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ 2020\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_HAL\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_HAL\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{misc_8h}{misc.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//TODO\ YW:\ copied\ from\ leo\_api\_internal.h}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ LEO\_BOOT\_STAT\_OFFSET\ \ 0xf0}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ LEO\_FW\_VERSION\_OFFSET\ 0xf4}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ LEO\_FW\_BUILD\_OFFSET\ \ \ 0xf8}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//TODO\ YW:\ same\ solution\ for\ all\ MINI\ registers?}}
+\DoxyCodeLine{00035\ \textcolor{comment}{/*********************************************/}}
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ Keep\ using\ A0\ register\ nameing\ convention\ */}}
+\DoxyCodeLine{00037\ \textcolor{comment}{/*********************************************/}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ CHIP\_D5}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ LEO\_TOP\_CSR\_CMAL\_SECOND\_SLV\_STS\_RRSP\_DDR\_RETURNED\_POISON\_CNT\_ADDRESS\ LEO\_TOP\_CSR\_CMAL\_STS\_RRSP\_DDR\_RETURNED\_POISON\_CNT\_ADDRESS}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ LEO\_TOP\_CSR\_CMAL\_SECOND\_SLV\_STS\_RRSP\_RDP\_CAUSED\_POISON\_CNT\_ADDRESS\ \ \ LEO\_TOP\_CSR\_CMAL\_STS\_RRSP\_RDP\_CAUSED\_POISON\_CNT\_ADDRESS}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LEO\_TOP\_CSR\_CXL\_CTR\_MINI\_CXL\_VIRAL\_REQUEST\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LEO\_TOP\_CSR\_CXL\_CTR\_CXL\_VIRAL\_REQUEST\_ADDRESS\ \ \ \ \ \ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ CHIP\_A0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#error\ NO\ chip\ revision\ provided}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//TODO\ YW:\ DDR\ related,\ copied\ from\ leo\_api\_internal.h}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ DDR\_TEMP\_EXPECTED\_NO\_WORKLOAD\ 32}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ DDR\_TEMP\_THEORETICAL\_MAX\ 105}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ENABLE\ 1}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DISABLE\ 0}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CLEAR\ 0}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_RD\_ACTIVATE\_OFFSET\ 10}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_PRECHARGE\_OFFSET\ 13}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_REFRESH\_OFFSET\ 37}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_CRIT\_REFRESH\_OFFSET\ 38}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_SPEC\_REFRESH\_OFFSET\ 39}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_RD\_ACTIVATE\_OFFSET\_SUBCHN1\ 74}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_PRECHARGE\_OFFSET\_SUBCHN1\ 77}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_REFRESH\_OFFSET\_SUBCHN1\ 101}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_CRIT\_REFRESH\_OFFSET\_SUBCHN1\ 102}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ SRAM\_ANA\_CTR\_SPEC\_REFRESH\_OFFSET\_SUBCHN1\ 103}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *****************************************************************************}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ Leo\ CSR\ base\ addresses}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ ******************************************************************************}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_MISC\_BASE\_ADDRESS\ 0x000000}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_OFFSET\ (0x6000)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ DW\_APB\_SSI\_ADDRESS\ (CSR\_CXL\_MISC\_BASE\_ADDRESS\ +\ DW\_APB\_SSI\_OFFSET)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_CMAL\_BASE\_ADDRESS\ 0x100000}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_PHY\_BASE\_ADDRESS\ 0x200000}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ CXL\_PHY\_INTERNAL\_PMA\_REG\_ACCESS\ 0x080000}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ CXL\_PHY\_INTERNAL\_PMA\_ID\_SHIFT\ (16)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ CXL\_PHY\_INTERNAL\_PMA\_ID\_MASK\ (0x030000)}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_CTLR\_0\_CSR\_BASE\_ADDRESS\ 0x400000}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_CTLR\_1\_CSR\_BASE\_ADDRESS\ 0x500000}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_CTLR\_0\_DBI\_BASE\_ADDRESS\ (0x600000)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ CSR\_CXL\_CTLR\_1\_DBI\_BASE\_ADDRESS\ (0x700000)}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT\ (0x040000)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT\ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ (0x0)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT\ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ (0x1)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_BASE\_ADDR\_PAT\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ (0x1\ |\ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT\ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ ((0x80001)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)\ }\textcolor{comment}{/*\ csr\_addr[19]\ =\ dbi\_addr[21]\ \&}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csr\_addr[17]\ =\ dbi\_addr[20]\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT\ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ ((0xA0001)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)\ }\textcolor{comment}{/*\ csr\_addr[19]\ =\ dbi\_addr[21]\ \&}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csr\_addr[17]\ =\ dbi\_addr[20]\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ (2)\ }\textcolor{comment}{/*\ register\ offset\ in\ the\ csr\ dbi\ address\ always\ starts\ from\ csr\_addr[2]}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ \ \ \ since\ we\ specify\ a\ dword\ offset\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR(\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ csr\_dbi\_base\_addr,\ reg\_offset)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR(\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ csr\_dbi\_base\_addr,\ reg\_offset)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ csr\_dbi\_base\_addr,\ reg\_offset)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR(\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ csr\_dbi\_base\_addr,\ reg\_offset)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR(\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ csr\_dbi\_base\_addr,\ reg\_offset)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_0\_CSR\_BASE\_ADDRESS\ 0x800000}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_1\_CSR\_BASE\_ADDRESS\ 0x900000}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_0\_IP\_BASE\_ADDRESS\ 0xa00000}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_1\_IP\_BASE\_ADDRESS\ 0xb00000}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_0\_PHY\_IP\_BASE\_ADDRESS\ 0xc00000}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ CSR\_DDR\_CTLR\_1\_PHY\_IP\_BASE\_ADDRESS\ 0xd00000}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ Macros\ for\ CSR\ address\ generation}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//******************************************************************************}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ ((DWC\_DBI\_ADDR\ \&\ 0xffff)\ |\ ((DWC\_DBI\_ADDR\ \&\ 0x100000)\ >>\ 3)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ ((DWC\_DBI\_ADDR\ \&\ 0x200000)\ >>\ 2))}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT\ |\ 1)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR(DWC\_DBI\_ADDR)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ *\ For\ DV\_SIM\ FW\ state\ notification}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_NOTIF\_ADDR\ (uint32\_t\ volatile\ *)(0x1fffdc)}}
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ defines\ for\ DV\ sync\ */}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_RESET\ 0x8000}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_IDLE\ 0x8001}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_DDR\_ACTIVE\ 0x8002}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_CXL\_ACTIVE\ 0x8004}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_LINK\_ACTIVE\ 0x8008\ }\textcolor{comment}{//\ ready\ to\ process\ data\ traffic}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_INITIAL\_CFG\_DONE\ 0x8010}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_FAST\_CLK\_EN\ 0x8020}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_STATE\_FAST\_CLK\_DIS\ 0x8040}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_DDRPHY\_CFG\_DONE\ 0x8080}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_DDRPHY\_INIT\_START\ 0x8100}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ DV\_SIM\_FW\_DDRPHY\_INIT\_END\ 0x8200}}
+\DoxyCodeLine{00173\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ *****************************************************************************}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ *\ Defines}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ ******************************************************************************}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00178\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00179\ \ \ uint32\_t\ addr;}
+\DoxyCodeLine{00180\ \ \ uint32\_t\ data;}
+\DoxyCodeLine{00181\ \}\ \mbox{\hyperlink{structcfg__data__t}{cfg\_data\_t}};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ *****************************************************************************}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ *\ ARC\ internal\ CSR\ base\ addresses}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ ******************************************************************************}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ ARC\_CSR\_RGN\ 0xf0000000}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ARC\_CSR\_RGN\_BRC\ 0xf4000000}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\#define\ ARC\_CSR\_RGN\_BRC\ 0xf0000000}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\#define\ ARC\_CSR\_RGN\ 0x000000}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00194\ \ \ uint32\_t\ error;}
+\DoxyCodeLine{00195\ \}\ \mbox{\hyperlink{structhal__status__t}{hal\_status\_t}};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ *****************************************************************************}}
+\DoxyCodeLine{00199\ \textcolor{comment}{\ *\ Function\ prototypes\ ("{}Public"{}\ functions\ provided\ for\ users\ of\ this\ HAL)}}
+\DoxyCodeLine{00200\ \textcolor{comment}{\ ******************************************************************************}}
+\DoxyCodeLine{00201\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00204\ \textcolor{comment}{\ *\ Function:\ hal\_init}}
+\DoxyCodeLine{00205\ \textcolor{comment}{\ *\ Description:\ Initialize\ the\ HAL\ layer}}
+\DoxyCodeLine{00206\ \textcolor{comment}{\ *\ Parameters:\ None}}
+\DoxyCodeLine{00207\ \textcolor{comment}{\ *\ Returns:\ None}}
+\DoxyCodeLine{00208\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ hal\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00212\ \textcolor{comment}{\ *\ Function:\ csr\_check\_error}}
+\DoxyCodeLine{00213\ \textcolor{comment}{\ *\ Description:\ Get\ CSR\ access\ error}}
+\DoxyCodeLine{00214\ \textcolor{comment}{\ *\ Parameters:\ None}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ *\ Returns:\ CSR\ access\ error\ type}}
+\DoxyCodeLine{00216\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00217\ uint32\_t\ csr\_check\_error(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00220\ \textcolor{comment}{\ *\ Function:\ csr\_rd}}
+\DoxyCodeLine{00221\ \textcolor{comment}{\ *\ Description:\ Read\ a\ CSR\ register}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00223\ \textcolor{comment}{\ *\ Returns:\ CSR\ register\ value}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00225\ uint32\_t\ csr\_rd(uint32\_t\ addr);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00228\ \textcolor{comment}{\ *\ Function:\ csr\_wr}}
+\DoxyCodeLine{00229\ \textcolor{comment}{\ *\ Description:\ Write\ a\ CSR\ register}}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00231\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ data\ -\/\ CSR\ register\ value}}
+\DoxyCodeLine{00232\ \textcolor{comment}{\ *\ Returns:\ Status\ of\ the\ operation}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00234\ uint32\_t\ csr\_wr(uint32\_t\ addr,\ uint32\_t\ data);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00237\ \textcolor{comment}{\ *\ Function:\ csr\_wr\_no\_chk}}
+\DoxyCodeLine{00238\ \textcolor{comment}{\ *\ Description:\ Write\ to\ a\ CSR\ register\ without\ checking\ for\ errors}}
+\DoxyCodeLine{00239\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00240\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ data\ -\/\ CSR\ register\ value}}
+\DoxyCodeLine{00241\ \textcolor{comment}{\ *\ Returns:\ None}}
+\DoxyCodeLine{00242\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00243\ \textcolor{keywordtype}{void}\ csr\_wr\_no\_chk(uint32\_t\ addr,\ uint32\_t\ data);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00246\ \textcolor{comment}{\ *\ Function:\ csr\_brc\_wr}}
+\DoxyCodeLine{00247\ \textcolor{comment}{\ *\ Description:\ Write\ to\ multiple\ instance\ of\ the\ same\ module}}
+\DoxyCodeLine{00248\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ (broadcast)}}
+\DoxyCodeLine{00249\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00250\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ data\ -\/\ CSR\ register\ value}}
+\DoxyCodeLine{00251\ \textcolor{comment}{\ *\ Returns:\ Status\ of\ the\ operation}}
+\DoxyCodeLine{00252\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00253\ uint32\_t\ csr\_brc\_wr(uint32\_t\ addr,\ uint32\_t\ data);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00256\ \textcolor{comment}{\ *\ Function:\ csr\_brc\_wr\_no\_chk}}
+\DoxyCodeLine{00257\ \textcolor{comment}{\ *\ Description:\ Write\ to\ multiple\ instance\ of\ the\ same\ module}}
+\DoxyCodeLine{00258\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ without\ checking\ for\ errors}}
+\DoxyCodeLine{00259\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00260\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ data\ -\/\ CSR\ register\ value}}
+\DoxyCodeLine{00261\ \textcolor{comment}{\ *\ Returns:\ None}}
+\DoxyCodeLine{00262\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00263\ \textcolor{keywordtype}{void}\ csr\_brc\_wr\_no\_chk(uint32\_t\ addr,\ uint32\_t\ data);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00266\ \textcolor{comment}{//\ CSR\ wr\ field:\ use\ read\ modify\ write\ to\ update\ a\ field}}
+\DoxyCodeLine{00267\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00268\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ *\ Function:\ csr\_wr\_field}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ *\ Description:\ Write\ to\ a\ CSR\ register\ field\ by\ using}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ read-\/modify-\/write}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ *\ Parameters:\ addr\ -\/\ CSR\ register\ address}}
+\DoxyCodeLine{00273\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ data\ -\/\ CSR\ register\ value}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ mask\ -\/\ CSR\ register\ field\ mask}}
+\DoxyCodeLine{00275\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ shift\ -\/\ CSR\ register\ field\ shift}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ *\ Returns:\ Status\ of\ the\ operation}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00278\ uint32\_t\ csr\_wr\_field(uint32\_t\ addr,\ uint32\_t\ field\_mask,\ uint32\_t\ field\_lsb,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ field\_data);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00282\ \textcolor{comment}{\ *\ Function:\ csr\_wr\_array}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ *\ Description:\ Write\ an\ array\ of\ CSR\ data}}
+\DoxyCodeLine{00284\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ each\ entry\ of\ the\ array\ is\ an\ addr/data\ pair}}
+\DoxyCodeLine{00285\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ base\_addr\ will\ be\ added\ to\ the\ addr\ when\ writing\ to\ the\ CSR}}
+\DoxyCodeLine{00286\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ The\ last\ element\ of\ the\ array\ must\ be:\ addr\ ==\ 0xffffffff,\ data}}
+\DoxyCodeLine{00287\ \textcolor{comment}{\ *\ ==\ 0\ Example\ of\ cfg\_data\_t\ array:\ cfg\_data\_t\ cfg\_0[]\ =\ \{\ \{0x1000,\ 0\},}}
+\DoxyCodeLine{00288\ \textcolor{comment}{\ *\ \{0x1004,\ 1\},}}
+\DoxyCodeLine{00289\ \textcolor{comment}{\ *\ \{0xffffffff,\ 0\}}}
+\DoxyCodeLine{00290\ \textcolor{comment}{\ *\ \};}}
+\DoxyCodeLine{00291\ \textcolor{comment}{\ *\ Parameters:\ base\_addr\ -\/\ CSR\ register\ base\ address}}
+\DoxyCodeLine{00292\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ cfg\_data\ -\/\ CSR\ register\ array}}
+\DoxyCodeLine{00293\ \textcolor{comment}{\ *\ Returns:\ Status\ of\ the\ operation}}
+\DoxyCodeLine{00294\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00295\ uint32\_t\ csr\_wr\_array(uint32\_t\ base\_addr,\ \mbox{\hyperlink{structcfg__data__t}{cfg\_data\_t}}\ *p\_cfg);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00298\ \textcolor{comment}{\ *\ Function:\ csr\_brc\_wr\_array}}
+\DoxyCodeLine{00299\ \textcolor{comment}{\ *\ Description:\ Write\ an\ array\ of\ CSR\ data\ to\ multiple\ instances\ of\ the\ same}}
+\DoxyCodeLine{00300\ \textcolor{comment}{\ *\ module\ Parameters:\ base\_addr\ -\/\ CSR\ register\ base\ address\ cfg\_data\ -\/\ CSR}}
+\DoxyCodeLine{00301\ \textcolor{comment}{\ *\ register\ array\ Returns:\ Status\ of\ the\ operation}}
+\DoxyCodeLine{00302\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00303\ uint32\_t\ csr\_brc\_wr\_array(uint32\_t\ base\_addr,\ \mbox{\hyperlink{structcfg__data__t}{cfg\_data\_t}}\ *p\_cfg);}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ uint32\_t\ cxl\_ctr\_dbi\_csr\_wr(uint32\_t\ csr\_dbi\_base\_addr,\ uint32\_t\ dbi\_addr,}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ dbi\_cs2,\ uint32\_t\ data);}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ uint32\_t\ cxl\_ctr\_dbi\_csr\_rd(uint32\_t\ csr\_dbi\_base\_addr,\ uint32\_t\ dbi\_addr,}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ dbi\_cs2);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ uint32\_t\ leoGetDdrCtlAddr(uint32\_t\ top\_csr\_addr,\ uint8\_t\ ctl\_id);}
+\DoxyCodeLine{00312\ uint32\_t\ leoGetCxlCtrAddr(uint32\_t\ top\_csr\_addr,\ uint8\_t\ ctl\_id);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \textcolor{keywordtype}{void}\ hal\_send\_dv\_sync(uint32\_t\ val);}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

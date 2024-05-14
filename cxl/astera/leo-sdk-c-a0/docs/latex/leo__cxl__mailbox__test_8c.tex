@@ -1,0 +1,145 @@
+\hypertarget{leo__cxl__mailbox__test_8c}{}\doxysection{leo-\/sdk-\/c/examples/leo\+\_\+cxl\+\_\+mailbox\+\_\+test.c File Reference}
+\label{leo__cxl__mailbox__test_8c}\index{leo-\/sdk-\/c/examples/leo\_cxl\_mailbox\_test.c@{leo-\/sdk-\/c/examples/leo\_cxl\_mailbox\_test.c}}
+
+
+api test demonstrates leo CXL mailbox features. This is recommended for\+:  
+
+
+{\ttfamily \#include \char`\"{}../include/\+DW\+\_\+apb\+\_\+ssi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/leo\+\_\+evt\+\_\+rec\+\_\+mgr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/leo\+\_\+common\+\_\+global.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$linux/cxl\+\_\+mem.\+h$>$}\newline
+{\ttfamily \#include $<$poll.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+Include dependency graph for leo\+\_\+cxl\+\_\+mailbox\+\_\+test.\+c\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args}}
+\item 
+struct \mbox{\hyperlink{structcxl__set__alert__config}{cxl\+\_\+set\+\_\+alert\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{structcxl__get__alert__config}{cxl\+\_\+get\+\_\+alert\+\_\+config}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_ab19c67b221c5652bd694c51bed9ceca3}\label{leo__cxl__mailbox__test_8c_ab19c67b221c5652bd694c51bed9ceca3}} 
+\#define {\bfseries BIT\+\_\+\+SET}(pos)~(1UL$<$$<$(pos))
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a2719e36d5933dc42d8501967f70d0066}\label{leo__cxl__mailbox__test_8c_a2719e36d5933dc42d8501967f70d0066}} 
+\#define {\bfseries TEST\+\_\+\+BIT\+\_\+\+SET}(value,  bit)~(value\&BIT\+\_\+\+SET(bit))
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a6adc22710c9fc2379d80bea197ba08d2}\label{leo__cxl__mailbox__test_8c_a6adc22710c9fc2379d80bea197ba08d2}} 
+\#define {\bfseries SIGN\+\_\+\+BIT\+\_\+\+CLEAR\+\_\+\+VAL}(bits\+\_\+limit)~(BIT\+\_\+\+SET(bits\+\_\+limit-\/1)-\/1)
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a81eebbdd42468accc2e81494d32480a8}\label{leo__cxl__mailbox__test_8c_a81eebbdd42468accc2e81494d32480a8}} 
+\#define {\bfseries AL\+\_\+\+LEO\+\_\+\+DEVICE}~\char`\"{}/dev/cxl/mem\char`\"{}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a53aacd4435fffe56f60400aa67e12c6a}\label{leo__cxl__mailbox__test_8c_a53aacd4435fffe56f60400aa67e12c6a}} 
+\#define {\bfseries AL\+\_\+\+INTR\+\_\+\+POLICY\+\_\+\+MSI\+\_\+\+SET}~0x01
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_acbfbdd26f9039c01aae0ff90148390d1}\label{leo__cxl__mailbox__test_8c_acbfbdd26f9039c01aae0ff90148390d1}} 
+\#define {\bfseries AL\+\_\+\+INTR\+\_\+\+POLICY\+\_\+\+MSI\+\_\+\+MASK}~0x01
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_aa39707aaddccb48957cc085d35ae74fc}\label{leo__cxl__mailbox__test_8c_aa39707aaddccb48957cc085d35ae74fc}} 
+\#define {\bfseries GET\+\_\+\+EVT\+\_\+\+REC\+\_\+\+PAYLOAD\+\_\+\+SIZE}~0x\+A0
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a2fb4ed2b5eee94e1979c42674728236b}\label{leo__cxl__mailbox__test_8c_a2fb4ed2b5eee94e1979c42674728236b}} 
+\#define {\bfseries CLR\+\_\+\+EVT\+\_\+\+REC\+\_\+\+PAYLOAD\+\_\+\+SIZE}~0x8
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a8e34e7c91f3270e95c313c4f17a05159}\label{leo__cxl__mailbox__test_8c_a8e34e7c91f3270e95c313c4f17a05159}} 
+\#define {\bfseries SET\+\_\+\+ALERT\+\_\+\+PAYLOAD\+\_\+\+SIZE}~0x0C
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_ae3948a58789db4ea8334f298d5c9fcab}\label{leo__cxl__mailbox__test_8c_ae3948a58789db4ea8334f298d5c9fcab}} 
+\#define {\bfseries GET\+\_\+\+ALERT\+\_\+\+PAYLOAD\+\_\+\+SIZE}~0x10
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a7b9d2f5853207f4545506120d11d55cb}\label{leo__cxl__mailbox__test_8c_a7b9d2f5853207f4545506120d11d55cb}} 
+typedef struct \mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args}} {\bfseries ev\+Rec\+Args\+Type}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_ae8a4fee86ad55ae4281e70f24e08e6ff}\label{leo__cxl__mailbox__test_8c_ae8a4fee86ad55ae4281e70f24e08e6ff}} 
+typedef struct \mbox{\hyperlink{structcxl__set__alert__config}{cxl\+\_\+set\+\_\+alert\+\_\+config}} {\bfseries cxl\+\_\+set\+\_\+alert\+\_\+config\+\_\+t}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a80ab0737323310600f45bb9ac8c04c20}\label{leo__cxl__mailbox__test_8c_a80ab0737323310600f45bb9ac8c04c20}} 
+typedef struct \mbox{\hyperlink{structcxl__get__alert__config}{cxl\+\_\+get\+\_\+alert\+\_\+config}} {\bfseries cxl\+\_\+get\+\_\+alert\+\_\+config\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a257025061a7640cff6b4334425d3eb9d}\label{leo__cxl__mailbox__test_8c_a257025061a7640cff6b4334425d3eb9d}} 
+int16\+\_\+t {\bfseries do2s\+Complement\+To\+Decimal} (uint16\+\_\+t value, uint8\+\_\+t bits\+\_\+limit)
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_ad8698a1f51f20b25a65e6a87a37a32cc}\label{leo__cxl__mailbox__test_8c_ad8698a1f51f20b25a65e6a87a37a32cc}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Edac\+Test} (\mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args\+Type}} \mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args}})
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a4c356f12757fde3320694579a9bfea8f}\label{leo__cxl__mailbox__test_8c_a4c356f12757fde3320694579a9bfea8f}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Edac\+Run} (\mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args\+Type}} \mbox{\hyperlink{structevRecArgs}{ev\+Rec\+Args}}, \mbox{\hyperlink{structcxl__set__alert__config}{cxl\+\_\+set\+\_\+alert\+\_\+config\+\_\+t}} alert\+Config)
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a739d5fde473c9b0447eadff3e37bbe51}\label{leo__cxl__mailbox__test_8c_a739d5fde473c9b0447eadff3e37bbe51}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Leo\+Getinput} (void)
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a5084cce4294544528d552596ae83a3d0}\label{leo__cxl__mailbox__test_8c_a5084cce4294544528d552596ae83a3d0}} 
+\mbox{\hyperlink{leo__error_8h_a2f7909bc4b30a2692fc751e1d45dd1d1}{Leo\+Error\+Type}} {\bfseries do\+Cxl\+Com} (struct cxl\+\_\+send\+\_\+command cxl\+\_\+payload)
+\item 
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{leo__cxl__mailbox__test_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{leo__cxl__mailbox__test_8c_ab1fe928685daf88e15523ab730a2197f}{help\+\_\+string}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+api test demonstrates leo CXL mailbox features. This is recommended for\+: 
+
+
+\begin{DoxyItemize}
+\item Print SDK version
+\item Iinitialize Leo device
+\item Read, print FW version and status check
+\item Link status check (Get details on the Speed, Width, linkstatus and Mode)
+\item Get/\+Clear event records using Linux Open Source IOCTL calls
+\item Get/\+Set Alert Config using Linux Open Source IOCTL calls
+\item sudo ./leo\+\_\+cxl\+\_\+mailbox\+\_\+test -\/help 
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{leo__cxl__mailbox__test_8c_ab1fe928685daf88e15523ab730a2197f}\label{leo__cxl__mailbox__test_8c_ab1fe928685daf88e15523ab730a2197f}} 
+\index{leo\_cxl\_mailbox\_test.c@{leo\_cxl\_mailbox\_test.c}!help\_string@{help\_string}}
+\index{help\_string@{help\_string}!leo\_cxl\_mailbox\_test.c@{leo\_cxl\_mailbox\_test.c}}
+\doxysubsubsection{\texorpdfstring{help\_string}{help\_string}}
+{\footnotesize\ttfamily const char$\ast$ help\+\_\+string\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{DEFAULT\_HELPSTRINGS,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}action,\ (optional)\ get\ -\/or-\/\ clear"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}logtype,\ (optional)\ info,\ warn,\ failure\ or\ fatal"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}clrall,\ (optional)\ to\ clear\ all\ records\ alltogether"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}numrecs,\ (optional)\ no\ of\ event\ records\ to\ clear,\ valid\ only\ if\ clrall\ is\ not\ used"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}handles,\ (optional)\ comma\ separate\ event\ handles\ list,\ valid\ only\ if\ clrall\ is\ not\ used"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}device,\ (optional)\ device\ node\ path\ ex:0\ or\ 1\ or\ 2\ etc..."{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}over\_temp,\ (optional)\ Device\ Over-\/Temperature\ Programmable\ Warning\ Threshold\ Enable\ Alert,\ supported\ 0-\/125ºC"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}under\_temp,\ (optional)\ Device\ Under-\/Temperature\ Programmable\ Warning\ Threshold\ Enable\ Alert,\ supported\ 0-\/125ºC"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}corr\_threshold,\ (optional)\ Corrected\ Volatile\ Memory\ Error\ Programmable\ Warning\ Threshold\ Enable\ Alert"{}}\}}
+
+\end{DoxyCode}

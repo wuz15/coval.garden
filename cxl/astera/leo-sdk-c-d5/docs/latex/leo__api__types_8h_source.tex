@@ -1,0 +1,650 @@
+\hypertarget{leo__api__types_8h_source}{}\doxysection{leo\+\_\+api\+\_\+types.\+h}
+\label{leo__api__types_8h_source}\index{leo-\/sdk-\/c/include/leo\_api\_types.h@{leo-\/sdk-\/c/include/leo\_api\_types.h}}
+\mbox{\hyperlink{leo__api__types_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Astera\ Labs,\ Inc.\ or\ its\ affiliates.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{}).\ You\ may\ not}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.\ You\ may\ obtain\ a\ copy}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ of\ the\ License\ at:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ or\ in\ the\ "{}license"{}\ file\ accompanying\ this\ file.\ This\ file\ is\ distributed}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ on\ an\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ express\ or\ implied.\ See\ the\ License\ for\ the\ specific\ language\ governing}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ permissions\ and\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ ASTERA\_LEO\_SDK\_API\_TYPES\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ ASTERA\_LEO\_SDK\_API\_TYPES\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LEO\_MEM\_CHANNEL\_COUNT\ 2}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ LeoBoard\ \{\ LEO\_SVB\ =\ 1,\ LEO\_A1\ =\ 2,\ LEO\_A2\ =\ 3\ \}\ LeoBoardType;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ LEO\_ASIC\_D5\ =\ 0,\ LEO\_ASIC\_A0\ =\ 1\ \}\ LeoAsicMinorVersionType;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7}{LeoDevicePart}}\ \{}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a874176390ebd873f22f1c028357720fc}{LEO\_PTX16}}\ =\ 0x0,\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{leo__api__types_8h_a451fa916aa68ffd3dfa7cf969e4035d7a6a908a63402de66b1d0d9def80765507}{LEO\_PTX08}}\ =\ 0x1\ \ }
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{LeoDevicePartType}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4}{LeoFWImageFormat}}\ \{}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a520162c2e76ae03f714bd308d7aad75e}{LEO\_FW\_IMAGE\_FORMAT\_IHX}},\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{leo__api__types_8h_a93712dfa463745e281765b626ba53be4a050ed5f6873003637759be9e4f00083e}{LEO\_FW\_IMAGE\_FORMAT\_BIN}}\ \ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{leo__api__types_8h_affa08f27fb16342e1c145bfc45ee5a67}{LeoFWImageFormatType}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPseudoPortPins}{LeoPseudoPortPins}}\ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structLeoPseudoPortPins_ad01d0284ad1ef0b7b66b0b5c9884fa52}{rxPin}}[9];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structLeoPseudoPortPins_af867aeb05732a9f26c0a0d2fbfbb3807}{txPin}}[9];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoPseudoPortPins_a524207def34004f1c2472fb6b4798cdd}{rxPackageInversion}};\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoPseudoPortPins_ae5a8a780ecc3ec672a1dbabc2760d010}{txPackageInsersion}};\ }
+\DoxyCodeLine{00064\ \}\ \mbox{\hyperlink{leo__api__types_8h_afb8c3d24764cbc190e5e19c7535f33ef}{LeoPseudoPortPinsType}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPins}{LeoPins}}\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoPins_aadf75ed29836d7b82bbdabbab0ed1da6}{lane}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{structLeoPseudoPortPins}{LeoPseudoPortPinsType}}\ \mbox{\hyperlink{structLeoPins_a6660147edcc937029b1be29fb4b88f43}{pinSet1}};\ }
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{structLeoPseudoPortPins}{LeoPseudoPortPinsType}}\ \mbox{\hyperlink{structLeoPins_a72abb0b70a87384a59bae1e58a4810a1}{pinSet2}};\ }
+\DoxyCodeLine{00073\ \}\ \mbox{\hyperlink{leo__api__types_8h_ade92df856a5f94efc2605c0bd1d83427}{LeoPinsType}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826}{LeoI2cFormat}}\ \{}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a843f5a9aad5fa5f2e708e42e61e087e5}{LEO\_I2C\_FORMAT\_ASTERA}},\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826ab168961671b01666a5cc009894fe2fb4}{LEO\_I2C\_FORMAT\_INTEL}},\ \ }
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{leo__api__types_8h_a43398ea08629c96c8a5e603ab3eda826a05f45be8dbc813b8ff60c2278a71bef4}{LEO\_I2C\_FORMAT\_SMBUS}}\ \ \ }
+\DoxyCodeLine{00082\ \}\ \mbox{\hyperlink{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}{LeoI2CFormatType}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653}{LeoI2cPecEnable}}\ \{}
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653a407523057c1f54effd7a6fc46aec88fa}{LEO\_I2C\_PEC\_ENABLE}},\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{leo__api__types_8h_a51c1670ccbc9e11aebb8e76c6e2ca653afd6fcd65d57b3cd92af4db6a4b25cbe2}{LEO\_I2C\_PEC\_DISABLE}}\ }
+\DoxyCodeLine{00090\ \}\ \mbox{\hyperlink{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}{LeoI2CPECEnableType}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ LeoPRBSPattern\ \{}
+\DoxyCodeLine{00093\ \ \ DISABLED\ =\ 0,}
+\DoxyCodeLine{00094\ \ \ LFSR31\ =\ 1,}
+\DoxyCodeLine{00095\ \ \ LFSR23\ =\ 2,}
+\DoxyCodeLine{00096\ \ \ LFSR23\_ALT\ =\ 3,}
+\DoxyCodeLine{00097\ \ \ LFSR16\ =\ 4,}
+\DoxyCodeLine{00098\ \ \ LFSR15\ =\ 5,}
+\DoxyCodeLine{00099\ \ \ LFSR11\ =\ 6,}
+\DoxyCodeLine{00100\ \ \ LFSR9\ =\ 7,}
+\DoxyCodeLine{00101\ \ \ LFSR7\ =\ 8,}
+\DoxyCodeLine{00102\ \ \ FIXED\_PAT0\ =\ 9,}
+\DoxyCodeLine{00103\ \ \ FIXED\_PAT0\_ALT\ =\ 10,}
+\DoxyCodeLine{00104\ \ \ FIXED\_PAT0\_ALT\_PAD\ =\ 11}
+\DoxyCodeLine{00105\ \}\ LeoPRBSPatternType;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriver}}\ \{}
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoI2CDriver_a655f3cb786ea3bf0fb34b48681f92060}{handle}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoI2CDriver_a2a5fc79c05bcda1262339f84c7e12246}{slaveAddr}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{leo__api__types_8h_aeee2865aa11887290aa4661e23e55d92}{LeoI2CFormatType}}\ \mbox{\hyperlink{structLeoI2CDriver_a74a4338af93c7fa443542f4ebae62d3c}{i2cFormat}};\ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{leo__api__types_8h_a35e67136b17e4f7cf85c5364be3b964c}{LeoI2CPECEnableType}}\ \mbox{\hyperlink{structLeoI2CDriver_a683197849a7fd646abfc3d95997136bc}{pecEnable}};\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{int}\ lock;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoI2CDriver_a5222d3cb9f6b3bf86ca3fd0f6b9eedb9}{lockInit}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structLeoI2CDriver_a71506fdeeab1684978b1b39b6475f533}{pciefile}};\ }
+\DoxyCodeLine{00119\ \}\ \mbox{\hyperlink{leo__api__types_8h_a0e1807c16a7c4406767cc816f126d753}{LeoI2CDriverType}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoFWVersion}{LeoFWVersion}}\ \{}
+\DoxyCodeLine{00125\ \ \ uint8\_t\ major;\ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoFWVersion_ad15731659d57088e04c2fdd8892ed9e4}{minor}};\ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoFWVersion_ac47831892b7f1404aa4de35ec4b855bc}{build}};\ }
+\DoxyCodeLine{00128\ \}\ \mbox{\hyperlink{leo__api__types_8h_a64ef63ed95cb9a771c7ebdc44a90984a}{LeoFWVersionType}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoAsicVersion}{LeoAsicVersion}}\ \{}
+\DoxyCodeLine{00134\ \ \ uint8\_t\ major;\ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoAsicVersion_a4e78aefb77eb83c865428161837fc3e8}{minor}};\ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \}\ \mbox{\hyperlink{leo__api__types_8h_a838ca359cb720c0b8ff27c8f4026e267}{LeoAsicVersionType}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoSPIDriver}{LeoSPIDriver}}\ \{}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoSPIDriver_ac690653431010a5de7bc278f68cf1774}{handle}};\ \ \ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoSPIDriver_a5adec194253c342bedbda980e98e89ea}{addr}};\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoSPIDriver_ab854283914b03467b88d55909915510b}{lock}};\ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoSPIDriver_a21aa2a5430bddcea338576c383eab9c6}{lockInit}};\ }
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoSPIDriver_a941623f303ffd47d442680a0deee59f5}{inUse}};\ \ \ }
+\DoxyCodeLine{00150\ \}\ \mbox{\hyperlink{leo__api__types_8h_aba8631e25e9fd44ee00aa2361d7f4110}{LeoSPIDriverType}};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ linkSpeed:0=illegal,1=Gen1...5=Gen5,6=reserved,7=reserved}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ linkWidth:0=1x16,1=1x8(Lane0),\ 2=1x8(Lane8),\ 3=2x8}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ linkMode:0=CXL,1=PCIE}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ linkStatus:0=Inactive,\ 1=Active}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ linkFoM:0..0xff\ (0xff\ higher\ the\ better\ max\ 255)}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00158\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoLinkStatusType_a1c2486974c91c2879559a47175054cb6}{linkSpeed}}\ :\ 3;\ \ }
+\DoxyCodeLine{00159\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoLinkStatusType_a997f2724188877af16053918440506c1}{linkWidth}}\ :\ 5;\ \ }
+\DoxyCodeLine{00160\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoLinkStatusType_a11ff0df3630873c9a8487563d614a42c}{linkMode}}\ :\ 1;\ \ \ }
+\DoxyCodeLine{00161\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoLinkStatusType_ac1da09c2d1f2e1576d0ee798d2a155e0}{linkStatus}}\ :\ 1;\ }
+\DoxyCodeLine{00162\ \ \ uint8\_t\ linkFoM[16];\ \ \ \ }
+\DoxyCodeLine{00163\ \}\ \mbox{\hyperlink{structLeoLinkStatusType}{LeoLinkStatusType}};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ In\ Progress\ -\/\ will\ be\ filled\ up}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ training\ and\ initialization\ done}}
+\DoxyCodeLine{00167\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00168\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoMemChannelStatusType_a4603e84568efbfb0f25b0cbfa42d3773}{initDone}}\ :\ 1;\ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoMemChannelStatusType_aab87e18ba82e71dc521112312758f883}{trainingDone}}\ :\ 1;\ }
+\DoxyCodeLine{00170\ \}\ \mbox{\hyperlink{structLeoMemChannelStatusType}{LeoMemChannelStatusType}};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{structLeoMemChannelStatusType}{LeoMemChannelStatusType}}\ ch[LEO\_MEM\_CHANNEL\_COUNT];}
+\DoxyCodeLine{00174\ \}\ \mbox{\hyperlink{structLeoMemoryStatusType}{LeoMemoryStatusType}};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236}{LeoSPIStatus}}\ \{}
+\DoxyCodeLine{00177\ \ \ \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236ac1532ba89e17ff2f1309747cdca54cb6}{LEO\_SPI\_ISIN\_TXMODE}},\ }
+\DoxyCodeLine{00178\ \ \ \mbox{\hyperlink{leo__api__types_8h_ad02d8e0bc4dee9a3925747311f58a236a5f5f3a7e124aee9fcd28192a6613eff3}{LEO\_SPI\_ISIN\_RXMODE}}\ \ }
+\DoxyCodeLine{00179\ \}\ LeoSPIStatusType;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634}{LeoBifurcation}}\ \{}
+\DoxyCodeLine{00187\ \ \ LEO\_BIFUR\_1X16\ =\ 0x0,\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{leo__api__types_8h_a2d2b9fd38745f830e8f96d73aa8ca634aa1e8db2afc9bbfe4f3e141cd8c1ac6a5}{LEO\_BIFUR\_2X8}}\ =\ 0x1\ \ \ }
+\DoxyCodeLine{00189\ \}\ \mbox{\hyperlink{leo__api__types_8h_a37c6a330a2cc77402d8f0435226b2610}{LeoBifurcationType}};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a37085fde738a2759bdd106e849151ca9}{LeoDDRPhyTrainingMode}}\ \{}
+\DoxyCodeLine{00197\ \ \ DDR\_PHY\_TRAIN\_NORMAL\ =\ 0,}
+\DoxyCodeLine{00198\ \ \ DDR\_PHY\_TRAIN\_SKIP\ =\ 1,}
+\DoxyCodeLine{00199\ \ \ DDR\_PHY\_TRAIN\_INIT\_ONLY\ =\ 2}
+\DoxyCodeLine{00200\ \}\ \mbox{\hyperlink{leo__api__types_8h_af6ee9fada912c83cc0ba098914ca96bf}{LeoDDRPhyTrainingModeType}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a02eecd1fb606dc8f6f3602b3ba1e8913}{LeoPerDimmCapacity}}\ \{}
+\DoxyCodeLine{00209\ \ \ PER\_DIMM\_CAPACITY\_16GB,}
+\DoxyCodeLine{00210\ \ \ PER\_DIMM\_CAPACITY\_32GB,}
+\DoxyCodeLine{00211\ \ \ PER\_DIMM\_CAPACITY\_64GB,}
+\DoxyCodeLine{00212\ \ \ PER\_DIMM\_CAPACITY\_128GB}
+\DoxyCodeLine{00213\ \}\ \mbox{\hyperlink{leo__api__types_8h_a52e2f623a7eabc5982a3b78021307b6b}{LeoPerDimmCapacityType}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00221\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPcieLaneMarginInfo}{LeoPcieLaneMarginInfo}}\ \{}
+\DoxyCodeLine{00222\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoPcieLaneMarginInfo_a87978445a8e632eb6e3f47a5c09e5b3d}{marginStatus}};\ }
+\DoxyCodeLine{00223\ \ \ uint32\_t\ eyeHeight;}
+\DoxyCodeLine{00224\ \ \ uint32\_t\ eyeWidth;}
+\DoxyCodeLine{00225\ \}\ \mbox{\hyperlink{leo__api__types_8h_ac43b973feee1e9ccb7f4041a5871cc0f}{LeoPcieLaneMarginInfoType}};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoECSInfo}{LeoECSInfo}}\ \{}
+\DoxyCodeLine{00234\ \ \ uint32\_t\ ecsEnable;}
+\DoxyCodeLine{00235\ \ \ uint32\_t\ errCount;}
+\DoxyCodeLine{00236\ \}\ \mbox{\hyperlink{leo__api__types_8h_aced88bcbbf51239e509ac8de09824b5e}{LeoECSInfoType}};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoScrubConfigInfo}{LeoScrubConfigInfo}}\ \{}
+\DoxyCodeLine{00245\ \ \ uint32\_t\ bkgrdScrbEn;}
+\DoxyCodeLine{00246\ \ \ uint32\_t\ bkgrdScrbTimeout;}
+\DoxyCodeLine{00247\ \ \ uint64\_t\ bkgrdDpaEndAddr;}
+\DoxyCodeLine{00248\ \ \ uint32\_t\ bkgrdRoundInterval;}
+\DoxyCodeLine{00249\ \ \ uint32\_t\ bkgrdCmdInterval;}
+\DoxyCodeLine{00250\ \ \ uint32\_t\ bkgrdWrPoisonIfUncorrErr;}
+\DoxyCodeLine{00251\ \ \ uint32\_t\ reqScrbEn;}
+\DoxyCodeLine{00252\ \ \ uint64\_t\ ReqScrbDpaStartAddr;}
+\DoxyCodeLine{00253\ \ \ uint64\_t\ ReqScrbDpaEndAddr;}
+\DoxyCodeLine{00254\ \ \ uint32\_t\ ReqScrbCmdInterval;}
+\DoxyCodeLine{00255\ \ \ uint32\_t\ onDemandScrbEn;}
+\DoxyCodeLine{00256\ \ \ uint32\_t\ onDemandWrPoisonIfUncorrErr;}
+\DoxyCodeLine{00257\ \}\ \mbox{\hyperlink{leo__api__types_8h_a68a07d672539f7615f60123264179182}{LeoScrubConfigInfoType}};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00265\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoSpdInfo}{LeoSpdInfo}}\ \{}
+\DoxyCodeLine{00266\ \ \ uint32\_t\ diePerPackage;}
+\DoxyCodeLine{00267\ \ \ uint32\_t\ densityInGb;}
+\DoxyCodeLine{00268\ \ \ uint32\_t\ ddrSpeedMax;}
+\DoxyCodeLine{00269\ \ \ uint32\_t\ ddrSpeedMin;}
+\DoxyCodeLine{00270\ \ \ uint32\_t\ rank;}
+\DoxyCodeLine{00271\ \ \ uint32\_t\ capacityInGb;}
+\DoxyCodeLine{00272\ \ \ uint32\_t\ channel;}
+\DoxyCodeLine{00273\ \ \ uint32\_t\ channelWidth;}
+\DoxyCodeLine{00274\ \ \ uint32\_t\ ioWidth;}
+\DoxyCodeLine{00275\ \ \ uint32\_t\ dimmType;}
+\DoxyCodeLine{00276\ \ \ uint32\_t\ ddr5SDRAM;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ uint32\_t\ manufacturerIdCode;}
+\DoxyCodeLine{00279\ \ \ uint32\_t\ dimmDateCodeBcd;}
+\DoxyCodeLine{00280\ \ \ \textcolor{keywordtype}{char}\ partNumber[31];}
+\DoxyCodeLine{00281\ \ \ uint32\_t\ manufactureringLoc;}
+\DoxyCodeLine{00282\ \ \ uint32\_t\ serialNumber;}
+\DoxyCodeLine{00283\ \}\ \mbox{\hyperlink{leo__api__types_8h_a938a38a948eaecc18227507fdd9fad3d}{LeoSpdInfoType}};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00294\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDimmTsodData}{LeoDimmTsodData}}\ \{}
+\DoxyCodeLine{00295\ \ \ uint32\_t\ ts0WholeNum;}
+\DoxyCodeLine{00296\ \ \ uint32\_t\ ts1WholeNum;}
+\DoxyCodeLine{00297\ \ \ uint32\_t\ ts0Decimal;}
+\DoxyCodeLine{00298\ \ \ uint32\_t\ ts1Decimal;}
+\DoxyCodeLine{00299\ \}\ \mbox{\hyperlink{leo__api__types_8h_a6eae73197cf03f31605aa5db64a1295e}{LeoDimmTsodDataType}};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00307\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPPRInfo}{LeoPPRInfo}}\ \{}
+\DoxyCodeLine{00308\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoPPRInfo_a0a953d53d4a742af245d69338eb93f45}{PPRtype}};\ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoPPRInfo_abd73ebe3e8dca8127ad0138356deac5d}{dimmSlotNum}};\ }
+\DoxyCodeLine{00311\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoPPRInfo_afeb7f921d42ea48206379f6ca6d342bd}{status}};\ \ \ \ \ \ }
+\DoxyCodeLine{00312\ \}\ \mbox{\hyperlink{leo__api__types_8h_a491a9e823fce7fe27dcae59a560269c5}{LeoPPRInfoType}};}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00321\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoConfigTgc}{LeoConfigTgc}}\ \{}
+\DoxyCodeLine{00322\ \ \ uint32\_t\ wrEn;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ operation\ Enable}}
+\DoxyCodeLine{00323\ \ \ uint32\_t\ rdEn;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ operation\ Enable}}
+\DoxyCodeLine{00324\ \ \ uint32\_t\ tranCnt;\ \ \ \ \ \textcolor{comment}{//\ transaction\ count}}
+\DoxyCodeLine{00325\ \ \ uint32\_t\ startAddr;\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00326\ \ \ uint32\_t\ dataPattern;\ \textcolor{comment}{//}}
+\DoxyCodeLine{00327\ \}\ \mbox{\hyperlink{leo__api__types_8h_ad73af7355ec62ae1f616ec5a5edcaa1d}{LeoConfigTgc\_t}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{comment}{/*\ results\ and\ status}}
+\DoxyCodeLine{00330\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00334\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoResultsTgc}{LeoResultsTgc}}\ \{}
+\DoxyCodeLine{00335\ \ \ uint32\_t\ tgcStatus;\ \ \ \ \textcolor{comment}{//\ Write\ operation\ Enable}}
+\DoxyCodeLine{00336\ \ \ uint32\_t\ wrRdupperCnt;\ \textcolor{comment}{//\ Read\ operation\ Enable}}
+\DoxyCodeLine{00337\ \ \ uint32\_t\ rdReqLowCnt;\ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00338\ \ \ uint32\_t\ rdSubchnlCnt;}
+\DoxyCodeLine{00339\ \ \ uint32\_t\ wrSubchnlCnt;\ \textcolor{comment}{//}}
+\DoxyCodeLine{00340\ \ \ uint32\_t\ wrReqLowCnt;\ \ \textcolor{comment}{//\ transaction\ count}}
+\DoxyCodeLine{00341\ \ \ uint32\_t\ tgcError0;\ \ \ \ \textcolor{comment}{//\ B0,B1\ csr\ expected\ meta\ B2,\ B3\ csr\ received\ meta}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ B4\ csr\ expected\ poison\ B5\ csr\ received\ poison}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ B8\ -\/\ B16\ error\ count\ B16-\/B32\ upper\ address}}
+\DoxyCodeLine{00344\ \ \ uint32\_t\ tgcError1;\ \ \ \ \textcolor{comment}{//\ lower\ address}}
+\DoxyCodeLine{00345\ \ \ uint32\_t\ tgcDataMismatchVec;\ \textcolor{comment}{//\ tgc\ data\ mismatch\ vec}}
+\DoxyCodeLine{00346\ \ \ uint32\_t\ tgcDataMismatch;\ \ \ \ \textcolor{comment}{//\ tgc\ data\ mismatch\ rx\ data\ 16bits}}
+\DoxyCodeLine{00347\ \}\ \mbox{\hyperlink{leo__api__types_8h_a0d8cdbdbe608f1dddab405e061643588}{LeoResultsTgc\_t}};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00352\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDevice}{LeoDevice}}\ \{}
+\DoxyCodeLine{00353\ \ \ \mbox{\hyperlink{structLeoI2CDriver}{LeoI2CDriverType}}\ *\mbox{\hyperlink{structLeoDevice_ae468f157123f60e4cf1b79d70cc4e00c}{i2cDriver}};\ }
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#ifndef\ ES0}}
+\DoxyCodeLine{00355\ \ \ \textcolor{comment}{//\ LeoPIODriverType\ pio;\ /**<\ PIO\ connection\ to\ Leo\ device\ */}}
+\DoxyCodeLine{00356\ \ \ \textcolor{comment}{//\ FIXME\ LeoUARTDriverType\ uart;\ /**<\ UART\ connection\ to\ Leo\ device\ */}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00358\ \ \ \mbox{\hyperlink{structLeoSPIDriver}{LeoSPIDriverType}}\ \mbox{\hyperlink{structLeoDevice_a3594bac94d5d085bc846834432886981}{spi}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00359\ \ \ \mbox{\hyperlink{structLeoFWVersion}{LeoFWVersionType}}\ \mbox{\hyperlink{structLeoDevice_a5125848a65c66cbd2223a8eccb8ca8bd}{fwVersion}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00360\ \ \ \mbox{\hyperlink{structLeoAsicVersion}{LeoAsicVersionType}}\ \mbox{\hyperlink{structLeoDevice_a95c6a538399c7754e1177f2ce9280e60}{asicVersion}};\ \ \ }
+\DoxyCodeLine{00361\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_ae5fd1554347aa30f3d4099c467570460}{i2cBus}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00362\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a6c7b497e3ba55d4cba45f37805a4d9c7}{revNumber}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00363\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a8afe523d3b11ef0b86dfa58090958b31}{deviceId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00364\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_aedd0b376e9084dcc420b419b33d319b3}{vendorId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00365\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_ac78e1d222ad9926be520d0fddbf0be3d}{controllerIndex}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00366\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a5c243022155ff2ee098173df1cd6755b}{lotNumber}}[6];\ \ \ \ \ \ \ }
+\DoxyCodeLine{00367\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_afc5150d110d5dd7fc569ecb9f2a22318}{chipID}}[12];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00368\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoDevice_a44a5482104f369b9455017673bf70df0}{arpEnable}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00369\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoDevice_a6c74f7ab857273ae3c390bffe93bf600}{codeLoadOkay}};\ }
+\DoxyCodeLine{00370\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoDevice_aabf7231fc1d340bafceed1582227e8ef}{mmHeartbeatOkay}};\ }
+\DoxyCodeLine{00371\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a69c77ce4f22954f69c2275ef33d5ee04}{mm\_print\_info\_struct\_addr}};\ \ }
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a6fdacd373a0dcde49b5e2ef5da275c26}{pm\_print\_info\_struct\_addr}};\ \ }
+\DoxyCodeLine{00375\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a4206d7fea0e0933b90463dd45f65cd6c}{mm\_gp\_ctrl\_sts\_struct\_addr}};\ }
+\DoxyCodeLine{00377\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_a19ab7ca59c0a49175a6f301073c5b5b4}{pm\_gp\_ctrl\_sts\_struct\_addr}};\ }
+\DoxyCodeLine{00379\ \ \ \textcolor{keywordtype}{int}\ linkPathStructSize;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a5f5c120f7eae1897814b2be1049d53bc}{tempCalCodePmaA}}[4];\ \ \ \ \ }
+\DoxyCodeLine{00381\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_ada5ee3fd05379066938bb91d86f3a376}{tempCalCodePmaB}}[4];\ \ \ \ \ }
+\DoxyCodeLine{00382\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a60da766b64830b87e5d09550bb4bfd21}{tempCalCodeAvg}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00383\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoDevice_a10ffd997978908af3930cb099a0af7a0}{tempAlertThreshC}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00384\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoDevice_affa65a66da651289d318591cda92dbff}{tempWarnThreshC}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00385\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoDevice_afc6740ad2746f20b6cdd7b10a7388f0b}{maxTempC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00386\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoDevice_ad4db9205e68f7ad89347093df7b39c40}{currentTempC}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00387\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a433a5ece40663eeef260cc745730f84b}{minLinkFoMAlert}};\ \ \ \ \ \ }
+\DoxyCodeLine{00388\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoDevice_acf7bf0ba88a7a93a38d00d50d8d86ff8}{deviceOkay}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00389\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoDevice_a5508c35382cd383ffb48f848a5e3a13b}{overtempAlert}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00390\ \ \ \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{LeoDevicePartType}}\ partNumber;\ }
+\DoxyCodeLine{00391\ \ \ \mbox{\hyperlink{structLeoPins}{LeoPinsType}}\ \mbox{\hyperlink{structLeoDevice_aa74800de4c5bad3f4fbb7e42c72dbc5b}{pins}}[16];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00392\ \ \ uint16\_t\ \mbox{\hyperlink{structLeoDevice_a4fa6393f284208f2ddecc00c216bfe30}{minDPLLFreqAlert}};\ \ \ \ }
+\DoxyCodeLine{00393\ \ \ uint16\_t\ \mbox{\hyperlink{structLeoDevice_af723f3114e68bc05df84a16e87b2eb7b}{maxDPLLFreqAlert}};\ \ \ \ }
+\DoxyCodeLine{00394\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a5f1011a8a6d4edb86778fedba045fb3b}{ignorePersistentDataFlag}};\ }
+\DoxyCodeLine{00395\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoDevice_a66da301721ad5435ff561a2467f4a7f8}{ignoreCompatibilityCheckFlag}};\ }
+\DoxyCodeLine{00396\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoDevice_ac3de389df7e0047cb5d667a650f3e03d}{spiDevice}};}
+\DoxyCodeLine{00397\ \}\ \mbox{\hyperlink{leo__api__types_8h_ab3871e3352cab46331ebcfd4026dad31}{LeoDeviceType}};}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00403\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoTxState}{LeoTxState}}\ \{}
+\DoxyCodeLine{00404\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a2ed9fb39fbc1f9cd6cbe2230f4e02b1b}{logicalLaneNum}};\ \ \ \ }
+\DoxyCodeLine{00405\ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structLeoTxState_a9ed65217e2442da08c48313117b62457}{physicalPinName}};\ }
+\DoxyCodeLine{00406\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a80018057f2e80e14a70abd09ec2ec26e}{elecIdleStatus}};\ \ \ \ }
+\DoxyCodeLine{00407\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a8af5c4e7b73f7273423b165b97b56090}{de}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00408\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a1fe4113260ebae350edae648ee387afe}{pre}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00409\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_adbc7a92b936988aa1d21a9b048879781}{cur}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00410\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoTxState_a2d59ce92ab06e0eda992a7d86acbe3cf}{pst}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00411\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_ab3964d5b73fd1cfc94012484e39a6238}{lastEqRate}};\ \ \ \ }
+\DoxyCodeLine{00412\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_aa9c55a1eee73c25ee15a29eb95634689}{lastPresetReq}};\ }
+\DoxyCodeLine{00413\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a0453751ba6589aa084de98916296fe88}{lastPreReq}};\ \ \ \ }
+\DoxyCodeLine{00414\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a9bc2f9885894c6f8a19890f357a6daae}{lastCurReq}};\ \ \ \ }
+\DoxyCodeLine{00415\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoTxState_a2b82f37e72b3e5c47687b9a53bd58a72}{lastPstReq}};\ \ \ \ }
+\DoxyCodeLine{00416\ \}\ \mbox{\hyperlink{leo__api__types_8h_a9c7eac0eab238969bdfa2c1db85bd5a3}{LeoTxStateType}};}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00422\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoRxState}{LeoRxState}}\ \{}
+\DoxyCodeLine{00423\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_af1aad50b395af8c8270e4195015035fa}{logicalLaneNum}};\ \ \ \ }
+\DoxyCodeLine{00424\ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structLeoRxState_aa5a5bf83b92e6c4b7cdad2eacb5baffd}{physicalPinName}};\ }
+\DoxyCodeLine{00425\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_aa72b2e7a51ad661d5dcfe13fe383e328}{termination}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00426\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a6000a700a3960d43364ff0ba5db78396}{polarity}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00427\ \ \ \textcolor{keywordtype}{float}\ attdB;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_ab812566260716c2fe5a93117c74c6324}{vgadB}};\ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00429\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_ac0a8467447efd7b32da78fb121eaf5de}{ctleBoostdB}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00430\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_afd2d0f1c2b5f9fe0fe4c97c809b6f146}{ctlePole}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00431\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_a2e7db2bb9caa2d4ca29e92c5a86eb26f}{dfe1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00432\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_a5046193c2168d2927d01de4d007b752b}{dfe2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00433\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_aa655138ac0cd5ab9105e0a1dca7b8e2c}{dfe3}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00434\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_ab9423d59218f32568001043fd00a8629}{dfe4}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00435\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_a9507cac09443e6630db94142a71163e3}{dfe5}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00436\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_a916b1f5ac77efb1ee3ca6993e8b4ff5f}{dfe6}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00437\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_aa2ec0c74d84ad8399b177440547abf6f}{dfe7}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00438\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoRxState_a6210e61edca4cf6e6601818876991010}{dfe8}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00439\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_aa2a7125f8a5133e4f47512c9c03ceab8}{FoM}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00440\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a34fb91ca670f273b5ed7cfe6e3319dcc}{lastEqRate}};\ \ \ \ }
+\DoxyCodeLine{00441\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a2315817326efffbc12f04e44ee8fd58d}{lastPresetReq}};\ }
+\DoxyCodeLine{00442\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_ada118bc7c7dc7b39a2418f10b989be72}{lastPresetReqFom}};\ \ \ }
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a1be04fc96b8a576a667287df47e6d56a}{lastPresetReqM1}};\ \ \ \ }
+\DoxyCodeLine{00444\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_ac3199a5f1772d66fef64795644647507}{lastPresetReqFomM1}};\ }
+\DoxyCodeLine{00445\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a03679e4d3b37a740366bcbda318146c7}{lastPresetReqM2}};\ \ \ \ }
+\DoxyCodeLine{00446\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a24bad903505cb627ef1ccea554f1d024}{lastPresetReqFomM2}};\ }
+\DoxyCodeLine{00447\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_aca8af1722a422097f6c2afba3ffd9d96}{lastPresetReqM3}};\ \ \ \ }
+\DoxyCodeLine{00448\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoRxState_a1e70ef79979f723a0e8c2c4216fda51e}{lastPresetReqFomM3}};\ }
+\DoxyCodeLine{00449\ \ \ uint16\_t\ \mbox{\hyperlink{structLeoRxState_af467439f4d7ecac1a53b17bda23fa2fa}{DPLLCode}};\ \ \ \ \ \ }
+\DoxyCodeLine{00450\ \}\ \mbox{\hyperlink{leo__api__types_8h_aedab81244ba6e5e64ea93aca78eaa0da}{LeoRxStateType}};}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ LeoMaxDataRate\ \{\ Leo\_GEN1\ =\ 1,\ Leo\_GEN2\ =\ 2\ \}\ LeoMaxDataRateType;}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00459\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07f}{LeoLTSSMVerbosity}}\ \{}
+\DoxyCodeLine{00460\ \ \ \mbox{\hyperlink{leo__api__types_8h_abd2c85be2bcbf241df281a7e0548b07fa56b7e9c7657af3e65ea8ba511e56c585}{LEO\_LTSSM\_VERBOSITY\_HIGH}}\ =\ 0x1,\ }
+\DoxyCodeLine{00461\ \}\ \mbox{\hyperlink{leo__api__types_8h_a7e24639bf2b6d4900d6682c79e52d46b}{LeoLTSSMVerbosityType}};}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00468\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22}{LeoLinkStateEnum}}\ \{}
+\DoxyCodeLine{00469\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ac41888305aeda78000c2a47fbfb3a43b}{LEO\_STATE\_RESET}}\ =\ 0x0,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00470\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a7ca088252f39288b80f8d1d47295a656}{LEO\_STATE\_PROTOCOL\_RESET\_0}}\ =\ 0x1,\ }
+\DoxyCodeLine{00471\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a909979ceb23cdef376bed19611405332}{LEO\_STATE\_PROTOCOL\_RESET\_1}}\ =\ 0x2,\ }
+\DoxyCodeLine{00472\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a376f1a0b3dcc833bfc0a54185bce262a}{LEO\_STATE\_PROTOCOL\_RESET\_2}}\ =\ 0x3,\ }
+\DoxyCodeLine{00473\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ab7b8767886fde68c64377bf3cb82beac}{LEO\_STATE\_PROTOCOL\_RESET\_3}}\ =\ 0x4,\ }
+\DoxyCodeLine{00474\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a30a21d5145b798d2b81293fdc1e5b01f}{LEO\_STATE\_DETECT\_OR\_DESKEW}}\ =\ 0x5,\ }
+\DoxyCodeLine{00475\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22acb2ab2aecc4c9a28c621b38193781cd4}{LEO\_STATE\_FWD}}\ =\ 0x6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00476\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ae19f51a2e9c00fcc2ccbf828ab296dd1}{LEO\_STATE\_EQ\_P2\_0}}\ =\ 0x7,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00477\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22adbe0ed25339a7c1d5813033dd2ab38b8}{LEO\_STATE\_EQ\_P2\_1}}\ =\ 0x8,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00478\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a2f52b8437bf043be4bb824bf55d1714c}{LEO\_STATE\_EQ\_P3\_0}}\ =\ 0x9,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00479\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a55112ebc073ccbd048ac69e12985a810}{LEO\_STATE\_EQ\_P3\_1}}\ =\ 0xa,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00480\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a102b0987fc98fdf56bd1c5b320cc0ef6}{LEO\_STATE\_HOT\_PLUG}}\ =\ 0xb,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00481\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22a19a19be89b058222ece8059154a74742}{LEO\_STATE\_PROTOCOL\_RESET\_4}}\ =\ 0xc,\ }
+\DoxyCodeLine{00482\ \ \ \mbox{\hyperlink{leo__api__types_8h_a4eeb09210492480e909b6c31bd651c22ad4f914a185203ec734901f730d31a86e}{LEO\_STATE\_OTHER}}\ =\ 0xd\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00483\ \}\ \mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{LeoLinkStateEnumType}};}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00490\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00491\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a411e30037668f8c9a9ecc6865bb82a06}{LEO\_LTSSM\_LINK\_LOGGER}}\ =\ 0xff,\ \ \ \ }
+\DoxyCodeLine{00492\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a9b28fd79b27e2cc45b81f581f48e2ca1}{LEO\_LTSSM\_DS\_LN\_0\_1\_LOG}}\ =\ 0x0,\ \ \ }
+\DoxyCodeLine{00493\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac91c25cfa6cf0991adb950f6d4032e16}{LEO\_LTSSM\_DS\_LN\_2\_3\_LOG}}\ =\ 0x2,\ \ \ }
+\DoxyCodeLine{00494\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3fa58edabd2c3c29c3c8356292bcccac}{LEO\_LTSSM\_DS\_LN\_4\_5\_LOG}}\ =\ 0x4,\ \ \ }
+\DoxyCodeLine{00495\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3f9a09e4d9a7ad2dd4c9e71c324cf67a}{LEO\_LTSSM\_DS\_LN\_6\_7\_LOG}}\ =\ 0x6,\ \ \ }
+\DoxyCodeLine{00496\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a0b806298cc5df03bc161443deb44c41f}{LEO\_LTSSM\_DS\_LN\_8\_9\_LOG}}\ =\ 0x8,\ \ \ }
+\DoxyCodeLine{00497\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a1b65112a105455841868209b85a10ebc}{LEO\_LTSSM\_DS\_LN\_10\_11\_LOG}}\ =\ 0xa,\ }
+\DoxyCodeLine{00498\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a5986287e91e661eaec0ade161d024c02}{LEO\_LTSSM\_DS\_LN\_12\_13\_LOG}}\ =\ 0xc,\ }
+\DoxyCodeLine{00499\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac4136f8c33a01ea99f53ae1e3de0e31a}{LEO\_LTSSM\_DS\_LN\_14\_15\_LOG}}\ =\ 0xe,\ }
+\DoxyCodeLine{00500\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a97f6c2753f2d43a7c3e78102b70a6d6c}{LEO\_LTSSM\_US\_LN\_0\_1\_LOG}}\ =\ 0x1,\ \ \ }
+\DoxyCodeLine{00501\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a92d8b2e6358b947d128900b4770517c4}{LEO\_LTSSM\_US\_LN\_2\_3\_LOG}}\ =\ 0x3,\ \ \ }
+\DoxyCodeLine{00502\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a3a0f23f5044fccaf31a48f7044c42c01}{LEO\_LTSSM\_US\_LN\_4\_5\_LOG}}\ =\ 0x5,\ \ \ }
+\DoxyCodeLine{00503\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ac0e15533ac0d9d4b5bb98591e7450f6d}{LEO\_LTSSM\_US\_LN\_6\_7\_LOG}}\ =\ 0x7,\ \ \ }
+\DoxyCodeLine{00504\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a76ddc6be1a2fbe737ba7555982205bc1}{LEO\_LTSSM\_US\_LN\_8\_9\_LOG}}\ =\ 0x9,\ \ \ }
+\DoxyCodeLine{00505\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a892b78a5adc4dbc935755856267c9147}{LEO\_LTSSM\_US\_LN\_10\_11\_LOG}}\ =\ 0xb,\ }
+\DoxyCodeLine{00506\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6ae6431558f9990877b6b69c52e249d4d7}{LEO\_LTSSM\_US\_LN\_12\_13\_LOG}}\ =\ 0xd,\ }
+\DoxyCodeLine{00507\ \ \ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6a49638e44e3bfbf946557a5329b8afafb}{LEO\_LTSSM\_US\_LN\_14\_15\_LOG}}\ =\ 0xf,\ }
+\DoxyCodeLine{00508\ \}\ \mbox{\hyperlink{leo__api__types_8h_ae490aa73a1ddb32e7fe240dd293c7ce6}{LeoLTSSMLoggerEnumType}};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00513\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7}{LeoSramMemoryCheck}}\ \{}
+\DoxyCodeLine{00514\ \ \ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7aaa9638e9da762c59b17de6fdecbe2bfd}{LEO\_SRAM\_MM\_CHECK\_IDLE}}\ =\ 0,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00515\ \ \ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a48ffa4cbdee098ff03f69ca3a7c377bc}{LEO\_SRAM\_MM\_CHECK\_IN\_PROGRESS}}\ =\ 1,\ }
+\DoxyCodeLine{00516\ \ \ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7a0502b2393c37b719eb3d63b4bc0f0b74}{LEO\_SRAM\_MM\_CHECK\_PASS}}\ =\ 2,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00517\ \ \ \mbox{\hyperlink{leo__api__types_8h_a235bd3a29c25da8d46c05341108fa5b7af897623d5d087f063994f772caa722e5}{LEO\_SRAM\_MM\_CHECK\_FAIL}}\ =\ 3,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00518\ \}\ \mbox{\hyperlink{leo__api__types_8h_a3276fff322f5b69c58ed4e370c0dd42c}{LeoSramMemoryCheckType}};}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00525\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoLinkConfig}{LeoLinkConfig}}\ \{}
+\DoxyCodeLine{00526\ \ \ \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{LeoDevicePartType}}\ \mbox{\hyperlink{structLeoLinkConfig_af3c7968722a6693da8f3624c9569ec35}{partNumber}};\ }
+\DoxyCodeLine{00527\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkConfig_a861627d0b9e219dd7c7767a3f899a66f}{maxWidth}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00528\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkConfig_a167a8ad9897d15d2ddb429ebad7d3842}{startLane}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00529\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structLeoLinkConfig_a24f8927aa8c4a9255b0edf66c7dc41aa}{tempAlertThreshC}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00530\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkConfig_aec69f1a6570d029517579b62c6e71b35}{linkId}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00531\ \}\ \mbox{\hyperlink{leo__api__types_8h_a8ce13faac7212d130234a7e9911cbc22}{LeoLinkConfigType}};}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00540\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPseudoPortState}{LeoPseudoPortState}}\ \{}
+\DoxyCodeLine{00541\ \ \ \mbox{\hyperlink{structLeoTxState}{LeoTxStateType}}\ \mbox{\hyperlink{structLeoPseudoPortState_a53b871134388b388eca3038b411e023b}{txState}}[16];\ }
+\DoxyCodeLine{00542\ \ \ \mbox{\hyperlink{structLeoRxState}{LeoRxStateType}}\ \mbox{\hyperlink{structLeoPseudoPortState_a3399b2066e62788412300871b8bd309e}{rxState}}[16];\ }
+\DoxyCodeLine{00543\ \ \ uint16\_t\ \mbox{\hyperlink{structLeoPseudoPortState_acf2f9785d0f358fc9e512b6b9ca55610}{minDPLLCode}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00544\ \ \ uint16\_t\ \mbox{\hyperlink{structLeoPseudoPortState_aa9293a957b072ea4c6eec1fc8493f2de}{maxDPLLCode}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00545\ \}\ \mbox{\hyperlink{leo__api__types_8h_a699db062d9a235343481bd207d97d0bf}{LeoPseudoPortStateType}};}
+\DoxyCodeLine{00551\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoLinkState}{LeoLinkState}}\ \{}
+\DoxyCodeLine{00552\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkState_aaed222510750a8be4a4a7ebcd932431d}{width}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00553\ \ \ \mbox{\hyperlink{leo__api__types_8h_a91a95f421c815aca37a556fdb7dea0a9}{LeoLinkStateEnumType}}\ \mbox{\hyperlink{structLeoLinkState_ae7c2d8d9c0d57048c753ce6c075866e5}{state}};\ }
+\DoxyCodeLine{00554\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkState_a820c2957289a4ab9b75e1e5bd5b1eafd}{rate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00555\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeoLinkState_a817e7610d8ab91362f06a53192e7ad99}{linkOkay}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00556\ \ \ \mbox{\hyperlink{structLeoPseudoPortState}{LeoPseudoPortStateType}}\ \mbox{\hyperlink{structLeoLinkState_aa82714a38d386322a069277961907fa9}{usppState}};\ }
+\DoxyCodeLine{00557\ \ \ \textcolor{comment}{//\ LeoRetimerCoreStateType\ coreState;\ /**<\ Current\ RT\ core\ state\ */}}
+\DoxyCodeLine{00558\ \ \ \mbox{\hyperlink{structLeoPseudoPortState}{LeoPseudoPortStateType}}\ \mbox{\hyperlink{structLeoLinkState_a373bc048c911ae79f5a9252a23c6781f}{dsppState}};\ }
+\DoxyCodeLine{00559\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkState_a138045c17b5f6df31fbe71d5cd468491}{linkMinFoM}};\ }
+\DoxyCodeLine{00560\ \ \ \textcolor{keywordtype}{char}\ *linkMinFoMRx;\ }
+\DoxyCodeLine{00561\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLinkState_a377e9dc173c2c031eefefeb17591ed6e}{recoveryCount}};\ \ }
+\DoxyCodeLine{00563\ \}\ \mbox{\hyperlink{leo__api__types_8h_ae6d70a3ced5e1fc300915f151739f0c3}{LeoLinkStateType}};}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00570\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoLink}{LeoLink}}\ \{}
+\DoxyCodeLine{00571\ \ \ \mbox{\hyperlink{structLeoDevice}{LeoDeviceType}}\ *\mbox{\hyperlink{structLeoLink_a3a7ea2b6cf14fe8b8a3515dc3067f8db}{device}};\ \ \ \ }
+\DoxyCodeLine{00572\ \ \ \mbox{\hyperlink{structLeoLinkConfig}{LeoLinkConfigType}}\ \mbox{\hyperlink{structLeoLink_a837e5e2f7c13b7328bcc8ba3aca72567}{config}};\ }
+\DoxyCodeLine{00573\ \ \ \mbox{\hyperlink{structLeoLinkState}{LeoLinkStateType}}\ \mbox{\hyperlink{structLeoLink_a00562fd85275a123253ac3c956659935}{state}};\ \ \ }
+\DoxyCodeLine{00574\ \}\ \mbox{\hyperlink{leo__api__types_8h_ac6107d9f63e55be8626d651a9ae27b24}{LeoLinkType}};}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00579\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoLTSSMEntry}{LeoLTSSMEntry}}\ \{}
+\DoxyCodeLine{00580\ \ \ uint8\_t\ \mbox{\hyperlink{structLeoLTSSMEntry_a87e8005375ac25ba1e76a5b6af99f235}{data}};\ }
+\DoxyCodeLine{00581\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLTSSMEntry_a560f8ea036bebe701ab387df6b6b2e0e}{logType}};\ \ }
+\DoxyCodeLine{00582\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLeoLTSSMEntry_a557eaee24f2894edcb027c0634428754}{offset}};\ \ \ }
+\DoxyCodeLine{00583\ \}\ \mbox{\hyperlink{leo__api__types_8h_a607b09f3380427e3059debe5ef5289d2}{LeoLTSSMEntryType}};}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00589\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionLeoLinkStatusRegisterType}{LeoLinkStatusRegisterType}}\ \{}
+\DoxyCodeLine{00590\ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00591\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_aea4f2c4ca063d2aa4f34c4e6a17ed879}{linkSpeed}}\ :\ 2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00592\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a7369bdcdcaa262f8ad5bf151392d0999}{linkWidth}}\ :\ 2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00593\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_aeddf936d3e993feef6fdf462e1b35d5a}{undefined}}\ :\ 2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00594\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a26379713c733d492c3ae799713fd0e31}{linkTraining}}\ :\ 2;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00595\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_af679364e57201f154aed1d06cb2a53fe}{slotClockConfig}}\ :\ 2;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00596\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a8e390d3ef0ebdfb806cfcc0438b97c00}{dataLinkLayerLinkActive}}\ :\ 1;\ }
+\DoxyCodeLine{00597\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_ade4d09b10b8243ed7066b62d80594185}{linkBandwidthManagementStatus}}\ :\ 1;\ }
+\DoxyCodeLine{00599\ \ \ \};}
+\DoxyCodeLine{00600\ \ \ uint8\_t}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \mbox{\hyperlink{unionLeoLinkStatusRegisterType_a9dbb54b8f0f1b9344be49b8396e63233}{linkAutonomousBandwidthStatus}};\ }
+\DoxyCodeLine{00602\ \}\ \mbox{\hyperlink{unionLeoLinkStatusRegisterType}{LeoLinkStatusRegisterType}};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00608\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionLeoLinkControlRegisterType}{LeoLinkControlRegisterType}}\ \{}
+\DoxyCodeLine{00609\ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00610\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_aab1bdb1f9ee9a24e940d4b2c1270d978}{ASPMControl}}\ :\ 2;\ }
+\DoxyCodeLine{00611\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_a45b80632315f1632e0ef7775e49b5b46}{RsvdP1}}\ :\ 2;\ \ \ \ \ \ }
+\DoxyCodeLine{00612\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_acc8ff5833f029ab055bf64c7213912df}{readCompletionBoundary}}\ :\ 1;\ }
+\DoxyCodeLine{00615\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_a24a44a60634ba43454bb014c4754a440}{linkDisable}}\ :\ 1;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00616\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_ad3b589716bc3dfb0f745a3f9cc1a28f4}{retrainLink}}\ :\ 2;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00617\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_aa5245c9c72e33e7168648cca6acb3519}{commonClockConfig}}\ :\ 1;\ \ \ \ \ \ }
+\DoxyCodeLine{00618\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_a28c6c5258e03d5e5842cc144bff8e55a}{extendedSync}}\ :\ 1;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00619\ \ \ \ \ uint8\_t}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unionLeoLinkControlRegisterType_a823872ea90de83832027210ae3941a08}{enableClockPowerManagement}}\ :\ 1;\ }
+\DoxyCodeLine{00621\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{unionLeoLinkControlRegisterType_aa66462517024cba8bfb9114de0169115}{RsvdP2}}\ :\ 7;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00622\ \ \ \};}
+\DoxyCodeLine{00623\ \ \ uint8\_t}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \mbox{\hyperlink{unionLeoLinkControlRegisterType_ab3e5166a0d64988770861495cf00224c}{linkAutonomousBandwidthStatus}};\ }
+\DoxyCodeLine{00625\ \}\ \mbox{\hyperlink{unionLeoLinkControlRegisterType}{LeoLinkControlRegisterType}};}
+\DoxyCodeLine{00626\ }
+\DoxyCodeLine{00627\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ LeoSvbI2cSWMode\ \{}
+\DoxyCodeLine{00628\ \ \ I2C\_SW\_UNKNOW\ =\ 0,}
+\DoxyCodeLine{00629\ \ \ I2C\_SW\_NORMAL\ =\ 1,}
+\DoxyCodeLine{00630\ \ \ I2C\_SW\_DDRC\_0\ =\ 2,}
+\DoxyCodeLine{00631\ \ \ I2C\_SW\_DDRC\_1\ =\ 3}
+\DoxyCodeLine{00632\ \}\ LeoSvbI2cSWModeType;}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDdrConfig}{LeoDdrConfig}}\ \{}
+\DoxyCodeLine{00635\ \ \ uint32\_t\ numRanks;}
+\DoxyCodeLine{00636\ \ \ uint32\_t\ ddrSpeed;}
+\DoxyCodeLine{00637\ \ \ uint32\_t\ dqWidth;}
+\DoxyCodeLine{00638\ \ \ uint32\_t\ dpc;}
+\DoxyCodeLine{00639\ \ \ uint32\_t\ capacity;}
+\DoxyCodeLine{00640\ \}\ \mbox{\hyperlink{structLeoDdrConfig}{LeoDdrConfigType}};}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCxlConfig}{LeoCxlConfig}}\ \{}
+\DoxyCodeLine{00643\ \ \ uint32\_t\ numLinks;}
+\DoxyCodeLine{00644\ \ \ uint32\_t\ linkWidth;}
+\DoxyCodeLine{00645\ \}\ \mbox{\hyperlink{structLeoCxlConfig}{LeoCxlConfigType}};}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoIdInfo}{LeoIdInfo}}\ \{}
+\DoxyCodeLine{00648\ \ \ uint32\_t\ leoId;}
+\DoxyCodeLine{00649\ \ \ LeoBoardType\ boardType;}
+\DoxyCodeLine{00650\ \}\ \mbox{\hyperlink{structLeoIdInfo}{LeoIdInfoType}};}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCmalStats}{LeoCmalStats}}\ \{}
+\DoxyCodeLine{00653\ \ \ uint8\_t\ rrspDdrReturnedPoisonCount[2];}
+\DoxyCodeLine{00654\ \ \ uint8\_t\ rrspRdpCausedPoisonCount[2];}
+\DoxyCodeLine{00655\ \}\ \mbox{\hyperlink{structLeoCmalStats}{LeoCmalStatsType}};}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ LeoFailVectorIndex\ \{}
+\DoxyCodeLine{00658\ \ \ LEO\_FAIL\_VEC\_CATRIP\ \ \ \ \ \ \ \ \ =\ 0x3,}
+\DoxyCodeLine{00659\ \ \ LEO\_FAIL\_VEC\_DDR\_CLEAR\_COUNTERS\ =\ 0x4,}
+\DoxyCodeLine{00660\ \ \ LEO\_FAIL\_VEC\_BAD\_DSID\ \ \ \ \ \ \ =\ 0x5,}
+\DoxyCodeLine{00661\ \ \ LEO\_FAIL\_VEC\_GUARD\_CH0\_FAIL\ \ \ \ \ =\ 0x6,}
+\DoxyCodeLine{00662\ \ \ LEO\_FAIL\_VEC\_GUARD\_CH1\_FAIL\ \ \ \ \ =\ 0x7,}
+\DoxyCodeLine{00663\ \ \ LEO\_FAIL\_VEC\_GUARD\_CHECK\_FAIL\ \ \ =\ 0x8}
+\DoxyCodeLine{00664\ \}\ LeoFailVectorIndexType;}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoFailVector}{LeoFailVector}}\ \{}
+\DoxyCodeLine{00667\ \ \ uint32\_t\ failVector;}
+\DoxyCodeLine{00668\ \}\ \mbox{\hyperlink{structLeoFailVector}{LeoFailVectorType}};}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCxlDvsecHdr1Info}{LeoCxlDvsecHdr1Info}}\ \{}
+\DoxyCodeLine{00671\ \ \ uint32\_t\ dvsecVendorId\ :\ 16;}
+\DoxyCodeLine{00672\ \ \ uint32\_t\ dvsecRev\ :\ 4;}
+\DoxyCodeLine{00673\ \ \ uint32\_t\ dvsecLen\ :\ 12;}
+\DoxyCodeLine{00674\ \}\ \mbox{\hyperlink{structLeoCxlDvsecHdr1Info}{LeoCxlDvSecHdr1InfoType}};}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCxlFlexbusRange2SizeLow}{LeoCxlFlexbusRange2SizeLow}}\ \{}
+\DoxyCodeLine{00677\ \ \ uint32\_t\ memInfoValid\ :\ 1;}
+\DoxyCodeLine{00678\ \ \ uint32\_t\ memActive\ :\ 1;}
+\DoxyCodeLine{00679\ \ \ uint32\_t\ mediaType\ :\ 3;}
+\DoxyCodeLine{00680\ \ \ uint32\_t\ memClass\ :\ 3;}
+\DoxyCodeLine{00681\ \ \ uint32\_t\ desiredInterleave\ :\ 5;}
+\DoxyCodeLine{00682\ \ \ uint32\_t\ hwInit\ :\ 3;}
+\DoxyCodeLine{00683\ \ \ uint32\_t\ rsvd\ :\ 12;}
+\DoxyCodeLine{00684\ \ \ uint32\_t\ memSizeLow\ :\ 4;}
+\DoxyCodeLine{00685\ \}\ \mbox{\hyperlink{structLeoCxlFlexbusRange2SizeLow}{LeoCxlFlexbusRange2SizeLowType}};}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCxlStats}{LeoCxlStats}}\ \{}
+\DoxyCodeLine{00688\ \ \ uint64\_t\ s2mNdrCount[2];}
+\DoxyCodeLine{00689\ \ \ uint64\_t\ s2mDrsCount[2];}
+\DoxyCodeLine{00690\ \ \ uint64\_t\ m2sReqCount[2];}
+\DoxyCodeLine{00691\ \ \ uint64\_t\ m2sRwdCount[2];}
+\DoxyCodeLine{00692\ \ \ uint64\_t\ linkBandwidth[2];}
+\DoxyCodeLine{00693\ \}\ \mbox{\hyperlink{structLeoCxlStats}{LeoCxlStatsType}};}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDdrTelemetry}{LeoDdrTelemetry}}\ \{}
+\DoxyCodeLine{00696\ \ \ uint8\_t\ ddrS0waec;}
+\DoxyCodeLine{00697\ \ \ uint8\_t\ ddrS1waec;}
+\DoxyCodeLine{00698\ \ \ uint8\_t\ ddrS2waec;}
+\DoxyCodeLine{00699\ \ \ uint8\_t\ ddrS3waec;}
+\DoxyCodeLine{00700\ \ \ uint8\_t\ ddrchwaec;}
+\DoxyCodeLine{00701\ \ \ uint8\_t\ ddrS0rdcrc;}
+\DoxyCodeLine{00702\ \ \ uint8\_t\ ddrS1rdcrc;}
+\DoxyCodeLine{00703\ \ \ uint8\_t\ ddrS2rdcrc;}
+\DoxyCodeLine{00704\ \ \ uint8\_t\ ddrS3rdcrc;}
+\DoxyCodeLine{00705\ \ \ uint8\_t\ ddrchrdcrc;}
+\DoxyCodeLine{00706\ \ \ uint8\_t\ ddrS0rduec;}
+\DoxyCodeLine{00707\ \ \ uint8\_t\ ddrS1rduec;}
+\DoxyCodeLine{00708\ \ \ uint8\_t\ ddrS2rduec;}
+\DoxyCodeLine{00709\ \ \ uint8\_t\ ddrS3rduec;}
+\DoxyCodeLine{00710\ \ \ uint8\_t\ ddrchrduec;}
+\DoxyCodeLine{00711\ \ \ uint8\_t\ ddrS0rdcec;}
+\DoxyCodeLine{00712\ \ \ uint8\_t\ ddrS1rdcec;}
+\DoxyCodeLine{00713\ \ \ uint8\_t\ ddrS2rdcec;}
+\DoxyCodeLine{00714\ \ \ uint8\_t\ ddrS3rdcec;}
+\DoxyCodeLine{00715\ \ \ uint8\_t\ ddrchrdcec;}
+\DoxyCodeLine{00716\ \ \ uint64\_t\ ddrRefCount;}
+\DoxyCodeLine{00717\ \ \ uint64\_t\ ddrRdActCount;}
+\DoxyCodeLine{00718\ \ \ uint64\_t\ ddrPreChCount;}
+\DoxyCodeLine{00719\ \}\ \mbox{\hyperlink{structLeoDdrTelemetry}{LeoDdrTelemetryType}};}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDatapathTelemetry}{LeoDatapathTelemetry}}\ \{}
+\DoxyCodeLine{00722\ \ \ uint8\_t\ ddrTgcCe;}
+\DoxyCodeLine{00723\ \ \ uint8\_t\ ddrTgcUe;}
+\DoxyCodeLine{00724\ \ \ uint8\_t\ ddrOssc;}
+\DoxyCodeLine{00725\ \ \ uint8\_t\ ddrOsdc;}
+\DoxyCodeLine{00726\ \ \ uint32\_t\ ddrbscec;}
+\DoxyCodeLine{00727\ \ \ uint32\_t\ ddrbsuec;}
+\DoxyCodeLine{00728\ \ \ uint32\_t\ ddrbsoec;}
+\DoxyCodeLine{00729\ \}\ \mbox{\hyperlink{structLeoDatapathTelemetry}{LeoDatapathTelemetryType}};}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00731\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoCxlTelemetry}{LeoCxlTelemetry}}\ \{}
+\DoxyCodeLine{00732\ \ \ uint64\_t\ clock\_ticks;}
+\DoxyCodeLine{00733\ \ \ uint64\_t\ s2m\_ndr\_c;}
+\DoxyCodeLine{00734\ \ \ uint64\_t\ s2m\_drs\_c;}
+\DoxyCodeLine{00735\ \ \ uint64\_t\ m2s\_req\_c;}
+\DoxyCodeLine{00736\ \ \ uint64\_t\ m2s\_rwd\_c;}
+\DoxyCodeLine{00737\ \ \ uint64\_t\ rasRxCe;}
+\DoxyCodeLine{00738\ \ \ uint64\_t\ rasRxUeRwdHdr;}
+\DoxyCodeLine{00739\ \ \ uint64\_t\ rasRxUeReqHdr;}
+\DoxyCodeLine{00740\ \ \ uint64\_t\ rasRxUeRwdBe;}
+\DoxyCodeLine{00741\ \ \ uint64\_t\ rasRxUeRwdData;}
+\DoxyCodeLine{00742\ \ \ uint64\_t\ rwdHdrUe;}
+\DoxyCodeLine{00743\ \ \ uint64\_t\ rwdHdrHdm;}
+\DoxyCodeLine{00744\ \ \ uint64\_t\ rwdHdrUfe;}
+\DoxyCodeLine{00745\ \ \ uint64\_t\ reqHdrUe;}
+\DoxyCodeLine{00746\ \ \ uint64\_t\ reqHdrHdm;}
+\DoxyCodeLine{00747\ \ \ uint64\_t\ reqHdrUfe;}
+\DoxyCodeLine{00748\ \}\ \mbox{\hyperlink{structLeoCxlTelemetry}{LeoCxlTelemetryType}};}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \textcolor{keyword}{enum}\ LeoPersistentDataId\ \{}
+\DoxyCodeLine{00751\ \ \ PERSISTENT\_DATA\_ID\_VERSION\ =\ 1,}
+\DoxyCodeLine{00752\ \ \ PERSISTENT\_DATA\_ID\_CATTRIP\ =\ 3,}
+\DoxyCodeLine{00753\ \};}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoPersistentDataValue}{LeoPersistentDataValue}}\ \{}
+\DoxyCodeLine{00756\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00757\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ uint32\_t\ countTotal\ :\ 16;}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ uint32\_t\ countSinceBoot\ :\ 16;}
+\DoxyCodeLine{00760\ \ \ \ \ \};}
+\DoxyCodeLine{00761\ \ \ \ \ uint32\_t\ value;}
+\DoxyCodeLine{00762\ \ \ \};}
+\DoxyCodeLine{00763\ \}\ \mbox{\hyperlink{structLeoPersistentDataValue}{LeoPersistentDataValueType}};}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00765\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoDDRSubChannelThrottleContrlConfig}{LeoDDRSubChannelThrottleContrlConfig}}\ \{}
+\DoxyCodeLine{00766\ \ \ uint32\_t\ throtCtrlEnable\ :\ 1;}
+\DoxyCodeLine{00767\ \ \ uint32\_t\ maxCmdCntPerWindow\ :\ 12;}
+\DoxyCodeLine{00768\ \ \ uint32\_t\ windowLength\ :\ 12;}
+\DoxyCodeLine{00769\ \}\ \mbox{\hyperlink{structLeoDDRSubChannelThrottleContrlConfig}{LeoDDRSubChannelThrottleContrlConfigType}};}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00771\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00772\ \ \ uint32\_t\ dw[8];}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00774\ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00775\ \ \ \ \ uint8\_t\ rxClkDlyMargin[2][4];\ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00776\ \ \ \ \ uint8\_t\ vrefDacMargin[2][4];\ \ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00777\ \ \ \ \ uint8\_t\ txDqDlyMargin[2][4];\ \ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00778\ \ \ \ \ uint8\_t\ devVrefMargin[2][4];\ \ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00779\ \ \ \};}
+\DoxyCodeLine{00780\ \}\ \mbox{\hyperlink{unionLeoDdrphyRxTxMarginType}{LeoDdrphyRxTxMarginType}};}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00783\ \ \ uint32\_t\ dw[8];}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00786\ \ \ \ \ uint8\_t\ csDlyMargin[2][4];\ \ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00787\ \ \ \ \ uint8\_t\ csVrefMargin[2][4];\ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00788\ \ \ \ \ uint8\_t\ caDlyMargin[2][4];\ \ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00789\ \ \ \ \ uint8\_t\ caVrefMargin[2][4];\ \textcolor{comment}{//\ [ch][rank]}}
+\DoxyCodeLine{00790\ \ \ \};}
+\DoxyCodeLine{00791\ \}\ \mbox{\hyperlink{unionLeoDdrphyCsCaMarginType}{LeoDdrphyCsCaMarginType}};}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }}
+\DoxyCodeLine{00794\ \{}
+\DoxyCodeLine{00795\ \ \ uint32\_t\ dw[4];}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00797\ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00798\ \ \ \{}
+\DoxyCodeLine{00799\ \ \ \ \ uint8\_t\ qcsDlyMargin[2][4];\ \textcolor{comment}{//\ [ch][rank]\ \ }}
+\DoxyCodeLine{00800\ \ \ \ \ uint8\_t\ qcaDlyMargin[2][4];\ \textcolor{comment}{//\ [ch][rank]\ \ }}
+\DoxyCodeLine{00801\ \ \ \};}
+\DoxyCodeLine{00802\ \}\ \mbox{\hyperlink{unionLeoDdrphyQcsQcaMarginType}{LeoDdrphyQcsQcaMarginType}};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00807\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLeoRepairRecord}{LeoRepairRecord}}\ \{}
+\DoxyCodeLine{00808\ \ \ uint8\_t\ \ channel;\ \ \ \ \ \ }
+\DoxyCodeLine{00809\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_a19dfb8bb06e9851c07b9563fb42572f4}{rank}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00810\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_adc4ecf8a6649661dd9495f846cf3ecf7}{bank}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00811\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoRepairRecord_ae723431d3edbb213561306d6400ca08e}{row}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00812\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_a67bcc79693c868e538e5375994a275f9}{bankGroup}};\ \ \ \ }
+\DoxyCodeLine{00813\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_a467998bde5b06478e7ad6dc22f2fc4cb}{CID}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00814\ \ \ uint32\_t\ \mbox{\hyperlink{structLeoRepairRecord_a71ddee29076fc09c8a3a2913da1b8771}{nibbleMask}};\ \ \ }
+\DoxyCodeLine{00815\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_ac03a7a9c907fc59e1647af2e4333ce76}{pResource}};\ \ \ \ }
+\DoxyCodeLine{00816\ \ \ uint8\_t\ \ \mbox{\hyperlink{structLeoRepairRecord_ab13fe3fdffb5d0dc1bb68f0ae5c87ce8}{pStatus}};\ \ \ \ \ \ }
+\DoxyCodeLine{00817\ \}\ \mbox{\hyperlink{leo__api__types_8h_a32b41397428434de3dab670e1b15e595}{LeoRepairRecordType}};}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00820\ \}}
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00823\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASTERA\_LEO\_SDK\_API\_TYPES\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

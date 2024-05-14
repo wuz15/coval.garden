@@ -1,0 +1,2303 @@
+{
+    "SystemConfiguration": {
+        "Comments": [
+            {
+                "comment": "Export type is Normal,JSON,Selective"
+            }
+        ],
+        "Model": "PowerEdge HS7720",
+        "Components": [
+            {
+                "FQDD": "BIOS.Setup.1-1",
+                "Attributes": [
+                    {
+                        "Name": "ProcPwrPerf",
+                        "Value": "OsDbpm",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcCStates",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CpuInterconnectBusSpeed",
+                        "Value": "MaxDataRate",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "KernelDmaProtection",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DirectoryMode",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcAdjCacheLine",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcHwPrefetcher",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DcuStreamerPrefetcher",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DcuIpPrefetcher",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "UpiPrefetch",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "XptPrefetch",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "LlcPrefetch",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DeadLineLlcAlloc",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DirectoryAtoS",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcAvxP1",
+                        "Value": "Normal",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DynamicIss",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcIssSetting",
+                        "Value": "IssOp1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcessorSstCpSetting",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "OptimizedPowerMode",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AvxIccpPreGrantLicense",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcCores",
+                        "Value": "All",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CpuPaLimit",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcAmpPrefetch",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcHomelessPrefetch",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcUncoreFreqRapl",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "LmceEn",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CpuCrashLogControl",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "BiosNvmeDriver",
+                        "Value": "DellQualifiedDrives",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "GenericUsbBoot",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HddPlaceholder",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SysPrepClean",
+                        "Value": "None",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderEn2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderDis",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderDis2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd1",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd3",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd4",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd5",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd6",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd7",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd8",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd9",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd10",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd11",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd12",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd13",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd14",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd15",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetBootOrderFqdd16",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "OneTimeBootMode",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "NumberOfPxeDevices",
+                        "Value": "4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev1EnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev2EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev3EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev4EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiInitiatorName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev1Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev1VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev1VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev1VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev2Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev2VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev2VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev2VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev3Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev3VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev3VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev3VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev4Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev4VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev4VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev4VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev5Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev5VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev5VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev5VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev6Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev6VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev6VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev6VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev7Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev7VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev7VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev7VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev8Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev8VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev8VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev8VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev9Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev9VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev9VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev9VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev10Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev10VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev10VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev10VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev11Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev11VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev11VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev11VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev12Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev12VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev12VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev12VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev13Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev13VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev13VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev13VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev14Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev14VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev14VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev14VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev15Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev15VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev15VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev15VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev16Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev16VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev16VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PxeDev16VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1DhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1DnsDhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Dns1",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Dns2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1Uri",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev1TlsMode",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2DhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2DnsDhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Dns1",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Dns2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2Uri",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev2TlsMode",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3DhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3DnsDhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Dns1",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Dns2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3Uri",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev3TlsMode",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4DhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4DnsDhcpEnDis",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Dns1",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Dns2",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4Uri",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "HttpDev4TlsMode",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2EnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1ConOrder",
+                        "Value": "Con1Con2",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Retry",
+                        "Value": "3",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Timeout",
+                        "Value": "10000",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1DhcpEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1TgtDhcpEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1TargetName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1TargetIp",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Port",
+                        "Value": "3260",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Lun",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1IsId",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1Auth",
+                        "Value": "None",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1ChapType",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1ChapName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1ChapSecret",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1RevChapName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con1RevChapSecret",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Protocol",
+                        "Value": "IPv4",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2VlanEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2VlanId",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2VlanPriority",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Retry",
+                        "Value": "3",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Timeout",
+                        "Value": "10000",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2DhcpEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Ip",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Mask",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Gateway",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2TgtDhcpEnDis",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2TargetName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2TargetIp",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Port",
+                        "Value": "3260",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Lun",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2IsId",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2Auth",
+                        "Value": "None",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2ChapType",
+                        "Value": "OneWay",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2ChapName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2ChapSecret",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2RevChapName",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IscsiDev1Con2RevChapSecret",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "UsbPorts",
+                        "Value": "AllOn",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntegratedRaid",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntNic1Port1BootProto",
+                        "Value": "Unknown",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntNic1Port2BootProto",
+                        "Value": "Unknown",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntNic1Port3BootProto",
+                        "Value": "Unknown",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntNic1Port4BootProto",
+                        "Value": "Unknown",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IoatEngine",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "EmbVideo",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SnoopHldOff",
+                        "Value": "Roll2KCycles",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SriovGlobalEnable",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "OsWatchdogTimer",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PCIRootDeviceUnhide",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MmioAbove4Gb",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemoryMappedIOH",
+                        "Value": "56TB",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DellAutoDiscovery",
+                        "Value": "PlatformDefault",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SerialComm",
+                        "Value": "Off",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SerialPortAddress",
+                        "Value": "Com1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "FailSafeBaud",
+                        "Value": "115200",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ConTermType",
+                        "Value": "Vt100Vt220",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SysProfile",
+                        "Value": "Custom",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "WorkloadProfile",
+                        "Value": "NotConfigured",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SysPassword",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SetupPassword",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PasswordStatus",
+                        "Value": "Unlocked",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SHA256SystemPassword",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SHA256SystemPasswordSalt",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SHA256SetupPassword",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SHA256SetupPasswordSalt",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemoryEncryption",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PwrButton",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AcPwrRcvry",
+                        "Value": "On",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AcPwrRcvryDelay",
+                        "Value": "Immediate",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AcPwrRcvryUserDelay",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "UefiVariableAccess",
+                        "Value": "Standard",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "InBandManageabilityInterface",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SecureBoot",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SecureBootPolicy",
+                        "Value": "Standard",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SecureBootMode",
+                        "Value": "DeployedMode",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "RedundantOsLocation",
+                        "Value": "None",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemTest",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemoryTraining",
+                        "Value": "MemoryTrainingFast",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CorrEccSmi",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PPROnUCE",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CECriticalSEL",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PagingPolicy",
+                        "Value": "PagingClosed",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot00",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot01",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot02",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot03",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot04",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot05",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot06",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot07",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot08",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot09",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot10",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot11",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot12",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot13",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot14",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot15",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot16",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot17",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot18",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot19",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot20",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot21",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot22",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot23",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot24",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot25",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot26",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot27",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot28",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot29",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot30",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DimmSlot31",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "TimeZone",
+                        "Value": "LOCAL",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "Daylight",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AssetTag",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "NumLock",
+                        "Value": "On",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ErrPrompt",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DellWyseP25BIOSAccess",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PowerCycleRequest",
+                        "Value": "None",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "BugChecking",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DebugErrorLevel",
+                        "Value": "",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IgnoreIdracCrReq",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "RebootTestMode",
+                        "Value": "RebootTestModeOff",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "LinkDowntrainReporting",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PostPackageRepair",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SccDebugEnabled",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CeMemoryThreshold",
+                        "Value": "CeMemoryDisabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IdracDebugMode",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "TpmBindingReset",
+                        "Value": "No",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcessorTraceDebug",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "FFMMemoryCE",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "BrowserMode",
+                        "Value": "BrowserModeGraphic",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "BrowserDebugMode",
+                        "Value": "Default",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "InteractivePassword24A",
+                        "Value": "Default",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DellAttributeOverlay",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CrbDebugMode",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DciTransport",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PowerLimit1Power",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MeEopEnable",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MeCbdEnable",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PmicSecureMode",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PmicFailureIsolation",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemoryPOR",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemPopulationPor",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "UmaBasedClustering",
+                        "Value": "Quadrant",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "EmbSataTestMode",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "S4Support",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "EmbSataRSTeDebug",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MRCSerialDbgOut",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DisableImcSmbusWrite",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "RankMargin",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemoryThrottlingMode",
+                        "Value": "MemoryThrottlingModeCLTT",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemHotIn",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemhotOutputOnlyOpt",
+                        "Value": "MemHotOutputOnlyHigh",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PromoteMrcWarnings",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PromoteWarnings",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "SrefProgramming",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "CkeThrottling",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MultiThreaded",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AttemptFastBoot",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemTestOnColdFastBoot",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "NdcConfigurationSpeed",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IoMarginTest",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IoMarginTestRetimer",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "Dfx",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DfxDisableBiosDone",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PCIePHYTestMode",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntelMemTest",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemTestLoops",
+                        "Value": "1",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DebugAMT",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PcodeWASAIPG",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "NvmeOobPresenceDetect",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IllegalMsiMitigation",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "WriteDataCrc",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "MemPatrolScrubEnable",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IoDirectoryCache",
+                        "Value": "Auto",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "XptRemotePrefetch",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PPINControlOverride",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PsysPowerLimitCsrLock",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PsysPowerInfoCsrLock",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "LockChipset",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "ProcessorMsrLockControl",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "InbandErrorInjection",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "PCIeErrorInjection",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IioPcieGlobalSpeed",
+                        "Value": "Default",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DirectMediaInterfaceSpeed",
+                        "Value": "Default",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "DeviceUnhide",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "IntelTestEventIio",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "UnusedPcieClk",
+                        "Value": "Disabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "E3BPClk",
+                        "Value": "CommonClock",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
+                        "Name": "AdvMemTestRankEntries",
+                        "Value": "0",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    }
+                ]
+            }
+        ]
+    }
+}

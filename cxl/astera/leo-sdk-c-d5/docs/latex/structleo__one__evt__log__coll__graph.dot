@@ -1,0 +1,23 @@
+digraph "leo_one_evt_log"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="leo_one_evt_log",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" first_overflow_time\nlast_overflow_time" ];
+  Node2 [label="qword",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$unionqword.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" rec" ];
+  Node3 [label="leo_evt_rec",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structleo__evt__rec.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" timestamp" ];
+  Node4 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" evt_data" ];
+  Node4 [label="evt_spc_data",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$unionevt__spc__data.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" dram_rec" ];
+  Node5 [label="dram_evt_rec",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structdram__evt__rec.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" dpa" ];
+  Node6 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" mem_mdl_rec" ];
+  Node6 [label="mem_mdl_evt_rec",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structmem__mdl__evt__rec.html",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" media_rec" ];
+  Node7 [label="gen_media_evt_rec",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$structgen__media__evt__rec.html",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" dpa" ];
+}

@@ -1,0 +1,36 @@
+digraph "leo-sdk-c/include/leo_common.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="leo-sdk-c/include/leo\l_common.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Definition of enums and structs globally used by the SDK."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="leo-sdk-c/examples\l/leo_api_test.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__api__test_8c.html",tooltip="api test demonstrates usage of Leo SDK API calls. This is recommended for:"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="leo-sdk-c/examples\l/leo_cxl_mailbox_test.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__cxl__mailbox__test_8c.html",tooltip="api test demonstrates leo CXL mailbox features. This is recommended for:"];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="leo-sdk-c/examples\l/leo_fw_update_example.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__fw__update__example_8c.html",tooltip="Example application to perform firmware update in Leo Tunnel Mode. This is recommended for:"];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="leo-sdk-c/examples\l/leo_get_ddr_margins\l_example.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__get__ddr__margins__example_8c.html",tooltip="api test demonstrates usage of Leo SDK API calls. This is recommended for:"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="leo-sdk-c/examples\l/leo_get_recent_uart\l_rx_example.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__get__recent__uart__rx__example_8c.html",tooltip="demonstrate use of leoReadEepromWord api"];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="leo-sdk-c/examples\l/leo_inject_err_test.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__inject__err__test_8c.html",tooltip="api test demonstrates usage of Leo SDK Inject Error API calls. This is recommended for:"];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="leo-sdk-c/examples\l/leo_memscrb_test.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__memscrb__test_8c.html",tooltip="api test demonstrates usage of Leo SDK API calls related to memory scrubbing."];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="leo-sdk-c/examples\l/leo_poison_list.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__poison__list_8c.html",tooltip="reference demonstrates usage of mailbox commands inject, clear and get poison. This is recommended fo..."];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="leo-sdk-c/examples\l/leo_read_eeprom_example.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__read__eeprom__example_8c.html",tooltip="demonstrate use of leoReadEepromWord api"];
+  Node1 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="leo-sdk-c/examples\l/leo_read_tsod_example.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__read__tsod__example_8c.html",tooltip="Read DIMM TSOD data."];
+  Node1 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="leo-sdk-c/examples\l/leo_sample_cxl_bw.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__sample__cxl__bw_8c.html",tooltip="check the bandwidth of CXL link"];
+  Node1 -> Node13 [dir="back",color="steelblue1",style="solid"];
+  Node13 [label="leo-sdk-c/examples\l/leo_telemetry.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__telemetry_8c.html",tooltip="reference/example to gather DDR and CXL telemetry from a Leo Device"];
+  Node1 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node14 [label="leo-sdk-c/examples\l/leo_tgc_test.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__tgc__test_8c.html",tooltip="api test demonstrates usage of Leo SDK TGC test API calls. This is recommended for:"];
+  Node1 -> Node15 [dir="back",color="steelblue1",style="solid"];
+  Node15 [label="leo-sdk-c/source/leo\l_common.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$leo__common_8c.html",tooltip="Implementation of common utility functions used by the SDK."];
+}

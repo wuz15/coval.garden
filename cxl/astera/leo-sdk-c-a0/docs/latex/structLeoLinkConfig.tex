@@ -1,0 +1,67 @@
+\hypertarget{structLeoLinkConfig}{}\doxysection{Leo\+Link\+Config Struct Reference}
+\label{structLeoLinkConfig}\index{LeoLinkConfig@{LeoLinkConfig}}
+
+
+Struct defining an Leo chip Link configuration.  
+
+
+
+
+{\ttfamily \#include $<$leo\+\_\+api\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{Leo\+Device\+Part\+Type}} \mbox{\hyperlink{structLeoLinkConfig_af3c7968722a6693da8f3624c9569ec35}{part\+Number}}
+\item 
+int \mbox{\hyperlink{structLeoLinkConfig_a861627d0b9e219dd7c7767a3f899a66f}{max\+Width}}
+\item 
+int \mbox{\hyperlink{structLeoLinkConfig_a167a8ad9897d15d2ddb429ebad7d3842}{start\+Lane}}
+\item 
+float \mbox{\hyperlink{structLeoLinkConfig_a24f8927aa8c4a9255b0edf66c7dc41aa}{temp\+Alert\+ThreshC}}
+\item 
+int \mbox{\hyperlink{structLeoLinkConfig_aec69f1a6570d029517579b62c6e71b35}{link\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct defining an Leo chip Link configuration. 
+
+Note that each Leo chip can support multiple multi-\/\+Lane Links. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLeoLinkConfig_aec69f1a6570d029517579b62c6e71b35}\label{structLeoLinkConfig_aec69f1a6570d029517579b62c6e71b35}} 
+\index{LeoLinkConfig@{LeoLinkConfig}!linkId@{linkId}}
+\index{linkId@{linkId}!LeoLinkConfig@{LeoLinkConfig}}
+\doxysubsubsection{\texorpdfstring{linkId}{linkId}}
+{\footnotesize\ttfamily int Leo\+Link\+Config\+::link\+Id}
+
+Link identifier (starts from 0) \mbox{\Hypertarget{structLeoLinkConfig_a861627d0b9e219dd7c7767a3f899a66f}\label{structLeoLinkConfig_a861627d0b9e219dd7c7767a3f899a66f}} 
+\index{LeoLinkConfig@{LeoLinkConfig}!maxWidth@{maxWidth}}
+\index{maxWidth@{maxWidth}!LeoLinkConfig@{LeoLinkConfig}}
+\doxysubsubsection{\texorpdfstring{maxWidth}{maxWidth}}
+{\footnotesize\ttfamily int Leo\+Link\+Config\+::max\+Width}
+
+Maximum Link width (e.\+g. 16) \mbox{\Hypertarget{structLeoLinkConfig_af3c7968722a6693da8f3624c9569ec35}\label{structLeoLinkConfig_af3c7968722a6693da8f3624c9569ec35}} 
+\index{LeoLinkConfig@{LeoLinkConfig}!partNumber@{partNumber}}
+\index{partNumber@{partNumber}!LeoLinkConfig@{LeoLinkConfig}}
+\doxysubsubsection{\texorpdfstring{partNumber}{partNumber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{leo__api__types_8h_acc4e58ee6a1720be165557eb480d50ab}{Leo\+Device\+Part\+Type}} Leo\+Link\+Config\+::part\+Number}
+
+Leo part number \mbox{\Hypertarget{structLeoLinkConfig_a167a8ad9897d15d2ddb429ebad7d3842}\label{structLeoLinkConfig_a167a8ad9897d15d2ddb429ebad7d3842}} 
+\index{LeoLinkConfig@{LeoLinkConfig}!startLane@{startLane}}
+\index{startLane@{startLane}!LeoLinkConfig@{LeoLinkConfig}}
+\doxysubsubsection{\texorpdfstring{startLane}{startLane}}
+{\footnotesize\ttfamily int Leo\+Link\+Config\+::start\+Lane}
+
+Starting (physical) Lane number \mbox{\Hypertarget{structLeoLinkConfig_a24f8927aa8c4a9255b0edf66c7dc41aa}\label{structLeoLinkConfig_a24f8927aa8c4a9255b0edf66c7dc41aa}} 
+\index{LeoLinkConfig@{LeoLinkConfig}!tempAlertThreshC@{tempAlertThreshC}}
+\index{tempAlertThreshC@{tempAlertThreshC}!LeoLinkConfig@{LeoLinkConfig}}
+\doxysubsubsection{\texorpdfstring{tempAlertThreshC}{tempAlertThreshC}}
+{\footnotesize\ttfamily float Leo\+Link\+Config\+::temp\+Alert\+ThreshC}
+
+Temperature alert threshold, in celsius 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+leo-\/sdk-\/c/include/\mbox{\hyperlink{leo__api__types_8h}{leo\+\_\+api\+\_\+types.\+h}}\end{DoxyCompactItemize}

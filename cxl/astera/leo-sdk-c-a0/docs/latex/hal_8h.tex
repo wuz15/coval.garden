@@ -1,0 +1,401 @@
+\hypertarget{hal_8h}{}\doxysection{leo-\/sdk-\/c/include/hal.h File Reference}
+\label{hal_8h}\index{leo-\/sdk-\/c/include/hal.h@{leo-\/sdk-\/c/include/hal.h}}
+
+
+Definitions related Hardware abstraction layer for Leo CPU interfaces to hardware (e.\+g. CSRs, IP registers and Memory etc.).  
+
+
+{\ttfamily \#include \char`\"{}misc.\+h\char`\"{}}\newline
+Include dependency graph for hal.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcfg__data__t}{cfg\+\_\+data\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structhal__status__t}{hal\+\_\+status\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hal_8h_abbe231ba24abf0f39814ad6c1eff7884}\label{hal_8h_abbe231ba24abf0f39814ad6c1eff7884}} 
+\#define {\bfseries LEO\+\_\+\+BOOT\+\_\+\+STAT\+\_\+\+OFFSET}~0xf0
+\item 
+\mbox{\Hypertarget{hal_8h_a8ab067fec6c6fa2977021ff09e54e146}\label{hal_8h_a8ab067fec6c6fa2977021ff09e54e146}} 
+\#define {\bfseries LEO\+\_\+\+FW\+\_\+\+VERSION\+\_\+\+OFFSET}~0xf4
+\item 
+\mbox{\Hypertarget{hal_8h_a0328fec79d38aeef8d7f3f8a9d9e8f1a}\label{hal_8h_a0328fec79d38aeef8d7f3f8a9d9e8f1a}} 
+\#define {\bfseries LEO\+\_\+\+FW\+\_\+\+BUILD\+\_\+\+OFFSET}~0xf8
+\item 
+\mbox{\Hypertarget{hal_8h_a1f7ca3121d3a2d041820843cb7917889}\label{hal_8h_a1f7ca3121d3a2d041820843cb7917889}} 
+\#define {\bfseries DDR\+\_\+\+TEMP\+\_\+\+EXPECTED\+\_\+\+NO\+\_\+\+WORKLOAD}~32
+\item 
+\mbox{\Hypertarget{hal_8h_ac89c743aebe601d79739298e2b55c2e1}\label{hal_8h_ac89c743aebe601d79739298e2b55c2e1}} 
+\#define {\bfseries DDR\+\_\+\+TEMP\+\_\+\+THEORETICAL\+\_\+\+MAX}~105
+\item 
+\mbox{\Hypertarget{hal_8h_a514ad415fb6125ba296793df7d1a468a}\label{hal_8h_a514ad415fb6125ba296793df7d1a468a}} 
+\#define {\bfseries ENABLE}~1
+\item 
+\mbox{\Hypertarget{hal_8h_a99496f7308834e8b220f7894efa0b6ab}\label{hal_8h_a99496f7308834e8b220f7894efa0b6ab}} 
+\#define {\bfseries DISABLE}~0
+\item 
+\mbox{\Hypertarget{hal_8h_a611cc9b5f655508482f3d7a9751c182a}\label{hal_8h_a611cc9b5f655508482f3d7a9751c182a}} 
+\#define {\bfseries CLEAR}~0
+\item 
+\mbox{\Hypertarget{hal_8h_a273f8bd128d2f2938365c07eb971326a}\label{hal_8h_a273f8bd128d2f2938365c07eb971326a}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+RD\+\_\+\+ACTIVATE\+\_\+\+OFFSET}~10
+\item 
+\mbox{\Hypertarget{hal_8h_a9788908a10c7f5182a04f73cc771aa97}\label{hal_8h_a9788908a10c7f5182a04f73cc771aa97}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+PRECHARGE\+\_\+\+OFFSET}~13
+\item 
+\mbox{\Hypertarget{hal_8h_a45f4d31e60e3ef3a7d0034ada889f2e6}\label{hal_8h_a45f4d31e60e3ef3a7d0034ada889f2e6}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+REFRESH\+\_\+\+OFFSET}~37
+\item 
+\mbox{\Hypertarget{hal_8h_ae4c607497b9ad6976e6814f4385e497f}\label{hal_8h_ae4c607497b9ad6976e6814f4385e497f}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+CRIT\+\_\+\+REFRESH\+\_\+\+OFFSET}~38
+\item 
+\mbox{\Hypertarget{hal_8h_a03297def7ca921f6d1a3455e4191ef2c}\label{hal_8h_a03297def7ca921f6d1a3455e4191ef2c}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+SPEC\+\_\+\+REFRESH\+\_\+\+OFFSET}~39
+\item 
+\mbox{\Hypertarget{hal_8h_a0abcd7b7cd52cf1d1d071763de2b4846}\label{hal_8h_a0abcd7b7cd52cf1d1d071763de2b4846}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+RD\+\_\+\+ACTIVATE\+\_\+\+OFFSET\+\_\+\+SUBCHN1}~74
+\item 
+\mbox{\Hypertarget{hal_8h_a708e73713bb4c9fe7c783d8bb8312e38}\label{hal_8h_a708e73713bb4c9fe7c783d8bb8312e38}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+PRECHARGE\+\_\+\+OFFSET\+\_\+\+SUBCHN1}~77
+\item 
+\mbox{\Hypertarget{hal_8h_a003b76b4141ddd3d9d1171f4027811f4}\label{hal_8h_a003b76b4141ddd3d9d1171f4027811f4}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+REFRESH\+\_\+\+OFFSET\+\_\+\+SUBCHN1}~101
+\item 
+\mbox{\Hypertarget{hal_8h_af37ceb6d9003e7016f4e56c14d79b56a}\label{hal_8h_af37ceb6d9003e7016f4e56c14d79b56a}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+CRIT\+\_\+\+REFRESH\+\_\+\+OFFSET\+\_\+\+SUBCHN1}~102
+\item 
+\mbox{\Hypertarget{hal_8h_a86252eaa5f1118153f6b37e71fd127f4}\label{hal_8h_a86252eaa5f1118153f6b37e71fd127f4}} 
+\#define {\bfseries SRAM\+\_\+\+ANA\+\_\+\+CTR\+\_\+\+SPEC\+\_\+\+REFRESH\+\_\+\+OFFSET\+\_\+\+SUBCHN1}~103
+\item 
+\mbox{\Hypertarget{hal_8h_a4e63ef1763e867ff1b68512195d150ca}\label{hal_8h_a4e63ef1763e867ff1b68512195d150ca}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+MISC\+\_\+\+BASE\+\_\+\+ADDRESS}~0x000000
+\item 
+\mbox{\Hypertarget{hal_8h_aaa8f1db359c8f1df94b20fa32e87cd25}\label{hal_8h_aaa8f1db359c8f1df94b20fa32e87cd25}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+OFFSET}~(0x6000)
+\item 
+\mbox{\Hypertarget{hal_8h_aeb0f28833538498a4864caa325932d51}\label{hal_8h_aeb0f28833538498a4864caa325932d51}} 
+\#define {\bfseries DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+ADDRESS}~(CSR\+\_\+\+CXL\+\_\+\+MISC\+\_\+\+BASE\+\_\+\+ADDRESS + DW\+\_\+\+APB\+\_\+\+SSI\+\_\+\+OFFSET)
+\item 
+\mbox{\Hypertarget{hal_8h_a4a9beda30ebb990237f77f36cf87b8f4}\label{hal_8h_a4a9beda30ebb990237f77f36cf87b8f4}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+CMAL\+\_\+\+BASE\+\_\+\+ADDRESS}~0x100000
+\item 
+\mbox{\Hypertarget{hal_8h_a8d6758ecbf53b117d256a52a6863d112}\label{hal_8h_a8d6758ecbf53b117d256a52a6863d112}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+PHY\+\_\+\+BASE\+\_\+\+ADDRESS}~0x200000
+\item 
+\mbox{\Hypertarget{hal_8h_a33e1651b3edbfceb02b445557ebcf5b1}\label{hal_8h_a33e1651b3edbfceb02b445557ebcf5b1}} 
+\#define {\bfseries CXL\+\_\+\+PHY\+\_\+\+INTERNAL\+\_\+\+PMA\+\_\+\+REG\+\_\+\+ACCESS}~0x080000
+\item 
+\mbox{\Hypertarget{hal_8h_afbb197ce5fd304b7c1fb23f5936c6211}\label{hal_8h_afbb197ce5fd304b7c1fb23f5936c6211}} 
+\#define {\bfseries CXL\+\_\+\+PHY\+\_\+\+INTERNAL\+\_\+\+PMA\+\_\+\+ID\+\_\+\+SHIFT}~(16)
+\item 
+\mbox{\Hypertarget{hal_8h_afd90af50097459af915a70c667dd1037}\label{hal_8h_afd90af50097459af915a70c667dd1037}} 
+\#define {\bfseries CXL\+\_\+\+PHY\+\_\+\+INTERNAL\+\_\+\+PMA\+\_\+\+ID\+\_\+\+MASK}~(0x030000)
+\item 
+\mbox{\Hypertarget{hal_8h_ac8cb5924074f8a681a60a9423725e262}\label{hal_8h_ac8cb5924074f8a681a60a9423725e262}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+CTLR\+\_\+0\+\_\+\+CSR\+\_\+\+BASE\+\_\+\+ADDRESS}~0x400000
+\item 
+\mbox{\Hypertarget{hal_8h_a421695efd98ddd72ebab7ec4d5e05c61}\label{hal_8h_a421695efd98ddd72ebab7ec4d5e05c61}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+CTLR\+\_\+1\+\_\+\+CSR\+\_\+\+BASE\+\_\+\+ADDRESS}~0x500000
+\item 
+\mbox{\Hypertarget{hal_8h_aaa41acc3384709ef36343b30ca082757}\label{hal_8h_aaa41acc3384709ef36343b30ca082757}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+CTLR\+\_\+0\+\_\+\+DBI\+\_\+\+BASE\+\_\+\+ADDRESS}~(0x600000)
+\item 
+\mbox{\Hypertarget{hal_8h_a667363832f1506f522c1667e60dab07f}\label{hal_8h_a667363832f1506f522c1667e60dab07f}} 
+\#define {\bfseries CSR\+\_\+\+CXL\+\_\+\+CTLR\+\_\+1\+\_\+\+DBI\+\_\+\+BASE\+\_\+\+ADDRESS}~(0x700000)
+\item 
+\mbox{\Hypertarget{hal_8h_aff1811f1cb5fa55f63e4190b3eee0d43}\label{hal_8h_aff1811f1cb5fa55f63e4190b3eee0d43}} 
+\#define {\bfseries CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTLR\+\_\+0\+\_\+\+DBI\+\_\+\+CS2\+\_\+\+ACCESS\+\_\+\+ADDR\+\_\+\+PAT}~(0x040000)
+\item 
+\mbox{\Hypertarget{hal_8h_a55cf6c95e9df6cf6a1c6a4d72b9628b0}\label{hal_8h_a55cf6c95e9df6cf6a1c6a4d72b9628b0}} 
+\#define {\bfseries CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+PCIE\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}~  (0x0)
+\item 
+\mbox{\Hypertarget{hal_8h_a7d43b5bde2eaf246b6735f309edea638}\label{hal_8h_a7d43b5bde2eaf246b6735f309edea638}} 
+\#define {\bfseries CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+ELBI\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}~  (0x1)
+\item 
+\mbox{\Hypertarget{hal_8h_a72c4844813cfb73ed5a3469855c527a8}\label{hal_8h_a72c4844813cfb73ed5a3469855c527a8}} 
+\#define {\bfseries CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+IATU\+\_\+\+REGS\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}~  (0x1 $\vert$ CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTLR\+\_\+0\+\_\+\+DBI\+\_\+\+CS2\+\_\+\+ACCESS\+\_\+\+ADDR\+\_\+\+PAT)
+\item 
+\#define \mbox{\hyperlink{hal_8h_a1044afa45c998bec13b6018b549d4c02}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}}
+\item 
+\#define \mbox{\hyperlink{hal_8h_a21985adf7ca248cecb0ecc8397dc7eab}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}}
+\item 
+\#define \mbox{\hyperlink{hal_8h_aadd76e0cad4d2aa35742b368e87b3432}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+REG\+\_\+\+ADDR\+\_\+\+SHIFT}}
+\item 
+\#define \mbox{\hyperlink{hal_8h_a2f52856e185a6485a2b9d52e2aabdc61}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+PCIE\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+ADDR}}( csr\+\_\+dbi\+\_\+base\+\_\+addr,  reg\+\_\+offset)
+\item 
+\#define \mbox{\hyperlink{hal_8h_a8eed242e1c8f6631093c709370690156}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+ELBI\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+ADDR}}( csr\+\_\+dbi\+\_\+base\+\_\+addr,  reg\+\_\+offset)
+\item 
+\#define \mbox{\hyperlink{hal_8h_a04ff06dd7dfc6da85ea4bb2734738502}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+IATU\+\_\+\+REGS\+\_\+\+SPACE\+\_\+\+ADDR}}( csr\+\_\+dbi\+\_\+base\+\_\+addr,  reg\+\_\+offset)
+\item 
+\#define \mbox{\hyperlink{hal_8h_aee4850708fe4e2ee1cf314fc3586316b}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+ADDR}}( csr\+\_\+dbi\+\_\+base\+\_\+addr,  reg\+\_\+offset)
+\item 
+\#define \mbox{\hyperlink{hal_8h_a30582dd884d635c778519d28b3b37bff}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+ADDR}}( csr\+\_\+dbi\+\_\+base\+\_\+addr,  reg\+\_\+offset)
+\item 
+\mbox{\Hypertarget{hal_8h_a109cbb005785ca71706cf90376954347}\label{hal_8h_a109cbb005785ca71706cf90376954347}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+0\+\_\+\+CSR\+\_\+\+BASE\+\_\+\+ADDRESS}~0x800000
+\item 
+\mbox{\Hypertarget{hal_8h_ae744fada07dde036328d19c4f258e859}\label{hal_8h_ae744fada07dde036328d19c4f258e859}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+1\+\_\+\+CSR\+\_\+\+BASE\+\_\+\+ADDRESS}~0x900000
+\item 
+\mbox{\Hypertarget{hal_8h_a58beb1895be4a3856bce746441deff83}\label{hal_8h_a58beb1895be4a3856bce746441deff83}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+0\+\_\+\+IP\+\_\+\+BASE\+\_\+\+ADDRESS}~0xa00000
+\item 
+\mbox{\Hypertarget{hal_8h_acb4d0bd7387faa0370db93e511ba71a7}\label{hal_8h_acb4d0bd7387faa0370db93e511ba71a7}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+1\+\_\+\+IP\+\_\+\+BASE\+\_\+\+ADDRESS}~0xb00000
+\item 
+\mbox{\Hypertarget{hal_8h_abefe264a39ac47b8a23db6a02a2a6661}\label{hal_8h_abefe264a39ac47b8a23db6a02a2a6661}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+0\+\_\+\+PHY\+\_\+\+IP\+\_\+\+BASE\+\_\+\+ADDRESS}~0xc00000
+\item 
+\mbox{\Hypertarget{hal_8h_a068d5b2900e1c662d60af3306a206f86}\label{hal_8h_a068d5b2900e1c662d60af3306a206f86}} 
+\#define {\bfseries CSR\+\_\+\+DDR\+\_\+\+CTLR\+\_\+1\+\_\+\+PHY\+\_\+\+IP\+\_\+\+BASE\+\_\+\+ADDRESS}~0xd00000
+\item 
+\#define \mbox{\hyperlink{hal_8h_ab6ae8ee2e9f26beb5bbff32a0c0d3dfe}{CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR\+\_\+\+ADDR}}(DWC\+\_\+\+DBI\+\_\+\+ADDR)
+\item 
+\#define \mbox{\hyperlink{hal_8h_a5cf0698b51ba6474da13a7f38b24eb29}{COMPRESS\+\_\+\+CXL\+\_\+\+MBAR0\+\_\+\+DBI\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR\+\_\+\+ADDR}}(DWC\+\_\+\+DBI\+\_\+\+ADDR)
+\item 
+\#define \mbox{\hyperlink{hal_8h_ad9281ec5d3c3022d0744dab1664161f1}{COMPRESS\+\_\+\+CXL\+\_\+\+DBI2\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR}}(DWC\+\_\+\+DBI\+\_\+\+ADDR)
+\item 
+\mbox{\Hypertarget{hal_8h_a433a31e3178e64b877e9024a100735fb}\label{hal_8h_a433a31e3178e64b877e9024a100735fb}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+NOTIF\+\_\+\+ADDR}~(uint32\+\_\+t volatile $\ast$)(0x1fffdc)
+\item 
+\mbox{\Hypertarget{hal_8h_a74dfaa1a9eab1a0a1d40d50bcd556210}\label{hal_8h_a74dfaa1a9eab1a0a1d40d50bcd556210}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+RESET}~0x8000
+\item 
+\mbox{\Hypertarget{hal_8h_a46a68dc5cd66ae9172708c1d40f42298}\label{hal_8h_a46a68dc5cd66ae9172708c1d40f42298}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+IDLE}~0x8001
+\item 
+\mbox{\Hypertarget{hal_8h_a93c5319732bee0ed31de7fd313f22d4c}\label{hal_8h_a93c5319732bee0ed31de7fd313f22d4c}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+DDR\+\_\+\+ACTIVE}~0x8002
+\item 
+\mbox{\Hypertarget{hal_8h_a837a5fa77302a09b174f2fe8e7e73976}\label{hal_8h_a837a5fa77302a09b174f2fe8e7e73976}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+CXL\+\_\+\+ACTIVE}~0x8004
+\item 
+\mbox{\Hypertarget{hal_8h_a61e169ad9e3d8147e8bb6602343486d6}\label{hal_8h_a61e169ad9e3d8147e8bb6602343486d6}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+LINK\+\_\+\+ACTIVE}~0x8008
+\item 
+\mbox{\Hypertarget{hal_8h_a0b8f1d255e9bd23eceefb269c36feba2}\label{hal_8h_a0b8f1d255e9bd23eceefb269c36feba2}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+INITIAL\+\_\+\+CFG\+\_\+\+DONE}~0x8010
+\item 
+\mbox{\Hypertarget{hal_8h_afc3db1254dfb5a02ceb73a72e444507e}\label{hal_8h_afc3db1254dfb5a02ceb73a72e444507e}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+FAST\+\_\+\+CLK\+\_\+\+EN}~0x8020
+\item 
+\mbox{\Hypertarget{hal_8h_a76eb714f120792ffc1dfe94b8dd46ab0}\label{hal_8h_a76eb714f120792ffc1dfe94b8dd46ab0}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+STATE\+\_\+\+FAST\+\_\+\+CLK\+\_\+\+DIS}~0x8040
+\item 
+\mbox{\Hypertarget{hal_8h_af9396d64a10ca97bf3a15311a600c3b4}\label{hal_8h_af9396d64a10ca97bf3a15311a600c3b4}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+DDRPHY\+\_\+\+CFG\+\_\+\+DONE}~0x8080
+\item 
+\mbox{\Hypertarget{hal_8h_a0eab348fc68a4365eff0fb85ea666bbd}\label{hal_8h_a0eab348fc68a4365eff0fb85ea666bbd}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+DDRPHY\+\_\+\+INIT\+\_\+\+START}~0x8100
+\item 
+\mbox{\Hypertarget{hal_8h_a5fbef31953288874973b3d727e5eb110}\label{hal_8h_a5fbef31953288874973b3d727e5eb110}} 
+\#define {\bfseries DV\+\_\+\+SIM\+\_\+\+FW\+\_\+\+DDRPHY\+\_\+\+INIT\+\_\+\+END}~0x8200
+\item 
+\mbox{\Hypertarget{hal_8h_aa5b5208fe27c82ca7dd661212674ca89}\label{hal_8h_aa5b5208fe27c82ca7dd661212674ca89}} 
+\#define {\bfseries ARC\+\_\+\+CSR\+\_\+\+RGN}~0xf0000000
+\item 
+\mbox{\Hypertarget{hal_8h_adfd85b83d4f77f4e9b6e5915598fc411}\label{hal_8h_adfd85b83d4f77f4e9b6e5915598fc411}} 
+\#define {\bfseries ARC\+\_\+\+CSR\+\_\+\+RGN\+\_\+\+BRC}~0xf4000000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hal_8h_af5ea8985a12feedc3ac25fbb50712183}\label{hal_8h_af5ea8985a12feedc3ac25fbb50712183}} 
+void {\bfseries hal\+\_\+init} (void)
+\item 
+\mbox{\Hypertarget{hal_8h_a8440ddfe549447a1db459742e551db8c}\label{hal_8h_a8440ddfe549447a1db459742e551db8c}} 
+uint32\+\_\+t {\bfseries csr\+\_\+check\+\_\+error} (void)
+\item 
+\mbox{\Hypertarget{hal_8h_a1faeccf3b777d46d4d95db697b14d610}\label{hal_8h_a1faeccf3b777d46d4d95db697b14d610}} 
+uint32\+\_\+t {\bfseries csr\+\_\+rd} (uint32\+\_\+t addr)
+\item 
+\mbox{\Hypertarget{hal_8h_aaea1efc03984baac2b73fe557e96e684}\label{hal_8h_aaea1efc03984baac2b73fe557e96e684}} 
+uint32\+\_\+t {\bfseries csr\+\_\+wr} (uint32\+\_\+t addr, uint32\+\_\+t data)
+\item 
+\mbox{\Hypertarget{hal_8h_acb41bd00bce1e245370a705197b73989}\label{hal_8h_acb41bd00bce1e245370a705197b73989}} 
+void {\bfseries csr\+\_\+wr\+\_\+no\+\_\+chk} (uint32\+\_\+t addr, uint32\+\_\+t data)
+\item 
+\mbox{\Hypertarget{hal_8h_ac74efa9da03ccb344f93a36a4cba5661}\label{hal_8h_ac74efa9da03ccb344f93a36a4cba5661}} 
+uint32\+\_\+t {\bfseries csr\+\_\+brc\+\_\+wr} (uint32\+\_\+t addr, uint32\+\_\+t data)
+\item 
+\mbox{\Hypertarget{hal_8h_ae10e930a313bd0a3a8965527da00b1e5}\label{hal_8h_ae10e930a313bd0a3a8965527da00b1e5}} 
+void {\bfseries csr\+\_\+brc\+\_\+wr\+\_\+no\+\_\+chk} (uint32\+\_\+t addr, uint32\+\_\+t data)
+\item 
+\mbox{\Hypertarget{hal_8h_ae2e6be5ad9c9d767f61baf229b0a00b9}\label{hal_8h_ae2e6be5ad9c9d767f61baf229b0a00b9}} 
+uint32\+\_\+t {\bfseries csr\+\_\+wr\+\_\+field} (uint32\+\_\+t addr, uint32\+\_\+t field\+\_\+mask, uint32\+\_\+t field\+\_\+lsb, uint32\+\_\+t field\+\_\+data)
+\item 
+\mbox{\Hypertarget{hal_8h_a86dc35cb4bc94082bd0a96b413f330ff}\label{hal_8h_a86dc35cb4bc94082bd0a96b413f330ff}} 
+uint32\+\_\+t {\bfseries csr\+\_\+wr\+\_\+array} (uint32\+\_\+t base\+\_\+addr, \mbox{\hyperlink{structcfg__data__t}{cfg\+\_\+data\+\_\+t}} $\ast$p\+\_\+cfg)
+\item 
+\mbox{\Hypertarget{hal_8h_a5bd7fc72f6bcf25bf2d358893de01fec}\label{hal_8h_a5bd7fc72f6bcf25bf2d358893de01fec}} 
+uint32\+\_\+t {\bfseries csr\+\_\+brc\+\_\+wr\+\_\+array} (uint32\+\_\+t base\+\_\+addr, \mbox{\hyperlink{structcfg__data__t}{cfg\+\_\+data\+\_\+t}} $\ast$p\+\_\+cfg)
+\item 
+\mbox{\Hypertarget{hal_8h_a61a306c850cbc89e5502e8541de6e888}\label{hal_8h_a61a306c850cbc89e5502e8541de6e888}} 
+uint32\+\_\+t {\bfseries cxl\+\_\+ctr\+\_\+dbi\+\_\+csr\+\_\+wr} (uint32\+\_\+t csr\+\_\+dbi\+\_\+base\+\_\+addr, uint32\+\_\+t dbi\+\_\+addr, uint32\+\_\+t dbi\+\_\+cs2, uint32\+\_\+t data)
+\item 
+\mbox{\Hypertarget{hal_8h_a9731199211d715519c9b3b00deff0616}\label{hal_8h_a9731199211d715519c9b3b00deff0616}} 
+uint32\+\_\+t {\bfseries cxl\+\_\+ctr\+\_\+dbi\+\_\+csr\+\_\+rd} (uint32\+\_\+t csr\+\_\+dbi\+\_\+base\+\_\+addr, uint32\+\_\+t dbi\+\_\+addr, uint32\+\_\+t dbi\+\_\+cs2)
+\item 
+\mbox{\Hypertarget{hal_8h_a2ed8918902ec83c258dd01beed7ef134}\label{hal_8h_a2ed8918902ec83c258dd01beed7ef134}} 
+uint32\+\_\+t {\bfseries leo\+Get\+Ddr\+Ctl\+Addr} (uint32\+\_\+t top\+\_\+csr\+\_\+addr, uint8\+\_\+t ctl\+\_\+id)
+\item 
+\mbox{\Hypertarget{hal_8h_a4c9a694b262193c9e8d239da983c1e2e}\label{hal_8h_a4c9a694b262193c9e8d239da983c1e2e}} 
+uint32\+\_\+t {\bfseries leo\+Get\+Cxl\+Ctr\+Addr} (uint32\+\_\+t top\+\_\+csr\+\_\+addr, uint8\+\_\+t ctl\+\_\+id)
+\item 
+\mbox{\Hypertarget{hal_8h_ab3e913f818078781666909bc7f138ca3}\label{hal_8h_ab3e913f818078781666909bc7f138ca3}} 
+void {\bfseries hal\+\_\+send\+\_\+dv\+\_\+sync} (uint32\+\_\+t val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions related Hardware abstraction layer for Leo CPU interfaces to hardware (e.\+g. CSRs, IP registers and Memory etc.). 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{hal_8h_ad9281ec5d3c3022d0744dab1664161f1}\label{hal_8h_ad9281ec5d3c3022d0744dab1664161f1}} 
+\index{hal.h@{hal.h}!COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR@{COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR}}
+\index{COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR@{COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR}{COMPRESS\_CXL\_DBI2\_ADDR\_TO\_CSR}}
+{\footnotesize\ttfamily \#define COMPRESS\+\_\+\+CXL\+\_\+\+DBI2\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR(\begin{DoxyParamCaption}\item[{}]{DWC\+\_\+\+DBI\+\_\+\+ADDR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a5cf0698b51ba6474da13a7f38b24eb29}\label{hal_8h_a5cf0698b51ba6474da13a7f38b24eb29}} 
+\index{hal.h@{hal.h}!COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR@{COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR}}
+\index{COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR@{COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR}{COMPRESS\_CXL\_MBAR0\_DBI\_ADDR\_TO\_CSR\_ADDR}}
+{\footnotesize\ttfamily \#define COMPRESS\+\_\+\+CXL\+\_\+\+MBAR0\+\_\+\+DBI\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{DWC\+\_\+\+DBI\+\_\+\+ADDR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR(DWC\_DBI\_ADDR)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT\ |\ 1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_ab6ae8ee2e9f26beb5bbff32a0c0d3dfe}\label{hal_8h_ab6ae8ee2e9f26beb5bbff32a0c0d3dfe}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDR\_TO\_CSR\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDR\+\_\+\+TO\+\_\+\+CSR\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{DWC\+\_\+\+DBI\+\_\+\+ADDR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((DWC\_DBI\_ADDR\ \&\ 0xffff)\ |\ ((DWC\_DBI\_ADDR\ \&\ 0x100000)\ >>\ 3)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ ((DWC\_DBI\_ADDR\ \&\ 0x200000)\ >>\ 2))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a8eed242e1c8f6631093c709370690156}\label{hal_8h_a8eed242e1c8f6631093c709370690156}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+ELBI\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{csr\+\_\+dbi\+\_\+base\+\_\+addr,  }\item[{}]{reg\+\_\+offset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_ELBI\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a04ff06dd7dfc6da85ea4bb2734738502}\label{hal_8h_a04ff06dd7dfc6da85ea4bb2734738502}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+IATU\+\_\+\+REGS\+\_\+\+SPACE\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{csr\+\_\+dbi\+\_\+base\+\_\+addr,  }\item[{}]{reg\+\_\+offset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_IATU\_REGS\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a2f52856e185a6485a2b9d52e2aabdc61}\label{hal_8h_a2f52856e185a6485a2b9d52e2aabdc61}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+PCIE\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{csr\+\_\+dbi\+\_\+base\+\_\+addr,  }\item[{}]{reg\+\_\+offset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_PCIE\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_aee4850708fe4e2ee1cf314fc3586316b}\label{hal_8h_aee4850708fe4e2ee1cf314fc3586316b}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{csr\+\_\+dbi\+\_\+base\+\_\+addr,  }\item[{}]{reg\+\_\+offset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a1044afa45c998bec13b6018b549d4c02}\label{hal_8h_a1044afa45c998bec13b6018b549d4c02}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_4K\_CONFIG\_SPACE\_BASE\_ADDR\_PAT}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+4\+K\+\_\+\+CONFIG\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((0x80001)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)\ \textcolor{comment}{/*\ csr\_addr[19]\ =\ dbi\_addr[21]\ \&}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csr\_addr[17]\ =\ dbi\_addr[20]\ */}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a30582dd884d635c778519d28b3b37bff}\label{hal_8h_a30582dd884d635c778519d28b3b37bff}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_ADDR}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+ADDR(\begin{DoxyParamCaption}\item[{}]{csr\+\_\+dbi\+\_\+base\+\_\+addr,  }\item[{}]{reg\+\_\+offset }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((csr\_dbi\_base\_addr)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT)\ |\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (reg\_offset\ <<\ CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_a21985adf7ca248cecb0ecc8397dc7eab}\label{hal_8h_a21985adf7ca248cecb0ecc8397dc7eab}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_RCRB\_64K\_MBAR0\_SPACE\_BASE\_ADDR\_PAT}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+RCRB\+\_\+64\+K\+\_\+\+MBAR0\+\_\+\+SPACE\+\_\+\+BASE\+\_\+\+ADDR\+\_\+\+PAT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((0xA0001)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ CSR\_DWC\_CXL\_CTLR\_0\_DBI\_CS2\_ACCESS\_ADDR\_PAT)\ \textcolor{comment}{/*\ csr\_addr[19]\ =\ dbi\_addr[21]\ \&}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csr\_addr[17]\ =\ dbi\_addr[20]\ */}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{hal_8h_aadd76e0cad4d2aa35742b368e87b3432}\label{hal_8h_aadd76e0cad4d2aa35742b368e87b3432}} 
+\index{hal.h@{hal.h}!CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT}}
+\index{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT@{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT}!hal.h@{hal.h}}
+\doxysubsubsection{\texorpdfstring{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT}{CSR\_DWC\_CXL\_CTRL\_DBI\_ADDRESS\_SPACE\_REG\_ADDR\_SHIFT}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+DWC\+\_\+\+CXL\+\_\+\+CTRL\+\_\+\+DBI\+\_\+\+ADDRESS\+\_\+\+SPACE\+\_\+\+REG\+\_\+\+ADDR\+\_\+\+SHIFT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (2)\ \textcolor{comment}{/*\ register\ offset\ in\ the\ csr\ dbi\ address\ always\ starts\ from\ csr\_addr[2]}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ since\ we\ specify\ a\ dword\ offset\ */}}
+
+\end{DoxyCode}
