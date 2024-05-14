@@ -46,6 +46,17 @@ def update_configuration():
 	bmc_username = os.environ['BMC_USERNAME']
 	bmc_password = os.environ['BMC_PASSWORD']
 
+def show_configuration():
+	update_configuration()
+	logger.info("====================System Configuration====================")
+	logger.info("CPU Project: {}".format(cpu_project))
+	logger.info("CUSTOMER TYPE: {}".format(customer_type))
+	logger.info("BMC TYPE: {}".format(bmc_type))
+	logger.info("BMC IP ADDRESS: {}".format(bmc_ip))
+	logger.info("BMC USERNAME: {}".format(bmc_username))
+	logger.info("BMC PASSWORD: {}".format(bmc_password))
+	logger.info("=============================END============================")
+
 def get_bios_knob_ops():
 	'''
 	Unified interface to call BIOS knobs operation APIs for Co-Val platforms

@@ -74,6 +74,19 @@ In [17]: os.environ['BMC_PASSWORD'] = 'intel@123'
 In [18]: os.environ['BMC_PASSWORD']
 Out[18]: 'intel@123'
 ```
+##### g. Show System Configuration
+```
+In [3]: show_configuration
+------> show_configuration()
+2024-05-14 23:37:54,323 - INFO: ====================System Configuration====================
+2024-05-14 23:37:54,323 - INFO: CPU Project: SRF
+2024-05-14 23:37:54,323 - INFO: CUSTOMER TYPE: DELL
+2024-05-14 23:37:54,323 - INFO: BMC TYPE: OSM
+2024-05-14 23:37:54,323 - INFO: BMC IP ADDRESS: 10.89.92.150
+2024-05-14 23:37:54,323 - INFO: BMC USERNAME: root
+2024-05-14 23:37:54,323 - INFO: BMC PASSWORD: Dell0penBMC
+2024-05-14 23:37:54,323 - INFO: =============================END============================
+```
 
 #### 3. BIOS Knob Operation
 ##### a. Read BIOS Knobs
