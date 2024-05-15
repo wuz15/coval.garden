@@ -19,8 +19,6 @@ class InspurBiosKnobOps(object):
 
 	def write_bios_knobs(self, knobs=None):
 		self._log("[INSPUR][BIOS_KNOB_SET] %s" % knobs)
-		# Sleep 30 sec to make sure OS monitor thread is closed.
-		time.sleep(30)
 		# Initialize and config the Inspur Redfish
 		rf = redfish.redfish_client(base_url="https://%s" % self.ip, username=self.username, password=self.password)
 		rf.login()

@@ -65,6 +65,7 @@ def get_bios_knob_ops():
 		2. HPE
 		3. Lenovo
 		4. Inspur
+		5. Intel
 	'''
 	logger.info("====================System Configuration====================")
 	logger.info("CPU Project: {}".format(cpu_project))
@@ -87,6 +88,9 @@ def get_bios_knob_ops():
 	elif customer_type == 'INSPUR':
 		from inspur_biosknob import InspurBiosKnobOps
 		return InspurBiosKnobOps(bmc_ip, bmc_username, bmc_password, logger)
+	elif customer_type == 'INTEL':
+		from intel_biosknob import IntelBiosKnobOps
+		return IntelBiosKnobOps(bmc_ip, bmc_username, bmc_password, logger)
 	else:
 		raise Exception("{} was not supported yet, please check your platform type".format(customer_type))
 

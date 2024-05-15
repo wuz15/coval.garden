@@ -19,8 +19,6 @@ class HpeBiosKnobOps(object):
 
 	def write_bios_knobs(self, knobs=None):
 		self._log("[HPE][BIOS_KNOB_SET] %s" % knobs)
-		# Sleep 30 sec to make sure OS monitor thread is closed.
-		time.sleep(30)
 		# Initialize and config the HPE Redfish
 		rf = redfish.redfish_client(base_url="https://%s" % self.ip, username=self.username, password=self.password)
 		rf.login()

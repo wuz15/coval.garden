@@ -111,8 +111,6 @@ class DellBiosKnobOps(object):
 
 	def write_bios_knobs(self, knobs=None):
 		self._log("[DELL][BIOS_KNOB_SET] %s" % knobs)
-		# Sleep 30 sec to make sure OS monitor thread is closed.
-		time.sleep(30)
 		# Initialize and config the Dell Redfish
 		url = r'https://{0}'.format(self.ip) + redfish_bios_setting_url[self.bmc_type]
 		name_list = []
