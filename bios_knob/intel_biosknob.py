@@ -69,16 +69,19 @@ class IntelBiosKnobOps(object):
 
 		data = resp.json()
 		# Find the BIOS knob attribute whether it has value. If yes, show the value; otherwise, report the error. 
+		print("----------------------------------------------------------------------------------------------")
+		print("|{:^30s}|{:^30s}|{:^30s}|".format('BIOS_KNOB_NAME', 'CURRENT_VALUE', 'EXPECT_VALUE'))
+		print("----------------------------------------------------------------------------------------------")
 		for current_knob in knobs:
 			check_status = False
 			for key, value in data['Attributes'].items():
 				if key == current_knob.split('=')[0].strip():
-					self._log("\n- Current value for attribute \"%s\" is \"%s\"\n" % (current_knob.split('=')[0].strip(), value))
+					print("|{:^30s}|{:^30s}|{:^30s}|".format(key, value, current_knob.split('=')[1].strip()))
+					print("----------------------------------------------------------------------------------------------")
 					check_status = True
 					break
 			if check_status == False:
 				self._log("\n- (ERROR!) Current value for attribute \"%s\" cannot be found.\n" % (current_knob.split('=')[0].strip()))
-
 		return 0
 
 	def clear_cmos(self):
