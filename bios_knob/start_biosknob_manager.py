@@ -94,64 +94,13 @@ def get_bios_knob_ops():
 	else:
 		raise Exception("{} was not supported yet, please check your platform type".format(customer_type))
 
-def get_mapped_bios_knobs(knobs=None):
-	'''
-	Used to patch bios_knobs if the bios_knob path being different between RP platform and Co-Val Platform
-	'''
-	if cpu_project.upper() == 'SPR':
-		mapping_json_file = "coval_biosknob_mapping_spr.json"
-	elif cpu_project == 'GNR':
-		mapping_json_file = "coval_biosknob_mapping_gnr.json"
-	elif cpu_project == 'SRF':
-		mapping_json_file = "coval_biosknob_mapping_srf.json"
-	else:
-		logger.info("Skip Co-Val platform bios_knobs mapping due to {} not supported yet".format(cpu_project))
-		return knobs
-
-	delimiter = '='
-
-	mapped_knobs = []
-	with open(mapping_json_file) as json_file:
-		bios_knobs_mapping = json.load(json_file)
-		for knob in knobs.split(','):
-			key = knob.split(delimiter)[0].strip()
-			value = knob.split(delimiter)[1].strip()
-			# Checking whether bios_knob mapping being required
-			if key in bios_knobs_mapping.keys() and value in bios_knobs_mapping[key].keys() \
-												and customer_type in bios_knobs_mapping[key][value].keys():
-				mapped_knob = bios_knobs_mapping[key][value][customer_type]
-				# Ignore the bios_knob if it being not supported on Co-Val platform
-				if mapped_knob != '':
-					mapped_knobs.append(mapped_knob)
-			else:
-				mapped_knobs.append(knob)
-	mapped_knobs = ','.join(mapped_knobs)
-
-	return mapped_knobs
-
 def write_bios_knobs(knobs=None):
 	update_configuration()
-	mapped_knobs = get_mapped_bios_knobs(knobs)
-	if mapped_knobs != knobs:
-		if mapped_knobs == '':
-			logger.info("Skip bios_knobs ops due to {} not supported on {} platform".format(knobs, customer_type))
-			return 0
-		else:
-			logger.info("[{}] {} being mapped to {}".format(customer_type, knobs, mapped_knobs))
-
-	return get_bios_knob_ops().write_bios_knobs(mapped_knobs)
+	return get_bios_knob_ops().write_bios_knobs(knobs)
 
 def read_bios_knobs(knobs=None):
 	update_configuration()
-	mapped_knobs = get_mapped_bios_knobs(knobs)
-	if mapped_knobs != knobs:
-		if mapped_knobs == '':
-			logger.info("Skip bios_knobs ops due to {} not supported on {} platform".format(knobs, customer_type))
-			return 0
-		else:
-			logger.info("[{}] {} being mapped to {}".format(customer_type, knobs, mapped_knobs))
-
-	return get_bios_knob_ops().read_bios_knobs(mapped_knobs)
+	return get_bios_knob_ops().read_bios_knobs(knobs)
 
 def clear_cmos():
 	update_configuration()
