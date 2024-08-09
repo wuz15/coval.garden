@@ -11,6 +11,12 @@
                 "FQDD": "BIOS.Setup.1-1",
                 "Attributes": [
                     {
+                        "Name": "MonitorMwait",
+                        "Value": "Enabled",
+                        "Set On Import": "True",
+                        "Comment": "Read and Write"
+                    },
+                    {
                         "Name": "ProcPwrPerf",
                         "Value": "OsDbpm",
                         "Set On Import": "True",
